@@ -186,30 +186,37 @@ body.menu-locked #container{overflow:hidden}
 .sec-domains{position:relative;padding:64px 80px 72px;background:linear-gradient(180deg,#F7FCFB 0%,#FFFFFF 35%,#F4FBF9 100%);overflow:hidden}
 .sec-domains::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,transparent,var(--teal) 20%,var(--gold) 50%,var(--teal) 80%,transparent)}
 
+/* Header Inti Halaman (Pojok Kiri sampai Pojok Kanan) */
 .dom-header{width:100%;margin-bottom:46px;padding-bottom:28px;border-bottom:1.5px solid rgba(11,110,106,.14)}
 .dom-header-top{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-bottom:14px}
 .dom-header .pill-badge{margin-bottom:0;font-size:12.5px;letter-spacing:1.5px}
 .dom-header h2{font-size:28px;font-weight:800;color:var(--teal-deep);margin:0 0 14px;letter-spacing:.4px;line-height:1.3;text-transform:uppercase;width:100%}
 .dom-header .lede{font-size:15.5px;line-height:1.78;color:#325855;margin:0;width:100%;text-align:justify;text-justify:inter-word}
 
+/* Container Baris Selang-Seling */
 .dom-list{display:flex;flex-direction:column;gap:30px;position:relative}
 
+/* Kartu Baris Selang-Seling */
 .dom-row{display:grid;grid-template-columns:410px 1fr;align-items:stretch;background:#fff;border-radius:20px;border:1px solid rgba(11,110,106,.15);box-shadow:0 12px 30px rgba(11,59,58,.07);overflow:hidden;position:relative;transition:transform .25s ease,box-shadow .25s ease}
 .dom-row:hover{transform:translateY(-3px);box-shadow:0 18px 38px rgba(11,59,58,.12)}
 
+/* Variasi Arah Baris Genap (Judul di Kanan, Penjelasan di Kiri) */
 .dom-row--reverse{grid-template-columns:1fr 410px}
 .dom-row--reverse .dom-title-panel{order:2}
 .dom-row--reverse .dom-desc-panel{order:1}
 
+/* Panel Judul (Sisi Gelap Berwibawa & Bervariasi) */
 .dom-title-panel{position:relative;padding:34px 36px;display:flex;flex-direction:column;justify-content:space-between;color:#fff;overflow:hidden}
 .dom-title-panel::after{content:"";position:absolute;right:-40px;bottom:-40px;width:170px;height:170px;border-radius:50%;background:radial-gradient(circle,rgba(129,246,239,.18),transparent 70%);pointer-events:none}
 .dom-row--reverse .dom-title-panel::after{right:auto;left:-40px}
 
+/* Variasi Warna Panel per Cabang */
 .dom-row--1 .dom-title-panel{background:linear-gradient(145deg,#0B3B3A 0%,#0E5956 100%)}
 .dom-row--2 .dom-title-panel{background:linear-gradient(145deg,#0E4F4C 0%,#0B3B3A 100%)}
 .dom-row--3 .dom-title-panel{background:linear-gradient(145deg,#093332 0%,#12635F 100%)}
 .dom-row--4 .dom-title-panel{background:linear-gradient(145deg,#105653 0%,#093130 100%)}
 
+/* Aksen Garis Sisi Panel Judul */
 .dom-row--1 .dom-title-panel{border-left:5px solid var(--cyan)}
 .dom-row--2 .dom-title-panel{border-right:5px solid var(--gold)}
 .dom-row--3 .dom-title-panel{border-left:5px solid var(--gold)}
@@ -226,6 +233,7 @@ body.menu-locked #container{overflow:hidden}
 .dom-panel-foot{margin-top:22px;padding-top:14px;border-top:1px solid rgba(255,255,255,.14);display:flex;align-items:center;gap:8px;flex-wrap:wrap;position:relative;z-index:1}
 .dom-subtag{font-size:11px;font-weight:700;color:#fff;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);padding:4px 11px;border-radius:6px;letter-spacing:.4px}
 
+/* Panel Penjelasan (Rata Kanan-Kiri / Justify Rapi) */
 .dom-desc-panel{padding:34px 40px;display:flex;flex-direction:column;justify-content:center;background:#fff;position:relative}
 .dom-desc-label{display:inline-flex;align-items:center;gap:8px;font-size:11.5px;font-weight:800;letter-spacing:1.6px;color:var(--teal);text-transform:uppercase;margin-bottom:12px}
 .dom-desc-label::before{content:"";width:22px;height:2px;background:var(--gold);border-radius:2px}
@@ -234,33 +242,6 @@ body.menu-locked #container{overflow:hidden}
 .dom-point{background:#F5FBFA;border:1px solid rgba(11,110,106,.12);border-radius:10px;padding:11px 14px}
 .dom-point strong{display:block;font-size:12.5px;font-weight:800;color:var(--teal-deep);margin-bottom:4px;letter-spacing:.2px}
 .dom-point span{display:block;font-size:12.5px;line-height:1.55;color:#466663;text-align:justify;text-justify:inter-word}
-
-/* ============ SECTION 2D: EKSPLORASI ARSIP PILIHAN (3, 3, 3 DENGAN TAB ANGKA & SWIPE) ============ */
-.sec-catalog{position:relative;padding:64px 80px 72px;background:#fff;border-top:1px solid rgba(11,110,106,.12);border-bottom:1px solid rgba(11,110,106,.12);overflow:hidden}
-.catalog-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:36px;gap:30px}
-.catalog-header-left h2{font-size:28px;font-weight:800;color:var(--teal-deep);margin:6px 0 0;text-transform:uppercase;letter-spacing:.4px}
-.catalog-tabs{display:flex;gap:10px;background:rgba(11,110,106,.06);padding:6px;border-radius:999px;border:1px solid rgba(11,110,106,.15)}
-.catalog-tab-btn{width:42px;height:42px;border-radius:50%;border:none;background:transparent;font-family:var(--font);font-size:15px;font-weight:800;color:var(--teal);cursor:pointer;transition:all .25s ease;display:flex;align-items:center;justify-content:center}
-.catalog-tab-btn.active{background:var(--teal);color:#fff;box-shadow:0 4px 12px rgba(11,59,58,.25)}
-.catalog-tab-btn:hover:not(.active){background:rgba(11,110,106,.12)}
-
-.catalog-viewport{position:relative;overflow:hidden;width:100%;touch-action:pan-y}
-.catalog-slider{display:flex;transition:transform .45s cubic-bezier(0.25,1,0.5,1);will-change:transform}
-.catalog-slide{min-width:100%;display:flex;flex-direction:column;gap:24px;flex-shrink:0}
-
-.catalog-card{display:grid;grid-template-columns:1fr 420px;background:linear-gradient(135deg,#F7FCFB,#EEF9F7);border:1px solid rgba(11,110,106,.15);border-radius:18px;overflow:hidden;box-shadow:0 8px 24px rgba(11,59,58,.06);transition:box-shadow .25s ease,transform .25s ease}
-.catalog-card:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(11,59,58,.1)}
-.catalog-card-left{padding:32px 36px;display:flex;flex-direction:column;justify-content:space-between}
-.catalog-meta{display:flex;align-items:center;gap:10px;margin-bottom:12px}
-.catalog-badge{font-size:10.5px;font-weight:800;color:var(--teal);background:rgba(11,110,106,.1);padding:3px 10px;border-radius:6px;letter-spacing:.8px;text-transform:uppercase}
-.catalog-idx{font-size:12px;font-weight:700;color:var(--teal-soft)}
-.catalog-card-title{font-size:21px;font-weight:800;color:var(--teal-deep);margin:0 0 10px;line-height:1.3;text-transform:uppercase}
-.catalog-card-desc{font-size:15px;line-height:1.75;color:var(--ink);margin:0 0 20px;text-align:justify;text-justify:inter-word}
-.catalog-action-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 22px;background:var(--teal);color:#fff;border-radius:999px;font-size:13px;font-weight:700;text-decoration:none;letter-spacing:.3px;width:max-content;transition:background .2s,transform .2s}
-.catalog-action-btn:hover{background:var(--teal-deep);transform:translateX(3px)}
-.catalog-card-right{position:relative;background:#0B3B3A;overflow:hidden}
-.catalog-card-right img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
-.catalog-card:hover .catalog-card-right img{transform:scale(1.04)}
 
 /* ============ SECTION 3: KUTIPAN SEMANGAT ============ */
 .sec-quote{position:relative;overflow:hidden;background:linear-gradient(180deg,#A5F4EC,#C4FAF3 45%,#E2FEFA)}
@@ -467,6 +448,7 @@ body.menu-locked #container{overflow:hidden}
 
         <!-- SECTION 2C: URAIAN EMPAT CABANG BIDANG (ZIGZAG SELANG-SELING) -->
         <section class="sec-domains">
+          <!-- Judul & Penjelasan Inti Halaman (Pojok Kiri sampai Pojok Kanan) -->
           <div class="dom-header">
             <div class="dom-header-top">
               <div class="pill-badge">URAIAN CABANG BIDANG</div>
@@ -475,7 +457,10 @@ body.menu-locked #container{overflow:hidden}
             <p class="lede">Setelah melihat gambaran besar bagaimana satu wadah mencabang ke berbagai arah, bagian ini menguraikan peran dan karakter masing-masing cabang bidang secara terstruktur. Keempat lini utama disusun berurutan agar mudah dikenali batasannya: mulai dari ruang hadir di ranah digital, tata cara pengelolaan langkah kerja, wujud karya yang diabadikan, hingga ruang terbuka bagi pertumbuhan perluasan di masa mendatang.</p>
           </div>
 
+          <!-- Daftar Selang-Seling (Kiri-Kanan / Kanan-Kiri) -->
           <div class="dom-list">
+
+            <!-- BARIS 1: Judul di KIRI, Penjelasan di KANAN -->
             <article class="dom-row dom-row--1">
               <div class="dom-title-panel">
                 <div class="dom-panel-top">
@@ -507,6 +492,7 @@ body.menu-locked #container{overflow:hidden}
               </div>
             </article>
 
+            <!-- BARIS 2: Penjelasan di KIRI, Judul di KANAN -->
             <article class="dom-row dom-row--2 dom-row--reverse">
               <div class="dom-title-panel">
                 <div class="dom-panel-top">
@@ -538,6 +524,7 @@ body.menu-locked #container{overflow:hidden}
               </div>
             </article>
 
+            <!-- BARIS 3: Judul di KIRI, Penjelasan di KANAN -->
             <article class="dom-row dom-row--3">
               <div class="dom-title-panel">
                 <div class="dom-panel-top">
@@ -569,6 +556,7 @@ body.menu-locked #container{overflow:hidden}
               </div>
             </article>
 
+            <!-- BARIS 4: Penjelasan di KIRI, Judul di KANAN -->
             <article class="dom-row dom-row--4 dom-row--reverse">
               <div class="dom-title-panel">
                 <div class="dom-panel-top">
@@ -599,189 +587,7 @@ body.menu-locked #container{overflow:hidden}
                 </div>
               </div>
             </article>
-          </div>
-        </section>
 
-        <!-- SECTION 2D: EKSPLORASI ARSIP PILIHAN (3, 3, 3 DENGAN TAB ANGKA & SWIPE INTERAKTIF) -->
-        <section class="sec-catalog">
-          <div class="catalog-header">
-            <div class="catalog-header-left">
-              <div class="pill-badge">EKSPLORASI ARSIP PILIHAN</div>
-              <h2>Koleksi Catatan &amp; Dokumentasi Unggulan</h2>
-            </div>
-            <div class="catalog-tabs" aria-label="Navigasi Grup Arsip">
-              <button class="catalog-tab-btn active" data-tab="0">1</button>
-              <button class="catalog-tab-btn" data-tab="1">2</button>
-              <button class="catalog-tab-btn" data-tab="2">3</button>
-            </div>
-          </div>
-
-          <div class="catalog-viewport" id="catalogViewport">
-            <div class="catalog-slider" id="catalogSlider">
-              
-              <!-- SLIDE 1 (Item 1, 2, 3) -->
-              <div class="catalog-slide">
-                <div class="catalog-card">
-                  <div class="catalog-card-left">
-                    <div>
-                      <div class="catalog-meta">
-                        <span class="catalog-badge">Kanal Digital</span>
-                        <span class="catalog-idx">01 / 09</span>
-                      </div>
-                      <h3 class="catalog-card-title">Perintisan Media &amp; Jejaring Informasi</h3>
-                      <p class="catalog-card-desc">Menelusuri awal mula kehadiran lini digital yang dirancang untuk merangkum arus informasi secara terstruktur, transparan, dan terhubung langsung dengan perkembangan di lapangan.</p>
-                    </div>
-                    <a class="catalog-action-btn" href="#">Klik Masuk →</a>
-                  </div>
-                  <div class="catalog-card-right">
-                    <img src="slide/hero_studio_kreatif.jpg" alt="Perintisan Media">
-                  </div>
-                </div>
-
-                <div class="catalog-card">
-                  <div class="catalog-card-left">
-                    <div>
-                      <div class="catalog-meta">
-                        <span class="catalog-badge">Kajian Riset</span>
-                        <span class="catalog-idx">02 / 09</span>
-                      </div>
-                      <h3 class="catalog-card-title">Metodologi &amp; Pendekatan Studi</h3>
-                      <p class="catalog-card-desc">Dokumentasi mendalam mengenai cara pandang dan penelaahan data yang mengutamakan ketelitian, kejujuran empiris, serta validitas dari setiap sumber rujukan yang dihimpun.</p>
-                    </div>
-                    <a class="catalog-action-btn" href="#">Klik Masuk →</a>
-                  </div>
-                  <div class="catalog-card-right">
-                    <img src="slide/hero_4_narasumber.jpg" alt="Metodologi Riset">
-                  </div>
-                </div>
-
-                <div class="catalog-card">
-                  <div class="catalog-card-left">
-                    <div>
-                      <div class="catalog-meta">
-                        <span class="catalog-badge">Tata Kelola</span>
-                        <span class="catalog-idx">03 / 09</span>
-                      </div>
-                      <h3 class="catalog-card-title">Prinsip Manajemen &amp; Pengelolaan</h3>
-                      <p class="catalog-card-desc">Catatan tata cara penyusunan langkah kerja yang terarah, mulai dari tahap perencanaan strategis hingga evaluasi berkala untuk memastikan kesinambungan jangka panjang.</p>
-                    </div>
-                    <a class="catalog-action-btn" href="#">Klik Masuk →</a>
-                  </div>
-                  <div class="catalog-card-right">
-                    <img src="slide/tim_kolaborasi.jpg" alt="Prinsip Manajemen">
-                  </div>
-                </div>
-              </div>
-
-              <!-- SLIDE 2 (Item 4, 5, 6) -->
-              <div class="catalog-slide">
-                <div class="catalog-card">
-                  <div class="catalog-card-left">
-                    <div>
-                      <div class="catalog-meta">
-                        <span class="catalog-badge">Pembangunan</span>
-                        <span class="catalog-idx">04 / 09</span>
-                      </div>
-                      <h3 class="catalog-card-title">Pengawasan &amp; Pelaksanaan Fisik</h3>
-                      <p class="catalog-card-desc">Merekam setiap tahapan realisasi proyek di lapangan secara bertahap, memastikan kesesuaian antara rancangan konseptual dan bentuk wujud nyata di lokasi.</p>
-                    </div>
-                    <a class="catalog-action-btn" href="#">Klik Masuk →</a>
-                  </div>
-                  <div class="catalog-card-right">
-                    <img src="slide/hero_pembangunan.jpg" alt="Pelaksanaan Fisik">
-                  </div>
-                </div>
-
-                <div class="catalog-card">
-                  <div class="catalog-card-left">
-                    <div>
-                      <div class="catalog-meta">
-                        <span class="catalog-badge">Inisiatif Sosial</span>
-                        <span class="catalog-idx">05 / 09</span>
-                      </div>
-                      <h3 class="catalog-card-title">Program Berbagi &amp; Kepedulian</h3>
-                      <p class="catalog-card-desc">Dokumentasi kegiatan kemasyarakatan dan aksi nyata yang berfokus pada penguatan solidaritas serta kontribusi positif langsung kepada sesama di lingkungan sekitar.</p>
-                    </div>
-                    <a class="catalog-action-btn" href="#">Klik Masuk →</a>
-                  </div>
-                  <div class="catalog-card-right">
-                    <img src="slide/hero_berbagi_sesama.jpg" alt="Program Berbagi">
-                  </div>
-                </div>
-
-                <div class="catalog-card">
-                  <div class="catalog-card-left">
-                    <div>
-                      <div class="catalog-meta">
-                        <span class="catalog-badge">Karya Visual</span>
-                        <span class="catalog-idx">06 / 09</span>
-                      </div>
-                      <h3 class="catalog-card-title">Arsip Rancang Bangun &amp; Estetika</h3>
-                      <p class="catalog-card-desc">Kumpulan dokumentasi visual, infografis, dan tata letak artistik yang menghidupkan gagasan kreatif ke dalam wujud estetika yang berwibawa dan mudah dipahami.</p>
-                    </div>
-                    <a class="catalog-action-btn" href="#">Klik Masuk →</a>
-                  </div>
-                  <div class="catalog-card-right">
-                    <img src="slide/hero_studio_kreatif.jpg" alt="Arsip Rancang Bangun">
-                  </div>
-                </div>
-              </div>
-
-              <!-- SLIDE 3 (Item 7, 8, 9) -->
-              <div class="catalog-slide">
-                <div class="catalog-card">
-                  <div class="catalog-card-left">
-                    <div>
-                      <div class="catalog-meta">
-                        <span class="catalog-badge">Karya Tulis</span>
-                        <span class="catalog-idx">07 / 09</span>
-                      </div>
-                      <h3 class="catalog-card-title">Publikasi Naskah &amp; Artikel Resmi</h3>
-                      <p class="catalog-card-desc">Kumpulan pemikiran analitis dan esei tematik yang mengupas dinamika industri, perkembangan pengetahuan, serta tinjauan kritis berbagai sektor strategis.</p>
-                    </div>
-                    <a class="catalog-action-btn" href="#">Klik Masuk →</a>
-                  </div>
-                  <div class="catalog-card-right">
-                    <img src="slide/hero_4_narasumber.jpg" alt="Publikasi Naskah">
-                  </div>
-                </div>
-
-                <div class="catalog-card">
-                  <div class="catalog-card-left">
-                    <div>
-                      <div class="catalog-meta">
-                        <span class="catalog-badge">Laporan Berkala</span>
-                        <span class="catalog-idx">08 / 09</span>
-                      </div>
-                      <h3 class="catalog-card-title">Rekam Jejak Kemajuan &amp; Evaluasi</h3>
-                      <p class="catalog-card-desc">Laporan komprehensif yang merangkum pencapaian dari waktu ke waktu, disajikan secara transparan untuk memetakan arah pertumbuhan di masa depan.</p>
-                    </div>
-                    <a class="catalog-action-btn" href="#">Klik Masuk →</a>
-                  </div>
-                  <div class="catalog-card-right">
-                    <img src="slide/tim_kolaborasi.jpg" alt="Rekam Jejak">
-                  </div>
-                </div>
-
-                <div class="catalog-card">
-                  <div class="catalog-card-left">
-                    <div>
-                      <div class="catalog-meta">
-                        <span class="catalog-badge">Perluasan Masa Depan</span>
-                        <span class="catalog-idx">09 / 09</span>
-                      </div>
-                      <h3 class="catalog-card-title">Inovasi Rintisan &amp; Sinergi Lintas Sektor</h3>
-                      <p class="catalog-card-desc">Ruang eksplorasi bagi gagasan-gagasan baru dan kerja sama strategis yang terus dikembangkan seiring dinamika zaman dan kebutuhan pengetahuan global.</p>
-                    </div>
-                    <a class="catalog-action-btn" href="#">Klik Masuk →</a>
-                  </div>
-                  <div class="catalog-card-right">
-                    <img src="slide/hero_pembangunan.jpg" alt="Inovasi Rintisan">
-                  </div>
-                </div>
-              </div>
-
-            </div>
           </div>
         </section>
 
@@ -1066,72 +872,6 @@ function updateNavHighlight(){
   });
 }
 
-/* ============ KATALOG SLIDER & SWIPE INTERAKTIF ============ */
-function initCatalogSlider(){
-  var slider = $("#catalogSlider");
-  var buttons = $$(".catalog-tab-btn");
-  if(!slider || buttons.length === 0) return;
-
-  var currentSlide = 0;
-  var totalSlides = buttons.length;
-
-  function goToSlide(index){
-    if(index < 0) index = 0;
-    if(index >= totalSlides) index = totalSlides - 1;
-    currentSlide = index;
-    slider.style.transform = "translateX(-" + (currentSlide * 100) + "%)";
-    buttons.forEach(function(btn, i){
-      btn.classList.toggle("active", i === currentSlide);
-    });
-    setTimeout(function(){ onResize(); }, 300);
-  }
-
-  buttons.forEach(function(btn){
-    btn.addEventListener("click", function(){
-      var idx = parseInt(btn.getAttribute("data-tab"), 10);
-      goToSlide(idx);
-    });
-  });
-
-  var startX = 0;
-  var isDragging = false;
-  var viewport = $("#catalogViewport");
-
-  if(viewport){
-    viewport.addEventListener("touchstart", function(e){
-      startX = e.touches[0].clientX;
-      isDragging = true;
-    }, {passive:true});
-
-    viewport.addEventListener("touchend", function(e){
-      if(!isDragging) return;
-      var endX = e.changedTouches[0].clientX;
-      var diff = startX - endX;
-      if(Math.abs(diff) > 50){
-        if(diff > 0){ goToSlide(currentSlide + 1); }
-        else { goToSlide(currentSlide - 1); }
-      }
-      isDragging = false;
-    }, {passive:true});
-
-    viewport.addEventListener("mousedown", function(e){
-      startX = e.clientX;
-      isDragging = true;
-    });
-
-    viewport.addEventListener("mouseup", function(e){
-      if(!isDragging) return;
-      var endX = e.clientX;
-      var diff = startX - endX;
-      if(Math.abs(diff) > 50){
-        if(diff > 0){ goToSlide(currentSlide + 1); }
-        else { goToSlide(currentSlide - 1); }
-      }
-      isDragging = false;
-    });
-  }
-}
-
 /* ============ EVENT ============ */
 function onClick(e){
   var navEl = e.target.closest("[data-nav]");
@@ -1154,7 +894,6 @@ function onResize(){
 function init(){
   renderOverlays();
   renderFlowStages();
-  initCatalogSlider();
   updateScale(); applyZoom();
   requestAnimationFrame(function(){ measureContentHeight(); measureNavPositions(); });
   updateNavHighlight();
