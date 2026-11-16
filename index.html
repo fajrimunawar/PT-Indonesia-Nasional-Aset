@@ -92,23 +92,23 @@ body.menu-locked #container{overflow:hidden}
 .overlay-menu.open .ov-dot-end{opacity:1;transform:scale(1);transition-delay:.4s}
 .ov-line{stroke:var(--teal);stroke-width:3;fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset .45s ease;transition-delay:.15s}
 .overlay-menu.open .ov-line{stroke-dashoffset:0;transition-delay:.1s}
-.ov-box{position:absolute;left:70px;top:150px;width:1140px;height:530px;background:rgba(255,255,255,.98);border-radius:0 0 20px 20px;box-shadow:0 12px 40px rgba(11,59,58,0.22);z-index:15;padding:36px 44px;overflow-y:auto;opacity:0;transform:scaleY(0);transform-origin:center top;transition:opacity .4s ease,transform .4s ease;transition-delay:.05s}
+.ov-box{position:absolute;left:70px;top:130px;width:1140px;height:560px;background:rgba(255,255,255,.98);border-radius:0 0 20px 20px;box-shadow:0 12px 40px rgba(11,59,58,0.22);z-index:15;padding:28px 36px;overflow-y:auto;opacity:0;transform:scaleY(0);transform-origin:center top;transition:opacity .4s ease,transform .4s ease;transition-delay:.05s}
 .overlay-menu.open .ov-box{opacity:1;transform:scaleY(1);transition-delay:.25s}
 .ov-head{opacity:0;transform:translateY(10px);transition:opacity .3s ease,transform .3s ease}
 .overlay-menu.open .ov-head{opacity:1;transform:translateY(0);transition-delay:.45s}
-.ov-h2{font-size:30px;font-weight:800;color:var(--teal-deep);margin:0;letter-spacing:-.3px}
-.ov-desc{font-size:15px;color:var(--teal-soft);margin:6px 0 0;font-weight:500}
-.ov-divider{height:2px;background:linear-gradient(90deg,var(--teal),rgba(11,110,106,.1));margin:18px 0 24px;opacity:0;transform:scaleX(0);transform-origin:left center;transition:opacity .25s ease,transform .35s ease}
+.ov-h2{font-size:28px;font-weight:800;color:var(--teal-deep);margin:0;letter-spacing:-.3px}
+.ov-desc{font-size:14px;color:var(--teal-soft);margin:4px 0 0;font-weight:500}
+.ov-divider{height:2px;background:linear-gradient(90deg,var(--teal),rgba(11,110,106,.1));margin:14px 0 18px;opacity:0;transform:scaleX(0);transform-origin:left center;transition:opacity .25s ease,transform .35s ease}
 .overlay-menu.open .ov-divider{opacity:1;transform:scaleX(1);transition-delay:.5s}
-.ov-cards{display:grid;grid-template-columns:repeat(auto-fill, minmax(220px, 1fr));gap:16px}
-.ov-card{padding:20px 18px;background:linear-gradient(135deg,#F0FAF8,#DCF3EC);border-radius:14px;border:1px solid rgba(11,110,106,.15);opacity:0;transform:translateY(20px);transition:all .3s ease;box-shadow:0 4px 14px rgba(11,59,58,.05)}
+.ov-cards{display:grid;grid-template-columns:repeat(3, minmax(0, 1fr));gap:14px}
+.ov-card{padding:16px 18px;background:linear-gradient(135deg,#F0FAF8,#DCF3EC);border-radius:14px;border:1px solid rgba(11,110,106,.15);opacity:0;transform:translateY(20px);transition:all .3s ease;box-shadow:0 4px 14px rgba(11,59,58,.05)}
 .ov-card:hover{transform:translateY(-3px);box-shadow:0 8px 22px rgba(11,59,58,.12);border-color:var(--teal)}
 .overlay-menu.open .ov-card{opacity:1;transform:translateY(0);transition-delay:var(--d,0s)}
-.ov-num{display:inline-block;font-size:11px;font-weight:700;color:var(--teal);background:rgba(11,110,106,.1);padding:3px 9px;border-radius:6px;margin-bottom:10px;letter-spacing:.5px}
-.ov-title{font-size:15px;font-weight:700;color:var(--teal-deep);min-height:42px;line-height:1.35}
-.ov-btn{display:inline-flex;align-items:center;gap:6px;padding:7px 16px;background:var(--teal);color:#fff;border:none;border-radius:999px;font-family:var(--font);font-size:11.5px;font-weight:700;cursor:pointer;margin-top:14px;letter-spacing:.3px;transition:background .2s,transform .2s;text-decoration:none}
+.ov-num{display:inline-block;font-size:11px;font-weight:700;color:var(--teal);background:rgba(11,110,106,.1);padding:3px 9px;border-radius:6px;margin-bottom:8px;letter-spacing:.5px}
+.ov-title{font-size:14px;font-weight:700;color:var(--teal-deep);min-height:38px;line-height:1.35}
+.ov-btn{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;background:var(--teal);color:#fff;border:none;border-radius:999px;font-family:var(--font);font-size:11px;font-weight:700;cursor:pointer;margin-top:10px;letter-spacing:.3px;transition:background .2s,transform .2s;text-decoration:none}
 .ov-btn:hover{background:var(--teal-deep);transform:translateX(3px)}
-.ov-x{position:absolute;left:1154px;top:166px;width:38px;height:38px;border-radius:50%;background:var(--teal-deep);color:#fff;border:none;font-family:var(--font);font-size:16px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:18;opacity:0;transform:scale(0) rotate(-90deg);box-shadow:0 4px 12px rgba(11,59,58,.25);transition:opacity .25s,transform .25s,background .2s}
+.ov-x{position:absolute;left:1154px;top:146px;width:38px;height:38px;border-radius:50%;background:var(--teal-deep);color:#fff;border:none;font-family:var(--font);font-size:16px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:18;opacity:0;transform:scale(0) rotate(-90deg);box-shadow:0 4px 12px rgba(11,59,58,.25);transition:opacity .25s,transform .25s,background .2s}
 .overlay-menu.open .ov-x{opacity:1;transform:scale(1) rotate(0);transition-delay:.55s}
 .overlay-menu.open .ov-x:hover{background:#d32f2f;transform:scale(1.1) rotate(0);transition-delay:0s}
 
@@ -171,8 +171,8 @@ body.menu-locked #container{overflow:hidden}
 .tree-root .tag{font-size:9.5px;font-weight:700;letter-spacing:2px;color:var(--cyan);background:rgba(129,246,239,.12);border:1px solid rgba(129,246,239,.35);padding:3px 10px;border-radius:999px;margin-bottom:7px}
 .tree-root .nm{font-size:21px;font-weight:800;color:#fff;letter-spacing:.5px}
 .tree-root .sb{font-size:11px;color:rgba(255,255,255,.75);margin-top:4px;line-height:1.4}
-.tree-branch{position:absolute;left:330px;width:170px;height:118px;background:#fff;border:2px solid var(--teal);border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:10px 12px;box-shadow:0 0 0 5px rgba(11,110,106,.08),0 6px 14px rgba(11,59,58,.12);z-index:1;transition:box-shadow .2s,transform .2s}
-.tree-branch:hover{transform:translateX(3px);box-shadow:0 0 0 5px rgba(11,110,106,.14),0 8px 18px rgba(11,59,58,.16)}
+.tree-branch{position:absolute;left:330px;width:170px;height:118px;background:#fff;border:2px solid var(--teal);border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:10px 12px;box-shadow:0 0 0 5px rgba(11,59,58,.08),0 6px 14px rgba(11,59,58,.12);z-index:1;transition:box-shadow .2s,transform .2s}
+.tree-branch:hover{transform:translateX(3px);box-shadow:0 0 0 5px rgba(11,59,58,.14),0 8px 18px rgba(11,59,58,.16)}
 .tree-branch .num{display:inline-block;font-size:10px;font-weight:700;color:var(--teal);background:rgba(11,110,106,.1);padding:2px 9px;border-radius:6px;margin-bottom:6px;letter-spacing:.5px}
 .tree-branch .nm{font-size:15px;font-weight:800;color:var(--teal-deep);text-transform:uppercase;letter-spacing:.2px;line-height:1.25}
 .tree-branch .hint{font-size:10.5px;color:var(--teal-soft);margin-top:4px;line-height:1.3}
@@ -873,7 +873,7 @@ function renderOverlays(){
   for(var menu in SUB_MENUS){
     var data = SUB_MENUS[menu];
     var x = NAV_X[menu] || 910;
-    var path = "M "+x+" 78 L "+x+" 150 L 70 150";
+    var path = "M "+x+" 78 L "+x+" 130 L 70 130";
     var cards = "";
     for(var i=0;i<data.items.length;i++){
       var itemTitle = data.items[i];
@@ -889,7 +889,7 @@ function renderOverlays(){
       + '<svg class="ov-svg" width="1280" height="720" aria-hidden="true">'
       + '<circle class="ov-dot-start" cx="'+x+'" cy="78" r="5"></circle>'
       + '<path class="ov-line" d="'+path+'" pathLength="1"></path>'
-      + '<circle class="ov-dot-end" cx="70" cy="150" r="5"></circle>'
+      + '<circle class="ov-dot-end" cx="70" cy="130" r="5"></circle>'
       + '</svg>'
       + '<div class="ov-box">'
       + '<div class="ov-head"><h2 class="ov-h2">'+brand(menu)+'</h2><p class="ov-desc">'+esc(data.description)+'</p></div>'
@@ -954,7 +954,7 @@ function updateOverlayPositions(){
   $$(".overlay-menu", slide).forEach(function(ov){
     var key = ov.getAttribute("data-menu");
     var x = (state.navPositions[key]!=null) ? state.navPositions[key] : (NAV_X[key] || 910);
-    var path = ov.querySelector("path"); if(path) path.setAttribute("d", "M "+x+" 78 L "+x+" 150 L 70 150");
+    var path = ov.querySelector("path"); if(path) path.setAttribute("d", "M "+x+" 78 L "+x+" 130 L 70 130");
     var dot = ov.querySelector(".ov-dot-start"); if(dot) dot.setAttribute("cx", x);
   });
 }
