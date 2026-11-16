@@ -27,12 +27,12 @@
   --bg-grad:linear-gradient(180deg,#81F6EF 0%,#9CF4ED 22%,#B2FBF6 45%,#CFFCF6 68%,#E1FFFD 88%,#E8FEFC 100%);
 }
 *,*::before,*::after{box-sizing:border-box}
-html,body{margin:0;padding:0}
+html,body{margin:0;padding:0;width:100%;height:100%}
 body{font-family:var(--font);background:var(--cyan);color:var(--teal-deep);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow:hidden}
 #container{position:fixed;inset:0;overflow-y:auto;overflow-x:hidden;scrollbar-gutter:stable;background:var(--bg-grad)}
 body.menu-locked #container{overflow:hidden}
 #wrapper{width:100%;position:relative;overflow:hidden}
-#content{position:absolute;top:0;left:0;width:1280px;transform-origin:top left}
+#content{position:absolute;top:0;left:0;width:1280px;transform-origin:top left;transform:scale(var(--scale, 1));will-change:transform}
 
 @keyframes marqueeHero{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 @keyframes marqueeFoot{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
@@ -781,27 +781,32 @@ function renderFlowStages(){
   host.insertAdjacentHTML("beforeend", html);
 }
 
-/* ============ SCALE / ZOOM ============ */
+/* ============ SCALE / ZOOM CERDAS ============ */
 function updateScale(){
   var el = $("#container"); if(!el) return;
-  state.scale = Math.max(el.clientWidth/1280, 0.5);
+  // Dihapus batasan 0.5 agar pada layar HP kecil (misal 360px), skala menyesuaikan secara akurat tanpa terpotong
+  state.scale = el.clientWidth / 1280;
 }
 function applyZoom(){
-  var c = $("#content"); if(c && state.scale>0) c.style.zoom = state.scale;
+  var c = $("#content");
+  if(c && state.scale > 0){
+    c.style.transform = "scale(" + state.scale + ")";
+    c.style.setProperty("--scale", state.scale);
+  }
 }
 function measureContentHeight(){
   var c = $("#content"); if(!c) return;
   var h = c.scrollHeight * state.scale;
-  if(h>0){ var w=$("#wrapper"); if(w) w.style.height = h+"px"; }
+  if(h > 0){ var w = $("#wrapper"); if(w) w.style.height = h + "px"; }
 }
 function measureNavPositions(){
   var slide = $("[data-slide]"); if(!slide) return;
   var sr = slide.getBoundingClientRect();
-  var sc = sr.width/1280; if(sc===0) return;
+  var sc = sr.width / 1280; if(sc === 0) return;
   var pos = {};
   $$("[data-nav]", slide).forEach(function(el){
     var r = el.getBoundingClientRect();
-    pos[el.getAttribute("data-nav")] = (r.left + r.width/2 - sr.left)/sc;
+    pos[el.getAttribute("data-nav")] = (r.left + r.width/2 - sr.left) / sc;
   });
   state.navPositions = pos;
   updateOverlayPositions();
@@ -810,7 +815,7 @@ function updateOverlayPositions(){
   var slide = $("[data-slide]"); if(!slide) return;
   $$(".overlay-menu", slide).forEach(function(ov){
     var key = ov.getAttribute("data-menu");
-    var x = (state.navPositions[key]!=null) ? state.navPositions[key] : NAV_X[key];
+    var x = (state.navPositions[key] != null) ? state.navPositions[key] : NAV_X[key];
     var path = ov.querySelector("path"); if(path) path.setAttribute("d", "M "+x+" 78 L "+x+" 150 L 70 150");
     var dot = ov.querySelector(".ov-dot-start"); if(dot) dot.setAttribute("cx", x);
   });
@@ -819,7 +824,7 @@ function updateOverlayPositions(){
 /* ============ DAFTAR ISI ============ */
 function getOverlay(slide, item){
   var list = $$(".overlay-menu", slide);
-  for(var i=0;i<list.length;i++){ if(list[i].getAttribute("data-menu")===item) return list[i]; }
+  for(var i=0; i<list.length; i++){ if(list[i].getAttribute("data-menu") === item) return list[i]; }
   return null;
 }
 var NAV_AFTER_CLOSE_MS = 600;
@@ -855,7 +860,7 @@ function goBeranda(){
 function updateNavHighlight(){
   $$(".nav-link").forEach(function(l){
     var item = l.getAttribute("data-nav");
-    var on = state.activeMenu ? (state.activeMenu===item) : (item==="Beranda");
+    var on = state.activeMenu ? (state.activeMenu === item) : (item === "Beranda");
     l.classList.toggle("on", on);
   });
 }
@@ -888,7 +893,7 @@ function init(){
   document.addEventListener("click", onClick);
   document.addEventListener("keydown", onKeydown);
   window.addEventListener("resize", onResize);
-  window.addEventListener("orientationchange", function(){ setTimeout(onResize, 100); });
+  window.addEventListener("orientationchange", function(){ setTimeout(onResize, 150); });
   if(document.fonts && document.fonts.ready) document.fonts.ready.then(measureNavPositions);
   setTimeout(onResize, 100);
   setTimeout(onResize, 500);
