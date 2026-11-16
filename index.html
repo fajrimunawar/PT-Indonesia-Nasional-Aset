@@ -1093,7 +1093,6 @@ function initCatalogSlider(){
     });
   });
 
-  // Touch / Swipe Support
   var startX = 0;
   var isDragging = false;
   var viewport = $("#catalogViewport");
@@ -1104,25 +1103,17 @@ function initCatalogSlider(){
       isDragging = true;
     }, {passive:true});
 
-    viewport.addEventListener("touchmove", function(e){
-      if(!isDragging) return;
-    }, {passive:true});
-
     viewport.addEventListener("touchend", function(e){
       if(!isDragging) return;
       var endX = e.changedTouches[0].clientX;
       var diff = startX - endX;
       if(Math.abs(diff) > 50){
-        if(diff > 0){
-          goToSlide(currentSlide + 1);
-        } else {
-          goToSlide(currentSlide - 1);
-        }
+        if(diff > 0){ goToSlide(currentSlide + 1); }
+        else { goToSlide(currentSlide - 1); }
       }
       isDragging = false;
     }, {passive:true});
 
-    // Mouse drag support for testing on desktop
     viewport.addEventListener("mousedown", function(e){
       startX = e.clientX;
       isDragging = true;
@@ -1133,11 +1124,8 @@ function initCatalogSlider(){
       var endX = e.clientX;
       var diff = startX - endX;
       if(Math.abs(diff) > 50){
-        if(diff > 0){
-          goToSlide(currentSlide + 1);
-        } else {
-          goToSlide(currentSlide - 1);
-        }
+        if(diff > 0){ goToSlide(currentSlide + 1); }
+        else { goToSlide(currentSlide - 1); }
       }
       isDragging = false;
     });
