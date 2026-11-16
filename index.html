@@ -21,6 +21,7 @@
   --teal:#0B6E6A;
   --teal-soft:#5B7A78;
   --cyan:#81F6EF;
+  --gold:#D9B45B;
   --ink:#1F2937;
   --font:'Open Sans','Segoe UI',Tahoma,sans-serif;
   --bg-grad:linear-gradient(180deg,#81F6EF 0%,#9CF4ED 22%,#B2FBF6 45%,#CFFCF6 68%,#E1FFFD 88%,#E8FEFC 100%);
@@ -85,8 +86,6 @@ body.menu-locked #container{overflow:hidden}
 .overlay-menu.open .ov-box,.overlay-menu.open .ov-x{pointer-events:auto}
 .ov-svg{position:absolute;inset:0;pointer-events:none;z-index:20}
 .ov-dot-start,.ov-dot-end{fill:var(--teal);opacity:0;transform:scale(0);transform-origin:center;transform-box:fill-box;transition:opacity .25s ease,transform .25s ease}
-/* Saat DITUTUP (cascade balik): titik kotak hilang dulu (.1s), kotak mengecil (.05s),
-   garis menarik balik ke nav (.15s), titik nav hilang paling akhir (.4s) -> garis pulang ke beranda */
 .ov-dot-end{transition-delay:.1s}
 .ov-dot-start{transition-delay:.4s}
 .overlay-menu.open .ov-dot-start{opacity:1;transform:scale(1);transition-delay:.05s}
@@ -117,23 +116,24 @@ body.menu-locked #container{overflow:hidden}
 .pill-badge{display:inline-block;font-size:13px;font-weight:700;color:var(--teal);background:rgba(11,110,106,.1);padding:6px 14px;border-radius:999px;letter-spacing:1px;margin-bottom:18px}
 
 /* ============ SECTION 1: INTRO ============ */
-.sec-intro{position:relative;min-height:700px;padding:50px 80px 30px;background:#fff}
+.sec-intro{position:relative;min-height:700px;padding:50px 80px 44px;background:#fff}
 .sec-intro::after{content:"";display:table;clear:both}
-.sec-intro .float-img{float:right;margin-top:50px;margin-left:40px;margin-bottom:24px;position:relative}
+.sec-intro .float-img{float:right;margin-top:54px;margin-left:40px;margin-bottom:24px;position:relative}
 .sec-intro .float-img::before{content:"";position:absolute;top:18px;left:-18px;width:100%;height:100%;background:linear-gradient(135deg,#0B6E6A,#5B7A78);border-radius:22px;opacity:.3}
 .sec-intro .img-frame{position:relative;width:516px;height:348px;border-radius:22px;overflow:hidden;background:#fff;box-shadow:0 0 0 1px rgba(11,110,106,.10),0 14px 34px rgba(11,59,58,.18);border:6px solid #fff}
 .sec-intro .img-frame img{width:100%;height:100%;object-fit:contain;display:block}
 .sec-intro .img-badge{position:absolute;bottom:16px;left:16px;padding:10px 16px;background:rgba(255,255,255,.95);border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.1)}
 .sec-intro .img-badge .label{font-size:11px;color:var(--teal-soft);font-weight:600;letter-spacing:.5px}
 .sec-intro .img-badge .title{font-size:14px;color:var(--teal-deep);font-weight:700}
-.sec-intro h2{font-size:26px;font-weight:800;color:var(--teal-deep);margin:0 0 22px;letter-spacing:.5px;line-height:1.3;text-transform:uppercase}
-.sec-intro p{font-size:16.5px;line-height:1.75;color:var(--ink);margin:0;text-align:justify}
+/* Diperbaiki: Judul satu baris penuh (tidak terpotong 2 baris) */
+.sec-intro h2{font-size:25.5px;font-weight:800;color:var(--teal-deep);margin:0 0 22px;letter-spacing:.3px;line-height:1.3;text-transform:uppercase;white-space:nowrap}
+.sec-intro p{font-size:16.5px;line-height:1.75;color:var(--ink);margin:0;text-align:justify;text-justify:inter-word}
 
 /* ============ SECTION 2: ALUR PERJALANAN ============ */
 .sec-flow{position:relative;padding:56px 80px 58px;background:#fff;border-top:1px solid rgba(11,110,106,.12);border-bottom:1px solid rgba(11,110,106,.12);background-image:linear-gradient(rgba(11,110,106,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(11,110,106,.035) 1px,transparent 1px);background-size:40px 40px;overflow:hidden}
 .sec-flow .pill-badge{font-size:12.5px;letter-spacing:1.5px;margin-bottom:16px}
 .sec-flow h2{font-size:27px;font-weight:800;color:var(--teal-deep);margin:0 0 12px;letter-spacing:.5px;line-height:1.3;max-width:1060px;text-transform:uppercase}
-.sec-flow .lede{font-size:15px;line-height:1.72;color:#37605D;margin:0 0 10px;text-align:justify}
+.sec-flow .lede{font-size:15px;line-height:1.72;color:#37605D;margin:0 0 10px;text-align:justify;text-justify:inter-word}
 .flow-chart{position:relative;height:472px;margin-top:14px}
 .flow-chart svg{position:absolute;inset:0}
 .flow-bg{fill:none;stroke:rgba(11,110,106,.08);stroke-width:9;stroke-linecap:round}
@@ -155,10 +155,10 @@ body.menu-locked #container{overflow:hidden}
 .stage--7{left:986px;top:321px} .stage-label--7{left:925px;top:366px;width:170px}
 
 /* ============ SECTION 2B: PETA BIDANG (POHON HIERARKI) ============ */
-.sec-scope{position:relative;padding:56px 80px 58px;background:#fff;background-image:linear-gradient(rgba(11,110,106,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(11,110,106,.03) 1px,transparent 1px);background-size:60px 60px;overflow:hidden}
+.sec-scope{position:relative;padding:56px 80px 58px;background:#fff;border-bottom:1px solid rgba(11,110,106,.12);background-image:linear-gradient(rgba(11,110,106,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(11,110,106,.03) 1px,transparent 1px);background-size:60px 60px;overflow:hidden}
 .sec-scope .pill-badge{font-size:12.5px;letter-spacing:1.5px;margin-bottom:16px}
 .sec-scope h2{font-size:27px;font-weight:800;color:var(--teal-deep);margin:0 0 12px;letter-spacing:.5px;line-height:1.3;max-width:1060px;text-transform:uppercase}
-.sec-scope .lede{font-size:15px;line-height:1.72;color:#37605D;margin:0 0 10px;text-align:justify}
+.sec-scope .lede{font-size:15px;line-height:1.72;color:#37605D;margin:0 0 10px;text-align:justify;text-justify:inter-word}
 .tree-chart{position:relative;height:560px;margin-top:26px}
 .tree-chart svg{position:absolute;inset:0}
 .tree-bg{fill:none;stroke:rgba(11,110,106,.12);stroke-width:7;stroke-linecap:round}
@@ -182,6 +182,69 @@ body.menu-locked #container{overflow:hidden}
 .sub--1a{top:4px}.sub--1b{top:66px}.sub--2a{top:152px}.sub--2b{top:214px}
 .sub--3a{top:300px}.sub--3b{top:362px}.sub--4a{top:448px}.sub--4b{top:510px}
 .tree-note{text-align:center;font-size:12.5px;font-style:italic;color:var(--teal-soft);margin:20px auto 0;max-width:780px;line-height:1.6}
+
+/* ============ SECTION 2C: PENJELASAN EMPAT CABANG BIDANG (ZIGZAG SELANG-SELING) ============ */
+.sec-domains{position:relative;padding:64px 80px 72px;background:linear-gradient(180deg,#F7FCFB 0%,#FFFFFF 35%,#F4FBF9 100%);overflow:hidden}
+.sec-domains::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,transparent,var(--teal) 20%,var(--gold) 50%,var(--teal) 80%,transparent)}
+
+/* Header Inti Halaman (Pojok Kiri sampai Pojok Kanan) */
+.dom-header{width:100%;margin-bottom:46px;padding-bottom:28px;border-bottom:1.5px solid rgba(11,110,106,.14)}
+.dom-header-top{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-bottom:14px}
+.dom-header .pill-badge{margin-bottom:0;font-size:12.5px;letter-spacing:1.5px}
+.dom-header-tag{font-size:12px;font-weight:700;letter-spacing:1.6px;color:var(--teal-soft);text-transform:uppercase}
+.dom-header h2{font-size:28px;font-weight:800;color:var(--teal-deep);margin:0 0 14px;letter-spacing:.4px;line-height:1.3;text-transform:uppercase;width:100%}
+.dom-header .lede{font-size:15.5px;line-height:1.78;color:#325855;margin:0;width:100%;text-align:justify;text-justify:inter-word}
+
+/* Container Baris Selang-Seling */
+.dom-list{display:flex;flex-direction:column;gap:30px;position:relative}
+
+/* Kartu Baris Selang-Seling */
+.dom-row{display:grid;grid-template-columns:410px 1fr;align-items:stretch;background:#fff;border-radius:20px;border:1px solid rgba(11,110,106,.15);box-shadow:0 12px 30px rgba(11,59,58,.07);overflow:hidden;position:relative;transition:transform .25s ease,box-shadow .25s ease}
+.dom-row:hover{transform:translateY(-3px);box-shadow:0 18px 38px rgba(11,59,58,.12)}
+
+/* Variasi Arah Baris Genap (Judul di Kanan, Penjelasan di Kiri) */
+.dom-row--reverse{grid-template-columns:1fr 410px}
+.dom-row--reverse .dom-title-panel{order:2}
+.dom-row--reverse .dom-desc-panel{order:1}
+
+/* Panel Judul (Sisi Gelap Berwibawa & Bervariasi) */
+.dom-title-panel{position:relative;padding:34px 36px;display:flex;flex-direction:column;justify-content:space-between;color:#fff;overflow:hidden}
+.dom-title-panel::after{content:"";position:absolute;right:-40px;bottom:-40px;width:170px;height:170px;border-radius:50%;background:radial-gradient(circle,rgba(129,246,239,.18),transparent 70%);pointer-events:none}
+.dom-row--reverse .dom-title-panel::after{right:auto;left:-40px}
+
+/* Variasi Warna Panel per Cabang */
+.dom-row--1 .dom-title-panel{background:linear-gradient(145deg,#0B3B3A 0%,#0E5956 100%)}
+.dom-row--2 .dom-title-panel{background:linear-gradient(145deg,#0E4F4C 0%,#0B3B3A 100%)}
+.dom-row--3 .dom-title-panel{background:linear-gradient(145deg,#093332 0%,#12635F 100%)}
+.dom-row--4 .dom-title-panel{background:linear-gradient(145deg,#105653 0%,#093130 100%)}
+
+/* Aksen Garis Sisi Panel Judul */
+.dom-row--1 .dom-title-panel{border-left:5px solid var(--cyan)}
+.dom-row--2 .dom-title-panel{border-right:5px solid var(--gold)}
+.dom-row--3 .dom-title-panel{border-left:5px solid var(--gold)}
+.dom-row--4 .dom-title-panel{border-right:5px solid var(--cyan)}
+
+.dom-panel-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:20px;position:relative;z-index:1}
+.dom-num-pill{display:inline-flex;align-items:center;gap:8px;padding:5px 13px;border-radius:999px;background:rgba(129,246,239,.14);border:1px solid rgba(129,246,239,.35);font-size:11px;font-weight:800;letter-spacing:1.6px;color:var(--cyan);text-transform:uppercase}
+.dom-icon-box{width:42px;height:42px;border-radius:12px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);display:flex;align-items:center;justify-content:center;color:var(--cyan);flex-shrink:0}
+
+.dom-panel-main{position:relative;z-index:1}
+.dom-kicker{font-size:11.5px;font-weight:700;letter-spacing:1.8px;color:var(--gold);text-transform:uppercase;margin-bottom:8px;display:block}
+.dom-title{font-size:24px;font-weight:800;color:#fff;margin:0 0 10px;line-height:1.25;letter-spacing:.3px;text-transform:uppercase}
+.dom-subtitle{font-size:13.5px;line-height:1.55;color:rgba(255,255,255,.82);margin:0}
+
+.dom-panel-foot{margin-top:22px;padding-top:14px;border-top:1px solid rgba(255,255,255,.14);display:flex;align-items:center;gap:8px;flex-wrap:wrap;position:relative;z-index:1}
+.dom-subtag{font-size:11px;font-weight:700;color:#fff;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);padding:4px 11px;border-radius:6px;letter-spacing:.4px}
+
+/* Panel Penjelasan (Rata Kanan-Kiri / Justify Rapi) */
+.dom-desc-panel{padding:34px 40px;display:flex;flex-direction:column;justify-content:center;background:#fff;position:relative}
+.dom-desc-label{display:inline-flex;align-items:center;gap:8px;font-size:11.5px;font-weight:800;letter-spacing:1.6px;color:var(--teal);text-transform:uppercase;margin-bottom:12px}
+.dom-desc-label::before{content:"";width:22px;height:2px;background:var(--gold);border-radius:2px}
+.dom-desc-text{font-size:15.5px;line-height:1.82;color:var(--ink);margin:0;text-align:justify;text-justify:inter-word}
+.dom-desc-points{margin-top:18px;padding-top:16px;border-top:1px dashed rgba(11,110,106,.2);display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.dom-point{background:#F5FBFA;border:1px solid rgba(11,110,106,.12);border-radius:10px;padding:11px 14px}
+.dom-point strong{display:block;font-size:12.5px;font-weight:800;color:var(--teal-deep);margin-bottom:4px;letter-spacing:.2px}
+.dom-point span{display:block;font-size:12.5px;line-height:1.55;color:#466663;text-align:justify;text-justify:inter-word}
 
 /* ============ SECTION 3: KUTIPAN SEMANGAT ============ */
 .sec-quote{position:relative;overflow:hidden;background:linear-gradient(180deg,#A5F4EC,#C4FAF3 45%,#E2FEFA)}
@@ -324,7 +387,7 @@ body.menu-locked #container{overflow:hidden}
           </div>
           <div>
             <div class="pill-badge">TENTANG PLATFORM</div>
-            <h2>Setiap Pembangunan<br>Mempunyai Awal</h2>
+            <h2>Setiap Pembangunan Mempunyai Awal</h2>
             <p>Keyakinan sederhana itulah yang melatarbelakangi <span translate="no">INFOTRINK</span>: hampir semua hal yang berdiri hari ini bermula dari sebuah gagasan yang dirumuskan dan dirancang sebelum akhirnya diwujudkan sedikit demi sedikit. Atas dasar itu, perjalanan pada berbagai lini dicatat sesuai tahapannya, mulai dari perencanaan dan perintisan, berlanjut ke perwujudan dan pelaksanaan, hingga pengelolaan dan pengembangannya. Penyajiannya dibuat jujur pada posisinya. Yang masih berupa gagasan diperkenalkan sebagai gagasan, sedangkan yang sudah berjalan dipaparkan sebagaimana perkembangannya, tanpa diperbesar dan tanpa diperkecil. Kedudukannya pun dijaga dengan batas yang jelas. <span translate="no">INFOTRINK</span> tidak berperan sebagai pihak yang memiliki atau membawahi apa yang diperkenalkan, dan setiap hal tetap berada di bawah pengelolaan pihaknya masing-masing. Yang tersaji di sini hanyalah gambaran, uraian, dan tautan yang mengarah pada sumbernya, bukan pengganti dari peran resminya. Berbeda dengan unggahan yang cepat berganti atau pemberitaan yang mudah berlalu, dokumentasi semacam ini disusun untuk bertahan lebih lama: setiap kemajuan ditambahkan, setiap perubahan diperbarui, agar yang terbaca selalu sesuai keadaan terkininya dan tidak berhenti pada versi lama. Dengan cara itulah sebuah awal tidak berakhir sebagai kenangan, melainkan terus hidup sebagai catatan yang berguna, baik bagi pihak yang melanjutkan perjalanannya maupun bagi siapa pun yang ingin memahami dari mana semuanya dimulai.</p>
           </div>
         </section>
@@ -384,6 +447,164 @@ body.menu-locked #container{overflow:hidden}
             <div class="tree-sub sub--4b"><span class="dot"></span><span class="tt">Langkah Berikutnya</span><span class="dd">Tempat bagi jalur yang belum masuk lini mana pun — karena perjalanan ini masih terus berjalan.</span></div>
           </div>
           <p class="tree-note">Pemetaan di atas menunjukkan kedudukan dan arah tumbuhnya setiap jalur, bukan kepemilikan — setiap cabang tetap berada di bawah pengelolaan pihaknya masing-masing, sebagaimana dijelaskan pada bagian pengenalan.</p>
+        </section>
+
+        <!-- SECTION 2C: URAIAN EMPAT CABANG BIDANG (ZIGZAG SELANG-SELING) -->
+        <section class="sec-domains">
+          <!-- Judul & Penjelasan Inti Halaman (Pojok Kiri sampai Pojok Kanan) -->
+          <div class="dom-header">
+            <div class="dom-header-top">
+              <div class="pill-badge">URAIAN CABANG BIDANG</div>
+              <span class="dom-header-tag">4 Lini Utama • 8 Sub-Jalur Dokumentasi</span>
+            </div>
+            <h2>Mendalami Setiap Jalur Pertumbuhan di Dalam <span translate="no">INFOTRINK</span></h2>
+            <p class="lede">Setelah melihat gambaran besar bagaimana satu wadah mencabang ke berbagai arah, bagian ini menguraikan peran dan karakter masing-masing cabang bidang secara terstruktur. Keempat lini utama disusun berurutan agar mudah dikenali batasannya: mulai dari ruang hadir di ranah digital, tata cara pengelolaan langkah kerja, wujud karya yang diabadikan, hingga ruang terbuka bagi pertumbuhan perluasan di masa mendatang.</p>
+          </div>
+
+          <!-- Daftar Selang-Seling (Kiri-Kanan / Kanan-Kiri) -->
+          <div class="dom-list">
+
+            <!-- BARIS 1: Judul di KIRI, Penjelasan di KANAN -->
+            <article class="dom-row dom-row--1">
+              <div class="dom-title-panel">
+                <div class="dom-panel-top">
+                  <span class="dom-num-pill">CABANG 01 • LINI DIGITAL</span>
+                  <div class="dom-icon-box" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                  </div>
+                </div>
+                <div class="dom-panel-main">
+                  <span class="dom-kicker">Pilar Pertama</span>
+                  <h3 class="dom-title">Ruang Digital</h3>
+                  <p class="dom-subtitle">Perjalanan gagasan dan informasi yang hidup, terhubung, serta terus diperbarui secara berkelanjutan di ruang maya.</p>
+                </div>
+                <div class="dom-panel-foot">
+                  <span class="dom-subtag">Kanal Aktif</span>
+                  <span class="dom-subtag">Seri Berkala</span>
+                </div>
+              </div>
+              <div class="dom-desc-panel">
+                <div class="dom-desc-label">Penjelasan Pembahasan</div>
+                <p class="dom-desc-text">Ruang Digital menghimpun seluruh jejak perjalanan yang tumbuh dan berinteraksi langsung melalui ekosistem digital. Di dalam lini ini, setiap catatan tidak dibiarkan berhenti sebagai arsip statis, melainkan dirawat secara berkala agar selaras dengan perkembangan terkini dan mudah ditelusuri kembali kapan saja.</p>
+                <div class="dom-desc-points">
+                  <div class="dom-point">
+                    <strong>Kanal Aktif</strong>
+                    <span>Menjadi titik hadir utama yang terus dijaga keterkiniannya sebagai rujukan informasi yang hidup dan dapat diikuti secara langsung.</span>
+                  </div>
+                  <div class="dom-point">
+                    <strong>Seri Berkala</strong>
+                    <span>Menyusun rangkaian tayangan dan catatan berkesinambungan dari waktu ke waktu sehingga perubahan pada tiap masa terekam utuh.</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- BARIS 2: Penjelasan di KIRI, Judul di KANAN -->
+            <article class="dom-row dom-row--2 dom-row--reverse">
+              <div class="dom-title-panel">
+                <div class="dom-panel-top">
+                  <span class="dom-num-pill">CABANG 02 • LINI TATA KELOLA</span>
+                  <div class="dom-icon-box" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                  </div>
+                </div>
+                <div class="dom-panel-main">
+                  <span class="dom-kicker">Pilar Kedua</span>
+                  <h3 class="dom-title">Lini Pengelolaan</h3>
+                  <p class="dom-subtitle">Perjalanan perintisan dan pelaksanaan yang dijalankan melalui pendekatan terarah maupun langkah mandiri.</p>
+                </div>
+                <div class="dom-panel-foot">
+                  <span class="dom-subtag">Pengelolaan Terarah</span>
+                  <span class="dom-subtag">Pengelolaan Mandiri</span>
+                </div>
+              </div>
+              <div class="dom-desc-panel">
+                <div class="dom-desc-label">Penjelasan Pembahasan</div>
+                <p class="dom-desc-text">Lini Pengelolaan mencatat bagaimana sebuah gagasan diterjemahkan menjadi langkah kerja nyata dan dirawat keberlanjutannya. Dokumentasi pada cabang ini menyoroti proses penataan, pembagian tahapan, serta disiplin pelaksanaan tanpa mencampuri kewenangan operasional pihak yang menjalankannya.</p>
+                <div class="dom-desc-points">
+                  <div class="dom-point">
+                    <strong>Pengelolaan Terarah</strong>
+                    <span>Merekam perjalanan yang disusun dalam kerangka terencana, mulai dari tahap perintisan awal hingga evaluasi dan perawatan rutin.</span>
+                  </div>
+                  <div class="dom-point">
+                    <strong>Pengelolaan Mandiri</strong>
+                    <span>Mengabadikan inisiatif yang ditempuh dengan daya dan langkah sendiri secara apa adanya sesuai kenyataan di lapangan.</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- BARIS 3: Judul di KIRI, Penjelasan di KANAN -->
+            <article class="dom-row dom-row--3">
+              <div class="dom-title-panel">
+                <div class="dom-panel-top">
+                  <span class="dom-num-pill">CABANG 03 • LINI KREATIF</span>
+                  <div class="dom-icon-box" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+                  </div>
+                </div>
+                <div class="dom-panel-main">
+                  <span class="dom-kicker">Pilar Ketiga</span>
+                  <h3 class="dom-title">Ruang Karya</h3>
+                  <p class="dom-subtitle">Perjalanan pemikiran dan imajinasi yang diabadikan ke dalam bentuk susunan kata maupun rancangan visual.</p>
+                </div>
+                <div class="dom-panel-foot">
+                  <span class="dom-subtag">Karya Tulis</span>
+                  <span class="dom-subtag">Karya Visual</span>
+                </div>
+              </div>
+              <div class="dom-desc-panel">
+                <div class="dom-desc-label">Penjelasan Pembahasan</div>
+                <p class="dom-desc-text">Ruang Karya menjadi tempat di mana pemikiran abstrak diberi bentuk konkret agar dapat dibaca, dilihat, dan dipelajari lintas waktu. Yang dihimpun bukan sekadar hasil akhirnya, melainkan juga catatan proses penyusunan, penyempurnaan konsep, serta latar belakang lahirnya setiap karya.</p>
+                <div class="dom-desc-points">
+                  <div class="dom-point">
+                    <strong>Karya Tulis</strong>
+                    <span>Menghimpun gagasan yang dirangkai melalui kata dan kalimat, mencatat perjalanan dari draf pertama hingga naskah yang matang.</span>
+                  </div>
+                  <div class="dom-point">
+                    <strong>Karya Visual</strong>
+                    <span>Mendokumentasikan gagasan yang dihidupkan lewat rupa, tata letak, dan rancangan grafis beserta setiap tahap pembentukannya.</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- BARIS 4: Penjelasan di KIRI, Judul di KANAN -->
+            <article class="dom-row dom-row--4 dom-row--reverse">
+              <div class="dom-title-panel">
+                <div class="dom-panel-top">
+                  <span class="dom-num-pill">CABANG 04 • LINI PENGEMBANGAN</span>
+                  <div class="dom-icon-box" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+                  </div>
+                </div>
+                <div class="dom-panel-main">
+                  <span class="dom-kicker">Pilar Keempat</span>
+                  <h3 class="dom-title">Lini Perluasan</h3>
+                  <p class="dom-subtitle">Perjalanan yang tumbuh melampaui batas tiga lini sebelumnya melalui sinergi maupun jalur rintisan baru.</p>
+                </div>
+                <div class="dom-panel-foot">
+                  <span class="dom-subtag">Langkah Bersama</span>
+                  <span class="dom-subtag">Langkah Berikutnya</span>
+                </div>
+              </div>
+              <div class="dom-desc-panel">
+                <div class="dom-desc-label">Penjelasan Pembahasan</div>
+                <p class="dom-desc-text">Lini Perluasan disiapkan sebagai ruang tumbuh yang lentur agar wadah dokumentasi ini tidak pernah tertutup terhadap perkembangan zaman. Cabang ini menampung inisiatif lintas sektor maupun gagasan baru yang belum tergolong ke dalam tiga lini utama sebelumnya.</p>
+                <div class="dom-desc-points">
+                  <div class="dom-point">
+                    <strong>Langkah Bersama</strong>
+                    <span>Mencatat perjalanan yang dijalani beriringan bersama pihak lain dengan tetap menjaga kejelasan peran dan batas masing-masing.</span>
+                  </div>
+                  <div class="dom-point">
+                    <strong>Langkah Berikutnya</strong>
+                    <span>Menyediakan ruang terbuka bagi bidang-bidang rintisan masa depan karena proses belajar dan membangun terus berlanjut.</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+          </div>
         </section>
 
         <!-- SECTION 3: KUTIPAN SEMANGAT -->
@@ -503,7 +724,6 @@ var $$ = function(s,c){ return Array.prototype.slice.call((c||document).querySel
 function esc(s){
   return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
 }
-// Bungkus kata "INFOTRINK" dengan translate="no"
 function brand(s){
   var parts = String(s).split("INFOTRINK"), out = "";
   for(var i=0;i<parts.length;i++){ out += esc(parts[i]); if(i<parts.length-1) out += '<span translate="no">INFOTRINK</span>'; }
@@ -541,7 +761,7 @@ var NAV_X = { Publikasi:910, Informasi:1000, Galeri:1085, "Mengenal INFOTRINK":1
 
 var state = { activeMenu:null, lastActiveMenu:null, scale:0, navPositions:{} };
 
-/* ============ RENDER (bagian repetitif) ============ */
+/* ============ RENDER ============ */
 function renderOverlays(){
   var host = $("[data-overlays]"); if(!host) return;
   var html = "";
@@ -577,7 +797,6 @@ function renderOverlays(){
 
 function renderFlowStages(){
   var host = $("[data-flow]"); if(!host) return;
-  var svg = host.querySelector("svg");
   var html = "";
   for(var i=0;i<FLOW_STAGES.length;i++){
     var s = FLOW_STAGES[i], n = i+1;
@@ -587,7 +806,6 @@ function renderFlowStages(){
       + '<span class="stage-desc">'+esc(s.desc)+'</span>'
       + '</div>';
   }
-  // sisipkan tahapan setelah svg (tidak menimpa svg)
   host.insertAdjacentHTML("beforeend", html);
 }
 
@@ -632,8 +850,6 @@ function getOverlay(slide, item){
   for(var i=0;i<list.length;i++){ if(list[i].getAttribute("data-menu")===item) return list[i]; }
   return null;
 }
-/* Jeda (ms) sebelum underline nav pindah ke Beranda SETELAH animasi tutup daftar isi selesai.
-   600ms = pas garis overlay selesai menarik balik ke nav. Atur sesuai selera: kecil=cepat, besar=lambat. */
 var NAV_AFTER_CLOSE_MS = 600;
 var navHighlightTimer = null;
 function scheduleNavHighlight(){ clearTimeout(navHighlightTimer); navHighlightTimer = setTimeout(updateNavHighlight, NAV_AFTER_CLOSE_MS); }
@@ -646,8 +862,8 @@ function openMenu(item){
   state.activeMenu = item; state.lastActiveMenu = item;
   var ov = getOverlay(slide, item); if(ov) ov.classList.add("open");
   slide.classList.add("menu-open");
-  document.body.classList.add("menu-locked"); // kunci scroll
-  cancelNavHighlight(); updateNavHighlight(); // buka menu -> sorot langsung, batalkan jeda tutup sebelumnya
+  document.body.classList.add("menu-locked");
+  cancelNavHighlight(); updateNavHighlight();
 }
 function closeMenu(){
   if(!state.activeMenu) return;
@@ -656,9 +872,9 @@ function closeMenu(){
     var ov = getOverlay(slide, state.activeMenu); if(ov) ov.classList.remove("open");
     slide.classList.remove("menu-open");
   }
-  document.body.classList.remove("menu-locked"); // buka kembali scroll
+  document.body.classList.remove("menu-locked");
   state.activeMenu = null;
-  scheduleNavHighlight(); // tunggu animasi tutup selesai, baru underline pindah ke Beranda
+  scheduleNavHighlight();
 }
 function goBeranda(){
   if(state.activeMenu) closeMenu();
@@ -667,13 +883,12 @@ function goBeranda(){
 function updateNavHighlight(){
   $$(".nav-link").forEach(function(l){
     var item = l.getAttribute("data-nav");
-    // Menu terbuka -> sorot item itu. Menu ditutup -> sorot BERANDA (indikator pulang ke beranda).
     var on = state.activeMenu ? (state.activeMenu===item) : (item==="Beranda");
     l.classList.toggle("on", on);
   });
 }
 
-/* ============ EVENT (delegasi, tanpa onclick inline) ============ */
+/* ============ EVENT ============ */
 function onClick(e){
   var navEl = e.target.closest("[data-nav]");
   if(navEl){
@@ -683,7 +898,6 @@ function onClick(e){
     return;
   }
   if(e.target.closest("[data-close]")){ e.preventDefault(); closeMenu(); return; }
-  // tautan placeholder (href="#") tidak melakukan apa-apa
   var a = e.target.closest('a[href="#"]');
   if(a) e.preventDefault();
 }
