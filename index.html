@@ -186,37 +186,30 @@ body.menu-locked #container{overflow:hidden}
 .sec-domains{position:relative;padding:64px 80px 72px;background:linear-gradient(180deg,#F7FCFB 0%,#FFFFFF 35%,#F4FBF9 100%);overflow:hidden}
 .sec-domains::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,transparent,var(--teal) 20%,var(--gold) 50%,var(--teal) 80%,transparent)}
 
-/* Header Inti Halaman (Pojok Kiri sampai Pojok Kanan) */
 .dom-header{width:100%;margin-bottom:46px;padding-bottom:28px;border-bottom:1.5px solid rgba(11,110,106,.14)}
 .dom-header-top{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-bottom:14px}
 .dom-header .pill-badge{margin-bottom:0;font-size:12.5px;letter-spacing:1.5px}
 .dom-header h2{font-size:28px;font-weight:800;color:var(--teal-deep);margin:0 0 14px;letter-spacing:.4px;line-height:1.3;text-transform:uppercase;width:100%}
 .dom-header .lede{font-size:15.5px;line-height:1.78;color:#325855;margin:0;width:100%;text-align:justify;text-justify:inter-word}
 
-/* Container Baris Selang-Seling */
 .dom-list{display:flex;flex-direction:column;gap:30px;position:relative}
 
-/* Kartu Baris Selang-Seling */
 .dom-row{display:grid;grid-template-columns:410px 1fr;align-items:stretch;background:#fff;border-radius:20px;border:1px solid rgba(11,110,106,.15);box-shadow:0 12px 30px rgba(11,59,58,.07);overflow:hidden;position:relative;transition:transform .25s ease,box-shadow .25s ease}
 .dom-row:hover{transform:translateY(-3px);box-shadow:0 18px 38px rgba(11,59,58,.12)}
 
-/* Variasi Arah Baris Genap (Judul di Kanan, Penjelasan di Kiri) */
 .dom-row--reverse{grid-template-columns:1fr 410px}
 .dom-row--reverse .dom-title-panel{order:2}
 .dom-row--reverse .dom-desc-panel{order:1}
 
-/* Panel Judul (Sisi Gelap Berwibawa & Bervariasi) */
 .dom-title-panel{position:relative;padding:34px 36px;display:flex;flex-direction:column;justify-content:space-between;color:#fff;overflow:hidden}
 .dom-title-panel::after{content:"";position:absolute;right:-40px;bottom:-40px;width:170px;height:170px;border-radius:50%;background:radial-gradient(circle,rgba(129,246,239,.18),transparent 70%);pointer-events:none}
 .dom-row--reverse .dom-title-panel::after{right:auto;left:-40px}
 
-/* Variasi Warna Panel per Cabang */
 .dom-row--1 .dom-title-panel{background:linear-gradient(145deg,#0B3B3A 0%,#0E5956 100%)}
 .dom-row--2 .dom-title-panel{background:linear-gradient(145deg,#0E4F4C 0%,#0B3B3A 100%)}
 .dom-row--3 .dom-title-panel{background:linear-gradient(145deg,#093332 0%,#12635F 100%)}
 .dom-row--4 .dom-title-panel{background:linear-gradient(145deg,#105653 0%,#093130 100%)}
 
-/* Aksen Garis Sisi Panel Judul */
 .dom-row--1 .dom-title-panel{border-left:5px solid var(--cyan)}
 .dom-row--2 .dom-title-panel{border-right:5px solid var(--gold)}
 .dom-row--3 .dom-title-panel{border-left:5px solid var(--gold)}
@@ -233,7 +226,6 @@ body.menu-locked #container{overflow:hidden}
 .dom-panel-foot{margin-top:22px;padding-top:14px;border-top:1px solid rgba(255,255,255,.14);display:flex;align-items:center;gap:8px;flex-wrap:wrap;position:relative;z-index:1}
 .dom-subtag{font-size:11px;font-weight:700;color:#fff;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);padding:4px 11px;border-radius:6px;letter-spacing:.4px}
 
-/* Panel Penjelasan (Rata Kanan-Kiri / Justify Rapi) */
 .dom-desc-panel{padding:34px 40px;display:flex;flex-direction:column;justify-content:center;background:#fff;position:relative}
 .dom-desc-label{display:inline-flex;align-items:center;gap:8px;font-size:11.5px;font-weight:800;letter-spacing:1.6px;color:var(--teal);text-transform:uppercase;margin-bottom:12px}
 .dom-desc-label::before{content:"";width:22px;height:2px;background:var(--gold);border-radius:2px}
@@ -317,16 +309,16 @@ body.menu-locked #container{overflow:hidden}
       <div class="slide" data-slide>
         <div class="hero-dim">
           <header class="site-header">
-            <a class="logo-pill" href="#" data-nav="Beranda">
+            <a class="logo-pill" href="index.html">
               <img class="icon" src="slide/logo_icon.png" alt="Infotrink logo">
               <img class="text" src="slide/logo_text.png" alt="Infotrink">
             </a>
             <nav class="site-nav">
-              <a class="nav-link" href="#" data-nav="Beranda">Beranda</a>
-              <a class="nav-link" href="#" data-nav="Publikasi">Publikasi</a>
-              <a class="nav-link" href="#" data-nav="Informasi">Informasi</a>
-              <a class="nav-link" href="#" data-nav="Galeri">Galeri</a>
-              <a class="nav-link" href="#" data-nav="Mengenal INFOTRINK"><span translate="no">Mengenal INFOTRINK</span></a>
+              <a class="nav-link on" href="index.html" data-nav="Beranda">Beranda</a>
+              <a class="nav-link" href="publikasi.html" data-nav="Publikasi">Publikasi</a>
+              <a class="nav-link" href="informasi.html" data-nav="Informasi">Informasi</a>
+              <a class="nav-link" href="galeri.html" data-nav="Galeri">Galeri</a>
+              <a class="nav-link" href="mengenal-infotrink.html" data-nav="Mengenal INFOTRINK"><span translate="no">Mengenal INFOTRINK</span></a>
             </nav>
           </header>
 
@@ -337,8 +329,8 @@ body.menu-locked #container{overflow:hidden}
               <p><span translate="no">INFOTRINK</span> menghimpun informasi dan dokumentasi di beragam bidang, dirangkum mulai dari awal mula, perencanaan, sampai perwujudan dan pengembangannya — semuanya tertata rapi dan terus diperbarui, sehingga perjalanan di balik setiap gagasan dan karya dapat dikenali dengan jelas.</p>
             </div>
             <div class="hero-actions">
-              <a class="btn-image btn-telusuri" href="#"><img src="slide/button2.png" alt="Tombol Telusuri"><span>Telusuri</span></a>
-              <a class="btn-image btn-kenali" href="#"><img src="slide/button1.png" alt="Tombol Kenali"><span>Kenali</span></a>
+              <a class="btn-image btn-telusuri" href="publikasi.html"><img src="slide/button2.png" alt="Tombol Telusuri"><span>Telusuri</span></a>
+              <a class="btn-image btn-kenali" href="mengenal-infotrink.html"><img src="slide/button1.png" alt="Tombol Kenali"><span>Kenali</span></a>
             </div>
             <div class="hero-marquee" aria-label="Instagram @jri_munawar, Twitter @Jri_munawar, Bagian dari jaringan JRI MUNAWAR GROUP">
               <div class="hero-marquee-inner">
@@ -357,7 +349,7 @@ body.menu-locked #container{overflow:hidden}
           </div>
 
           <div class="hero-photos">
-            <div class="photo-card photo-tl"><div class="photo-frame"><img src="logo_text.png"></div></div>
+            <div class="photo-card photo-tl"><div class="photo-frame"><img src="logo_text.png" alt="Logo Text"></div></div>
             <div class="photo-card photo-tr"><div class="photo-frame"><img src="slide/hero_4_narasumber.jpg" alt="Narasumber menyampaikan penjelasan saat sesi wawancara" width="240" height="240"></div></div>
             <div class="photo-card photo-bl"><div class="photo-frame"><img src="slide/hero_berbagi_sesama.jpg" alt="Relawan menyerahkan bantuan kepada warga dalam kegiatan berbagi bersama" width="240" height="240"></div></div>
             <div class="photo-card photo-br"><div class="photo-frame"><img src="slide/hero_pembangunan.jpg" alt="Petugas memeriksa denah pembangunan di lokasi proyek konstruksi" width="240" height="240"></div></div>
@@ -385,7 +377,7 @@ body.menu-locked #container{overflow:hidden}
           <div>
             <div class="pill-badge">TENTANG PLATFORM</div>
             <h2>Setiap Pembangunan Mempunyai Awal</h2>
-            <p>Keyakinan sederhana itulah yang melatarbelakangi <span translate="no">INFOTRINK</span>: hampir semua hal yang berdiri hari ini bermula dari sebuah gagasan yang dirumuskan dan dirancang sebelum akhirnya diwujudkan sedikit demi sedikit. Atas dasar itu, perjalanan pada berbagai lini dicatat sesuai tahapannya, mulai dari perencanaan dan perintisan, berlanjut ke perwujudan dan pelaksanaan, hingga pengelolaan dan pengembangannya. Penyajiannya dibuat jujur pada posisinya. Yang masih berupa gagasan diperkenalkan sebagai gagasan, sedangkan yang sudah berjalan dipaparkan sebagaimana perkembangannya, tanpa diperbesar dan tanpa diperkecil. Kedudukannya pun dijaga dengan batas yang jelas. <span translate="no">INFOTRINK</span> tidak berperan sebagai pihak yang memiliki atau membawahi apa yang diperkenalkan, dan setiap hal tetap berada di bawah pengelolaan pihaknya masing-masing. Yang tersaji di sini hanyalah gambaran, uraian, dan tautan yang mengarah pada sumbernya, bukan pengganti dari peran resminya. Berbeda dengan unggahan yang cepat berganti atau pemberitaan yang mudah berlalu, dokumentasi semacam ini disusun untuk bertahan lebih lama: setiap kemajuan ditambahkan, setiap perubahan diperbarui, agar yang terbaca selalu sesuai keadaan terkininya dan tidak berhenti pada versi lama. Dengan cara itulah sebuah awal tidak berakhir sebagai kenangan, melainkan terus hidup sebagai catatan yang berguna, baik bagi pihak yang melanjutkan perjalanannya maupun bagi siapa pun yang ingin memahami dari mana semuanya dimulai.</p>
+            <p>Keyakinan sederhana itulah yang melatarbelakangi <span translate="no">INFOTRINK</span>: hampir semua hal yang berdiri hari ini bermula dari sebuah gagasan yang dirumuskan dan dirancang sebelum akhirnya diwujudkan sedikit demi sedikit. Atas dasar itu, perjalanan pada berbagai lini dicatat sesuai tahapannya, mulai dari perencanaan dan perintisan, berlanjut ke perwujudan dan pelaksanaan, hingga pengelolaan dan pengembangannya. Penyajiannya dibuat jujur pada posisinya. Yang masih berupa gagasan diperkenalkan sebagai gagasan, sedangkan yang sudah berjalan dipaparkan sebagaimana perkembangannya, tanpa diperbesar dan tanpa diperkecil. Kedudukannya pun dijaga dengan batas yang jelas. <span translate="no">INFOTRINK</span> tidak berperan sebagai pihak yang memiliki atau membawahi apa yang diperkenalkan, dan setiap hal tetap berada di bawah pengelolaan pihaknya masing-masing. Yang tersaji di sini hanyalah gambaran, uraian, dan tautan yang mengarah pada sumbernya, bukan pengganti dari peran resminya. Berbeda dengan unggahan yang cepat berganti atau pemberitaan yang mudah berlalu, dokumentasi semacam ini disusun untuk bertahan lebih lama: setiap kemajuan ditambahkan, setiap perubahan diperbarui, agar yang terbaca selalu sesuai keadaan terkininya dan tidak berhenti pada versi lama. Dengan cara itulah sebuah awal tidak berhenti sebagai kenangan, melainkan terus hidup sebagai catatan yang berguna, baik bagi pihak yang melanjutkan perjalanannya maupun bagi siapa pun yang ingin memahami dari mana semuanya dimulai.</p>
           </div>
         </section>
 
@@ -403,7 +395,6 @@ body.menu-locked #container{overflow:hidden}
               <line class="flow-cap" x1="1010" y1="345" x2="1080" y2="345"/>
               <polygon class="flow-arrow" points="1080,338 1094,345 1080,352"/>
             </svg>
-            <!-- tahapan dihasilkan oleh JS -->
           </div>
         </section>
 
@@ -448,7 +439,6 @@ body.menu-locked #container{overflow:hidden}
 
         <!-- SECTION 2C: URAIAN EMPAT CABANG BIDANG (ZIGZAG SELANG-SELING) -->
         <section class="sec-domains">
-          <!-- Judul & Penjelasan Inti Halaman (Pojok Kiri sampai Pojok Kanan) -->
           <div class="dom-header">
             <div class="dom-header-top">
               <div class="pill-badge">URAIAN CABANG BIDANG</div>
@@ -457,15 +447,11 @@ body.menu-locked #container{overflow:hidden}
             <p class="lede">Setelah melihat gambaran besar bagaimana satu wadah mencabang ke berbagai arah, bagian ini menguraikan peran dan karakter masing-masing cabang bidang secara terstruktur. Keempat lini utama disusun berurutan agar mudah dikenali batasannya: mulai dari ruang hadir di ranah digital, tata cara pengelolaan langkah kerja, wujud karya yang diabadikan, hingga ruang terbuka bagi pertumbuhan perluasan di masa mendatang.</p>
           </div>
 
-          <!-- Daftar Selang-Seling (Kiri-Kanan / Kanan-Kiri) -->
           <div class="dom-list">
-
-            <!-- BARIS 1: Judul di KIRI, Penjelasan di KANAN -->
+            <!-- BARIS 1 -->
             <article class="dom-row dom-row--1">
               <div class="dom-title-panel">
-                <div class="dom-panel-top">
-                  <span class="dom-num-pill">CABANG 01 • LINI DIGITAL</span>
-                </div>
+                <div class="dom-panel-top"><span class="dom-num-pill">CABANG 01 • LINI DIGITAL</span></div>
                 <div class="dom-panel-main">
                   <span class="dom-kicker">Pilar Pertama</span>
                   <h3 class="dom-title">Ruang Digital</h3>
@@ -480,24 +466,16 @@ body.menu-locked #container{overflow:hidden}
                 <div class="dom-desc-label">Penjelasan Pembahasan</div>
                 <p class="dom-desc-text">Ruang Digital menghimpun seluruh jejak perjalanan yang tumbuh dan berinteraksi langsung melalui ekosistem digital. Di dalam lini ini, setiap catatan tidak dibiarkan berhenti sebagai arsip statis, melainkan dirawat secara berkala agar selaras dengan perkembangan terkini dan mudah ditelusuri kembali kapan saja.</p>
                 <div class="dom-desc-points">
-                  <div class="dom-point">
-                    <strong>Kanal Aktif</strong>
-                    <span>Menjadi titik hadir utama yang terus dijaga keterkiniannya sebagai rujukan informasi yang hidup dan dapat diikuti secara langsung.</span>
-                  </div>
-                  <div class="dom-point">
-                    <strong>Seri Berkala</strong>
-                    <span>Menyusun rangkaian tayangan dan catatan berkesinambungan dari waktu ke waktu sehingga perubahan pada tiap masa terekam utuh.</span>
-                  </div>
+                  <div class="dom-point"><strong>Kanal Aktif</strong><span>Menjadi titik hadir utama yang terus dijaga keterkiniannya sebagai rujukan informasi yang hidup dan dapat diikuti secara langsung.</span></div>
+                  <div class="dom-point"><strong>Seri Berkala</strong><span>Menyusun rangkaian tayangan dan catatan berkesinambungan dari waktu ke waktu sehingga perubahan pada tiap masa terekam utuh.</span></div>
                 </div>
               </div>
             </article>
 
-            <!-- BARIS 2: Penjelasan di KIRI, Judul di KANAN -->
+            <!-- BARIS 2 -->
             <article class="dom-row dom-row--2 dom-row--reverse">
               <div class="dom-title-panel">
-                <div class="dom-panel-top">
-                  <span class="dom-num-pill">CABANG 02 • LINI TATA KELOLA</span>
-                </div>
+                <div class="dom-panel-top"><span class="dom-num-pill">CABANG 02 • LINI TATA KELOLA</span></div>
                 <div class="dom-panel-main">
                   <span class="dom-kicker">Pilar Kedua</span>
                   <h3 class="dom-title">Lini Pengelolaan</h3>
@@ -512,24 +490,16 @@ body.menu-locked #container{overflow:hidden}
                 <div class="dom-desc-label">Penjelasan Pembahasan</div>
                 <p class="dom-desc-text">Lini Pengelolaan mencatat bagaimana sebuah gagasan diterjemahkan menjadi langkah kerja nyata dan dirawat keberlanjutannya. Dokumentasi pada cabang ini menyoroti proses penataan, pembagian tahapan, serta disiplin pelaksanaan tanpa mencampuri kewenangan operasional pihak yang menjalankannya.</p>
                 <div class="dom-desc-points">
-                  <div class="dom-point">
-                    <strong>Pengelolaan Terarah</strong>
-                    <span>Merekam perjalanan yang disusun dalam kerangka terencana, mulai dari tahap perintisan awal hingga evaluasi dan perawatan rutin.</span>
-                  </div>
-                  <div class="dom-point">
-                    <strong>Pengelolaan Mandiri</strong>
-                    <span>Mengabadikan inisiatif yang ditempuh dengan daya dan langkah sendiri secara apa adanya sesuai kenyataan di lapangan.</span>
-                  </div>
+                  <div class="dom-point"><strong>Pengelolaan Terarah</strong><span>Merekam perjalanan yang disusun dalam kerangka terencana, mulai dari tahap perintisan awal hingga evaluasi dan perawatan rutin.</span></div>
+                  <div class="dom-point"><strong>Pengelolaan Mandiri</strong><span>Mengabadikan inisiatif yang ditempuh dengan daya dan langkah sendiri secara apa adanya sesuai kenyataan di lapangan.</span></div>
                 </div>
               </div>
             </article>
 
-            <!-- BARIS 3: Judul di KIRI, Penjelasan di KANAN -->
+            <!-- BARIS 3 -->
             <article class="dom-row dom-row--3">
               <div class="dom-title-panel">
-                <div class="dom-panel-top">
-                  <span class="dom-num-pill">CABANG 03 • LINI KREATIF</span>
-                </div>
+                <div class="dom-panel-top"><span class="dom-num-pill">CABANG 03 • LINI KREATIF</span></div>
                 <div class="dom-panel-main">
                   <span class="dom-kicker">Pilar Ketiga</span>
                   <h3 class="dom-title">Ruang Karya</h3>
@@ -544,24 +514,16 @@ body.menu-locked #container{overflow:hidden}
                 <div class="dom-desc-label">Penjelasan Pembahasan</div>
                 <p class="dom-desc-text">Ruang Karya menjadi tempat di mana pemikiran abstrak diberi bentuk konkret agar dapat dibaca, dilihat, dan dipelajari lintas waktu. Yang dihimpun bukan sekadar hasil akhirnya, melainkan juga catatan proses penyusunan, penyempurnaan konsep, serta latar belakang lahirnya setiap karya.</p>
                 <div class="dom-desc-points">
-                  <div class="dom-point">
-                    <strong>Karya Tulis</strong>
-                    <span>Menghimpun gagasan yang dirangkai melalui kata dan kalimat, mencatat perjalanan dari draf pertama hingga naskah yang matang.</span>
-                  </div>
-                  <div class="dom-point">
-                    <strong>Karya Visual</strong>
-                    <span>Mendokumentasikan gagasan yang dihidupkan lewat rupa, tata letak, dan rancangan grafis beserta setiap tahap pembentukannya.</span>
-                  </div>
+                  <div class="dom-point"><strong>Karya Tulis</strong><span>Menghimpun gagasan yang dirangkai melalui kata dan kalimat, mencatat perjalanan dari draf pertama hingga naskah yang matang.</span></div>
+                  <div class="dom-point"><strong>Karya Visual</strong><span>Mendokumentasikan gagasan yang dihidupkan lewat rupa, tata letak, dan rancangan grafis beserta setiap tahap pembentukannya.</span></div>
                 </div>
               </div>
             </article>
 
-            <!-- BARIS 4: Penjelasan di KIRI, Judul di KANAN -->
+            <!-- BARIS 4 -->
             <article class="dom-row dom-row--4 dom-row--reverse">
               <div class="dom-title-panel">
-                <div class="dom-panel-top">
-                  <span class="dom-num-pill">CABANG 04 • LINI PENGEMBANGAN</span>
-                </div>
+                <div class="dom-panel-top"><span class="dom-num-pill">CABANG 04 • LINI PENGEMBANGAN</span></div>
                 <div class="dom-panel-main">
                   <span class="dom-kicker">Pilar Keempat</span>
                   <h3 class="dom-title">Lini Perluasan</h3>
@@ -576,18 +538,11 @@ body.menu-locked #container{overflow:hidden}
                 <div class="dom-desc-label">Penjelasan Pembahasan</div>
                 <p class="dom-desc-text">Lini Perluasan disiapkan sebagai ruang tumbuh yang lentur agar wadah dokumentasi ini tidak pernah tertutup terhadap perkembangan zaman. Cabang ini menampung inisiatif lintas sektor maupun gagasan baru yang belum tergolong ke dalam tiga lini utama sebelumnya.</p>
                 <div class="dom-desc-points">
-                  <div class="dom-point">
-                    <strong>Langkah Bersama</strong>
-                    <span>Mencatat perjalanan yang dijalani beriringan bersama pihak lain dengan tetap menjaga kejelasan peran dan batas masing-masing.</span>
-                  </div>
-                  <div class="dom-point">
-                    <strong>Langkah Berikutnya</strong>
-                    <span>Menyediakan ruang terbuka bagi bidang-bidang rintisan masa depan karena proses belajar dan membangun terus berlanjut.</span>
-                  </div>
+                  <div class="dom-point"><strong>Langkah Bersama</strong><span>Mencatat perjalanan yang dijalani beriringan bersama pihak lain dengan tetap menjaga kejelasan peran dan batas masing-masing.</span></div>
+                  <div class="dom-point"><strong>Langkah Berikutnya</strong><span>Menyediakan ruang terbuka bagi bidang-bidang rintisan masa depan karena proses belajar dan membangun terus berlanjut.</span></div>
                 </div>
               </div>
             </article>
-
           </div>
         </section>
 
@@ -644,8 +599,8 @@ body.menu-locked #container{overflow:hidden}
                 <p>Berbagai gagasan, karya, dan inisiatif telah terdokumentasi dalam satu wadah yang terstruktur. Setiap catatan memuat konteks dan tahapan perkembangannya sehingga siap dijelajahi dan dimanfaatkan kembali kapan saja.</p>
               </div>
               <div class="footer-ctas">
-                <a class="cta-primary" href="#">Telusuri →</a>
-                <a class="cta-secondary" href="#">Kenali <span translate="no">INFOTRINK</span></a>
+                <a class="cta-primary" href="publikasi.html">Telusuri →</a>
+                <a class="cta-secondary" href="mengenal-infotrink.html">Kenali <span translate="no">INFOTRINK</span></a>
               </div>
             </div>
           </div>
@@ -658,38 +613,38 @@ body.menu-locked #container{overflow:hidden}
             <div>
               <h4>NAVIGASI</h4>
               <ul>
-                <li><a href="#" data-nav="Beranda">Beranda</a></li>
-                <li><a href="#" data-nav="Publikasi">Publikasi</a></li>
-                <li><a href="#" data-nav="Informasi">Informasi</a></li>
-                <li><a href="#" data-nav="Galeri">Galeri</a></li>
-                <li><a href="#" data-nav="Mengenal INFOTRINK"><span translate="no">Mengenal INFOTRINK</span></a></li>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="publikasi.html">Publikasi</a></li>
+                <li><a href="informasi.html">Informasi</a></li>
+                <li><a href="galeri.html">Galeri</a></li>
+                <li><a href="mengenal-infotrink.html"><span translate="no">Mengenal INFOTRINK</span></a></li>
               </ul>
             </div>
             <div>
               <h4>BIDANG</h4>
               <ul>
-                <li><a href="#">Media Digital</a></li>
-                <li><a href="#">Pembangunan</a></li>
-                <li><a href="#">Personal</a></li>
-                <li><a href="#">Bidang Lainnya</a></li>
+                <li><a href="media-digital.html">Media Digital</a></li>
+                <li><a href="pembangunan.html">Pembangunan</a></li>
+                <li><a href="personal.html">Personal</a></li>
+                <li><a href="bidang-lainnya.html">Bidang Lainnya</a></li>
               </ul>
             </div>
             <div>
               <h4>JENIS MATERI</h4>
               <ul>
-                <li><a href="#">Media Informasi</a></li>
-                <li><a href="#">Hasil Riset</a></li>
-                <li><a href="#">Kajian &amp; Analisis</a></li>
-                <li><a href="#">Laporan</a></li>
-                <li><a href="#">Data &amp; Referensi</a></li>
-                <li><a href="#">Gagasan</a></li>
+                <li><a href="media-informasi.html">Media Informasi</a></li>
+                <li><a href="hasil-riset.html">Hasil Riset</a></li>
+                <li><a href="kajian-analisis.html">Kajian &amp; Analisis</a></li>
+                <li><a href="laporan.html">Laporan</a></li>
+                <li><a href="data-referensi.html">Data &amp; Referensi</a></li>
+                <li><a href="gagasan-konsep.html">Gagasan</a></li>
               </ul>
             </div>
           </div>
           <div class="footer-bottom">
             <div class="footer-copy">© 2026 <span translate="no">INFOTRINK</span>. Hak cipta dilindungi. Seluruh materi yang dipublikasikan merupakan hasil riset, kajian, pemikiran, dan dokumentasi yang dikelola secara terstruktur untuk kepentingan pengetahuan.</div>
             <div class="footer-rule"></div>
-            <div class="footer-legal"><span>Syarat &amp; Ketentuan</span><span class="sep">•</span><span>Kebijakan Privasi</span></div>
+            <div class="footer-legal"><a href="syarat-ketentuan.html" style="color:inherit;text-decoration:none">Syarat &amp; Ketentuan</a><span class="sep">•</span><a href="kebijakan-privasi.html" style="color:inherit;text-decoration:none">Kebijakan Privasi</a></div>
           </div>
         </section>
 
@@ -702,7 +657,6 @@ body.menu-locked #container{overflow:hidden}
 (function(){
 "use strict";
 
-/* ============ UTIL ============ */
 var $ = function(s,c){ return (c||document).querySelector(s); };
 var $$ = function(s,c){ return Array.prototype.slice.call((c||document).querySelectorAll(s)); };
 function esc(s){
@@ -714,7 +668,6 @@ function brand(s){
   return out;
 }
 
-/* ============ DATA ============ */
 var ICONS = {
   Lightbulb:'<svg class="stage-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B6E6A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>',
   Compass:'<svg class="stage-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B6E6A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>',
@@ -735,6 +688,33 @@ var FLOW_STAGES = [
   {icon:"TrendingUp", name:"Pengembangan", desc:"Kualitas ditingkatkan bertahap dan terukur."}
 ];
 
+/* Mapping file HTML untuk setiap sub menu */
+var SUB_MENU_URLS = {
+  "Media Informasi & Penjelasan": "media-informasi.html",
+  "Hasil Riset dan Penelitian": "hasil-riset.html",
+  "Kajian dan Analisis": "kajian-analisis.html",
+  "Laporan & Catatan Perkembangan": "laporan.html",
+  "Data dan Referensi": "data-referensi.html",
+  "Gagasan & Konsep Pengembangan": "gagasan-konsep.html",
+
+  "Media Digital": "media-digital.html",
+  "Pembangunan": "pembangunan.html",
+  "Personal": "personal.html",
+  "Bidang lainnya": "bidang-lainnya.html",
+
+  "Dokumentasi riset": "dok-riset.html",
+  "Dokumentasi media digital": "dok-digital.html",
+  "Dokumentasi pembangunan": "dok-pembangunan.html",
+  "Dokumentasi personal": "dok-personal.html",
+  "Visual dan infografis": "visual-infografis.html",
+
+  "Pengenalan INFOTRINK": "mengenal-infotrink.html",
+  "Latar Belakang": "latar-belakang.html",
+  "Tujuan dan Fungsi": "tujuan-fungsi.html",
+  "Ruang Lingkup": "ruang-lingkup.html",
+  "Prinsip Pengelolaan": "prinsip-pengelolaan.html"
+};
+
 var SUB_MENUS = {
   Publikasi:{ description:"Pusat seluruh konten yang diterbitkan.", items:["Media Informasi & Penjelasan","Hasil Riset dan Penelitian","Kajian dan Analisis","Laporan & Catatan Perkembangan","Data dan Referensi","Gagasan & Konsep Pengembangan"] },
   Informasi:{ description:"Pengelompokan informasi berdasarkan bidang.", items:["Media Digital","Pembangunan","Personal","Bidang lainnya"] },
@@ -743,9 +723,8 @@ var SUB_MENUS = {
 };
 var NAV_X = { Publikasi:910, Informasi:1000, Galeri:1085, "Mengenal INFOTRINK":1190 };
 
-var state = { activeMenu:null, lastActiveMenu:null, scale:0, navPositions:{} };
+var state = { activeMenu:null, scale:0, navPositions:{} };
 
-/* ============ RENDER ============ */
 function renderOverlays(){
   var host = $("[data-overlays]"); if(!host) return;
   var html = "";
@@ -755,11 +734,13 @@ function renderOverlays(){
     var path = "M "+x+" 78 L "+x+" 150 L 70 150";
     var cards = "";
     for(var i=0;i<data.items.length;i++){
+      var itemTitle = data.items[i];
+      var targetUrl = SUB_MENU_URLS[itemTitle] || "#";
       var delay = (0.55 + i*0.06).toFixed(2);
       cards += '<div class="ov-card" style="--d:'+delay+'s">'
         + '<span class="ov-num">'+String(i+1).padStart(2,"0")+'</span>'
-        + '<div class="ov-title">'+brand(data.items[i])+'</div>'
-        + '<a class="ov-btn" href="#">Telusuri \u2192</a>'
+        + '<div class="ov-title">'+brand(itemTitle)+'</div>'
+        + '<a class="ov-btn" href="'+targetUrl+'">Telusuri \u2192</a>'
         + '</div>';
     }
     html += '<div class="overlay-menu" data-menu="'+esc(menu)+'">'
@@ -793,7 +774,6 @@ function renderFlowStages(){
   host.insertAdjacentHTML("beforeend", html);
 }
 
-/* ============ SCALE / ZOOM ============ */
 function updateScale(){
   var el = $("#container"); if(!el) return;
   state.scale = Math.max(el.clientWidth/1280, 0.5);
@@ -828,27 +808,23 @@ function updateOverlayPositions(){
   });
 }
 
-/* ============ DAFTAR ISI ============ */
 function getOverlay(slide, item){
   var list = $$(".overlay-menu", slide);
   for(var i=0;i<list.length;i++){ if(list[i].getAttribute("data-menu")===item) return list[i]; }
   return null;
 }
-var NAV_AFTER_CLOSE_MS = 600;
-var navHighlightTimer = null;
-function scheduleNavHighlight(){ clearTimeout(navHighlightTimer); navHighlightTimer = setTimeout(updateNavHighlight, NAV_AFTER_CLOSE_MS); }
-function cancelNavHighlight(){ clearTimeout(navHighlightTimer); navHighlightTimer = null; }
+
 function openMenu(item){
   var slide = $("[data-slide]"); if(!slide) return;
   if(state.activeMenu === item){ closeMenu(); return; }
   if(state.activeMenu){ var old = getOverlay(slide, state.activeMenu); if(old) old.classList.remove("open"); }
   measureNavPositions();
-  state.activeMenu = item; state.lastActiveMenu = item;
+  state.activeMenu = item;
   var ov = getOverlay(slide, item); if(ov) ov.classList.add("open");
   slide.classList.add("menu-open");
   document.body.classList.add("menu-locked");
-  cancelNavHighlight(); updateNavHighlight();
 }
+
 function closeMenu(){
   if(!state.activeMenu) return;
   var slide = $("[data-slide]");
@@ -858,45 +834,30 @@ function closeMenu(){
   }
   document.body.classList.remove("menu-locked");
   state.activeMenu = null;
-  scheduleNavHighlight();
-}
-function goBeranda(){
-  if(state.activeMenu) closeMenu();
-  var c = $("#container"); if(c) c.scrollTop = 0;
-}
-function updateNavHighlight(){
-  $$(".nav-link").forEach(function(l){
-    var item = l.getAttribute("data-nav");
-    var on = state.activeMenu ? (state.activeMenu===item) : (item==="Beranda");
-    l.classList.toggle("on", on);
-  });
 }
 
-/* ============ EVENT ============ */
 function onClick(e){
   var navEl = e.target.closest("[data-nav]");
   if(navEl){
-    e.preventDefault();
     var item = navEl.getAttribute("data-nav");
-    if(item === "Beranda") goBeranda(); else openMenu(item);
+    // Jika ingin klik menu utama langsung membuka halaman file HTML masing-masing,
+    // biarkan browser berpindah halaman secara alami (sesuai atribut href).
+    // Jika Anda ingin menu utama tetap membuka overlay preview, Anda bisa lakukan e.preventDefault() lalu openMenu(item).
     return;
   }
   if(e.target.closest("[data-close]")){ e.preventDefault(); closeMenu(); return; }
-  var a = e.target.closest('a[href="#"]');
-  if(a) e.preventDefault();
 }
+
 function onKeydown(e){ if(e.key === "Escape") closeMenu(); }
 function onResize(){
   updateScale(); applyZoom(); measureContentHeight(); measureNavPositions();
 }
 
-/* ============ INIT ============ */
 function init(){
   renderOverlays();
   renderFlowStages();
   updateScale(); applyZoom();
   requestAnimationFrame(function(){ measureContentHeight(); measureNavPositions(); });
-  updateNavHighlight();
   document.addEventListener("click", onClick);
   document.addEventListener("keydown", onKeydown);
   window.addEventListener("resize", onResize);
@@ -905,6 +866,7 @@ function init(){
   setTimeout(onResize, 100);
   setTimeout(onResize, 500);
 }
+
 if(document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
 else init();
 })();
