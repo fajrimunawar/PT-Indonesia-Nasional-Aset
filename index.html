@@ -92,7 +92,7 @@ body.menu-locked #container{overflow:hidden}
 .overlay-menu.open .ov-dot-end{opacity:1;transform:scale(1);transition-delay:.4s}
 .ov-line{stroke:var(--teal);stroke-width:3;fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset .45s ease;transition-delay:.15s}
 .overlay-menu.open .ov-line{stroke-dashoffset:0;transition-delay:.1s}
-.ov-box{position:absolute;left:70px;top:150px;width:1140px;height:530px;background:rgba(255,255,255,.97);border-radius:0 0 16px 16px;box-shadow:0 8px 32px rgba(11,59,58,.18);z-index:15;padding:36px 44px;overflow:hidden;opacity:0;transform:scaleY(0);transform-origin:center top;transition:opacity .4s ease,transform .4s ease;transition-delay:.05s}
+.ov-box{position:absolute;left:70px;top:150px;width:1140px;height:530px;background:rgba(255,255,255,.98);border-radius:0 0 20px 20px;box-shadow:0 12px 40px rgba(11,59,58,0.22);z-index:15;padding:36px 44px;overflow-y:auto;opacity:0;transform:scaleY(0);transform-origin:center top;transition:opacity .4s ease,transform .4s ease;transition-delay:.05s}
 .overlay-menu.open .ov-box{opacity:1;transform:scaleY(1);transition-delay:.25s}
 .ov-head{opacity:0;transform:translateY(10px);transition:opacity .3s ease,transform .3s ease}
 .overlay-menu.open .ov-head{opacity:1;transform:translateY(0);transition-delay:.45s}
@@ -100,13 +100,14 @@ body.menu-locked #container{overflow:hidden}
 .ov-desc{font-size:15px;color:var(--teal-soft);margin:6px 0 0;font-weight:500}
 .ov-divider{height:2px;background:linear-gradient(90deg,var(--teal),rgba(11,110,106,.1));margin:18px 0 24px;opacity:0;transform:scaleX(0);transform-origin:left center;transition:opacity .25s ease,transform .35s ease}
 .overlay-menu.open .ov-divider{opacity:1;transform:scaleX(1);transition-delay:.5s}
-.ov-cards{display:flex;gap:14px;flex-wrap:wrap}
-.ov-card{width:182px;padding:18px 16px;background:linear-gradient(135deg,#F0FAF8,#DCF3EC);border-radius:12px;border:1px solid rgba(11,110,106,.12);opacity:0;transform:translateY(20px);transition:opacity .35s ease,transform .35s ease}
+.ov-cards{display:grid;grid-template-columns:repeat(auto-fill, minmax(220px, 1fr));gap:16px}
+.ov-card{padding:20px 18px;background:linear-gradient(135deg,#F0FAF8,#DCF3EC);border-radius:14px;border:1px solid rgba(11,110,106,.15);opacity:0;transform:translateY(20px);transition:all .3s ease;box-shadow:0 4px 14px rgba(11,59,58,.05)}
+.ov-card:hover{transform:translateY(-3px);box-shadow:0 8px 22px rgba(11,59,58,.12);border-color:var(--teal)}
 .overlay-menu.open .ov-card{opacity:1;transform:translateY(0);transition-delay:var(--d,0s)}
-.ov-num{display:inline-block;font-size:11px;font-weight:700;color:var(--teal);background:rgba(11,110,106,.1);padding:3px 8px;border-radius:6px;margin-bottom:10px;letter-spacing:.5px}
-.ov-title{font-size:15px;font-weight:700;color:var(--teal-deep);min-height:38px;line-height:1.3}
-.ov-btn{display:inline-flex;align-items:center;gap:5px;padding:6px 14px;background:var(--teal);color:#fff;border:none;border-radius:999px;font-family:var(--font);font-size:11px;font-weight:700;cursor:pointer;margin-top:12px;letter-spacing:.3px;transition:background .2s,transform .2s;text-decoration:none}
-.ov-btn:hover{background:var(--teal-deep);transform:translateX(2px)}
+.ov-num{display:inline-block;font-size:11px;font-weight:700;color:var(--teal);background:rgba(11,110,106,.1);padding:3px 9px;border-radius:6px;margin-bottom:10px;letter-spacing:.5px}
+.ov-title{font-size:15px;font-weight:700;color:var(--teal-deep);min-height:42px;line-height:1.35}
+.ov-btn{display:inline-flex;align-items:center;gap:6px;padding:7px 16px;background:var(--teal);color:#fff;border:none;border-radius:999px;font-family:var(--font);font-size:11.5px;font-weight:700;cursor:pointer;margin-top:14px;letter-spacing:.3px;transition:background .2s,transform .2s;text-decoration:none}
+.ov-btn:hover{background:var(--teal-deep);transform:translateX(3px)}
 .ov-x{position:absolute;left:1154px;top:166px;width:38px;height:38px;border-radius:50%;background:var(--teal-deep);color:#fff;border:none;font-family:var(--font);font-size:16px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:18;opacity:0;transform:scale(0) rotate(-90deg);box-shadow:0 4px 12px rgba(11,59,58,.25);transition:opacity .25s,transform .25s,background .2s}
 .overlay-menu.open .ov-x{opacity:1;transform:scale(1) rotate(0);transition-delay:.55s}
 .overlay-menu.open .ov-x:hover{background:#d32f2f;transform:scale(1.1) rotate(0);transition-delay:0s}
@@ -153,6 +154,9 @@ body.menu-locked #container{overflow:hidden}
 .stage--6{left:831px;top:86px} .stage-label--6{left:770px;top:2px;width:170px}
 .stage--7{left:986px;top:321px} .stage-label--7{left:925px;top:366px;width:170px}
 
+/* Default sembunyikan mobile list di desktop/tablet */
+.mobile-flow-list { display: none !important; }
+
 /* ============ SECTION 2B: PETA BIDANG (POHON HIERARKI) ============ */
 .sec-scope{position:relative;padding:56px 80px 58px;background:#fff;border-bottom:1px solid rgba(11,110,106,.12);background-image:linear-gradient(rgba(11,110,106,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(11,110,106,.03) 1px,transparent 1px);background-size:60px 60px;overflow:hidden}
 .sec-scope .pill-badge{font-size:12.5px;letter-spacing:1.5px;margin-bottom:16px}
@@ -182,41 +186,35 @@ body.menu-locked #container{overflow:hidden}
 .sub--3a{top:300px}.sub--3b{top:362px}.sub--4a{top:448px}.sub--4b{top:510px}
 .tree-note{text-align:center;font-size:12.5px;font-style:italic;color:var(--teal-soft);margin:20px auto 0;max-width:780px;line-height:1.6}
 
-/* ============ SECTION 2C: PENJELASAN EMPAT CABANG BIDANG (ZIGZAG SELANG-SELING) ============ */
+/* Default sembunyikan mobile tree list di desktop/tablet */
+.mobile-tree-list { display: none !important; }
+
+/* ============ SECTION 2C: PENJELASAN EMPAT CABANG BIDANG ============ */
 .sec-domains{position:relative;padding:64px 80px 72px;background:linear-gradient(180deg,#F7FCFB 0%,#FFFFFF 35%,#F4FBF9 100%);overflow:hidden}
 .sec-domains::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,transparent,var(--teal) 20%,var(--gold) 50%,var(--teal) 80%,transparent)}
 
-/* Header Inti Halaman (Pojok Kiri sampai Pojok Kanan) */
 .dom-header{width:100%;margin-bottom:46px;padding-bottom:28px;border-bottom:1.5px solid rgba(11,110,106,.14)}
 .dom-header-top{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-bottom:14px}
 .dom-header .pill-badge{margin-bottom:0;font-size:12.5px;letter-spacing:1.5px}
 .dom-header h2{font-size:28px;font-weight:800;color:var(--teal-deep);margin:0 0 14px;letter-spacing:.4px;line-height:1.3;text-transform:uppercase;width:100%}
 .dom-header .lede{font-size:15.5px;line-height:1.78;color:#325855;margin:0;width:100%;text-align:justify;text-justify:inter-word}
 
-/* Container Baris Selang-Seling */
 .dom-list{display:flex;flex-direction:column;gap:30px;position:relative}
-
-/* Kartu Baris Selang-Seling */
 .dom-row{display:grid;grid-template-columns:410px 1fr;align-items:stretch;background:#fff;border-radius:20px;border:1px solid rgba(11,110,106,.15);box-shadow:0 12px 30px rgba(11,59,58,.07);overflow:hidden;position:relative;transition:transform .25s ease,box-shadow .25s ease}
 .dom-row:hover{transform:translateY(-3px);box-shadow:0 18px 38px rgba(11,59,58,.12)}
-
-/* Variasi Arah Baris Genap (Judul di Kanan, Penjelasan di Kiri) */
 .dom-row--reverse{grid-template-columns:1fr 410px}
 .dom-row--reverse .dom-title-panel{order:2}
 .dom-row--reverse .dom-desc-panel{order:1}
 
-/* Panel Judul (Sisi Gelap Berwibawa & Bervariasi) */
 .dom-title-panel{position:relative;padding:34px 36px;display:flex;flex-direction:column;justify-content:space-between;color:#fff;overflow:hidden}
 .dom-title-panel::after{content:"";position:absolute;right:-40px;bottom:-40px;width:170px;height:170px;border-radius:50%;background:radial-gradient(circle,rgba(129,246,239,.18),transparent 70%);pointer-events:none}
 .dom-row--reverse .dom-title-panel::after{right:auto;left:-40px}
 
-/* Variasi Warna Panel per Cabang */
 .dom-row--1 .dom-title-panel{background:linear-gradient(145deg,#0B3B3A 0%,#0E5956 100%)}
 .dom-row--2 .dom-title-panel{background:linear-gradient(145deg,#0E4F4C 0%,#0B3B3A 100%)}
 .dom-row--3 .dom-title-panel{background:linear-gradient(145deg,#093332 0%,#12635F 100%)}
 .dom-row--4 .dom-title-panel{background:linear-gradient(145deg,#105653 0%,#093130 100%)}
 
-/* Aksen Garis Sisi Panel Judul */
 .dom-row--1 .dom-title-panel{border-left:5px solid var(--cyan)}
 .dom-row--2 .dom-title-panel{border-right:5px solid var(--gold)}
 .dom-row--3 .dom-title-panel{border-left:5px solid var(--gold)}
@@ -233,7 +231,6 @@ body.menu-locked #container{overflow:hidden}
 .dom-panel-foot{margin-top:22px;padding-top:14px;border-top:1px solid rgba(255,255,255,.14);display:flex;align-items:center;gap:8px;flex-wrap:wrap;position:relative;z-index:1}
 .dom-subtag{font-size:11px;font-weight:700;color:#fff;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);padding:4px 11px;border-radius:6px;letter-spacing:.4px}
 
-/* Panel Penjelasan (Rata Kanan-Kiri / Justify Rapi) */
 .dom-desc-panel{padding:34px 40px;display:flex;flex-direction:column;justify-content:center;background:#fff;position:relative}
 .dom-desc-label{display:inline-flex;align-items:center;gap:8px;font-size:11.5px;font-weight:800;letter-spacing:1.6px;color:var(--teal);text-transform:uppercase;margin-bottom:12px}
 .dom-desc-label::before{content:"";width:22px;height:2px;background:var(--gold);border-radius:2px}
@@ -308,9 +305,9 @@ body.menu-locked #container{overflow:hidden}
 .footer-legal .sep{opacity:.4}
 
 /* =========================================================
-   MEDIA QUERY RESPONSIVE KHUSUS PERANGKAT MOBILE (HP)
+   MEDIA QUERY RESPONSIVE KHUSUS PERANGKAT HP (MAX 768px)
    ========================================================= */
-@media (max-width: 900px) {
+@media (max-width: 768px) {
   body { overflow: auto !important; }
   #container { position: relative !important; inset: auto !important; height: auto !important; overflow: visible !important; }
   #wrapper { height: auto !important; overflow: visible !important; }
@@ -342,6 +339,7 @@ body.menu-locked #container{overflow:hidden}
   .sec-intro h2 { font-size: 22px !important; white-space: normal !important; }
   .sec-intro p { font-size: 15px !important; }
 
+  /* Tampilkan Mobile Flow List HANYA di Mobile */
   .sec-flow { padding: 40px 20px !important; }
   .sec-flow h2 { font-size: 22px !important; max-width: 100% !important; }
   .flow-chart { display: none !important; }
@@ -352,6 +350,7 @@ body.menu-locked #container{overflow:hidden}
   .mob-flow-title { font-size: 14.5px; font-weight: 800; color: var(--teal-deep); text-transform: uppercase; margin-bottom: 4px; }
   .mob-flow-desc { font-size: 13px; line-height: 1.5; color: #4A6A67; margin: 0; }
 
+  /* Tampilkan Mobile Tree List HANYA di Mobile */
   .sec-scope { padding: 40px 20px !important; }
   .sec-scope h2 { font-size: 22px !important; max-width: 100% !important; }
   .tree-chart { display: none !important; }
@@ -383,11 +382,10 @@ body.menu-locked #container{overflow:hidden}
   .footer-bottom { padding: 20px !important; flex-direction: column !important; align-items: flex-start !important; gap: 15px !important; }
   .footer-rule { display: none !important; }
 
-  /* FIX: Mobile Overlay Box scrollable so cards are never cut off */
   .overlay-menu { position: fixed !important; }
   .ov-box { left: 16px !important; top: 30px !important; width: calc(100% - 32px) !important; height: auto !important; max-height: 85vh !important; overflow-y: auto !important; padding: 24px 18px !important; }
   .ov-x { left: auto !important; right: 16px !important; top: 16px !important; z-index: 30 !important; }
-  .ov-cards { flex-direction: column !important; gap: 10px !important; }
+  .ov-cards { grid-template-columns: 1fr !important; gap: 12px !important; }
   .ov-card { width: 100% !important; }
   .ov-svg { display: none !important; }
 }
@@ -449,7 +447,7 @@ body.menu-locked #container{overflow:hidden}
           </div>
         </div>
 
-        <!-- Daftar isi overlay dihasilkan oleh JS -->
+        <!-- Daftar isi overlay -->
         <div class="overlays" data-overlays></div>
       </div>
 
@@ -489,7 +487,7 @@ body.menu-locked #container{overflow:hidden}
               <polygon class="flow-arrow" points="1080,338 1094,345 1080,352"/>
             </svg>
           </div>
-          <!-- Mobile Flow List -->
+          <!-- Mobile Flow List (Hanya tampil di Mobile) -->
           <div class="mobile-flow-list">
             <div class="mob-flow-card"><div class="mob-flow-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0B6E6A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg></div><div class="mob-flow-content"><div class="mob-flow-title">01. Gagasan</div><p class="mob-flow-desc">Bermula dari pemikiran yang dicatat apa adanya.</p></div></div>
             <div class="mob-flow-card"><div class="mob-flow-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0B6E6A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg></div><div class="mob-flow-content"><div class="mob-flow-title">02. Perencanaan</div><p class="mob-flow-desc">Tujuan, kebutuhan, dan kemampuan disusun terarah.</p></div></div>
@@ -538,7 +536,7 @@ body.menu-locked #container{overflow:hidden}
             <div class="tree-sub sub--4b"><span class="dot"></span><span class="tt">Langkah Berikutnya</span><span class="dd">Tempat bagi jalur yang belum masuk lini mana pun — karena perjalanan ini masih terus berjalan.</span></div>
           </div>
 
-          <!-- Mobile Tree List -->
+          <!-- Mobile Tree List (Hanya tampil di Mobile) -->
           <div class="mobile-tree-list">
             <div class="mob-tree-card">
               <div class="mob-tree-header"><span class="mob-tree-num">01</span></div>
@@ -581,7 +579,7 @@ body.menu-locked #container{overflow:hidden}
           <p class="tree-note">Pemetaan di atas menunjukkan kedudukan dan arah tumbuhnya setiap jalur, bukan kepemilikan — setiap cabang tetap berada di bawah pengelolaan pihaknya masing-masing, sebagaimana dijelaskan pada bagian pengenalan.</p>
         </section>
 
-        <!-- SECTION 2C: URAIAN EMPAT CABANG BIDANG (ZIGZAG SELANG-SELING) -->
+        <!-- SECTION 2C: URAIAN EMPAT CABANG BIDANG -->
         <section class="sec-domains">
           <div class="dom-header">
             <div class="dom-header-top">
@@ -714,26 +712,26 @@ body.menu-locked #container{overflow:hidden}
             <div class="footer-marquee" aria-label="Berkembang, Keterampilan, Ketekunan, Kerja Keras, Konsisten, Kemajuan, Keberhasilan, Perjuangan, Tekad">
               <div class="fm-inner">
                 <span class="fm-group">
-                  <span class="fm-item"><span class="fm-text">BERKEMBANG</span><span class="fm-dot">•</span></span>
-                  <span class="fm-item"><span class="fm-text">KETERAMPILAN</span><span class="fm-dot">•</span></span>
-                  <span class="fm-item"><span class="fm-text">KETEKUNAN</span><span class="fm-dot">•</span></span>
-                  <span class="fm-item"><span class="fm-text">KERJA KERAS</span><span class="fm-dot">•</span></span>
-                  <span class="fm-item"><span class="fm-text">KONSISTEN</span><span class="fm-dot">•</span></span>
-                  <span class="fm-item"><span class="fm-text">KEMAJUAN</span><span class="fm-dot">•</span></span>
-                  <span class="fm-item"><span class="fm-text">KEBERHASILAN</span><span class="fm-dot">•</span></span>
-                  <span class="fm-item"><span class="fm-text">PERJUANGAN</span><span class="fm-dot">•</span></span>
-                  <span class="fm-item"><span class="fm-text">TEKAD</span><span class="fm-dot">•</span></span>
+                  <span class="fm-item"><span class="hm-text">BERKEMBANG</span><span class="fm-dot">•</span></span>
+                  <span class="fm-item"><span class="hm-text">KETERAMPILAN</span><span class="fm-dot">•</span></span>
+                  <span class="fm-item"><span class="hm-text">KETEKUNAN</span><span class="fm-dot">•</span></span>
+                  <span class="fm-item"><span class="hm-text">KERJA KERAS</span><span class="fm-dot">•</span></span>
+                  <span class="fm-item"><span class="hm-text">KONSISTEN</span><span class="fm-dot">•</span></span>
+                  <span class="fm-item"><span class="hm-text">KEMAJUAN</span><span class="fm-dot">•</span></span>
+                  <span class="fm-item"><span class="hm-text">KEBERHASILAN</span><span class="fm-dot">•</span></span>
+                  <span class="fm-item"><span class="hm-text">PERJUANGAN</span><span class="fm-dot">•</span></span>
+                  <span class="fm-item"><span class="hm-text">TEKAD</span><span class="fm-dot">•</span></span>
                 </span>
                 <span class="fm-group" aria-hidden="true">
-                  <span class="fm-item"><span class="fm-text">BERKEMBANG</span><span class="fm-dot">•</span></span>
-                  <span class="fm-item"><span class="fm-text">KETERAMPILAN</span><span class="fm-dot">•</span></span>
-                  <span class="fm-item"><span class="fm-text">KETEKUNAN</span><span class="fm-dot">•</span></span>
-                  <span class="fm-item"><span class="fm-text">KERJA KERAS</span><span class="fm-dot">•</span></span>
-                  <span class="fm-item"><span class="fm-text">KONSISTEN</span><span class="fm-dot">•</span></span>
-                  <span class="fm-item"><span class="fm-text">KEMAJUAN</span><span class="fm-dot">•</span></span>
-                  <span class="fm-item"><span class="fm-text">KEBERHASILAN</span><span class="fm-dot">•</span></span>
-                  <span class="fm-item"><span class="fm-text">PERJUANGAN</span><span class="fm-dot">•</span></span>
-                  <span class="fm-item"><span class="fm-text">TEKAD</span><span class="fm-dot">•</span></span>
+                  <span class="fm-item"><span class="hm-text">BERKEMBANG</span><span class="fm-dot">•</span></span>
+                  <span class="fm-item"><span class="hm-text">KETERAMPILAN</span><span class="fm-dot">•</span></span>
+                  <span class="fm-item"><span class="hm-text">KETEKUNAN</span><span class="fm-dot">•</span></span>
+                  <span class="fm-item"><span class="hm-text">KERJA KERAS</span><span class="fm-dot">•</span></span>
+                  <span class="fm-item"><span class="hm-text">KONSISTEN</span><span class="fm-dot">•</span></span>
+                  <span class="fm-item"><span class="hm-text">KEMAJUAN</span><span class="fm-dot">•</span></span>
+                  <span class="fm-item"><span class="hm-text">KEBERHASILAN</span><span class="fm-dot">•</span></span>
+                  <span class="fm-item"><span class="hm-text">PERJUANGAN</span><span class="fm-dot">•</span></span>
+                  <span class="fm-item"><span class="hm-text">TEKAD</span><span class="fm-dot">•</span></span>
                 </span>
               </div>
             </div>
@@ -920,18 +918,22 @@ function renderFlowStages(){
 
 /* ============ SCALE / ZOOM ============ */
 function updateScale(){
+  if(window.innerWidth <= 768) return;
   var el = $("#container"); if(!el) return;
   state.scale = Math.max(el.clientWidth/1280, 0.5);
 }
 function applyZoom(){
+  if(window.innerWidth <= 768) return;
   var c = $("#content"); if(c && state.scale>0) c.style.zoom = state.scale;
 }
 function measureContentHeight(){
+  if(window.innerWidth <= 768) return;
   var c = $("#content"); if(!c) return;
   var h = c.scrollHeight * state.scale;
   if(h>0){ var w=$("#wrapper"); if(w) w.style.height = h+"px"; }
 }
 function measureNavPositions(){
+  if(window.innerWidth <= 768) return;
   var slide = $("[data-slide]"); if(!slide) return;
   var sr = slide.getBoundingClientRect();
   var sc = sr.width/1280; if(sc===0) return;
@@ -947,6 +949,7 @@ function measureNavPositions(){
   updateOverlayPositions();
 }
 function updateOverlayPositions(){
+  if(window.innerWidth <= 768) return;
   var slide = $("[data-slide]"); if(!slide) return;
   $$(".overlay-menu", slide).forEach(function(ov){
     var key = ov.getAttribute("data-menu");
@@ -1015,6 +1018,7 @@ function onClick(e){
 }
 function onKeydown(e){ if(e.key === "Escape") closeMenu(); }
 function onResize(){
+  if(window.innerWidth <= 768) return;
   updateScale(); applyZoom(); measureContentHeight(); measureNavPositions();
 }
 
@@ -1022,14 +1026,16 @@ function onResize(){
 function init(){
   renderOverlays();
   renderFlowStages();
-  updateScale(); applyZoom();
-  requestAnimationFrame(function(){ measureContentHeight(); measureNavPositions(); });
+  if(window.innerWidth > 768){
+    updateScale(); applyZoom();
+    requestAnimationFrame(function(){ measureContentHeight(); measureNavPositions(); });
+  }
   updateNavHighlight();
   document.addEventListener("click", onClick);
   document.addEventListener("keydown", onKeydown);
   window.addEventListener("resize", onResize);
   window.addEventListener("orientationchange", function(){ setTimeout(onResize, 100); });
-  if(document.fonts && document.fonts.ready) document.fonts.ready.then(measureNavPositions);
+  if(document.fonts && document.fonts.ready) document.fonts.ready.then(function(){ if(window.innerWidth > 768) measureNavPositions(); });
   setTimeout(onResize, 100);
   setTimeout(onResize, 500);
 }
