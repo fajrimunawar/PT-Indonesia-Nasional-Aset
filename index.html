@@ -309,16 +309,16 @@ body.menu-locked #container{overflow:hidden}
       <div class="slide" data-slide>
         <div class="hero-dim">
           <header class="site-header">
-            <a class="logo-pill" href="index.html">
+            <a class="logo-pill" href="#" data-nav="Beranda">
               <img class="icon" src="slide/logo_icon.png" alt="Infotrink logo">
               <img class="text" src="slide/logo_text.png" alt="Infotrink">
             </a>
             <nav class="site-nav">
-              <a class="nav-link on" href="index.html" data-nav="Beranda">Beranda</a>
-              <a class="nav-link" href="publikasi.html" data-nav="Publikasi">Publikasi</a>
-              <a class="nav-link" href="informasi.html" data-nav="Informasi">Informasi</a>
-              <a class="nav-link" href="galeri.html" data-nav="Galeri">Galeri</a>
-              <a class="nav-link" href="mengenal-infotrink.html" data-nav="Mengenal INFOTRINK"><span translate="no">Mengenal INFOTRINK</span></a>
+              <a class="nav-link" href="#" data-nav="Beranda">Beranda</a>
+              <a class="nav-link" href="#" data-nav="Publikasi">Publikasi</a>
+              <a class="nav-link" href="#" data-nav="Informasi">Informasi</a>
+              <a class="nav-link" href="#" data-nav="Galeri">Galeri</a>
+              <a class="nav-link" href="#" data-nav="Mengenal INFOTRINK"><span translate="no">Mengenal INFOTRINK</span></a>
             </nav>
           </header>
 
@@ -613,11 +613,11 @@ body.menu-locked #container{overflow:hidden}
             <div>
               <h4>NAVIGASI</h4>
               <ul>
-                <li><a href="index.html">Beranda</a></li>
-                <li><a href="publikasi.html">Publikasi</a></li>
-                <li><a href="informasi.html">Informasi</a></li>
-                <li><a href="galeri.html">Galeri</a></li>
-                <li><a href="mengenal-infotrink.html"><span translate="no">Mengenal INFOTRINK</span></a></li>
+                <li><a href="#" data-nav="Beranda">Beranda</a></li>
+                <li><a href="#" data-nav="Publikasi">Publikasi</a></li>
+                <li><a href="#" data-nav="Informasi">Informasi</a></li>
+                <li><a href="#" data-nav="Galeri">Galeri</a></li>
+                <li><a href="#" data-nav="Mengenal INFOTRINK"><span translate="no">Mengenal INFOTRINK</span></a></li>
               </ul>
             </div>
             <div>
@@ -688,7 +688,7 @@ var FLOW_STAGES = [
   {icon:"TrendingUp", name:"Pengembangan", desc:"Kualitas ditingkatkan bertahap dan terukur."}
 ];
 
-/* Mapping file HTML untuk setiap sub menu */
+/* Mapping file HTML untuk setiap sub-menu di dalam kotak overlay */
 var SUB_MENU_URLS = {
   "Media Informasi & Penjelasan": "media-informasi.html",
   "Hasil Riset dan Penelitian": "hasil-riset.html",
@@ -723,7 +723,7 @@ var SUB_MENUS = {
 };
 var NAV_X = { Publikasi:910, Informasi:1000, Galeri:1085, "Mengenal INFOTRINK":1190 };
 
-var state = { activeMenu:null, scale:0, navPositions:{} };
+var state = { activeMenu:null, lastActiveMenu:null, scale:0, navPositions:{} };
 
 function renderOverlays(){
   var host = $("[data-overlays]"); if(!host) return;
@@ -814,15 +814,21 @@ function getOverlay(slide, item){
   return null;
 }
 
+var NAV_AFTER_CLOSE_MS = 600;
+var navHighlightTimer = null;
+function scheduleNavHighlight(){ clearTimeout(navHighlightTimer); navHighlightTimer = setTimeout(updateNavHighlight, NAV_AFTER_CLOSE_MS); }
+function cancelNavHighlight(){ clearTimeout(navHighlightTimer); navHighlightTimer = null; }
+
 function openMenu(item){
   var slide = $("[data-slide]"); if(!slide) return;
   if(state.activeMenu === item){ closeMenu(); return; }
   if(state.activeMenu){ var old = getOverlay(slide, state.activeMenu); if(old) old.classList.remove("open"); }
   measureNavPositions();
-  state.activeMenu = item;
+  state.activeMenu = item; state.lastActiveMenu = item;
   var ov = getOverlay(slide, item); if(ov) ov.classList.add("open");
   slide.classList.add("menu-open");
   document.body.classList.add("menu-locked");
+  cancelNavHighlight(); updateNavHighlight();
 }
 
 function closeMenu(){
@@ -834,18 +840,33 @@ function closeMenu(){
   }
   document.body.classList.remove("menu-locked");
   state.activeMenu = null;
+  scheduleNavHighlight();
+}
+
+function goBeranda(){
+  if(state.activeMenu) closeMenu();
+  var c = $("#container"); if(c) c.scrollTop = 0;
+}
+
+function updateNavHighlight(){
+  $$(".nav-link").forEach(function(l){
+    var item = l.getAttribute("data-nav");
+    var on = state.activeMenu ? (state.activeMenu===item) : (item==="Beranda");
+    l.classList.toggle("on", on);
+  });
 }
 
 function onClick(e){
   var navEl = e.target.closest("[data-nav]");
   if(navEl){
+    e.preventDefault();
     var item = navEl.getAttribute("data-nav");
-    // Jika ingin klik menu utama langsung membuka halaman file HTML masing-masing,
-    // biarkan browser berpindah halaman secara alami (sesuai atribut href).
-    // Jika Anda ingin menu utama tetap membuka overlay preview, Anda bisa lakukan e.preventDefault() lalu openMenu(item).
+    if(item === "Beranda") goBeranda(); else openMenu(item);
     return;
   }
   if(e.target.closest("[data-close]")){ e.preventDefault(); closeMenu(); return; }
+  var a = e.target.closest('a[href="#"]');
+  if(a) e.preventDefault();
 }
 
 function onKeydown(e){ if(e.key === "Escape") closeMenu(); }
@@ -858,6 +879,7 @@ function init(){
   renderFlowStages();
   updateScale(); applyZoom();
   requestAnimationFrame(function(){ measureContentHeight(); measureNavPositions(); });
+  updateNavHighlight();
   document.addEventListener("click", onClick);
   document.addEventListener("keydown", onKeydown);
   window.addEventListener("resize", onResize);
