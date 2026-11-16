@@ -56,8 +56,8 @@ body.menu-locked #container{overflow:hidden}
 .hero-quote{display:flex;align-items:flex-start;margin-top:44px;gap:10px}
 .hero-quote img{flex-shrink:0;width:48px;height:34px;margin-top:-12px;user-select:none}
 .hero-quote p{font-weight:400;font-size:16.5px;line-height:1.6;color:var(--ink);text-align:justify;text-justify:inter-word;width:470px;margin:0}
-.hero-actions{display:flex;justify-content:space-between;align-items:center;margin-top:52px;margin-left:58px;width:470px}
-.btn-image{position:relative;display:inline-flex;align-items:center;height:44px;cursor:pointer;text-decoration:none}
+.hero-actions{display:flex;justify-content:space-between;align-items:center;margin-top:52px;margin-left:58px;width:470px;position:relative;z-index:10}
+.btn-image{position:relative;display:inline-flex;align-items:center;height:44px;cursor:pointer;text-decoration:none;z-index:5}
 .btn-image img{position:absolute;inset:0;width:100%;height:100%;object-fit:fill;display:block;z-index:0}
 .btn-image span{position:relative;z-index:1;font-size:16px;font-weight:700;color:#1a1a1a;letter-spacing:.3px;pointer-events:none}
 .btn-telusuri{justify-content:flex-end;padding-right:40px;padding-left:60px}
@@ -274,8 +274,8 @@ body.menu-locked #container{overflow:hidden}
 .fm-inner{display:inline-flex;align-items:center;animation:marqueeFoot 26s linear infinite;will-change:transform}
 .fm-group{display:inline-flex;align-items:center}
 .fm-item{display:inline-flex;align-items:center}
-.fm-text{font-size:13px;font-weight:700;letter-spacing:2.5px;color:var(--cyan);padding:0 20px;white-space:nowrap}
-.fm-dot{color:rgba(129,246,239,.45);font-size:11px}
+.fm-text{font-size:13px;font-weight:700;letter-spacing:2.5px;color:#FFFFFF;padding:0 20px;white-space:nowrap}
+.fm-dot{color:rgba(255,255,255,.6);font-size:11px}
 .footer-main{position:relative;padding:30px 80px 24px}
 .footer-main .row{display:flex;align-items:flex-start;justify-content:space-between;gap:60px}
 .footer-main .lead{flex:1;min-width:0;max-width:829px}
@@ -420,8 +420,8 @@ body.menu-locked #container{overflow:hidden}
               <p><span translate="no">INFOTRINK</span> menghimpun informasi dan dokumentasi di beragam bidang, dirangkum mulai dari awal mula, perencanaan, sampai perwujudan dan pengembangannya — semuanya tertata rapi dan terus diperbarui, sehingga perjalanan di balik setiap gagasan dan karya dapat dikenali dengan jelas.</p>
             </div>
             <div class="hero-actions">
-              <a class="btn-image btn-telusuri" href="#"><img src="1000007369.png" alt="Tombol Telusuri"><span>Telusuri</span></a>
-              <a class="btn-image btn-kenali" href="#"><img src="1000007370.png" alt="Tombol Kenali"><span>Kenali</span></a>
+              <a class="btn-image btn-telusuri" href="telusuri.html"><img src="1000007369.png" alt="Tombol Telusuri"><span>Telusuri</span></a>
+              <a class="btn-image btn-kenali" href="mengenal-infotrink.html"><img src="1000007370.png" alt="Tombol Kenali"><span>Kenali</span></a>
             </div>
             <div class="hero-marquee" aria-label="Instagram @jri_munawar, Twitter @Jri_munawar, Bagian dari jaringan JRI MUNAWAR GROUP">
               <div class="hero-marquee-inner">
@@ -712,26 +712,26 @@ body.menu-locked #container{overflow:hidden}
             <div class="footer-marquee" aria-label="Berkembang, Keterampilan, Ketekunan, Kerja Keras, Konsisten, Kemajuan, Keberhasilan, Perjuangan, Tekad">
               <div class="fm-inner">
                 <span class="fm-group">
-                  <span class="fm-item"><span class="hm-text">BERKEMBANG</span><span class="fm-dot">•</span></span>
-                  <span class="fm-item"><span class="hm-text">KETERAMPILAN</span><span class="fm-dot">•</span></span>
-                  <span class="fm-item"><span class="hm-text">KETEKUNAN</span><span class="fm-dot">•</span></span>
-                  <span class="fm-item"><span class="hm-text">KERJA KERAS</span><span class="fm-dot">•</span></span>
-                  <span class="fm-item"><span class="hm-text">KONSISTEN</span><span class="fm-dot">•</span></span>
-                  <span class="fm-item"><span class="hm-text">KEMAJUAN</span><span class="fm-dot">•</span></span>
-                  <span class="fm-item"><span class="hm-text">KEBERHASILAN</span><span class="fm-dot">•</span></span>
-                  <span class="fm-item"><span class="hm-text">PERJUANGAN</span><span class="fm-dot">•</span></span>
-                  <span class="fm-item"><span class="hm-text">TEKAD</span><span class="fm-dot">•</span></span>
+                  <span class="fm-item"><span class="fm-text">BERKEMBANG</span><span class="fm-dot">•</span></span>
+                  <span class="fm-item"><span class="fm-text">KETERAMPILAN</span><span class="fm-dot">•</span></span>
+                  <span class="fm-item"><span class="fm-text">KETEKUNAN</span><span class="fm-dot">•</span></span>
+                  <span class="fm-item"><span class="fm-text">KERJA KERAS</span><span class="fm-dot">•</span></span>
+                  <span class="fm-item"><span class="fm-text">KONSISTEN</span><span class="fm-dot">•</span></span>
+                  <span class="fm-item"><span class="fm-text">KEMAJUAN</span><span class="fm-dot">•</span></span>
+                  <span class="fm-item"><span class="fm-text">KEBERHASILAN</span><span class="fm-dot">•</span></span>
+                  <span class="fm-item"><span class="fm-text">PERJUANGAN</span><span class="fm-dot">•</span></span>
+                  <span class="fm-item"><span class="fm-text">TEKAD</span><span class="fm-dot">•</span></span>
                 </span>
                 <span class="fm-group" aria-hidden="true">
-                  <span class="fm-item"><span class="hm-text">BERKEMBANG</span><span class="fm-dot">•</span></span>
-                  <span class="fm-item"><span class="hm-text">KETERAMPILAN</span><span class="fm-dot">•</span></span>
-                  <span class="fm-item"><span class="hm-text">KETEKUNAN</span><span class="fm-dot">•</span></span>
-                  <span class="fm-item"><span class="hm-text">KERJA KERAS</span><span class="fm-dot">•</span></span>
-                  <span class="fm-item"><span class="hm-text">KONSISTEN</span><span class="fm-dot">•</span></span>
-                  <span class="fm-item"><span class="hm-text">KEMAJUAN</span><span class="fm-dot">•</span></span>
-                  <span class="fm-item"><span class="hm-text">KEBERHASILAN</span><span class="fm-dot">•</span></span>
-                  <span class="fm-item"><span class="hm-text">PERJUANGAN</span><span class="fm-dot">•</span></span>
-                  <span class="fm-item"><span class="hm-text">TEKAD</span><span class="fm-dot">•</span></span>
+                  <span class="fm-item"><span class="fm-text">BERKEMBANG</span><span class="fm-dot">•</span></span>
+                  <span class="fm-item"><span class="fm-text">KETERAMPILAN</span><span class="fm-dot">•</span></span>
+                  <span class="fm-item"><span class="fm-text">KETEKUNAN</span><span class="fm-dot">•</span></span>
+                  <span class="fm-item"><span class="fm-text">KERJA KERAS</span><span class="fm-dot">•</span></span>
+                  <span class="fm-item"><span class="fm-text">KONSISTEN</span><span class="fm-dot">•</span></span>
+                  <span class="fm-item"><span class="fm-text">KEMAJUAN</span><span class="fm-dot">•</span></span>
+                  <span class="fm-item"><span class="fm-text">KEBERHASILAN</span><span class="fm-dot">•</span></span>
+                  <span class="fm-item"><span class="fm-text">PERJUANGAN</span><span class="fm-dot">•</span></span>
+                  <span class="fm-item"><span class="fm-text">TEKAD</span><span class="fm-dot">•</span></span>
                 </span>
               </div>
             </div>
@@ -741,8 +741,8 @@ body.menu-locked #container{overflow:hidden}
                 <p>Berbagai gagasan, karya, dan inisiatif telah terdokumentasi dalam satu wadah yang terstruktur. Setiap catatan memuat konteks dan tahapan perkembangannya sehingga siap dijelajahi dan dimanfaatkan kembali kapan saja.</p>
               </div>
               <div class="footer-ctas">
-                <a class="cta-primary" href="#">Telusuri →</a>
-                <a class="cta-secondary" href="#">Kenali <span translate="no">INFOTRINK</span></a>
+                <a class="cta-primary" href="telusuri.html">Telusuri →</a>
+                <a class="cta-secondary" href="mengenal-infotrink.html">Kenali <span translate="no">INFOTRINK</span></a>
               </div>
             </div>
           </div>
