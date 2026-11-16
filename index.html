@@ -6,10 +6,10 @@
 <title>Infotrink</title>
 <meta name="description" content="INFOTRINK — satu wadah untuk perjalanan gagasan dan berbagai karya. Menghimpun informasi dan dokumentasi di beragam bidang, dirangkum dari awal mula hingga pengembangannya.">
 <meta name="theme-color" content="#81F6EF">
-<link rel="icon" href="favicon.ico" sizes="any">
-<link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
-<link rel="icon" href="favicon-16.png" type="image/png" sizes="16x16">
-<link rel="apple-touch-icon" href="apple-icon.png">
+<link rel="icon" href="1000007372.png" sizes="any">
+<link rel="icon" href="1000007372.png" type="image/png" sizes="32x32">
+<link rel="icon" href="1000007372.png" type="image/png" sizes="16x16">
+<link rel="apple-touch-icon" href="1000007372.png">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -121,7 +121,7 @@ body.menu-locked #container{overflow:hidden}
 .sec-intro .float-img{float:right;margin-top:54px;margin-left:40px;margin-bottom:24px;position:relative}
 .sec-intro .float-img::before{content:"";position:absolute;top:18px;left:-18px;width:100%;height:100%;background:linear-gradient(135deg,#0B6E6A,#5B7A78);border-radius:22px;opacity:.3}
 .sec-intro .img-frame{position:relative;width:516px;height:348px;border-radius:22px;overflow:hidden;background:#fff;box-shadow:0 0 0 1px rgba(11,110,106,.10),0 14px 34px rgba(11,59,58,.18);border:6px solid #fff}
-.sec-intro .img-frame img{width:100%;height:100%;object-fit:contain;display:block}
+.sec-intro .img-frame img{width:100%;height:100%;object-fit:cover;display:block}
 .sec-intro .img-badge{position:absolute;bottom:16px;left:16px;padding:10px 16px;background:rgba(255,255,255,.95);border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.1)}
 .sec-intro .img-badge .label{font-size:11px;color:var(--teal-soft);font-weight:600;letter-spacing:.5px}
 .sec-intro .img-badge .title{font-size:14px;color:var(--teal-deep);font-weight:700}
@@ -186,30 +186,37 @@ body.menu-locked #container{overflow:hidden}
 .sec-domains{position:relative;padding:64px 80px 72px;background:linear-gradient(180deg,#F7FCFB 0%,#FFFFFF 35%,#F4FBF9 100%);overflow:hidden}
 .sec-domains::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,transparent,var(--teal) 20%,var(--gold) 50%,var(--teal) 80%,transparent)}
 
+/* Header Inti Halaman (Pojok Kiri sampai Pojok Kanan) */
 .dom-header{width:100%;margin-bottom:46px;padding-bottom:28px;border-bottom:1.5px solid rgba(11,110,106,.14)}
 .dom-header-top{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-bottom:14px}
 .dom-header .pill-badge{margin-bottom:0;font-size:12.5px;letter-spacing:1.5px}
 .dom-header h2{font-size:28px;font-weight:800;color:var(--teal-deep);margin:0 0 14px;letter-spacing:.4px;line-height:1.3;text-transform:uppercase;width:100%}
 .dom-header .lede{font-size:15.5px;line-height:1.78;color:#325855;margin:0;width:100%;text-align:justify;text-justify:inter-word}
 
+/* Container Baris Selang-Seling */
 .dom-list{display:flex;flex-direction:column;gap:30px;position:relative}
 
+/* Kartu Baris Selang-Seling */
 .dom-row{display:grid;grid-template-columns:410px 1fr;align-items:stretch;background:#fff;border-radius:20px;border:1px solid rgba(11,110,106,.15);box-shadow:0 12px 30px rgba(11,59,58,.07);overflow:hidden;position:relative;transition:transform .25s ease,box-shadow .25s ease}
 .dom-row:hover{transform:translateY(-3px);box-shadow:0 18px 38px rgba(11,59,58,.12)}
 
+/* Variasi Arah Baris Genap (Judul di Kanan, Penjelasan di Kiri) */
 .dom-row--reverse{grid-template-columns:1fr 410px}
 .dom-row--reverse .dom-title-panel{order:2}
 .dom-row--reverse .dom-desc-panel{order:1}
 
+/* Panel Judul (Sisi Gelap Berwibawa & Bervariasi) */
 .dom-title-panel{position:relative;padding:34px 36px;display:flex;flex-direction:column;justify-content:space-between;color:#fff;overflow:hidden}
 .dom-title-panel::after{content:"";position:absolute;right:-40px;bottom:-40px;width:170px;height:170px;border-radius:50%;background:radial-gradient(circle,rgba(129,246,239,.18),transparent 70%);pointer-events:none}
 .dom-row--reverse .dom-title-panel::after{right:auto;left:-40px}
 
+/* Variasi Warna Panel per Cabang */
 .dom-row--1 .dom-title-panel{background:linear-gradient(145deg,#0B3B3A 0%,#0E5956 100%)}
 .dom-row--2 .dom-title-panel{background:linear-gradient(145deg,#0E4F4C 0%,#0B3B3A 100%)}
 .dom-row--3 .dom-title-panel{background:linear-gradient(145deg,#093332 0%,#12635F 100%)}
 .dom-row--4 .dom-title-panel{background:linear-gradient(145deg,#105653 0%,#093130 100%)}
 
+/* Aksen Garis Sisi Panel Judul */
 .dom-row--1 .dom-title-panel{border-left:5px solid var(--cyan)}
 .dom-row--2 .dom-title-panel{border-right:5px solid var(--gold)}
 .dom-row--3 .dom-title-panel{border-left:5px solid var(--gold)}
@@ -226,6 +233,7 @@ body.menu-locked #container{overflow:hidden}
 .dom-panel-foot{margin-top:22px;padding-top:14px;border-top:1px solid rgba(255,255,255,.14);display:flex;align-items:center;gap:8px;flex-wrap:wrap;position:relative;z-index:1}
 .dom-subtag{font-size:11px;font-weight:700;color:#fff;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);padding:4px 11px;border-radius:6px;letter-spacing:.4px}
 
+/* Panel Penjelasan (Rata Kanan-Kiri / Justify Rapi) */
 .dom-desc-panel{padding:34px 40px;display:flex;flex-direction:column;justify-content:center;background:#fff;position:relative}
 .dom-desc-label{display:inline-flex;align-items:center;gap:8px;font-size:11.5px;font-weight:800;letter-spacing:1.6px;color:var(--teal);text-transform:uppercase;margin-bottom:12px}
 .dom-desc-label::before{content:"";width:22px;height:2px;background:var(--gold);border-radius:2px}
@@ -310,11 +318,10 @@ body.menu-locked #container{overflow:hidden}
         <div class="hero-dim">
           <header class="site-header">
             <a class="logo-pill" href="#" data-nav="Beranda">
-              <img class="icon" src="slide/logo_icon.png" alt="Infotrink logo">
-              <img class="text" src="slide/logo_text.png" alt="Infotrink">
+              <img class="icon" src="1000007372.png" alt="Infotrink logo">
+              <img class="text" src="1000007373.png" alt="Infotrink">
             </a>
             <nav class="site-nav">
-              <a class="nav-link" href="#" data-nav="Beranda">Beranda</a>
               <a class="nav-link" href="#" data-nav="Publikasi">Publikasi</a>
               <a class="nav-link" href="#" data-nav="Informasi">Informasi</a>
               <a class="nav-link" href="#" data-nav="Galeri">Galeri</a>
@@ -329,8 +336,8 @@ body.menu-locked #container{overflow:hidden}
               <p><span translate="no">INFOTRINK</span> menghimpun informasi dan dokumentasi di beragam bidang, dirangkum mulai dari awal mula, perencanaan, sampai perwujudan dan pengembangannya — semuanya tertata rapi dan terus diperbarui, sehingga perjalanan di balik setiap gagasan dan karya dapat dikenali dengan jelas.</p>
             </div>
             <div class="hero-actions">
-              <a class="btn-image btn-telusuri" href="publikasi.html"><img src="slide/button2.png" alt="Tombol Telusuri"><span>Telusuri</span></a>
-              <a class="btn-image btn-kenali" href="mengenal-infotrink.html"><img src="slide/button1.png" alt="Tombol Kenali"><span>Kenali</span></a>
+              <a class="btn-image btn-telusuri" href="#"><img src="1000007369.png" alt="Tombol Telusuri"><span>Telusuri</span></a>
+              <a class="btn-image btn-kenali" href="#"><img src="1000007370.png" alt="Tombol Kenali"><span>Kenali</span></a>
             </div>
             <div class="hero-marquee" aria-label="Instagram @jri_munawar, Twitter @Jri_munawar, Bagian dari jaringan JRI MUNAWAR GROUP">
               <div class="hero-marquee-inner">
@@ -349,7 +356,7 @@ body.menu-locked #container{overflow:hidden}
           </div>
 
           <div class="hero-photos">
-            <div class="photo-card photo-tl"><div class="photo-frame"><img src="logo_text.png" alt="Logo Text"></div></div>
+            <div class="photo-card photo-tl"><div class="photo-frame"><img src="1000007373.png" alt="Logo Text"></div></div>
             <div class="photo-card photo-tr"><div class="photo-frame"><img src="slide/hero_4_narasumber.jpg" alt="Narasumber menyampaikan penjelasan saat sesi wawancara" width="240" height="240"></div></div>
             <div class="photo-card photo-bl"><div class="photo-frame"><img src="slide/hero_berbagi_sesama.jpg" alt="Relawan menyerahkan bantuan kepada warga dalam kegiatan berbagi bersama" width="240" height="240"></div></div>
             <div class="photo-card photo-br"><div class="photo-frame"><img src="slide/hero_pembangunan.jpg" alt="Petugas memeriksa denah pembangunan di lokasi proyek konstruksi" width="240" height="240"></div></div>
@@ -367,7 +374,7 @@ body.menu-locked #container{overflow:hidden}
         <section class="sec-intro">
           <div class="float-img">
             <div class="img-frame">
-              <img src="slide/tim_kolaborasi.jpg" alt="Suasana kerja kolaboratif">
+              <img src="1000007538.png" alt="Suasana kerja kolaboratif">
               <div class="img-badge">
                 <div class="label">RUANG DOKUMENTASI</div>
                 <div class="title">Perjalanan Gagasan dan Karya</div>
@@ -599,14 +606,14 @@ body.menu-locked #container{overflow:hidden}
                 <p>Berbagai gagasan, karya, dan inisiatif telah terdokumentasi dalam satu wadah yang terstruktur. Setiap catatan memuat konteks dan tahapan perkembangannya sehingga siap dijelajahi dan dimanfaatkan kembali kapan saja.</p>
               </div>
               <div class="footer-ctas">
-                <a class="cta-primary" href="publikasi.html">Telusuri →</a>
-                <a class="cta-secondary" href="mengenal-infotrink.html">Kenali <span translate="no">INFOTRINK</span></a>
+                <a class="cta-primary" href="#">Telusuri →</a>
+                <a class="cta-secondary" href="#">Kenali <span translate="no">INFOTRINK</span></a>
               </div>
             </div>
           </div>
           <div class="footer-cols">
             <div>
-              <div class="footer-brand"><img class="icon" src="slide/logo_icon.png" alt="Infotrink"><img class="text" src="slide/logo_text.png" alt="Infotrink"></div>
+              <div class="footer-brand"><img class="icon" src="1000007372.png" alt="Infotrink"><img class="text" src="1000007373.png" alt="Infotrink"></div>
               <p class="footer-desc">Tempat perjalanan gagasan dan karya diperkenalkan melalui informasi dan dokumentasi.</p>
               <div class="footer-tags"><span class="ftag ftag-m">M</span><span class="ftag ftag-p">P</span><span class="ftag ftag-pe">Pe</span><span class="ftag ftag-l">L</span></div>
             </div>
@@ -623,28 +630,28 @@ body.menu-locked #container{overflow:hidden}
             <div>
               <h4>BIDANG</h4>
               <ul>
-                <li><a href="media-digital.html">Media Digital</a></li>
-                <li><a href="pembangunan.html">Pembangunan</a></li>
-                <li><a href="personal.html">Personal</a></li>
-                <li><a href="bidang-lainnya.html">Bidang Lainnya</a></li>
+                <li><a href="#">Media Digital</a></li>
+                <li><a href="#">Pembangunan</a></li>
+                <li><a href="#">Personal</a></li>
+                <li><a href="#">Bidang Lainnya</a></li>
               </ul>
             </div>
             <div>
               <h4>JENIS MATERI</h4>
               <ul>
-                <li><a href="media-informasi.html">Media Informasi</a></li>
-                <li><a href="hasil-riset.html">Hasil Riset</a></li>
-                <li><a href="kajian-analisis.html">Kajian &amp; Analisis</a></li>
-                <li><a href="laporan.html">Laporan</a></li>
-                <li><a href="data-referensi.html">Data &amp; Referensi</a></li>
-                <li><a href="gagasan-konsep.html">Gagasan</a></li>
+                <li><a href="#">Media Informasi</a></li>
+                <li><a href="#">Hasil Riset</a></li>
+                <li><a href="#">Kajian &amp; Analisis</a></li>
+                <li><a href="#">Laporan</a></li>
+                <li><a href="#">Data &amp; Referensi</a></li>
+                <li><a href="#">Gagasan</a></li>
               </ul>
             </div>
           </div>
           <div class="footer-bottom">
             <div class="footer-copy">© 2026 <span translate="no">INFOTRINK</span>. Hak cipta dilindungi. Seluruh materi yang dipublikasikan merupakan hasil riset, kajian, pemikiran, dan dokumentasi yang dikelola secara terstruktur untuk kepentingan pengetahuan.</div>
             <div class="footer-rule"></div>
-            <div class="footer-legal"><a href="syarat-ketentuan.html" style="color:inherit;text-decoration:none">Syarat &amp; Ketentuan</a><span class="sep">•</span><a href="kebijakan-privasi.html" style="color:inherit;text-decoration:none">Kebijakan Privasi</a></div>
+            <div class="footer-legal"><span>Syarat &amp; Ketentuan</span><span class="sep">•</span><span>Kebijakan Privasi</span></div>
           </div>
         </section>
 
@@ -688,7 +695,6 @@ var FLOW_STAGES = [
   {icon:"TrendingUp", name:"Pengembangan", desc:"Kualitas ditingkatkan bertahap dan terukur."}
 ];
 
-/* Mapping file HTML untuk setiap sub-menu di dalam kotak overlay */
 var SUB_MENU_URLS = {
   "Media Informasi & Penjelasan": "media-informasi.html",
   "Hasil Riset dan Penelitian": "hasil-riset.html",
@@ -725,6 +731,7 @@ var NAV_X = { Publikasi:910, Informasi:1000, Galeri:1085, "Mengenal INFOTRINK":1
 
 var state = { activeMenu:null, lastActiveMenu:null, scale:0, navPositions:{} };
 
+/* ============ RENDER ============ */
 function renderOverlays(){
   var host = $("[data-overlays]"); if(!host) return;
   var html = "";
@@ -774,6 +781,7 @@ function renderFlowStages(){
   host.insertAdjacentHTML("beforeend", html);
 }
 
+/* ============ SCALE / ZOOM ============ */
 function updateScale(){
   var el = $("#container"); if(!el) return;
   state.scale = Math.max(el.clientWidth/1280, 0.5);
@@ -808,17 +816,16 @@ function updateOverlayPositions(){
   });
 }
 
+/* ============ DAFTAR ISI ============ */
 function getOverlay(slide, item){
   var list = $$(".overlay-menu", slide);
   for(var i=0;i<list.length;i++){ if(list[i].getAttribute("data-menu")===item) return list[i]; }
   return null;
 }
-
 var NAV_AFTER_CLOSE_MS = 600;
 var navHighlightTimer = null;
 function scheduleNavHighlight(){ clearTimeout(navHighlightTimer); navHighlightTimer = setTimeout(updateNavHighlight, NAV_AFTER_CLOSE_MS); }
 function cancelNavHighlight(){ clearTimeout(navHighlightTimer); navHighlightTimer = null; }
-
 function openMenu(item){
   var slide = $("[data-slide]"); if(!slide) return;
   if(state.activeMenu === item){ closeMenu(); return; }
@@ -830,7 +837,6 @@ function openMenu(item){
   document.body.classList.add("menu-locked");
   cancelNavHighlight(); updateNavHighlight();
 }
-
 function closeMenu(){
   if(!state.activeMenu) return;
   var slide = $("[data-slide]");
@@ -842,12 +848,10 @@ function closeMenu(){
   state.activeMenu = null;
   scheduleNavHighlight();
 }
-
 function goBeranda(){
   if(state.activeMenu) closeMenu();
   var c = $("#container"); if(c) c.scrollTop = 0;
 }
-
 function updateNavHighlight(){
   $$(".nav-link").forEach(function(l){
     var item = l.getAttribute("data-nav");
@@ -856,6 +860,7 @@ function updateNavHighlight(){
   });
 }
 
+/* ============ EVENT ============ */
 function onClick(e){
   var navEl = e.target.closest("[data-nav]");
   if(navEl){
@@ -868,12 +873,12 @@ function onClick(e){
   var a = e.target.closest('a[href="#"]');
   if(a) e.preventDefault();
 }
-
 function onKeydown(e){ if(e.key === "Escape") closeMenu(); }
 function onResize(){
   updateScale(); applyZoom(); measureContentHeight(); measureNavPositions();
 }
 
+/* ============ INIT ============ */
 function init(){
   renderOverlays();
   renderFlowStages();
@@ -888,7 +893,6 @@ function init(){
   setTimeout(onResize, 100);
   setTimeout(onResize, 500);
 }
-
 if(document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
 else init();
 })();
