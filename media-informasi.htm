@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Media Informasi &amp; Penjelasan — Infotrink</title>
+<meta name="description" content="Media Informasi & Penjelasan — Pusat kajian, dokumentasi mendalam, dan penjabaran komprehensif mengenai alur perjalanan gagasan, riset, serta inisiatif di dalam ekosistem Infotrink.">
+<meta name="theme-color" content="#81F6EF">
+<link rel="icon" href="1000007372.png" sizes="any">
+<link rel="icon" href="1000007372.png" type="image/png" sizes="32x32">
+<link rel="icon" href="1000007372.png" type="image/png" sizes="16x16">
+<link rel="apple-touch-icon" href="1000007372.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ============ VARIABEL & DASAR ============ */
+:root{
+  --teal-deep:#0B3B3A;
+  --teal:#0B6E6A;
+  --teal-soft:#5B7A78;
+  --cyan:#81F6EF;
+  --gold:#D9B45B;
+  --ink:#1F2937;
+  --font:'Open Sans','Segoe UI',Tahoma,sans-serif;
+  --bg-grad:linear-gradient(180deg,#81F6EF 0%,#9CF4ED 22%,#B2FBF6 45%,#CFFCF6 68%,#E1FFFD 88%,#E8FEFC 100%);
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:var(--font);background:var(--cyan);color:var(--teal-deep);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow:hidden}
+#container{position:fixed;inset:0;overflow-y:auto;overflow-x:hidden;scrollbar-gutter:stable;background:var(--bg-grad)}
+#wrapper{width:100%;position:relative;overflow:hidden}
+#content{position:absolute;top:0;left:0;width:1280px;transform-origin:top left}
+
+@keyframes marqueeHero{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@keyframes marqueeFoot{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* ============ HEADER UTAMA HALAMAN SUB-MENU ============ */
+.sub-hero{position:relative;width:1280px;padding:45px 70px 60px;background:linear-gradient(180deg,rgba(129,246,239,0.95) 0%,rgba(255,255,255,1) 100%);border-bottom:1px solid rgba(11,110,106,.15)}
+.site-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:45px}
+.logo-pill{display:flex;align-items:center;gap:12px;padding:8px 22px 8px 10px;background:rgba(255,255,255,.85);backdrop-filter:blur(10px);border-radius:999px;box-shadow:0 4px 16px rgba(11,59,58,.12);border:1px solid rgba(255,255,255,.6);text-decoration:none;cursor:pointer}
+.logo-pill .icon{width:42px;height:42px;object-fit:contain;filter:drop-shadow(0 2px 4px rgba(11,59,58,.15))}
+.logo-pill .text{width:125px;height:40px;object-fit:contain}
+.site-nav{display:flex;align-items:center;gap:32px;padding:10px 26px;background:rgba(255,255,255,.55);backdrop-filter:blur(8px);border-radius:999px;box-shadow:0 4px 16px rgba(11,59,58,.10)}
+.nav-link{font-size:15px;font-weight:600;color:var(--teal-deep);text-decoration:none;padding:4px 0;border-bottom:2px solid transparent;letter-spacing:.2px;cursor:pointer;display:inline-block;transition:color .2s,border-color .2s}
+.nav-link:hover{color:var(--teal)}
+.nav-link.on{font-weight:700;color:var(--teal);border-bottom-color:var(--teal)}
+
+.sub-hero-content{max-width:960px}
+.pill-badge{display:inline-block;font-size:13px;font-weight:700;color:var(--teal);background:rgba(11,110,106,.1);padding:6px 16px;border-radius:999px;letter-spacing:1.2px;margin-bottom:16px;text-transform:uppercase}
+.sub-hero-title{font-size:38px;font-weight:800;color:var(--teal-deep);line-height:1.25;margin:0 0 18px;text-transform:uppercase;letter-spacing:-.5px}
+.sub-hero-desc{font-size:17px;line-height:1.8;color:var(--ink);margin:0;text-align:justify;text-justify:inter-word}
+
+/* ============ SECTION BERSAMA ============ */
+.sections{position:relative;width:1280px;background:#fff}
+
+/* ============ BAGIAN 1: PERSPEKTIF & DEFINISI (Grid Asimetris) ============. */
+.sec-perspective{position:relative;padding:70px 80px;background:#fff;border-bottom:1px solid rgba(11,110,106,.1)}
+.persp-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:60px;align-items:center}
+.persp-visual{position:relative}
+.persp-card-stack{position:relative;width:100%;height:420px}
+.persp-card{position:absolute;background:linear-gradient(145deg,#0B3B3A,#0B6E6A);border-radius:20px;padding:32px;color:#fff;box-shadow:0 16px 36px rgba(11,59,58,.2);display:flex;flex-direction:column;justify-content:space-between}
+.persp-card.c1{width:360px;height:280px;top:0;left:0;z-index:2}
+.persp-card.c2{width:340px;height:260px;top:100px;left:140px;background:linear-gradient(145deg,#105653,#093130);border:2px solid var(--cyan);z-index:3;opacity:.95}
+.persp-num{font-size:12px;font-weight:800;letter-spacing:2px;color:var(--cyan);text-transform:uppercase}
+.persp-txt{font-size:15px;line-height:1.6;color:rgba(255,255,255,.9);margin:0}
+
+.persp-content h2{font-size:26px;font-weight:800;color:var(--teal-deep);margin:0 0 20px;line-height:1.3;text-transform:uppercase;letter-spacing:.3px}
+.persp-content p{font-size:16px;line-height:1.8;color:var(--ink);margin:0 0 20px;text-align:justify;text-justify:inter-word}
+
+/* ============ BAGIAN 2: PILAR UTAMA INFORMASI (4 Kolom Kartu Bergradasi) ============ */
+.sec-pillars{position:relative;padding:70px 80px;background:linear-gradient(180deg,#F8FCFB 0%,#F0FAF8 100%);border-bottom:1px solid rgba(11,110,106,.1)}
+.pillars-header{text-align:center;max-width:800px;margin:0 auto 50px}
+.pillars-header h2{font-size:28px;font-weight:800;color:var(--teal-deep);margin:0 0 14px;text-transform:uppercase;letter-spacing:.4px}
+.pillars-header p{font-size:15.5px;line-height:1.75;color:#3C6461;margin:0;text-align:justify;text-justify:inter-word}
+
+.pillars-grid{display:grid;grid-template-columns:repeat(4, 1fr);gap:24px}
+.pillar-card{background:#fff;border-radius:18px;border:1px solid rgba(11,110,106,.15);padding:28px 24px;box-shadow:0 8px 24px rgba(11,59,58,.06);transition:transform .3s,box-shadow .3s;display:flex;flex-direction:column;justify-content:space-between}
+.pillar-card:hover{transform:translateY(-5px);box-shadow:0 14px 32px rgba(11,59,58,.12);border-color:var(--teal)}
+.pillar-icon-box{width:50px;height:50px;border-radius:12px;background:rgba(11,110,106,.1);color:var(--teal);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;margin-bottom:20px}
+.pillar-title{font-size:18px;font-weight:800;color:var(--teal-deep);margin:0 0 12px;text-transform:uppercase;line-height:1.3}
+.pillar-desc{font-size:14px;line-height:1.7;color:var(--ink);margin:0;text-align:justify;text-justify:inter-word}
+
+/* ============ BAGIAN 3: ALUR PENYUSUNAN & VERIFIKASI (Infografis Linier Berjenjang) ============ */
+.sec-workflow{position:relative;padding:70px 80px;background:#fff;border-bottom:1px solid rgba(11,110,106,.1)}
+.wf-header{max-width:760px;margin-bottom:50px}
+.wf-header h2{font-size:28px;font-weight:800;color:var(--teal-deep);margin:0 0 14px;text-transform:uppercase;letter-spacing:.4px}
+.wf-header p{font-size:15.5px;line-height:1.78;color:var(--ink);margin:0;text-align:justify;text-justify:inter-word}
+
+.wf-timeline{display:grid;grid-template-columns:repeat(3, 1fr);gap:30px;position:relative}
+.wf-step{background:linear-gradient(135deg,#F2FBF9,#E6F7F5);border:1px solid rgba(11,110,106,.15);border-radius:16px;padding:30px;box-shadow:0 6px 18px rgba(11,59,58,.04);position:relative}
+.wf-step-num{display:inline-block;font-size:11px;font-weight:800;letter-spacing:1.5px;color:var(--cyan);background:var(--teal-deep);padding:4px 12px;border-radius:999px;margin-bottom:16px;text-transform:uppercase}
+.wf-step-title{font-size:19px;font-weight:800;color:var(--teal-deep);margin:0 0 12px;text-transform:uppercase;line-height:1.3}
+.wf-step-desc{font-size:14.5px;line-height:1.75;color:var(--ink);margin:0;text-align:justify;text-justify:inter-word}
+
+/* ============ BAGIAN 4: TABEL MATRIKS KEBIJAKAN & TRANSPARANSI ============ */
+.sec-matrix{position:relative;padding:70px 80px;background:linear-gradient(180deg,#F4FBF9 0%,#FFFFFF 100%);border-bottom:1px solid rgba(11,110,106,.1)}
+.matrix-header{max-width:800px;margin-bottom:45px}
+.matrix-header h2{font-size:28px;font-weight:800;color:var(--teal-deep);margin:0 0 14px;text-transform:uppercase;letter-spacing:.4px}
+.matrix-header p{font-size:15.5px;line-height:1.78;color:var(--ink);margin:0;text-align:justify;text-justify:inter-word}
+
+.matrix-table-wrap{width:100%;overflow-x:auto;border-radius:16px;box-shadow:0 10px 30px rgba(11,59,58,.08);border:1px solid rgba(11,110,106,.15);background:#fff}
+.matrix-table{width:100%;border-collapse:collapse;text-align:left}
+.matrix-table th{background:var(--teal-deep);color:#fff;padding:18px 24px;font-size:14px;font-weight:800;letter-spacing:.5px;text-transform:uppercase}
+.matrix-table td{padding:20px 24px;font-size:14.5px;line-height:1.6;color:var(--ink);border-bottom:1px solid rgba(11,110,106,.08);vertical-align:top}
+.matrix-table tr:last-child td{border-bottom:none}
+.matrix-table tr:nth-child(even) td{background:#F7FCFB}
+.matrix-tag{display:inline-block;font-size:11px;font-weight:700;padding:3px 10px;border-radius:6px;background:rgba(11,110,106,.1);color:var(--teal);letter-spacing:.3px}
+
+/* ============ BAGIAN 5: KUTIPAN KESIMPULAN & CATATAN AKHIR ============ */
+.sec-conclusion{position:relative;padding:70px 80px;background:linear-gradient(135deg,#0B3B3A,#0B6E6A);color:#fff;overflow:hidden}
+.sec-conclusion::before{content:"";position:absolute;top:-50px;right:-50px;width:300px;height:300px;background:radial-gradient(circle,rgba(129,246,239,.15),transparent 70%);border-radius:50%;pointer-events:none}
+.conclusion-box{max-width:900px;margin:0 auto;text-align:center;position:relative;z-index:2}
+.conclusion-badge{display:inline-block;font-size:12px;font-weight:800;letter-spacing:2px;color:var(--cyan);background:rgba(129,246,239,.15);border:1px solid rgba(129,246,239,.3);padding:6px 18px;border-radius:999px;margin-bottom:20px;text-transform:uppercase}
+.conclusion-title{font-size:30px;font-weight:800;color:#fff;margin:0 0 20px;line-height:1.3;text-transform:uppercase;letter-spacing:.5px}
+.conclusion-desc{font-size:16.5px;line-height:1.85;color:rgba(255,255,255,.88);margin:0 0 35px;text-align:justify;text-justify:inter-word}
+.conclusion-actions{display:flex;justify-content:center;gap:16px}
+.btn-primary-action{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:var(--cyan);color:var(--teal-deep);border-radius:999px;font-size:14px;font-weight:800;text-decoration:none;box-shadow:0 6px 20px rgba(0,0,0,.15);transition:background .2s,transform .2s;text-transform:uppercase;letter-spacing:.5px}
+.btn-primary-action:hover{background:#fff;transform:translateY(-2px)}
+.btn-secondary-action{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:rgba(255,255,255,.1);color:#fff;border:2px solid rgba(255,255,255,.3);border-radius:999px;font-size:14px;font-weight:800;text-decoration:none;transition:background .2s,transform .2s;text-transform:uppercase;letter-spacing:.5px}
+.btn-secondary-action:hover{background:rgba(255,255,255,.2);transform:translateY(-2px)}
+
+/* ============ FOOTER UTAMA ============ */
+.sec-footer{position:relative;background:linear-gradient(180deg,var(--teal-deep),var(--teal) 60%,var(--teal-deep));overflow:hidden}
+.footer-main{position:relative;padding:40px 80px 30px}
+.footer-main h2{font-size:22px;font-weight:800;color:#fff;margin:0 0 16px;letter-spacing:.2px;line-height:1.35;text-transform:uppercase}
+.footer-main p{font-size:16px;line-height:1.7;color:rgba(255,255,255,.85);margin:0;text-align:justify;text-justify:inter-word}
+.footer-cols{position:relative;padding:32px 80px 24px;display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px;border-top:1px solid rgba(255,255,255,.1)}
+.footer-brand{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.footer-brand img.icon{width:36px;height:36px;object-fit:contain}
+.footer-brand img.text{width:110px;height:36px;object-fit:contain}
+.footer-desc{font-size:12.5px;line-height:1.65;color:rgba(255,255,255,.7);margin:0 0 16px;text-align:justify;text-justify:inter-word}
+.footer-cols h4{font-size:12px;font-weight:700;color:var(--cyan);letter-spacing:1px;margin:0 0 16px}
+.footer-cols ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:9px}
+.footer-cols ul a{font-size:13px;color:rgba(255,255,255,.75);text-decoration:none}
+.footer-bottom{position:relative;padding:18px 80px;background:rgba(0,0,0,.25);display:flex;align-items:center;gap:28px}
+.footer-copy{font-size:11.5px;color:rgba(255,255,255,.65);line-height:1.55;flex:1;min-width:0}
+.footer-rule{width:1px;align-self:stretch;background:rgba(129,246,239,.2);flex-shrink:0}
+.footer-legal{display:flex;gap:12px;font-size:11px;color:rgba(255,255,255,.5);letter-spacing:.3px;flex-shrink:0;white-space:nowrap}
+
+/* =========================================================
+   MEDIA QUERY RESPONSIVE KHUSUS PERANGKAT HP (MAX 768px)
+   ========================================================= */
+@media (max-width: 768px) {
+  body { overflow: auto !important; }
+  #container { position: relative !important; inset: auto !important; height: auto !important; overflow: visible !important; }
+  #wrapper { height: auto !important; overflow: visible !important; }
+  #content { position: relative !important; width: 100% !important; transform: none !important; zoom: 1 !important; }
+
+  .sub-hero { padding: 30px 20px 40px !important; }
+  .site-header { flex-direction: column !important; align-items: stretch !important; gap: 15px; margin-bottom: 25px; }
+  .site-nav { width: 100% !important; justify-content: space-between !important; gap: 8px; padding: 10px 14px; overflow-x: auto; }
+  .nav-link { font-size: 12.5px !important; white-space: nowrap; }
+  .sub-hero-title { font-size: 26px !important; }
+  .sub-hero-desc { font-size: 15px !important; }
+
+  .sections { width: 100% !important; }
+  .sec-perspective, .sec-pillars, .sec-workflow, .sec-matrix, .sec-conclusion { padding: 40px 20px !important; }
+  
+  .persp-grid { grid-template-columns: 1fr !important; gap: 30px !important; }
+  .persp-card-stack { height: 260px !important; }
+  .persp-card.c1 { width: 280px !important; height: 210px !important; }
+  .persp-card.c2 { width: 270px !important; height: 200px !important; left: 50px !important; top: 50px !important; }
+
+  .pillars-grid { grid-template-columns: 1fr !important; gap: 20px !important; }
+  .wf-timeline { grid-template-columns: 1fr !important; gap: 20px !important; }
+  
+  .matrix-table th, .matrix-table td { padding: 12px 14px !important; font-size: 13px !important; }
+  .conclusion-title { font-size: 22px !important; }
+  .conclusion-actions { flex-direction: column !important; }
+
+  .footer-cols { grid-template-columns: 1fr !important; gap: 25px !important; padding: 30px 20px !important; }
+  .footer-bottom { padding: 20px !important; flex-direction: column !important; align-items: flex-start !important; gap: 15px !important; }
+  .footer-rule { display: none !important; }
+}
+</style>
+</head>
+<body>
+<main id="container">
+  <div id="wrapper">
+    <div id="content">
+
+      <!-- ============ HEADER & HERO SUB-MENU ============ -->
+      <section class="sub-hero">
+        <header class="site-header">
+          <a class="logo-pill" href="index.html">
+            <img class="icon" src="1000007372.png" alt="Infotrink logo">
+            <img class="text" src="1000007373.png" alt="Infotrink">
+          </a>
+          <nav class="site-nav">
+            <a class="nav-link" href="index.html">Beranda</a>
+            <a class="nav-link on" href="media-informasi.html">Publikasi</a>
+            <a class="nav-link" href="pembangunan.html">Informasi</a>
+            <a class="nav-link" href="visual-infografis.html">Galeri</a>
+            <a class="nav-link" href="mengenal-infotrink.html"><span translate="no">Mengenal INFOTRINK</span></a>
+          </nav>
+        </header>
+
+        <div class="sub-hero-content">
+          <div class="pill-badge">Sub-Menu Publikasi • Pusat Penjelasan</div>
+          <h1 class="sub-hero-title">Media Informasi &amp; Penjelasan Komprehensif</h1>
+          <p class="sub-hero-desc">Halaman khusus ini didedikasikan untuk menghimpun, menguraikan, dan menyajikan seluruh penjabaran substantif mengenai berbagai inisiatif, riset, serta catatan perkembangan yang dikelola di dalam ekosistem <span translate="no">INFOTRINK</span>. Disusun secara sistematis agar setiap arah gagasan, latar belakang perintisan, dan konteks pelaksanaannya dapat dipahami secara transparan, mendalam, dan bermakna bagi siapa saja yang menelusurinya.</p>
+        </div>
+      </section>
+
+      <!-- ============ KONTEN UTAMA HALAMAN PANJANG ============ -->
+      <div class="sections">
+
+        <!-- BAGIAN 1: PERSPEKTIF & DEFINISI -->
+        <section class="sec-perspective">
+          <div class="persp-grid">
+            <div class="persp-visual">
+              <div class="persp-card-stack">
+                <div class="persp-card c1">
+                  <span class="persp-num">01 / KONTEKS UTAMA</span>
+                  <p class="persp-txt">Penyajian informasi yang jujur pada posisinya, memisahkan antara gagasan konseptual dan realisasi lapangan tanpa ada pembesaran atau pengecilan fakta.</p>
+                </div>
+                <div class="persp-card c2">
+                  <span class="persp-num">02 / VISI JANGKA PANJANG</span>
+                  <p class="persp-txt">Arsip hidup yang terus diperbarui secara berkala, memastikan setiap kemajuan terekam rapi dan tidak berhenti pada versi masa lalu.</p>
+                </div>
+              </div>
+            </div>
+            <div class="persp-content">
+              <div class="pill-badge">FILOSOFI PEMBERITAAN</div>
+              <h2>Menjaga Integritas Makna di Balik Setiap Dokumentasi</h2>
+              <p>Di tengah derasnya arus informasi instan yang cepat berganti dan mudah terlupakan, keberadaan media informasi yang terstruktur menjadi sangat krusial. <span translate="no">INFOTRINK</span> memandang bahwa setiap karya, riset, atau proyek pembangunan tidak berdiri secara kebetulan; ia lahir dari rangkaian pemikiran yang matang dan proses perintisan yang panjang.</p>
+              <p>Oleh karena itu, setiap penjelasan yang dimuat dalam kanal ini dirumuskan dengan standar kebahasaan yang formal, objektif, dan berwibawa. Tujuannya bukan sekadar menyampaikan berita, melainkan memberikan pemahaman kontekstual yang utuh mengenai alasan di balik sebuah gagasan, tantangan yang dihadapi selama perjalanannya, serta arah pertumbuhan yang hendak dicapai di masa depan.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- BAGIAN 2: 4 PILAR UTAMA INFORMASI -->
+        <section class="sec-pillars">
+          <div class="pillars-header">
+            <div class="pill-badge">STRUKTUR UTAMA</div>
+<h2>Pilar Penjabaran dan Klasifikasi Materi</h2>
+            <p>Untuk memudahkan penelusuran, seluruh materi informasi dan penjelasan di dalam platform ini dikelompokkan ke dalam empat pilar utama yang masing-masing memiliki fokus pembahasan dan standar dokumentasi tersendiri.</p>
+          </div>
+          <div class="pillars-grid">
+            <div class="pillar-card">
+              <div>
+                <div class="pillar-icon-box">01</div>
+                <h3 class="pillar-title">Kajian Konseptual</h3>
+                <p class="pillar-desc">Mengupas tuntas rumusan gagasan awal sebelum sebuah inisiatif diterjemahkan menjadi bentuk perencanaan operasional yang terarah.</p>
+              </div>
+            </div>
+            <div class="pillar-card">
+              <div>
+                <div class="pillar-icon-box">02</div>
+                <h3 class="pillar-title">Catatan Perintisan</h3>
+                <p class="pillar-desc">Merekam langkah-langkah awal di lapangan, mencakup penyiapan infrastruktur, penataan kerangka kerja, hingga penentuan arah prioritas.</p>
+              </div>
+            </div>
+            <div class="pillar-card">
+              <div>
+                <div class="pillar-icon-box">03</div>
+                <h3 class="pillar-title">Perkembangan Terkini</h3>
+                <p class="pillar-desc">Pembaruan berkala yang melaporkan progres aktual dari setiap lini kegiatan, memastikan informasi senantiasa selaras dengan kondisi riil.</p>
+              </div>
+            </div>
+            <div class="pillar-card">
+              <div>
+                <div class="pillar-icon-box">04</div>
+                <h3 class="pillar-title">Sinergi &amp; Perluasan</h3>
+                <p class="pillar-desc">Penjelasan mengenai kolaborasi lintas sektor serta ruang tumbuh baru yang diintegrasikan ke dalam ekosistem platform.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- BAGIAN 3: ALUR PENYUSUNAN & VERIFIKASI -->
+        <section class="sec-workflow">
+          <div class="wf-header">
+            <div class="pill-badge">STANDAR OPERASIONAL</div>
+            <h2>Alur Penyusunan, Riset, dan Verifikasi Data</h2>
+            <p>Setiap naskah, laporan, dan lembar penjelasan yang diterbitkan melalui media informasi ini melalui tahapan kurasi yang ketat guna menjaga mutu, objektivitas, serta akurasi rujukan.</p>
+          </div>
+          <div class="wf-timeline">
+            <div class="wf-step">
+              <span class="wf-step-num">TAHAP PERTAMA</span>
+              <h3 class="wf-step-title">Pengumpulan &amp; Kajian Sumber</h3>
+              <p class="wf-step-desc">Materi mentah dikumpulkan dari dokumen riset, catatan lapangan, dan data autentik yang relevan dengan bidang yang dibahas, lalu ditelaah secara mendalam.</p>
+            </div>
+            <div class="wf-step">
+              <span class="wf-step-num">TAHAP KEDUA</span>
+              <h3 class="wf-step-title">Penyusunan Narasi &amp; Konteks</h3>
+              <p class="wf-step-desc">Informasi disusun ke dalam format penulisan yang terstruktur rapi, menjaga netralitas bahasa, serta memastikan konteks waktu dan peristiwanya tersampaikan dengan akurat.</p>
+            </div>
+            <div class="wf-step">
+              <span class="wf-step-num">TAHAP KETIGA</span>
+              <h3 class="wf-step-title">Pembaruan &amp; Pemeliharaan Berkala</h3>
+              <p class="wf-step-desc">Setiap catatan terus dievaluasi secara berkala. Apabila terdapat perkembangan baru atau penyesuaian data, pembaruan langsung disematkan agar arsip tetap relevan.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- BAGIAN 4: TABEL MATRIKS KEBIJAKAN & TRANSPARANSI -->
+        <section class="sec-matrix">
+          <div class="matrix-header">
+            <div class="pill-badge">TRANSPARANSI PUBLIKASI</div>
+            <h2>Matriks Batasan dan Prinsip Penyajian Informasi</h2>
+            <p>Untuk menghindari kesalahpahaman publik mengenai status hukum dan kepemilikan materi yang dibagikan, tabel berikut merangkum batasan tegas yang dipegang teguh oleh <span translate="no">INFOTRINK</span>.</p>
+          </div>
+          <div class="matrix-table-wrap">
+            <table class="matrix-table">
+              <thead>
+                <tr>
+                  <th>Aspek Peninjauan</th>
+                  <th>Prinsip &amp; Kebijakan Platform</th>
+                  <th>Keterangan / Batasan Operasional</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Status Kepemilikan</strong></td>
+                  <td><span class="matrix-tag">Bukan Pemilik</span></td>
+                  <td>Platform tidak memiliki atau membawahi entitas yang didokumentasikan; setiap lini dikelola secara mandiri oleh pihak aslinya.</td>
+                </tr>
+                <tr>
+                  <td><strong>Tujuan Publikasi</strong></td>
+                  <td><span class="matrix-tag">Pusat Dokumentasi</span></td>
+                  <td>Berfungsi murni sebagai sarana informasi, penjabaran, riset, dan pengarah (rujukan) menuju sumber resmi kegiatan terkait.</td>
+                </tr>
+                <tr>
+                  <td><strong>Keakuratan Waktu</strong></td>
+                  <td><span class="matrix-tag">Selalu Diperbarui</span></td>
+                  <td>Catatan kemajuan ditambahkan secara berkelanjutan agar pembaca tidak berpedoman pada informasi yang sudah kedaluwarsa.</td>
+                </tr>
+                <tr>
+                  <td><strong>Standar Bahasa</strong></td>
+                  <td><span class="matrix-tag">Formal &amp; Objektif</span></td>
+                  <td>Menggunakan tata bahasa Indonesia yang baik, terstruktur rapi, rata kanan-kiri, serta menghindari gaya bahasa yang berlebihan.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- BAGIAN 5: KESIMPULAN & ARAH LANJUTAN -->
+        <section class="sec-conclusion">
+          <div class="conclusion-box">
+            <span class="conclusion-badge">KOMITMEN BERKELANJUTAN</span>
+            <h2 class="conclusion-title">Menghubungkan Gagasan dengan Pemahaman yang Utuh</h2>
+            <p class="conclusion-desc">Media Informasi &amp; Penjelasan akan terus dikembangkan sebagai jembatan pengetahuan yang andal. Melalui komitmen terhadap ketelitian, transparansi, dan kerapian penyajian, setiap perjalanan gagasan di dalam ekosistem ini dapat terus dikenali, dipelajari, dan dihargai dari masa ke masa.</p>
+            <div class="conclusion-actions">
+              <a class="btn-primary-action" href="index.html">← Kembali ke Beranda</a>
+              <a class="btn-secondary-action" href="mengenal-infotrink.html">Kenali Lebih Jauh</a>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- ============ FOOTER UTAMA ============ -->
+      <footer class="sec-footer">
+        <div class="footer-main">
+          <h2>Dokumentasi yang Terhimpun Menanti untuk Ditelusuri</h2>
+          <p>Berbagai gagasan, karya, dan inisiatif telah terdokumentasi dalam satu wadah yang terstruktur. Setiap catatan memuat konteks dan tahapan perkembangannya sehingga siap dijelajahi dan dimanfaatkan kembali kapan saja.</p>
+        </div>
+        <div class="footer-cols">
+          <div>
+            <div class="footer-brand"><img class="icon" src="1000007372.png" alt="Infotrink"><img class="text" src="1000007373.png" alt="Infotrink"></div>
+            <p class="footer-desc">Tempat perjalanan gagasan dan karya diperkenalkan melalui informasi dan dokumentasi.</p>
+          </div>
+          <div>
+            <h4>NAVIGASI</h4>
+            <ul>
+              <li><a href="index.html">Beranda</a></li>
+              <li><a href="media-informasi.html">Publikasi</a></li>
+              <li><a href="pembangunan.html">Informasi</a></li>
+              <li><a href="visual-infografis.html">Galeri</a></li>
+              <li><a href="mengenal-infotrink.html"><span translate="no">Mengenal INFOTRINK</span></a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>BIDANG</h4>
+            <ul>
+              <li><a href="pembangunan.html">Media Digital</a></li>
+              <li><a href="pembangunan.html">Pembangunan</a></li>
+              <li><a href="pembangunan.html">Personal</a></li>
+              <li><a href="pembangunan.html">Bidang Lainnya</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>JENIS MATERI</h4>
+            <ul>
+              <li><a href="media-informasi.html">Media Informasi</a></li>
+              <li><a href="media-informasi.html">Hasil Riset</a></li>
+              <li><a href="media-informasi.html">Kajian &amp; Analisis</a></li>
+              <li><a href="media-informasi.html">Laporan &amp; Progres</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="footer-copy">© 2026 <span translate="no">INFOTRINK</span>. Hak cipta dilindungi. Seluruh materi yang dipublikasikan merupakan hasil riset, kajian, pemikiran, dan dokumentasi yang dikelola secara terstruktur untuk kepentingan pengetahuan.</div>
+          <div class="footer-rule"></div>
+          <div class="footer-legal"><span>Syarat &amp; Ketentuan</span><span>•</span><span>Kebijakan Privasi</span></div>
+        </div>
+      </footer>
+
+    </div>
+  </div>
+</main>
+
+<script>
+(function(){
+"use strict";
+var $ = function(s,c){ return (c||document).querySelector(s); };
+var $$ = function(s,c){ return Array.prototype.slice.call((c||document).querySelectorAll(s)); };
+
+function updateScale(){
+  if(window.innerWidth <= 768) return;
+  var el = $("#container"); if(!el) return;
+  var scale = Math.max(el.clientWidth/1280, 0.5);
+  var c = $("#content"); if(c && scale>0) c.style.zoom = scale;
+  var h = c.scrollHeight * scale;
+  if(h>0){ var w=$("#wrapper"); if(w) w.style.height = h+"px"; }
+}
+
+function init(){
+  if(window.innerWidth > 768){
+    updateScale();
+    window.addEventListener("resize", updateScale);
+  }
+}
+if(document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
+else init();
+})();
+</script>
+</body>
+</html>
