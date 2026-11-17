@@ -86,7 +86,7 @@ body.menu-locked #container{overflow:hidden}
 .overlay-menu.open .ov-x{opacity:1;transform:scale(1) rotate(0);transition-delay:.55s}
 .overlay-menu.open .ov-x:hover{background:#d32f2f;transform:scale(1.1) rotate(0);transition-delay:0s}
 
-/* ============ KONTEN HALAMAN 1: MEDIA INFORMASI & PENJELASAN ============ */
+/* ============ KONTEN HALAMAN 1 (BAGIAN AWAL) ============ */
 .page-body{margin:40px 70px 0;flex:1;display:flex;flex-direction:column;gap:52px;padding-bottom:50px}
 
 /* HERO SECTION */
@@ -124,27 +124,7 @@ body.menu-locked #container{overflow:hidden}
 .fc-badge{font-size:11.5px;font-weight:700;padding:5px 12px;border-radius:999px;background:rgba(11,110,106,.1);color:var(--teal)}
 .fc-h3{font-size:18px;font-weight:800;color:var(--teal-deep);margin:0 0 10px;line-height:1.4}
 .fc-p{font-size:14px;line-height:1.7;color:var(--ink);margin:0}
-.fc-foot{margin-top:20px;padding-top:14px;border-top:1px dashed rgba(11,59,58,.14);font-size:12.5px;font-weight:700;color:var(--teal)}
-
-/* SEKSI PENJELASAN UTAMA & FILOSOFI PUSAT AKSES */
-.core-shell{background:var(--glass-strong);backdrop-filter:blur(16px);border-radius:28px;padding:40px;border:1px solid var(--border-glass);box-shadow:0 16px 40px rgba(11,59,58,.07);display:grid;grid-template-columns:1.2fr 1fr;gap:36px;align-items:center}
-.cs-title{font-size:24px;font-weight:800;color:var(--teal-deep);margin:0 0 14px;line-height:1.35}
-.cs-text{font-size:14.5px;line-height:1.75;color:var(--ink);margin:0 0 16px}
-.cs-box-list{display:flex;flex-direction:column;gap:12px}
-.cs-item{background:#F0FAF8;border:1px solid rgba(11,110,106,.16);border-radius:16px;padding:16px 20px;display:flex;align-items:flex-start;gap:14px}
-.cs-item-icon{width:28px;height:28px;border-radius:50%;background:var(--teal);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;flex-shrink:0;margin-top:2px}
-.cs-item-content strong{display:block;font-size:14px;color:var(--teal-deep);margin-bottom:3px}
-.cs-item-content p{margin:0;font-size:13px;line-height:1.6;color:var(--ink)}
-
-/* BANNER PENUTUP HALAMAN 1 */
-.closing-banner{background:linear-gradient(120deg,rgba(255,255,255,.96) 0%,rgba(232,254,252,.96) 100%);border:1px solid rgba(11,110,106,.22);border-radius:28px;padding:36px 42px;box-shadow:0 16px 40px rgba(11,59,58,.08);display:grid;grid-template-columns:1.5fr 1fr;gap:32px;align-items:center}
-.cb-title{font-size:22px;font-weight:800;color:var(--teal-deep);margin:0 0 10px}
-.cb-text{font-size:14.5px;line-height:1.75;color:var(--ink);margin:0}
-.cb-actions{display:flex;flex-direction:column;gap:10px;background:#F0FAF8;padding:20px;border-radius:18px;border:1px solid rgba(11,110,106,.15)}
-.cb-cta{display:flex;align-items:center;justify-content:space-between;padding:12px 18px;border-radius:12px;background:var(--teal);color:#fff;text-decoration:none;font-size:13.5px;font-weight:700;transition:background .2s,transform .2s}
-.cb-cta:hover{background:var(--teal-deep);transform:translateX(3px)}
-.cb-cta.secondary{background:#fff;color:var(--teal-deep);border:1px solid rgba(11,110,106,.2)}
-.cb-cta.secondary:hover{background:#E3F6F2}
+.fc-foot{margin-top:20px;padding-top:14px;border-top:1px dashed rgba(11,110,106,.14);font-size:12.5px;font-weight:700;color:var(--teal)}
 
 /* FOOTER */
 .site-footer{margin:34px 70px 0;padding-top:22px;border-top:1px solid rgba(11,59,58,.14);display:flex;align-items:center;justify-content:space-between;font-size:13px;color:var(--teal-soft);font-weight:600}
@@ -171,8 +151,8 @@ body.menu-locked #container{overflow:hidden}
   .ov-svg { display: none !important; }
 
   .page-body { margin: 20px 0 0 !important; gap: 28px !important; }
-  .pub-hero, .format-bento, .core-shell, .closing-banner { grid-template-columns: 1fr !important; }
-  .pub-hero-left, .pub-hero-right, .format-card, .core-shell, .closing-banner { padding: 24px 20px !important; border-radius: 20px !important; }
+  .pub-hero, .format-bento { grid-template-columns: 1fr !important; }
+  .pub-hero-left, .pub-hero-right, .format-card { padding: 24px 20px !important; border-radius: 20px !important; }
   .pub-h1 { font-size: 26px !important; }
   .pr-quote { font-size: 16px !important; }
   .sec-head { flex-direction: column !important; align-items: flex-start !important; }
@@ -203,7 +183,7 @@ body.menu-locked #container{overflow:hidden}
             </nav>
           </header>
 
-          <!-- ============ KONTEN UTAMA HALAMAN 1: MEDIA INFORMASI & PENJELASAN ============ -->
+          <!-- ============ KONTEN BAGIAN AWAL HALAMAN 1 ============ -->
           <div class="page-body">
 
             <!-- KONTEN 1: HERO UTAMA PLATFORM -->
@@ -297,75 +277,6 @@ body.menu-locked #container{overflow:hidden}
                     </p>
                   </div>
                   <div class="fc-foot">Navigasi Terarah bagi Publik</div>
-                </div>
-              </div>
-            </section>
-
-            <!-- KONTEN 3: FILOSOFI PUSAT AKSES & REKAM PERJALANAN -->
-            <section>
-              <div class="sec-head">
-                <div>
-                  <span class="sec-eyebrow">02 / Esensi &amp; Tujuan</span>
-                  <h2 class="sec-title">Pusat Informasi &amp; Dokumentasi Terpadu</h2>
-                </div>
-                <p class="sec-sub">Menghubungkan berbagai inisiatif yang sedang dirintis, dibangun, dan dikembangkan dalam satu kendali terstruktur.</p>
-              </div>
-
-              <div class="core-shell">
-                <div>
-                  <h3 class="cs-title">Bukan Hanya Hasil Akhir, Melainkan Proses yang Bertumbuh</h3>
-                  <p class="cs-text">
-                    Inti paling kuat dari <strong translate="no">INFOTRINK</strong> adalah komitmen untuk memperlihatkan apa yang sedang dibangun, apa yang sedang berkembang, dan bagaimana semuanya terbentuk dari waktu ke waktu.
-                  </p>
-                  <p class="cs-text">
-                    Setiap perusahaan, proyek teknologi, riset, maupun karya personal mempunyai catatan perjalanan tersendiri yang disajikan secara transparan tanpa klaim berlebihan.
-                  </p>
-                </div>
-                <div class="cs-box-list">
-                  <div class="cs-item">
-                    <div class="cs-item-icon">✓</div>
-                    <div class="cs-item-content">
-                      <strong>Satu Pintu Akses Terstruktur</strong>
-                      <p>Menyatukan informasi dari berbagai platform dan media yang sebelumnya tersebar.</p>
-                    </div>
-                  </div>
-                  <div class="cs-item">
-                    <div class="cs-item-icon">✓</div>
-                    <div class="cs-item-content">
-                      <strong>Transparansi Status Riil</strong>
-                      <p>Membedakan dengan tegas antara gagasan konseptual, tahap persiapan, hingga operasional nyata.</p>
-                    </div>
-                  </div>
-                  <div class="cs-item">
-                    <div class="cs-item-icon">✓</div>
-                    <div class="cs-item-content">
-                      <strong>Dokumentasi Jangka Panjang</strong>
-                      <p>Terus bertumbuh mengikuti perkembangan inisiatif dari masa perintisan hingga masa depan.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-
-            <!-- KONTEN 4: BANNER PENUTUP HALAMAN 1 -->
-            <section>
-              <div class="closing-banner">
-                <div>
-                  <span class="sec-eyebrow">03 / Kelanjutan Navigasi</span>
-                  <h2 class="cb-title">Telusuri Lebih Lanjut Ruang Lingkup INFOTRINK</h2>
-                  <p class="cb-text">
-                    Pahami lebih mendalam bagaimana seluruh entitas, perusahaan, proyek pembangunan, dan karya personal diklasifikasikan dalam struktur platform ini.
-                  </p>
-                </div>
-                <div class="cb-actions">
-                  <a class="cb-cta" href="mengenal-infotrink.html">
-                    <span>Pelajari Halaman Mengenal INFOTRINK</span>
-                    <span>&rarr;</span>
-                  </a>
-                  <a class="cb-cta secondary" href="#" onclick="openMenu('Publikasi'); return false;">
-                    <span>Lihat Daftar Menu Publikasi Lainnya</span>
-                    <span>&rarr;</span>
-                  </a>
                 </div>
               </div>
             </section>
