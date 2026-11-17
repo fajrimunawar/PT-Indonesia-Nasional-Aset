@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-/* ============ VARIABEL & DASAR (SCROLL ALAMI & STABIL) ============ */
+/* ============ VARIABEL & DASAR ============ */
 :root{
   --teal-deep:#0B3B3A;
   --teal:#0B6E6A;
@@ -33,7 +33,7 @@ body{font-family:var(--font);background:var(--bg-grad);color:var(--teal-deep);-w
 body.menu-locked{overflow:hidden}
 
 /* ============ HEADER & NAVIGASI ============ */
-.slide{position:relative;width:100%;max-width:1280px;margin:0 auto;min-height:520px;overflow:hidden;background:transparent;padding-bottom:20px}
+.slide{position:relative;width:100%;max-width:1280px;margin:0 auto;min-height:220px;overflow:hidden;background:transparent;padding-bottom:20px}
 .hero-dim{transition:opacity .3s ease}
 .slide.menu-open .hero-dim{opacity:.22;pointer-events:none}
 
@@ -47,23 +47,15 @@ body.menu-locked{overflow:hidden}
 .nav-link.on{font-weight:700;color:var(--teal);border-bottom-color:var(--teal)}
 
 /* ============ BREADCRUMB / JEJAK NAVIGASI ============ */
-.breadcrumb-wrap{display:flex;align-items:center;gap:10px;margin-bottom:14px;font-size:13px;font-weight:700;color:var(--teal-soft);letter-spacing:.5px}
+.breadcrumb-container{max-width:1280px;margin:20px 70px 0 70px;position:relative;z-index:5}
+.breadcrumb-wrap{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:700;color:var(--teal-soft);letter-spacing:.5px}
 .breadcrumb-wrap a{color:var(--teal);text-decoration:none;transition:color .2s}
 .breadcrumb-wrap a:hover{color:var(--teal-deep)}
 .breadcrumb-wrap .separator{color:var(--teal);font-weight:800}
 .breadcrumb-wrap .current{color:var(--teal-deep);font-weight:800}
 
-/* ============ HERO HALAMAN ============ */
-.page-hero-content{padding:40px 70px 30px 70px;position:relative;z-index:5;max-width:1280px;margin:0 auto}
-.pill-badge{display:inline-block;font-size:13px;font-weight:700;color:var(--teal);background:rgba(11,110,106,.1);padding:6px 14px;border-radius:999px;letter-spacing:1px;margin-bottom:14px}
-.page-title{font-weight:800;font-size:38px;line-height:1.25;color:var(--teal-deep);letter-spacing:-.5px;text-transform:uppercase;margin:0 0 16px 0}
-.page-lede{font-size:17px;line-height:1.8;color:var(--ink);text-align:justify;text-justify:inter-word;max-width:1040px;margin:0}
-
-/* ============ AREA KONTEN KOSONG (SIAP DIISI SENDIRI) ============ */
-.custom-content-area{max-width:1280px;margin:0 auto;padding:40px 70px;min-height:350px;background:#fff;border-top:1px solid rgba(11,110,106,.15);border-bottom:1px solid rgba(11,110,106,.15)}
-.empty-placeholder-box{border:2px dashed rgba(11,110,106,.3);background:linear-gradient(135deg,#F0FAF8,#DCF3EC);border-radius:20px;padding:50px 30px;text-align:center;color:var(--teal-deep)}
-.empty-placeholder-box h3{font-size:20px;font-weight:800;margin:0 0 10px;text-transform:uppercase}
-.empty-placeholder-box p{font-size:14.5px;color:var(--teal-soft);margin:0;max-width:600px;margin-left:auto;margin-right:auto;line-height:1.6}
+/* ============ AREA UTAMA KOSONG (BEBAS DIISI) ============ */
+.main-content-area{max-width:1280px;margin:30px auto;padding:0 70px;min-height:200px}
 
 /* ============ DAFTAR ISI OVERLAY ============ */
 .overlay-menu{position:fixed;inset:0;visibility:hidden;pointer-events:none;transition:visibility 0s linear .7s;z-index:100}
@@ -98,7 +90,7 @@ body.menu-locked{overflow:hidden}
 .overlay-menu.open .ov-x:hover{background:#d32f2f;transform:scale(1.1) rotate(0);transition-delay:0s}
 
 /* ============ FOOTER UTAMA (UTUH & AMAN) ============ */
-.sec-footer{position:relative;background:linear-gradient(180deg,var(--teal-deep),var(--teal) 60%,var(--teal-deep));overflow:hidden;width:100%}
+.sec-footer{position:relative;background:linear-gradient(180deg,var(--teal-deep),var(--teal) 60%,var(--teal-deep));overflow:hidden;width:100%;margin-top:40px}
 .sec-footer .blob{position:absolute;border-radius:50%}
 .sec-footer .b1{top:-150px;right:-150px;width:400px;height:400px;background:rgba(129,246,239,.08)}
 .sec-footer .b2{bottom:-100px;left:-100px;width:300px;height:300px;background:rgba(129,246,239,.06)}
@@ -130,12 +122,9 @@ body.menu-locked{overflow:hidden}
   .site-nav { width: 100% !important; justify-content: space-between !important; gap: 8px; padding: 10px 14px; overflow-x: auto; }
   .nav-link { font-size: 12.5px !important; white-space: nowrap; }
 
-  .page-hero-content { padding: 20px 20px 10px 20px !important; }
-  .page-title { font-size: 24px !important; }
-  .page-lede { font-size: 14.5px !important; }
+  .breadcrumb-container { margin: 15px 20px 0 20px !important; }
+  .main-content-area { padding: 0 20px !important; }
 
-  .custom-content-area { padding: 30px 20px !important; }
-  
   .footer-cols { padding: 30px 20px !important; grid-template-columns: 1fr !important; gap: 25px !important; }
   .footer-bottom { padding: 20px !important; flex-direction: column !important; align-items: flex-start !important; gap: 15px !important; }
   .footer-rule { display: none !important; }
@@ -167,33 +156,26 @@ body.menu-locked{overflow:hidden}
           <a class="nav-link" href="mengenal-infotrink.html" data-nav="Mengenal INFOTRINK"><span translate="no">Mengenal INFOTRINK</span></a>
         </nav>
       </header>
-
-      <div class="page-hero-content">
-        <!-- JEJAK NAVIGASI / BREADCRUMB -->
-        <div class="breadcrumb-wrap">
-          <a href="index.html">Beranda</a>
-          <span class="separator">›</span>
-          <a href="#">Publikasi</a>
-          <span class="separator">›</span>
-          <span class="current">Media Informasi & Penjelasan</span>
-        </div>
-
-        <div class="pill-badge">PUSAT PUBLIKASI &amp; PENJELASAN KOMPREHENSIF</div>
-        <h1 class="page-title">Media Informasi &amp; Penjelasan Mendalam</h1>
-        <p class="page-lede">Menghimpun seluruh khazanah literatur, tinjauan strategis, dan dokumentasi terstruktur dari berbagai lini perjalanan gagasan. Setiap arsip disajikan secara transparan, analitis, dan berwibawa guna memberikan pemahaman utuh mengenai proses perintisan hingga perwujudannya.</p>
-      </div>
     </div>
 
     <div class="overlays" data-overlays></div>
   </div>
 
-  <!-- ============ AREA KONTEN KOSONG (SIAP ANDA ISI SENDIRI) ============ -->
-  <section class="custom-content-area">
-    <div class="empty-placeholder-box">
-      <h3>Area Konten Kosong</h3>
-      <p>Seluruh isi penyampaian artikel lama telah dibersihkan sesuai permintaan Anda. Anda dapat mulai menyusun dan menulis halaman Anda sendiri di area ini.</p>
+  <!-- JEJAK NAVIGASI / BREADCRUMB -->
+  <div class="breadcrumb-container">
+    <div class="breadcrumb-wrap">
+      <a href="index.html">Beranda</a>
+      <span class="separator">›</span>
+      <a href="#">Publikasi</a>
+      <span class="separator">›</span>
+      <span class="current">Media Informasi & Penjelasan</span>
     </div>
-  </section>
+  </div>
+
+  <!-- ============ AREA UTAMA KOSONG (BEBAS DISUSUN SENDIRI) ============ -->
+  <main class="main-content-area">
+    <!-- Silakan ketik atau susun halaman Anda sendiri di sini -->
+  </main>
 
   <!-- ============ FOOTER UTAMA (HAK CIPTA TETAP UTUH & AMAN) ============ -->
   <footer class="sec-footer">
