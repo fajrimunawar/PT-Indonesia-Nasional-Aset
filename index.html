@@ -397,12 +397,15 @@ body.menu-locked #container{overflow:hidden}
   .dom-title-panel, .dom-desc-panel { padding: 24px 20px !important; width: 100% !important; }
   .dom-desc-points { grid-template-columns: 1fr !important; }
 
-  /* Responsive Showcase - FIXED: Active slide handling */
+  /* Responsive Showcase - Perbaikan Gambar Kepotong & Tata Letak */
   .sec-showcase { padding: 40px 20px !important; }
   .showcase-header h2 { font-size: 22px !important; }
   .showcase-slide { display: none !important; flex-direction: column !important; gap: 24px !important; }
   .showcase-slide.active { display: flex !important; }
-  .showcase-img-frame { height: 220px !important; }
+  .showcase-visual-col { width: 100% !important; }
+  .showcase-visual-col::before { display: none !important; }
+  .showcase-img-frame { width: 100% !important; height: auto !important; aspect-ratio: 16/10 !important; }
+  .showcase-img-frame img { width: 100% !important; height: 100% !important; object-fit: cover !important; }
 
   .sec-quote .body { padding: 40px 20px !important; }
   .sec-quote h2 { font-size: 24px !important; white-space: normal !important; }
