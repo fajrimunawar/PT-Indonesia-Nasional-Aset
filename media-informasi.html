@@ -38,7 +38,7 @@ body.menu-locked #container{overflow:hidden}
 @keyframes marqueeFoot{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
 /* ============ HEADER & NAVIGASI ============ */
-.slide{position:relative;width:1280px;height:auto;min-height:620px;overflow:hidden;background:var(--bg-grad);padding-bottom:50px}
+.slide{position:relative;width:1280px;height:auto;min-height:600px;overflow:hidden;background:var(--bg-grad);padding-bottom:40px}
 .hero-dim{transition:opacity .3s ease}
 .slide.menu-open .hero-dim{opacity:.22;pointer-events:none}
 
@@ -51,13 +51,20 @@ body.menu-locked #container{overflow:hidden}
 .nav-link:hover{color:var(--teal)}
 .nav-link.on{font-weight:700;color:var(--teal);border-bottom-color:var(--teal)}
 
+/* ============ BREADCRUMB / JEJAK NAVIGASI ============ */
+.breadcrumb-wrap{display:flex;align-items:center;gap:10px;margin-bottom:14px;font-size:13px;font-weight:700;color:var(--teal-soft);letter-spacing:.5px}
+.breadcrumb-wrap a{color:var(--teal);text-decoration:none;transition:color .2s}
+.breadcrumb-wrap a:hover{color:var(--teal-deep)}
+.breadcrumb-wrap .separator{color:var(--teal);font-weight:800}
+.breadcrumb-wrap .current{color:var(--teal-deep);font-weight:800}
+
 /* ============ HERO HALAMAN ============ */
-.page-hero-content{padding:50px 70px 10px 70px;position:relative;z-index:5}
-.pill-badge{display:inline-block;font-size:13px;font-weight:700;color:var(--teal);background:rgba(11,110,106,.1);padding:6px 14px;border-radius:999px;letter-spacing:1px;margin-bottom:16px}
+.page-hero-content{padding:40px 70px 10px 70px;position:relative;z-index:5}
+.pill-badge{display:inline-block;font-size:13px;font-weight:700;color:var(--teal);background:rgba(11,110,106,.1);padding:6px 14px;border-radius:999px;letter-spacing:1px;margin-bottom:14px}
 .page-title{font-weight:800;font-size:38px;line-height:1.25;color:var(--teal-deep);letter-spacing:-.5px;text-transform:uppercase;margin:0 0 16px 0}
 .page-lede{font-size:17px;line-height:1.8;color:var(--ink);text-align:justify;text-justify:inter-word;max-width:1040px;margin:0}
 
-/* ============ SECTION UMUM & VARIASI KONTEN PANJANG ============ */
+/* ============ KONTEN UTAMA YANG DIPERBARUI & DIPERPANJANG ============ */
 .content-section{position:relative;padding:60px 70px;background:#fff;border-top:1px solid rgba(11,110,106,.15);border-bottom:1px solid rgba(11,110,106,.15)}
 .content-section.alt-bg{background:linear-gradient(180deg,#F7FCFB 0%,#FFFFFF 50%,#F4FBF9 100%)}
 
@@ -77,7 +84,7 @@ body.menu-locked #container{overflow:hidden}
 .card-link{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:700;color:var(--teal);text-decoration:none;transition:color .2s,transform .2s}
 .card-link:hover{color:var(--teal-deep);transform:translateX(4px)}
 
-/* Layout Artikel Panjang dengan Panel Sorotan */
+/* Layout Artikel Split dengan Panel Sorotan Khusus */
 .article-split{display:grid;grid-template-columns:1fr 420px;gap:40px;align-items:center}
 .article-text p{font-size:15.5px;line-height:1.85;color:var(--ink);margin:0 0 18px 0;text-align:justify}
 .highlight-box{background:linear-gradient(145deg,#0B3B3A 0%,#0E5956 100%);color:#fff;border-radius:20px;padding:34px;box-shadow:0 12px 35px rgba(11,59,58,.2);position:relative;overflow:hidden}
@@ -126,7 +133,7 @@ body.menu-locked #container{overflow:hidden}
 .overlay-menu.open .ov-x{opacity:1;transform:scale(1) rotate(0);transition-delay:.55s}
 .overlay-menu.open .ov-x:hover{background:#d32f2f;transform:scale(1.1) rotate(0);transition-delay:0s}
 
-/* ============ FOOTER ============ */
+/* ============ FOOTER (TETAP UTUH & AMAN) ============ */
 .sec-footer{position:relative;background:linear-gradient(180deg,var(--teal-deep),var(--teal) 60%,var(--teal-deep));overflow:hidden}
 .sec-footer .blob{position:absolute;border-radius:50%}
 .sec-footer .b1{top:-150px;right:-150px;width:400px;height:400px;background:rgba(129,246,239,.08)}
@@ -219,6 +226,15 @@ body.menu-locked #container{overflow:hidden}
           </header>
 
           <div class="page-hero-content">
+            <!-- JEJAK NAVIGASI / BREADCRUMB -->
+            <div class="breadcrumb-wrap">
+              <a href="index.html">Beranda</a>
+              <span class="separator">›</span>
+              <a href="#">Publikasi</a>
+              <span class="separator">›</span>
+              <span class="current">Media Informasi & Penjelasan</span>
+            </div>
+
             <div class="pill-badge">PUSAT PUBLIKASI &amp; PENJELASAN KOMPREHENSIF</div>
             <h1 class="page-title">Media Informasi &amp; Penjelasan Mendalam</h1>
             <p class="page-lede">Menghimpun seluruh khazanah literatur, tinjauan strategis, dan dokumentasi terstruktur dari berbagai lini perjalanan gagasan. Setiap arsip disajikan secara transparan, analitis, dan berwibawa guna memberikan pemahaman utuh mengenai proses perintisan hingga perwujudannya.</p>
@@ -255,7 +271,7 @@ body.menu-locked #container{overflow:hidden}
         <!-- SECTION 2: KATEGORI ARSIP UTAMA (GRID 3 KOLOM) -->
         <section class="content-section alt-bg">
           <div class="sec-header-block">
-            <div class="pill-badge">BAGIAN II • KLasifikasi PUSTAKA</div>
+            <div class="pill-badge">BAGIAN II • KLASIFIKASI PUSTAKA</div>
             <h2>Pusat Kategori &amp; Topik Penjelasan Terpilih</h2>
             <p>Eksplorasi arsip disusun ke dalam beberapa pilar utama guna memudahkan pembaca menelusuri bidang kajian yang diminati secara spesifik dan mendalam.</p>
           </div>
@@ -359,7 +375,7 @@ body.menu-locked #container{overflow:hidden}
           </div>
         </section>
 
-        <!-- ============ FOOTER ============ -->
+        <!-- ============ FOOTER (UTUH DAN TIDAK DIHAPUS) ============ -->
         <section class="sec-footer">
           <div class="blob b1"></div>
           <div class="blob b2"></div>
