@@ -154,7 +154,6 @@ body.menu-locked #container{overflow:hidden}
 .stage--6{left:831px;top:86px} .stage-label--6{left:770px;top:2px;width:170px}
 .stage--7{left:986px;top:321px} .stage-label--7{left:925px;top:366px;width:170px}
 
-/* Default sembunyikan mobile list di desktop/tablet */
 .mobile-flow-list { display: none !important; }
 
 /* ============ SECTION 2B: PETA BIDANG (POHON HIERARKI) ============ */
@@ -186,7 +185,6 @@ body.menu-locked #container{overflow:hidden}
 .sub--3a{top:300px}.sub--3b{top:362px}.sub--4a{top:448px}.sub--4b{top:510px}
 .tree-note{text-align:center;font-size:12.5px;font-style:italic;color:var(--teal-soft);margin:20px auto 0;max-width:780px;line-height:1.6}
 
-/* Default sembunyikan mobile tree list di desktop/tablet */
 .mobile-tree-list { display: none !important; }
 
 /* ============ SECTION 2C: PENJELASAN EMPAT CABANG BIDANG ============ */
@@ -370,7 +368,6 @@ body.menu-locked #container{overflow:hidden}
   .sec-intro h2 { font-size: 22px !important; white-space: normal !important; }
   .sec-intro p { font-size: 15px !important; }
 
-  /* Tampilkan Mobile Flow List HANYA di Mobile */
   .sec-flow { padding: 40px 20px !important; }
   .sec-flow h2 { font-size: 22px !important; max-width: 100% !important; }
   .flow-chart { display: none !important; }
@@ -381,7 +378,6 @@ body.menu-locked #container{overflow:hidden}
   .mob-flow-title { font-size: 14.5px; font-weight: 800; color: var(--teal-deep); text-transform: uppercase; margin-bottom: 4px; }
   .mob-flow-desc { font-size: 13px; line-height: 1.5; color: #4A6A67; margin: 0; }
 
-  /* Tampilkan Mobile Tree List HANYA di Mobile */
   .sec-scope { padding: 40px 20px !important; }
   .sec-scope h2 { font-size: 22px !important; max-width: 100% !important; }
   .tree-chart { display: none !important; }
@@ -401,10 +397,11 @@ body.menu-locked #container{overflow:hidden}
   .dom-title-panel, .dom-desc-panel { padding: 24px 20px !important; width: 100% !important; }
   .dom-desc-points { grid-template-columns: 1fr !important; }
 
-  /* Responsive Showcase */
+  /* Responsive Showcase - FIXED: Active slide handling */
   .sec-showcase { padding: 40px 20px !important; }
   .showcase-header h2 { font-size: 22px !important; }
-  .showcase-slide { display: flex !important; flex-direction: column !important; gap: 24px !important; }
+  .showcase-slide { display: none !important; flex-direction: column !important; gap: 24px !important; }
+  .showcase-slide.active { display: flex !important; }
   .showcase-img-frame { height: 220px !important; }
 
   .sec-quote .body { padding: 40px 20px !important; }
@@ -484,7 +481,6 @@ body.menu-locked #container{overflow:hidden}
           </div>
         </div>
 
-        <!-- Daftar isi overlay -->
         <div class="overlays" data-overlays></div>
       </div>
 
@@ -524,7 +520,6 @@ body.menu-locked #container{overflow:hidden}
               <polygon class="flow-arrow" points="1080,338 1094,345 1080,352"/>
             </svg>
           </div>
-          <!-- Mobile Flow List (Hanya tampil di Mobile) -->
           <div class="mobile-flow-list">
             <div class="mob-flow-card"><div class="mob-flow-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0B6E6A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg></div><div class="mob-flow-content"><div class="mob-flow-title">01. Gagasan</div><p class="mob-flow-desc">Bermula dari pemikiran yang dicatat apa adanya.</p></div></div>
             <div class="mob-flow-card"><div class="mob-flow-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0B6E6A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg></div><div class="mob-flow-content"><div class="mob-flow-title">02. Perencanaan</div><p class="mob-flow-desc">Tujuan, kebutuhan, dan kemampuan disusun terarah.</p></div></div>
@@ -573,7 +568,6 @@ body.menu-locked #container{overflow:hidden}
             <div class="tree-sub sub--4b"><span class="dot"></span><span class="tt">Langkah Berikutnya</span><span class="dd">Tempat bagi jalur yang belum masuk lini mana pun — karena perjalanan ini masih terus berjalan.</span></div>
           </div>
 
-          <!-- Mobile Tree List (Hanya tampil di Mobile) -->
           <div class="mobile-tree-list">
             <div class="mob-tree-card">
               <div class="mob-tree-header"><span class="mob-tree-num">01</span></div>
@@ -627,7 +621,6 @@ body.menu-locked #container{overflow:hidden}
           </div>
 
           <div class="dom-list">
-            <!-- BARIS 1 -->
             <article class="dom-row dom-row--1">
               <div class="dom-title-panel">
                 <div class="dom-panel-top"><span class="dom-num-pill">CABANG 01 • LINI DIGITAL</span></div>
@@ -651,7 +644,6 @@ body.menu-locked #container{overflow:hidden}
               </div>
             </article>
 
-            <!-- BARIS 2 -->
             <article class="dom-row dom-row--2 dom-row--reverse">
               <div class="dom-title-panel">
                 <div class="dom-panel-top"><span class="dom-num-pill">CABANG 02 • LINI TATA KELOLA</span></div>
@@ -675,7 +667,6 @@ body.menu-locked #container{overflow:hidden}
               </div>
             </article>
 
-            <!-- BARIS 3 -->
             <article class="dom-row dom-row--3">
               <div class="dom-title-panel">
                 <div class="dom-panel-top"><span class="dom-num-pill">CABANG 03 • LINI KREATIF</span></div>
@@ -699,7 +690,6 @@ body.menu-locked #container{overflow:hidden}
               </div>
             </article>
 
-            <!-- BARIS 4 -->
             <article class="dom-row dom-row--4 dom-row--reverse">
               <div class="dom-title-panel">
                 <div class="dom-panel-top"><span class="dom-num-pill">CABANG 04 • LINI PENGEMBANGAN</span></div>
@@ -734,7 +724,6 @@ body.menu-locked #container{overflow:hidden}
           </div>
 
           <div class="showcase-slides-wrap" id="showcaseWrap">
-            <!-- PART / HALAMAN 1 -->
             <div class="showcase-slide active" data-showcase-slide="1">
               <div class="showcase-text-col">
                 <p>Bagian pertama ini menghadirkan tinjauan mendalam atas proses dokumentasi riset dan kajian strategis yang dikumpulkan secara berkala dari berbagai sumber tepercaya. Setiap catatan disusun secara teliti untuk memastikan akurasi data serta kejelasan konteks dari masa perintisan hingga tahap realisasinya di lapangan. Dengan format penulisan yang terstruktur rapi, mendalam, dan rata kanan-kiri, pembaca dapat menelusuri alur pemikiran, latar belakang, serta arah pengembangan di balik setiap inisiatif secara nyaman, transparan, dan mudah dipahami lintas waktu.</p>
@@ -750,7 +739,6 @@ body.menu-locked #container{overflow:hidden}
               </div>
             </div>
 
-            <!-- PART / HALAMAN 2 -->
             <div class="showcase-slide" data-showcase-slide="2">
               <div class="showcase-text-col">
                 <p>Bagian kedua menyoroti rangkaian catatan pembangunan dan langkah perintisan yang dikelola secara berkelanjutan dan terarah. Fokus utama diletakkan pada transparansi tahapan pelaksanaan, mulai dari rancangan konseptual awal, persiapan infrastruktur, hingga evaluasi berkala di lapangan. Seluruh dokumentasi disajikan dengan standar kerapian tinggi, estetika visual yang berwibawa, serta kelengkapan informasi yang mendalam untuk menjadi rujukan yang andal bagi siapa saja yang ingin mempelajari perkembangannya secara utuh.</p>
@@ -766,7 +754,6 @@ body.menu-locked #container{overflow:hidden}
               </div>
             </div>
 
-            <!-- PART / HALAMAN 3 -->
             <div class="showcase-slide" data-showcase-slide="3">
               <div class="showcase-text-col">
                 <p>Bagian ketiga mengulas secara komprehensif dinamika ruang digital serta berbagai kanal aktif yang dikelola untuk memastikan arus informasi tetap terhubung secara langsung. Melalui pemantauan tren teknologi dan interaksi publik yang transparan, dokumentasi ini merekam bagaimana sebuah gagasan virtual dapat tumbuh, beradaptasi, dan memberikan dampak positif yang berkelanjutan bagi komunitas luas.</p>
@@ -782,7 +769,6 @@ body.menu-locked #container{overflow:hidden}
               </div>
             </div>
 
-            <!-- PART / HALAMAN 4 -->
             <div class="showcase-slide" data-showcase-slide="4">
               <div class="showcase-text-col">
                 <p>Bagian keempat berfokus pada eksplorasi karya visual, infografis, dan dokumentasi artistik yang merefleksikan estetika serta identitas platform. Setiap elemen visual dirancang dengan perhitungan spasial yang presisi, warna berkelas, dan filosofi mendalam agar mampu menyampaikan pesan secara visual tanpa meninggalkan esensi informasi yang ingin ditargetkan.</p>
@@ -798,7 +784,6 @@ body.menu-locked #container{overflow:hidden}
               </div>
             </div>
 
-            <!-- PART / HALAMAN 5 -->
             <div class="showcase-slide" data-showcase-slide="5">
               <div class="showcase-text-col">
                 <p>Bagian kelima menyajikan rangkuman langkah perluasan, inisiatif sinergi bersama pihak ketiga, serta visi masa depan yang terus dirintis. Ruang terbuka ini mencerminkan komitmen platform untuk senantiasa berkembang, terbuka terhadap inovasi lintas sektor, dan siap menghadapi tantangan zaman dengan fondasi tata kelola yang matang dan terstruktur.</p>
@@ -815,7 +800,6 @@ body.menu-locked #container{overflow:hidden}
             </div>
           </div>
 
-          <!-- Tombol Navigasi Nomor 1 sampai 5 -->
           <div class="showcase-nav-dots">
             <button class="showcase-dot active" data-showcase-target="1">1</button>
             <button class="showcase-dot" data-showcase-target="2">2</button>
@@ -1003,7 +987,6 @@ var NAV_X = { Publikasi:910, Informasi:1000, Galeri:1085, "Mengenal INFOTRINK":1
 
 var state = { activeMenu:null, lastActiveMenu:null, scale:0, navPositions:{} };
 
-/* ============ RENDER ============ */
 function renderOverlays(){
   var host = $("[data-overlays]"); if(!host) return;
   var html = "";
@@ -1053,7 +1036,6 @@ function renderFlowStages(){
   host.insertAdjacentHTML("beforeend", html);
 }
 
-/* ============ SCALE / ZOOM ============ */
 function updateScale(){
   if(window.innerWidth <= 768) return;
   var el = $("#container"); if(!el) return;
@@ -1096,7 +1078,6 @@ function updateOverlayPositions(){
   });
 }
 
-/* ============ DAFTAR ISI ============ */
 function getOverlay(slide, item){
   var list = $$(".overlay-menu", slide);
   for(var i=0;i<list.length;i++){ if(list[i].getAttribute("data-menu")===item) return list[i]; }
@@ -1140,7 +1121,6 @@ function updateNavHighlight(){
   });
 }
 
-/* ============ SHOWCASE SLIDER INTERACTIVITY (5 SLIDES + SWIPE + KEYBOARD) ============ */
 function initShowcaseSlider(){
   var dots = $$("[data-showcase-target]");
   var slides = $$("[data-showcase-slide]");
@@ -1177,9 +1157,8 @@ function initShowcaseSlider(){
     });
   });
 
-  // Dukungan Keyboard Panah Kiri / Kanan
   document.addEventListener("keydown", function(e){
-    if(state.activeMenu) return; // Jangan bentrok jika menu overlay aktif
+    if(state.activeMenu) return;
     if(e.key === "ArrowLeft"){
       goToSlide(currentSlide - 1);
     } else if(e.key === "ArrowRight"){
@@ -1187,7 +1166,6 @@ function initShowcaseSlider(){
     }
   });
 
-  // Dukungan Sentuh / Geser (Swipe/Touch & Mouse Drag) di layar
   if(wrap){
     var startX = 0;
     var isDragging = false;
@@ -1227,7 +1205,6 @@ function initShowcaseSlider(){
   }
 }
 
-/* ============ EVENT ============ */
 function onClick(e){
   var navEl = e.target.closest("[data-nav]");
   if(navEl){
@@ -1246,7 +1223,6 @@ function onResize(){
   updateScale(); applyZoom(); measureContentHeight(); measureNavPositions();
 }
 
-/* ============ INIT ============ */
 function init(){
   renderOverlays();
   renderFlowStages();
