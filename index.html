@@ -242,31 +242,32 @@ body.menu-locked #container{overflow:hidden}
 
 /* ============ SECTION BARU: EKSPLORASI HALAMAN INTERAKTIF (2 PART) ============ */
 .sec-showcase{position:relative;padding:64px 80px 72px;background:#fff;border-top:1px solid rgba(11,110,106,.12);border-bottom:1px solid rgba(11,110,106,.12)}
-.showcase-header{width:100%;margin-bottom:40px;padding-bottom:24px;border-bottom:1.5px solid rgba(11,110,106,.14)}
+.showcase-header{width:100%;margin-bottom:44px;padding-bottom:24px;border-bottom:1.5px solid rgba(11,110,106,.14)}
 .showcase-header h2{font-size:28px;font-weight:800;color:var(--teal-deep);margin:0 0 12px;letter-spacing:.4px;line-height:1.3;text-transform:uppercase}
 .showcase-header .lede{font-size:15.5px;line-height:1.78;color:#325855;margin:0;text-align:justify;text-justify:inter-word}
 
-.showcase-slides-wrap{position:relative;min-height:420px;overflow:hidden}
-.showcase-slide{display:none;animation:fadeInShowcase .4s ease forwards}
-.showcase-slide.active{display:grid;grid-template-columns:1fr 420px;gap:50px;align-items:center}
-.showcase-slide.reverse{grid-template-columns:420px 1fr}
-.showcase-slide.reverse .showcase-visual-col{order:1}
-.showcase-slide.reverse .showcase-text-col{order:2}
+.showcase-slides-wrap{position:relative;min-height:480px;overflow:hidden}
+.showcase-slide{display:none;grid-template-columns:1fr 480px;gap:60px;align-items:center;animation:fadeInShowcase .4s ease forwards}
+.showcase-slide.active{display:grid}
 
 @keyframes fadeInShowcase{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
 
-.showcase-text-col{display:flex;flex-direction:column;justify-content:center}
-.showcase-text-col p{font-size:15.5px;line-height:1.85;color:var(--ink);margin:0;text-align:justify;text-justify:inter-word}
+.showcase-text-col{display:flex;flex-direction:column;justify-content:center;height:100%}
+.showcase-text-col p{font-size:16px;line-height:1.85;color:var(--ink);margin:0;text-align:justify;text-justify:inter-word}
 
-.showcase-visual-col{display:flex;flex-direction:column;gap:14px}
-.showcase-img-box{position:relative;width:100%;height:270px;border-radius:18px;overflow:hidden;box-shadow:0 10px 30px rgba(11,59,58,.15);border:4px solid #fff;background:#F0FAF8}
-.showcase-img-box img{width:100%;height:100%;object-fit:cover;display:block}
-.showcase-item-title{font-size:18px;font-weight:800;color:var(--teal-deep);margin:0;text-transform:uppercase;letter-spacing:.3px}
-.showcase-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 22px;background:var(--teal);color:#fff;border-radius:999px;font-size:13px;font-weight:700;text-decoration:none;width:fit-content;transition:background .2s,transform .2s;box-shadow:0 4px 12px rgba(11,59,58,.12)}
+.showcase-visual-col{position:relative;display:flex;flex-direction:column;gap:18px}
+.showcase-visual-col::before{content:"";position:absolute;top:20px;left:-20px;width:100%;height:calc(100% - 40px);background:linear-gradient(135deg,#0B6E6A,#5B7A78);border-radius:24px;opacity:.25;z-index:0}
+
+.showcase-img-frame{position:relative;width:100%;height:310px;border-radius:22px;overflow:hidden;background:#fff;box-shadow:0 12px 36px rgba(11,59,58,.16);border:5px solid #fff;z-index:1}
+.showcase-img-frame img{width:100%;height:100%;object-fit:cover;display:block}
+
+.showcase-content-box{position:relative;z-index:1;display:flex;flex-direction:column;gap:10px}
+.showcase-item-title{font-size:20px;font-weight:800;color:var(--teal-deep);margin:0;text-transform:uppercase;letter-spacing:.3px}
+.showcase-btn{display:inline-flex;align-items:center;gap:8px;padding:11px 24px;background:var(--teal);color:#fff;border-radius:999px;font-size:13.5px;font-weight:700;text-decoration:none;width:fit-content;transition:background .2s,transform .2s;box-shadow:0 4px 14px rgba(11,59,58,.15)}
 .showcase-btn:hover{background:var(--teal-deep);transform:translateX(4px)}
 
-.showcase-nav-dots{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:40px}
-.showcase-dot{width:38px;height:38px;border-radius:50%;background:#F0FAF8;border:2px solid var(--teal);color:var(--teal);font-size:14px;font-weight:800;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s ease;box-shadow:0 4px 10px rgba(11,59,58,.08)}
+.showcase-nav-dots{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:45px}
+.showcase-dot{width:40px;height:40px;border-radius:50%;background:#F0FAF8;border:2px solid var(--teal);color:var(--teal);font-size:14px;font-weight:800;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s ease;box-shadow:0 4px 10px rgba(11,59,58,.08)}
 .showcase-dot:hover{background:rgba(11,110,106,.15);transform:scale(1.08)}
 .showcase-dot.active{background:var(--teal-deep);color:#fff;border-color:var(--teal-deep);box-shadow:0 6px 16px rgba(11,59,58,.2)}
 
@@ -403,10 +404,8 @@ body.menu-locked #container{overflow:hidden}
   /* Responsive Showcase */
   .sec-showcase { padding: 40px 20px !important; }
   .showcase-header h2 { font-size: 22px !important; }
-  .showcase-slide.active, .showcase-slide.reverse { display: flex !important; flex-direction: column !important; gap: 24px !important; }
-  .showcase-visual-col { order: 1 !important; width: 100% !important; }
-  .showcase-text-col { order: 2 !important; width: 100% !important; }
-  .showcase-img-box { height: 220px !important; }
+  .showcase-slide { display: flex !important; flex-direction: column !important; gap: 24px !important; }
+  .showcase-img-frame { height: 220px !important; }
 
   .sec-quote .body { padding: 40px 20px !important; }
   .sec-quote h2 { font-size: 24px !important; white-space: normal !important; }
@@ -738,28 +737,32 @@ body.menu-locked #container{overflow:hidden}
             <!-- PART / HALAMAN 1 -->
             <div class="showcase-slide active" data-showcase-slide="1">
               <div class="showcase-text-col">
-                <p>Bagian pertama ini menghadirkan tinjauan mendalam atas proses dokumentasi riset dan kajian strategis yang dikumpulkan secara berkala. Setiap catatan disusun secara teliti untuk memastikan akurasi data serta kejelasan konteks dari masa perintisan hingga tahap realisasinya. Dengan format penulisan yang terstruktur rapi dan rata kanan-kiri, pembaca dapat menelusuri alur pemikiran di balik setiap inisiatif dengan nyaman dan transparan.</p>
+                <p>Bagian pertama ini menghadirkan tinjauan mendalam atas proses dokumentasi riset dan kajian strategis yang dikumpulkan secara berkala dari berbagai sumber tepercaya. Setiap catatan disusun secara teliti untuk memastikan akurasi data serta kejelasan konteks dari masa perintisan hingga tahap realisasinya di lapangan. Dengan format penulisan yang terstruktur rapi, mendalam, dan rata kanan-kiri, pembaca dapat menelusuri alur pemikiran, latar belakang, serta arah pengembangan di balik setiap inisiatif secara nyaman, transparan, dan mudah dipahami lintas waktu.</p>
               </div>
               <div class="showcase-visual-col">
-                <div class="showcase-img-box">
-                  <img src="slide/hero_4_narasumber.jpg" alt="Dokumentasi Riset Pilihan">
+                <div class="showcase-img-frame">
+                  <img src="slide/hero_4_narasumber.jpg" alt="Dokumentasi Riset Pilihan" width="480" height="310">
                 </div>
-                <h3 class="showcase-item-title">Arsip Riset &amp; Kajian Strategis</h3>
-                <a class="showcase-btn" href="hasil-riset.html">Masuk ke Halaman →</a>
+                <div class="showcase-content-box">
+                  <h3 class="showcase-item-title">Arsip Riset &amp; Kajian Strategis</h3>
+                  <a class="showcase-btn" href="hasil-riset.html">Masuk ke Halaman →</a>
+                </div>
               </div>
             </div>
 
             <!-- PART / HALAMAN 2 -->
-            <div class="showcase-slide reverse" data-showcase-slide="2">
-              <div class="showcase-visual-col">
-                <div class="showcase-img-box">
-                  <img src="slide/hero_pembangunan.jpg" alt="Dokumentasi Pembangunan &amp; Perencanaan">
-                </div>
-                <h3 class="showcase-item-title">Catatan Pembangunan &amp; Perencanaan</h3>
-                <a class="showcase-btn" href="pembangunan.html">Masuk ke Halaman →</a>
-              </div>
+            <div class="showcase-slide" data-showcase-slide="2">
               <div class="showcase-text-col">
-                <p>Bagian kedua menyoroti rangkaian catatan pembangunan dan langkah perintisan yang dikelola secara berkelanjutan. Fokus utama diletakkan pada transparansi tahapan pelaksanaan, mulai dari rancangan konseptual awal hingga evaluasi berkala di lapangan. Seluruh dokumentasi disajikan dengan standar kerapian tinggi untuk menjadi rujukan yang andal bagi siapa saja yang ingin mempelajari perkembangannya secara utuh.</p>
+                <p>Bagian kedua menyoroti rangkaian catatan pembangunan dan langkah perintisan yang dikelola secara berkelanjutan dan terarah. Fokus utama diletakkan pada transparansi tahapan pelaksanaan, mulai dari rancangan konseptual awal, persiapan infrastruktur, hingga evaluasi berkala di lapangan. Seluruh dokumentasi disajikan dengan standar kerapian tinggi, estetika visual yang berwibawa, serta kelengkapan informasi yang mendalam untuk menjadi rujukan yang andal bagi siapa saja yang ingin mempelajari perkembangannya secara utuh.</p>
+              </div>
+              <div class="showcase-visual-col">
+                <div class="showcase-img-frame">
+                  <img src="slide/hero_pembangunan.jpg" alt="Dokumentasi Pembangunan &amp; Perencanaan" width="480" height="310">
+                </div>
+                <div class="showcase-content-box">
+                  <h3 class="showcase-item-title">Catatan Pembangunan &amp; Perencanaan</h3>
+                  <a class="showcase-btn" href="pembangunan.html">Masuk ke Halaman →</a>
+                </div>
               </div>
             </div>
           </div>
