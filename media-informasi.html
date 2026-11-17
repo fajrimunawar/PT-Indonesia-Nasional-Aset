@@ -27,13 +27,15 @@
   --bg-grad:linear-gradient(180deg,#81F6EF 0%,#9CF4ED 22%,#B2FBF6 45%,#CFFCF6 68%,#E1FFFD 88%,#E8FEFC 100%);
 }
 *,*::before,*::after{box-sizing:border-box}
-html,body{margin:0;padding:0;width:100%;height:100%}
-body{font-family:var(--font);background:var(--bg-grad);color:var(--teal-deep);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-y:auto;overflow-x:hidden}
-
-body.menu-locked{overflow:hidden}
+html,body{margin:0;padding:0}
+body{font-family:var(--font);background:var(--cyan);color:var(--teal-deep);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow:hidden}
+#container{position:fixed;inset:0;overflow-y:auto;overflow-x:hidden;scrollbar-gutter:stable;background:var(--bg-grad)}
+body.menu-locked #container{overflow:hidden}
+#wrapper{width:100%;position:relative;overflow:hidden}
+#content{position:absolute;top:0;left:0;width:1280px;transform-origin:top left}
 
 /* ============ HEADER & NAVIGASI ============ */
-.slide{position:relative;width:100%;max-width:1280px;margin:0 auto;min-height:140px;overflow:hidden;background:transparent;padding-bottom:10px}
+.slide{position:relative;width:1280px;height:auto;min-height:180px;overflow:hidden;background:var(--bg-grad);padding-bottom:10px}
 .hero-dim{transition:opacity .3s ease}
 .slide.menu-open .hero-dim{opacity:.22;pointer-events:none}
 
@@ -46,11 +48,11 @@ body.menu-locked{overflow:hidden}
 .nav-link:hover{color:var(--teal)}
 .nav-link.on{font-weight:700;color:var(--teal);border-bottom-color:var(--teal)}
 
-/* ============ AREA UTAMA KOSONG (BEBAS DISUSUN SENDIRI) ============ */
-.main-content-area{max-width:1280px;margin:20px auto;padding:0 70px;min-height:300px}
+/* ============ AREA UTAMA KOSONG ============ */
+.main-content-area{max-width:1280px;margin:20px 70px;min-height:220px}
 
-/* ============ DAFTAR ISI OVERLAY ============ */
-.overlay-menu{position:fixed;inset:0;visibility:hidden;pointer-events:none;transition:visibility 0s linear .7s;z-index:100}
+/* ============ DAFTAR ISI OVERLAY (ANIMASI & POSISI DIPERBAIKI) ============ */
+.overlay-menu{position:absolute;inset:0;visibility:hidden;pointer-events:none;transition:visibility 0s linear .7s;z-index:100}
 .overlay-menu.open{visibility:visible;transition-delay:0s}
 .overlay-menu.open .ov-box,.overlay-menu.open .ov-x{pointer-events:auto}
 .ov-svg{position:absolute;inset:0;pointer-events:none;z-index:20}
@@ -61,7 +63,7 @@ body.menu-locked{overflow:hidden}
 .overlay-menu.open .ov-dot-end{opacity:1;transform:scale(1);transition-delay:.4s}
 .ov-line{stroke:var(--teal);stroke-width:3;fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset .45s ease;transition-delay:.15s}
 .overlay-menu.open .ov-line{stroke-dashoffset:0;transition-delay:.1s}
-.ov-box{position:absolute;left:70px;top:130px;width:calc(100% - 140px);max-width:1140px;height:560px;background:rgba(255,255,255,.98);border-radius:0 0 20px 20px;box-shadow:0 12px 40px rgba(11,59,58,0.22);z-index:15;padding:28px 36px;overflow-y:auto;opacity:0;transform:scaleY(0);transform-origin:center top;transition:opacity .4s ease,transform .4s ease;transition-delay:.05s}
+.ov-box{position:absolute;left:70px;top:130px;width:1140px;height:560px;background:rgba(255,255,255,.98);border-radius:0 0 20px 20px;box-shadow:0 12px 40px rgba(11,59,58,0.22);z-index:15;padding:28px 36px;overflow-y:auto;opacity:0;transform:scaleY(0);transform-origin:center top;transition:opacity .4s ease,transform .4s ease;transition-delay:.05s}
 .overlay-menu.open .ov-box{opacity:1;transform:scaleY(1);transition-delay:.25s}
 .ov-head{opacity:0;transform:translateY(10px);transition:opacity .3s ease,transform .3s ease}
 .overlay-menu.open .ov-head{opacity:1;transform:translateY(0);transition-delay:.45s}
@@ -77,23 +79,58 @@ body.menu-locked{overflow:hidden}
 .ov-title{font-size:14px;font-weight:700;color:var(--teal-deep);min-height:38px;line-height:1.35}
 .ov-btn{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;background:var(--teal);color:#fff;border:none;border-radius:999px;font-family:var(--font);font-size:11px;font-weight:700;cursor:pointer;margin-top:10px;letter-spacing:.3px;transition:background .2s,transform .2s;text-decoration:none}
 .ov-btn:hover{background:var(--teal-deep);transform:translateX(3px)}
-.ov-x{position:absolute;right:90px;top:146px;width:38px;height:38px;border-radius:50%;background:var(--teal-deep);color:#fff;border:none;font-family:var(--font);font-size:16px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:18;opacity:0;transform:scale(0) rotate(-90deg);box-shadow:0 4px 12px rgba(11,59,58,.25);transition:opacity .25s,transform .25s,background .2s}
+.ov-x{position:absolute;left:1154px;top:146px;width:38px;height:38px;border-radius:50%;background:var(--teal-deep);color:#fff;border:none;font-family:var(--font);font-size:16px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:18;opacity:0;transform:scale(0) rotate(-90deg);box-shadow:0 4px 12px rgba(11,59,58,.25);transition:opacity .25s,transform .25s,background .2s}
 .overlay-menu.open .ov-x{opacity:1;transform:scale(1) rotate(0);transition-delay:.55s}
 .overlay-menu.open .ov-x:hover{background:#d32f2f;transform:scale(1.1) rotate(0);transition-delay:0s}
+
+/* ============ FOOTER UTAMA ============ */
+.sec-footer{position:relative;background:linear-gradient(180deg,var(--teal-deep),var(--teal) 60%,var(--teal-deep));overflow:hidden}
+.sec-footer .blob{position:absolute;border-radius:50%}
+.sec-footer .b1{top:-150px;right:-150px;width:400px;height:400px;background:rgba(129,246,239,.08)}
+.sec-footer .b2{bottom:-100px;left:-100px;width:300px;height:300px;background:rgba(129,246,239,.06)}
+.footer-cols{position:relative;padding:40px 80px 24px;display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px}
+.footer-brand{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.footer-brand img.icon{width:36px;height:36px;object-fit:contain}
+.footer-brand img.text{width:110px;height:36px;object-fit:contain}
+.footer-desc{font-size:12.5px;line-height:1.65;color:rgba(255,255,255,.7);margin:0 0 16px;text-align:justify}
+.footer-tags{display:flex;gap:8px}
+.footer-tags .ftag{font-size:10px;font-weight:700;color:#fff;padding:3px 10px;border-radius:6px;letter-spacing:.3px}
+.footer-tags .ftag-m{background:rgba(59,130,246,.25);border:1px solid rgba(59,130,246,.5)}
+.footer-tags .ftag-p{background:rgba(16,185,129,.25);border:1px solid rgba(16,185,129,.5)}
+.footer-tags .ftag-pe{background:rgba(245,158,11,.25);border:1px solid rgba(245,158,11,.5)}
+.footer-tags .ftag-l{background:rgba(139,92,246,.25);border:1px solid rgba(139,92,246,.5)}
+.footer-cols h4{font-size:12px;font-weight:700;color:var(--cyan);letter-spacing:1px;margin:0 0 16px}
+.footer-cols ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:9px}
+.footer-cols ul a{font-size:13px;color:rgba(255,255,255,.75);text-decoration:none}
+.footer-bottom{position:relative;padding:18px 80px;background:rgba(0,0,0,.25);display:flex;align-items:center;gap:28px}
+.footer-copy{font-size:11.5px;color:rgba(255,255,255,.65);line-height:1.55;flex:1;min-width:0}
+.footer-rule{width:1px;align-self:stretch;background:rgba(129,246,239,.2);flex-shrink:0}
+.footer-legal{display:flex;gap:12px;font-size:11px;color:rgba(255,255,255,.5);letter-spacing:.3px;flex-shrink:0;white-space:nowrap}
+.footer-legal .sep{opacity:.4}
 
 /* =========================================================
    MEDIA QUERY RESPONSIVE KHUSUS PERANGKAT HP (MAX 768px)
    ========================================================= */
 @media (max-width: 768px) {
-  .site-header { margin: 0 0 20px 0 !important; flex-direction: column !important; align-items: stretch !important; gap: 15px; padding: 15px 20px 0; }
+  body { overflow: auto !important; }
+  #container { position: relative !important; inset: auto !important; height: auto !important; overflow: visible !important; }
+  #wrapper { height: auto !important; overflow: visible !important; }
+  #content { position: relative !important; width: 100% !important; transform: none !important; zoom: 1 !important; }
+
+  .slide { width: 100% !important; height: auto !important; padding: 20px 20px 20px !important; }
+  .site-header { margin: 0 0 20px 0 !important; flex-direction: column !important; align-items: stretch !important; gap: 15px; }
   .site-nav { width: 100% !important; justify-content: space-between !important; gap: 8px; padding: 10px 14px; overflow-x: auto; }
   .nav-link { font-size: 12.5px !important; white-space: nowrap; }
 
   .main-content-area { padding: 0 20px !important; }
 
+  .footer-cols { padding: 30px 20px !important; grid-template-columns: 1fr !important; gap: 25px !important; }
+  .footer-bottom { padding: 20px !important; flex-direction: column !important; align-items: flex-start !important; gap: 15px !important; }
+  .footer-rule { display: none !important; }
+
   .overlay-menu { position: fixed !important; }
   .ov-box { left: 16px !important; top: 30px !important; width: calc(100% - 32px) !important; height: auto !important; max-height: 85vh !important; overflow-y: auto !important; padding: 24px 18px !important; }
-  .ov-x { right: 24px !important; top: 20px !important; z-index: 30 !important; }
+  .ov-x { left: auto !important; right: 16px !important; top: 16px !important; z-index: 30 !important; }
   .ov-cards { grid-template-columns: 1fr !important; gap: 12px !important; }
   .ov-card { width: 100% !important; }
   .ov-svg { display: none !important; }
@@ -101,32 +138,87 @@ body.menu-locked{overflow:hidden}
 </style>
 </head>
 <body>
+<main id="container">
+  <div id="wrapper">
+    <div id="content">
 
-  <!-- ============ KEPALA & NAVIGASI HALAMAN ============ -->
-  <div class="slide" data-slide>
-    <div class="hero-dim">
-      <header class="site-header">
-        <a class="logo-pill" href="index.html" data-nav="Beranda">
-          <img class="icon" src="1000007372.png" alt="Infotrink logo">
-          <img class="text" src="1000007373.png" alt="Infotrink">
-        </a>
-        <nav class="site-nav">
-          <a class="nav-link" href="index.html" data-nav="Beranda">Beranda</a>
-          <a class="nav-link on" href="media-informasi.html" data-nav="Publikasi">Publikasi</a>
-          <a class="nav-link" href="#" data-nav="Informasi">Informasi</a>
-          <a class="nav-link" href="#" data-nav="Galeri">Galeri</a>
-          <a class="nav-link" href="mengenal-infotrink.html" data-nav="Mengenal INFOTRINK"><span translate="no">Mengenal INFOTRINK</span></a>
-        </nav>
-      </header>
+      <!-- ============ KEPALA & NAVIGASI HALAMAN ============ -->
+      <div class="slide" data-slide>
+        <div class="hero-dim">
+          <header class="site-header">
+            <a class="logo-pill" href="index.html" data-nav="Beranda">
+              <img class="icon" src="1000007372.png" alt="Infotrink logo">
+              <img class="text" src="1000007373.png" alt="Infotrink">
+            </a>
+            <nav class="site-nav">
+              <a class="nav-link" href="index.html" data-nav="Beranda">Beranda</a>
+              <a class="nav-link on" href="media-informasi.html" data-nav="Publikasi">Publikasi</a>
+              <a class="nav-link" href="#" data-nav="Informasi">Informasi</a>
+              <a class="nav-link" href="#" data-nav="Galeri">Galeri</a>
+              <a class="nav-link" href="mengenal-infotrink.html" data-nav="Mengenal INFOTRINK"><span translate="no">Mengenal INFOTRINK</span></a>
+            </nav>
+          </header>
+        </div>
+
+        <div class="overlays" data-overlays></div>
+      </div>
+
+      <!-- ============ AREA KOSONG BEBAS DISUSUN ============ -->
+      <main class="main-content-area">
+        <!-- Silakan susun halaman Anda sendiri di sini -->
+      </main>
+
+      <!-- ============ FOOTER UTAMA ============ -->
+      <footer class="sec-footer">
+        <div class="blob b1"></div>
+        <div class="blob b2"></div>
+        <div class="footer-cols">
+          <div>
+            <div class="footer-brand"><img class="icon" src="1000007372.png" alt="Infotrink"><img class="text" src="1000007373.png" alt="Infotrink"></div>
+            <p class="footer-desc">Tempat perjalanan gagasan dan karya diperkenalkan melalui informasi dan dokumentasi.</p>
+            <div class="footer-tags"><span class="ftag ftag-m">M</span><span class="ftag ftag-p">P</span><span class="ftag ftag-pe">Pe</span><span class="ftag ftag-l">L</span></div>
+          </div>
+          <div>
+            <h4>NAVIGASI</h4>
+            <ul>
+              <li><a href="index.html" data-nav="Beranda">Beranda</a></li>
+              <li><a href="media-informasi.html" data-nav="Publikasi">Publikasi</a></li>
+              <li><a href="#" data-nav="Informasi">Informasi</a></li>
+              <li><a href="#" data-nav="Galeri">Galeri</a></li>
+              <li><a href="mengenal-infotrink.html" data-nav="Mengenal INFOTRINK"><span translate="no">Mengenal INFOTRINK</span></a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>BIDANG</h4>
+            <ul>
+              <li><a href="media-digital.html">Media Digital</a></li>
+              <li><a href="pembangunan.html">Pembangunan</a></li>
+              <li><a href="personal.html">Personal</a></li>
+              <li><a href="bidang-lainnya.html">Bidang Lainnya</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>JENIS MATERI</h4>
+            <ul>
+              <li><a href="media-informasi.html">Media Informasi</a></li>
+              <li><a href="hasil-riset.html">Hasil Riset</a></li>
+              <li><a href="kajian-analisis.html">Kajian &amp; Analisis</a></li>
+              <li><a href="laporan.html">Laporan</a></li>
+              <li><a href="data-referensi.html">Data &amp; Referensi</a></li>
+              <li><a href="gagasan-konsep.html">Gagasan</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="footer-copy">© 2026 <span translate="no">INFOTRINK</span>. Hak cipta dilindungi. Seluruh materi yang dipublikasikan merupakan hasil riset, kajian, pemikiran, dan dokumentasi yang dikelola secara terstruktur untuk kepentingan pengetahuan.</div>
+          <div class="footer-rule"></div>
+          <div class="footer-legal"><span>Syarat &amp; Ketentuan</span><span class="sep">•</span><span>Kebijakan Privasi</span></div>
+        </div>
+      </footer>
+
     </div>
-
-    <div class="overlays" data-overlays></div>
   </div>
-
-  <!-- ============ AREA UTAMA KOSONG (BEBAS DISUSUN SENDIRI) ============ -->
-  <main class="main-content-area">
-    <!-- Silakan susun elemen atau isi halaman Anda sendiri di sini -->
-  </main>
+</main>
 
 <script>
 (function(){
@@ -177,7 +269,7 @@ var SUB_MENUS = {
 };
 var NAV_X = { Publikasi:910, Informasi:1000, Galeri:1085, "Mengenal INFOTRINK":1190 };
 
-var state = { activeMenu:null, lastActiveMenu:null };
+var state = { activeMenu:null, lastActiveMenu:null, scale:0, navPositions:{} };
 
 function renderOverlays(){
   var host = $("[data-overlays]"); if(!host) return;
@@ -214,28 +306,68 @@ function renderOverlays(){
   host.innerHTML = html;
 }
 
+function updateScale(){
+  if(window.innerWidth <= 768) return;
+  var el = $("#container"); if(!el) return;
+  state.scale = Math.max(el.clientWidth/1280, 0.5);
+}
+function applyZoom(){
+  if(window.innerWidth <= 768) return;
+  var c = $("#content"); if(c && state.scale>0) c.style.zoom = state.scale;
+}
+function measureContentHeight(){
+  if(window.innerWidth <= 768) return;
+  var c = $("#content"); if(!c) return;
+  var h = c.scrollHeight * state.scale;
+  if(h>0){ var w=$("#wrapper"); if(w) w.style.height = h+"px"; }
+}
+function measureNavPositions(){
+  if(window.innerWidth <= 768) return;
+  var slide = $("[data-slide]"); if(!slide) return;
+  var sr = slide.getBoundingClientRect();
+  var sc = sr.width/1280; if(sc===0) return;
+  var pos = {};
+  $$("[data-nav]", slide).forEach(function(el){
+    var nKey = el.getAttribute("data-nav");
+    if(nKey && nKey !== "Beranda"){
+      var r = el.getBoundingClientRect();
+      pos[nKey] = (r.left + r.width/2 - sr.left)/sc;
+    }
+  });
+  state.navPositions = pos;
+  updateOverlayPositions();
+}
+function updateOverlayPositions(){
+  if(window.innerWidth <= 768) return;
+  var slide = $("[data-slide]"); if(!slide) return;
+  $$(".overlay-menu", slide).forEach(function(ov){
+    var key = ov.getAttribute("data-menu");
+    var x = (state.navPositions[key]!=null) ? state.navPositions[key] : (NAV_X[key] || 910);
+    var path = ov.querySelector("path"); if(path) path.setAttribute("d", "M "+x+" 78 L "+x+" 130 L 70 130");
+    var dot = ov.querySelector(".ov-dot-start"); if(dot) dot.setAttribute("cx", x);
+  });
+}
+
 function getOverlay(slide, item){
   var list = $$(".overlay-menu", slide);
   for(var i=0;i<list.length;i++){ if(list[i].getAttribute("data-menu")===item) return list[i]; }
   return null;
 }
-
 var NAV_AFTER_CLOSE_MS = 600;
 var navHighlightTimer = null;
 function scheduleNavHighlight(){ clearTimeout(navHighlightTimer); navHighlightTimer = setTimeout(updateNavHighlight, NAV_AFTER_CLOSE_MS); }
 function cancelNavHighlight(){ clearTimeout(navHighlightTimer); navHighlightTimer = null; }
-
 function openMenu(item){
   var slide = $("[data-slide]"); if(!slide) return;
   if(state.activeMenu === item){ closeMenu(); return; }
   if(state.activeMenu){ var old = getOverlay(slide, state.activeMenu); if(old) old.classList.remove("open"); }
+  measureNavPositions();
   state.activeMenu = item; state.lastActiveMenu = item;
   var ov = getOverlay(slide, item); if(ov) ov.classList.add("open");
   slide.classList.add("menu-open");
   document.body.classList.add("menu-locked");
   cancelNavHighlight(); updateNavHighlight();
 }
-
 function closeMenu(){
   if(!state.activeMenu) return;
   var slide = $("[data-slide]");
@@ -247,7 +379,6 @@ function closeMenu(){
   state.activeMenu = null;
   scheduleNavHighlight();
 }
-
 function updateNavHighlight(){
   $$(".nav-link").forEach(function(l){
     var item = l.getAttribute("data-nav");
@@ -270,16 +401,27 @@ function onClick(e){
   var a = e.target.closest('a[href="#"]');
   if(a) e.preventDefault();
 }
-
 function onKeydown(e){ if(e.key === "Escape") closeMenu(); }
+function onResize(){
+  if(window.innerWidth <= 768) return;
+  updateScale(); applyZoom(); measureContentHeight(); measureNavPositions();
+}
 
 function init(){
   renderOverlays();
+  if(window.innerWidth > 768){
+    updateScale(); applyZoom();
+    requestAnimationFrame(function(){ measureContentHeight(); measureNavPositions(); });
+  }
   updateNavHighlight();
   document.addEventListener("click", onClick);
   document.addEventListener("keydown", onKeydown);
+  window.addEventListener("resize", onResize);
+  window.addEventListener("orientationchange", function(){ setTimeout(onResize, 100); });
+  if(document.fonts && document.fonts.ready) document.fonts.ready.then(function(){ if(window.innerWidth > 768) measureNavPositions(); });
+  setTimeout(onResize, 100);
+  setTimeout(onResize, 500);
 }
-
 if(document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
 else init();
 })();
