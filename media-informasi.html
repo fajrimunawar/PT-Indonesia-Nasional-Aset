@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Media Informasi & Penjelasan — Infotrink</title>
-<meta name="description" content="INFOTRINK — Platform Informasi, Dokumentasi, Perkembangan, dan Pengembangan Terpadu oleh Muhammad Fajri Munawar.">
+<meta name="description" content="Pusat Media Informasi, Penjelasan Komprehensif, Klasifikasi Arsip, dan Standar Publikasi Terstruktur INFOTRINK.">
 <meta name="theme-color" content="#81F6EF">
 <link rel="icon" href="1000007372.png" sizes="any">
 <link rel="icon" href="1000007372.png" type="image/png" sizes="32x32">
@@ -86,7 +86,7 @@ body.menu-locked #container{overflow:hidden}
 .overlay-menu.open .ov-x{opacity:1;transform:scale(1) rotate(0);transition-delay:.55s}
 .overlay-menu.open .ov-x:hover{background:#d32f2f;transform:scale(1.1) rotate(0);transition-delay:0s}
 
-/* ============ KONTEN UTAMA HALAMAN (BERVARIASI & BERWIBAWA) ============ */
+/* ============ KONTEN UTAMA HALAMAN MEDIA INFORMASI & PENJELASAN ============ */
 .page-body{margin:40px 70px 0;display:flex;flex-direction:column;gap:50px}
 
 /* --- SECTION HEADER GLOBAL --- */
@@ -95,85 +95,75 @@ body.menu-locked #container{overflow:hidden}
 .sec-title{font-size:28px;font-weight:800;color:var(--teal-deep);margin:0;letter-spacing:-.4px}
 .sec-sub{font-size:14px;color:var(--teal-soft);max-width:480px;margin:0;line-height:1.52;text-align:right}
 
-/* --- BAGIAN 1: HERO UTAMA (EDITORIAL SPLIT & QUOTE CARD) --- */
-.hero-editorial{display:grid;grid-template-columns:1.35fr 1fr;gap:32px;align-items:stretch}
-.hero-left{background:var(--glass-strong);backdrop-filter:blur(14px);border-radius:28px;padding:44px 46px;border:1px solid var(--border-glass);box-shadow:0 14px 38px rgba(11,59,58,.08);display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
-.hero-left::before{content:"";position:absolute;top:0;left:0;width:6px;height:100%;background:linear-gradient(180deg,var(--teal),var(--gold))}
-.kicker-row{display:flex;align-items:center;gap:10px;margin-bottom:16px;flex-wrap:wrap}
-.kicker-pill{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:999px;background:rgba(11,110,106,.1);color:var(--teal);font-size:12px;font-weight:700;letter-spacing:.6px;text-transform:uppercase}
-.kicker-dot{width:7px;height:7px;border-radius:50%;background:var(--teal)}
-.kicker-author{font-size:12.5px;font-weight:600;color:var(--teal-soft)}
-.hero-h1{font-size:36px;font-weight:800;line-height:1.18;color:var(--teal-deep);margin:0 0 16px;letter-spacing:-.5px}
-.hero-h1 span{color:var(--teal)}
-.hero-lead{font-size:15.5px;line-height:1.72;color:var(--ink);margin:0 0 26px;font-weight:400}
-.hero-jump-bar{display:flex;flex-wrap:wrap;gap:8px;padding-top:18px;border-top:1px solid rgba(11,59,58,.1)}
-.jump-chip{padding:7px 14px;border-radius:999px;background:#F2FBF9;border:1px solid rgba(11,110,106,.18);color:var(--teal-deep);font-size:12px;font-weight:700;text-decoration:none;transition:all .2s}
-.jump-chip:hover{background:var(--teal);color:#fff;border-color:var(--teal);transform:translateY(-1px)}
+/* --- BAGIAN 1: HERO SPESIFIK MEDIA INFORMASI --- */
+.pub-hero{display:grid;grid-template-columns:1.4fr 1fr;gap:32px;align-items:stretch}
+.pub-hero-left{background:var(--glass-strong);backdrop-filter:blur(14px);border-radius:28px;padding:44px 46px;border:1px solid var(--border-glass);box-shadow:0 14px 38px rgba(11,59,58,.08);display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
+.pub-hero-left::before{content:"";position:absolute;top:0;left:0;width:6px;height:100%;background:linear-gradient(180deg,var(--teal),var(--gold))}
+.pub-kicker{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:999px;background:rgba(11,110,106,.1);color:var(--teal);font-size:12px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;width:fit-content;margin-bottom:16px}
+.pub-h1{font-size:34px;font-weight:800;line-height:1.2;color:var(--teal-deep);margin:0 0 16px;letter-spacing:-.4px}
+.pub-h1 span{color:var(--teal)}
+.pub-desc{font-size:15px;line-height:1.72;color:var(--ink);margin:0 0 24px}
+.pub-tags{display:flex;flex-wrap:wrap;gap:8px;padding-top:16px;border-top:1px solid rgba(11,59,58,.1)}
+.pub-tag-item{padding:6px 14px;border-radius:999px;background:#F2FBF9;border:1px solid rgba(11,110,106,.18);color:var(--teal-deep);font-size:12px;font-weight:700}
 
-.hero-right{background:linear-gradient(155deg,#0B3B3A 0%,#0E4E4C 60%,#0B6E6A 100%);color:#fff;border-radius:28px;padding:40px 38px;box-shadow:0 18px 40px rgba(11,59,58,.22);display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.15)}
-.hero-right::after{content:"";position:absolute;right:-40px;bottom:-40px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(217,180,91,.22) 0%,transparent 70%);pointer-events:none}
-.id-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:8px;background:rgba(217,180,91,.16);border:1px solid rgba(217,180,91,.45);color:#F6DE9C;font-size:11.5px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;width:fit-content}
-.id-quote{font-size:18px;font-weight:700;line-height:1.58;color:#FFFFFF;margin:20px 0;letter-spacing:-.1px}
-.id-quote em{font-style:normal;color:#81F6EF}
-.id-meta-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding-top:18px;border-top:1px solid rgba(255,255,255,.15)}
-.id-stat{background:rgba(255,255,255,.07);padding:10px 12px;border-radius:12px}
-.id-stat-label{font-size:10.5px;text-transform:uppercase;letter-spacing:.6px;color:#A3E8E2;font-weight:700;display:block;margin-bottom:3px}
-.id-stat-val{font-size:13px;font-weight:700;color:#fff}
+.pub-hero-right{background:linear-gradient(145deg,#0B3B3A,#104F4D);color:#fff;border-radius:28px;padding:40px 38px;box-shadow:0 18px 40px rgba(11,59,58,.22);display:flex;flex-direction:column;justify-content:space-between;border:1px solid rgba(255,255,255,.15)}
+.pr-badge{display:inline-block;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;padding:5px 12px;border-radius:8px;background:rgba(217,180,91,.2);color:#F8DE9C;width:fit-content;margin-bottom:16px}
+.pr-quote{font-size:16.5px;font-weight:700;line-height:1.6;color:#FFFFFF;margin:0 0 20px}
+.pr-quote em{color:#81F6EF;font-style:normal}
+.pr-metrics{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;padding-top:18px;border-top:1px solid rgba(255,255,255,.15)}
+.pr-stat{background:rgba(255,255,255,.07);padding:12px 14px;border-radius:14px}
+.pr-stat-lbl{font-size:10.5px;text-transform:uppercase;letter-spacing:.6px;color:#A3E8E2;font-weight:700;display:block;margin-bottom:3px}
+.pr-stat-val{font-size:13.5px;font-weight:700;color:#fff}
 
-/* --- BAGIAN 2: GRID 4 KUADRAN (DIMENSI ARSITEKTUR PLATFORM) --- *//* Menggunakan desain kotak asimetris bergaris sudut */
-.quad-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
-.quad-card{background:var(--glass-strong);backdrop-filter:blur(12px);border-radius:24px;padding:32px 30px;border:1px solid var(--border-glass);box-shadow:0 10px 28px rgba(11,59,58,.06);position:relative;overflow:hidden;transition:transform .25s,box-shadow .25s}
-.quad-card:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(11,59,58,.11)}
-.quad-card::before{content:"";position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(90deg,var(--teal),var(--cyan))}
-.quad-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
-.quad-index{font-size:11.5px;font-weight:800;letter-spacing:1px;color:var(--teal);background:rgba(11,110,106,.1);padding:4px 10px;border-radius:8px}
-.quad-icon-box{width:40px;height:40px;border-radius:12px;background:var(--teal-deep);color:var(--cyan);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px}
-.quad-h3{font-size:19px;font-weight:800;color:var(--teal-deep);margin:0 0 10px;letter-spacing:-.2px}
-.quad-p{font-size:14px;line-height:1.7;color:var(--ink);margin:0 0 16px}
-.quad-features{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
-.quad-features li{font-size:13px;font-weight:600;color:var(--teal-deep);display:flex;align-items:center;gap:8px;background:#F1FBF9;padding:8px 12px;border-radius:10px;border:1px solid rgba(11,110,106,.12)}
-.quad-features li span{color:var(--teal);font-weight:800}
+/* --- BAGIAN 2: KLASIFIKASI FORMAT PENJELASAN (BENTO 3 KOLOM) --- */
+.format-bento{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.format-card{background:var(--glass-strong);backdrop-filter:blur(12px);border-radius:24px;padding:32px 28px;border:1px solid var(--border-glass);box-shadow:0 10px 28px rgba(11,59,58,.06);display:flex;flex-direction:column;justify-content:space-between;transition:transform .25s,box-shadow .25s}
+.format-card:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(11,59,58,.11)}
+.fc-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+.fc-num{width:42px;height:42px;border-radius:12px;background:var(--teal-deep);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px}
+.fc-badge{font-size:11px;font-weight:700;padding:4px 10px;border-radius:999px;background:rgba(11,110,106,.1);color:var(--teal)}
+.fc-h3{font-size:18px;font-weight:800;color:var(--teal-deep);margin:0 0 10px;line-height:1.35}
+.fc-p{font-size:14px;line-height:1.68;color:var(--ink);margin:0}
+.fc-foot{margin-top:20px;padding-top:14px;border-top:1px dashed rgba(11,59,58,.14);font-size:12.5px;font-weight:700;color:var(--teal)}
 
-/* --- BAGIAN 3: TAB INTERAKTIF EKSPANSI LINGKUP --- */
-.scope-shell{background:var(--glass-strong);backdrop-filter:blur(14px);border-radius:28px;padding:36px 38px;border:1px solid var(--border-glass);box-shadow:0 14px 36px rgba(11,59,58,.07)}
-.scope-tabs{display:flex;gap:10px;flex-wrap:wrap;padding-bottom:20px;border-bottom:1px solid rgba(11,59,58,.1);margin-bottom:26px}
-.scope-tab{padding:11px 18px;border-radius:14px;border:1px solid rgba(11,110,106,.18);background:#F4FBF9;color:var(--teal-deep);font-family:var(--font);font-size:13.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:all .2s}
-.scope-tab:hover{background:#E3F6F2;border-color:var(--teal)}
-.scope-tab.active{background:var(--teal-deep);color:#fff;border-color:var(--teal-deep);box-shadow:0 6px 16px rgba(11,59,58,.2)}
-.scope-tab .tab-num{font-size:11px;padding:2px 7px;border-radius:6px;background:rgba(11,110,106,.12);color:var(--teal)}
-.scope-tab.active .tab-num{background:rgba(129,246,239,.2);color:var(--cyan)}
+/* --- BAGIAN 3: INTERACTIVE EXPANDABLE DISCLOSURE (STANDAR MATERI ARSIP) --- */
+.archive-shell{background:var(--glass-strong);backdrop-filter:blur(14px);border-radius:28px;padding:36px 38px;border:1px solid var(--border-glass);box-shadow:0 14px 36px rgba(11,59,58,.07)}
+.archive-tabs{display:flex;gap:10px;flex-wrap:wrap;padding-bottom:20px;border-bottom:1px solid rgba(11,59,58,.1);margin-bottom:26px}
+.archive-tab{padding:11px 18px;border-radius:14px;border:1px solid rgba(11,110,106,.18);background:#F4FBF9;color:var(--teal-deep);font-family:var(--font);font-size:13.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:all .2s}
+.archive-tab:hover{background:#E3F6F2;border-color:var(--teal)}
+.archive-tab.active{background:var(--teal-deep);color:#fff;border-color:var(--teal-deep);box-shadow:0 6px 16px rgba(11,59,58,.2)}
+.archive-tab .at-num{font-size:11px;padding:2px 7px;border-radius:6px;background:rgba(11,110,106,.12);color:var(--teal)}
+.archive-tab.active .at-num{background:rgba(129,246,239,.2);color:var(--cyan)}
 
-.scope-panel{display:none;animation:fadeSlide .3s ease}
-.scope-panel.active{display:grid;grid-template-columns:1.25fr 1fr;gap:30px;align-items:start}
+.archive-panel{display:none;animation:fadeSlide .3s ease}
+.archive-panel.active{display:grid;grid-template-columns:1.25fr 1fr;gap:30px;align-items:start}
 @keyframes fadeSlide{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 
-.sp-title{font-size:22px;font-weight:800;color:var(--teal-deep);margin:0 0 12px}
-.sp-text{font-size:14.5px;line-height:1.72;color:var(--ink);margin:0 0 14px}
-.sp-checklist{list-style:none;padding:0;margin:16px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.sp-checklist li{background:#F3FBF9;border:1px solid rgba(11,110,106,.14);padding:10px 14px;border-radius:12px;font-size:13px;font-weight:600;color:var(--teal-deep);display:flex;align-items:center;gap:8px}
-.sp-checklist li::before{content:"✓";display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:var(--teal);color:#fff;font-size:11px;font-weight:800;flex-shrink:0}
+.ap-title{font-size:22px;font-weight:800;color:var(--teal-deep);margin:0 0 12px}
+.ap-text{font-size:14.5px;line-height:1.72;color:var(--ink);margin:0 0 14px}
+.ap-list{list-style:none;padding:0;margin:16px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.ap-list li{background:#F3FBF9;border:1px solid rgba(11,110,106,.14);padding:10px 14px;border-radius:12px;font-size:13px;font-weight:600;color:var(--teal-deep);display:flex;align-items:center;gap:8px}
+.ap-list li::before{content:"✓";display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:var(--teal);color:#fff;font-size:11px;font-weight:800;flex-shrink:0}
 
-.sp-card-side{background:linear-gradient(145deg,#F0FAF8,#E0F4EF);border-radius:20px;padding:24px;border:1px solid rgba(11,110,106,.18)}
-.sp-side-head{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.7px;color:var(--teal);margin:0 0 12px;display:flex;align-items:center;justify-content:space-between}
-.sp-side-box{background:#fff;border-radius:14px;padding:16px;margin-bottom:12px;border-left:4px solid var(--gold);box-shadow:0 4px 12px rgba(11,59,58,.04)}
-.sp-side-box:last-child{margin-bottom:0;border-left-color:var(--teal)}
-.sp-side-box strong{display:block;font-size:13.5px;color:var(--teal-deep);margin-bottom:4px}
-.sp-side-box p{margin:0;font-size:13px;line-height:1.58;color:var(--ink)}
+.ap-side-card{background:linear-gradient(145deg,#F0FAF8,#E0F4EF);border-radius:20px;padding:24px;border:1px solid rgba(11,110,106,.18)}
+.ap-side-head{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.7px;color:var(--teal);margin:0 0 12px;display:flex;align-items:center;justify-content:space-between}
+.ap-box{background:#fff;border-radius:14px;padding:16px;margin-bottom:12px;border-left:4px solid var(--gold);box-shadow:0 4px 12px rgba(11,59,58,.04)}
+.ap-box:last-child{margin-bottom:0;border-left-color:var(--teal)}
+.ap-box strong{display:block;font-size:13.5px;color:var(--teal-deep);margin-bottom:4px}
+.ap-box p{margin:0;font-size:13px;line-height:1.58;color:var(--ink)}
 
-/* --- BAGIAN 4: VERTICAL PROCESS TIMELINE (ALUR REALISASI & RIWAYAT) --- */
-.timeline-card-shell{background:var(--glass-strong);backdrop-filter:blur(12px);border-radius:28px;padding:36px 38px;border:1px solid var(--border-glass);box-shadow:0 12px 32px rgba(11,59,58,.06)}
-.v-timeline{display:flex;flex-direction:column;gap:16px;margin-top:24px}
-.v-step{display:grid;grid-template-columns:140px 1fr;gap:20px;background:#F5FCFA;border:1px solid rgba(11,110,106,.16);border-radius:18px;padding:20px 24px;align-items:center;transition:transform .2s,background .2s}
-.v-step:hover{transform:translateX(4px);background:#fff;border-color:var(--teal)}
-.v-badge-wrap{display:flex;flex-direction:column;gap:4px}
-.v-code{font-size:11px;font-weight:800;color:var(--teal);background:rgba(11,110,106,.12);padding:4px 10px;border-radius:6px;width:fit-content;letter-spacing:.5px}
-.v-phase{font-size:14px;font-weight:800;color:var(--teal-deep)}
-.v-content-wrap h4{margin:0 0 4px;font-size:15px;font-weight:800;color:var(--teal-deep)}
-.v-content-wrap p{margin:0;font-size:13.5px;line-height:1.6;color:var(--ink)}
-.v-step.paused{background:#FFFDF6;border-color:rgba(217,180,91,.5)}
-.v-step.paused .v-code{background:rgba(217,180,91,.25);color:#7D5D12}
+/* --- BAGIAN 4: METODOLOGI VALIDASI DATA (VERTICAL STEPPER) --- */
+.validation-shell{background:var(--glass-strong);backdrop-filter:blur(12px);border-radius:28px;padding:36px 38px;border:1px solid var(--border-glass);box-shadow:0 12px 32px rgba(11,59,58,.06)}
+.val-timeline{display:flex;flex-direction:column;gap:16px;margin-top:24px}
+.val-step{display:grid;grid-template-columns:140px 1fr;gap:20px;background:#F5FCFA;border:1px solid rgba(11,110,106,.16);border-radius:18px;padding:20px 24px;align-items:center;transition:transform .2s,background .2s}
+.val-step:hover{transform:translateX(4px);background:#fff;border-color:var(--teal)}
+.val-badge-wrap{display:flex;flex-direction:column;gap:4px}
+.val-code{font-size:11px;font-weight:800;color:var(--teal);background:rgba(11,110,106,.12);padding:4px 10px;border-radius:6px;width:fit-content;letter-spacing:.5px}
+.val-phase{font-size:14px;font-weight:800;color:var(--teal-deep)}
+.val-content-wrap h4{margin:0 0 4px;font-size:15px;font-weight:800;color:var(--teal-deep)}
+.val-content-wrap p{margin:0;font-size:13.5px;line-height:1.6;color:var(--ink)}
 
-/* --- BAGIAN 5: DUAL MATRIX (ARSITEKTUR KETERHUBUNGAN & KELOLA TEKNIS) --- */
+/* --- BAGIAN 5: DUAL PANEL MATRIKS (STRUKTUR PUBLIKASI vs HAK AKSES) --- */
 .dual-matrix{display:grid;grid-template-columns:1fr 1fr;gap:24px}
 .matrix-dark{background:linear-gradient(160deg,#0B3B3A,#104F4D);color:#fff;border-radius:28px;padding:36px 38px;box-shadow:0 16px 38px rgba(11,59,58,.18)}
 .matrix-light{background:var(--glass-strong);backdrop-filter:blur(12px);border:1px solid var(--border-glass);border-radius:28px;padding:36px 38px;box-shadow:0 12px 32px rgba(11,59,58,.06)}
@@ -200,7 +190,7 @@ body.menu-locked #container{overflow:hidden}
 .gov-box strong{display:block;font-size:13.5px;color:var(--teal-deep);margin-bottom:4px}
 .gov-box p{margin:0;font-size:12.5px;line-height:1.52;color:var(--teal-soft)}
 
-/* --- BAGIAN 6: BANNER PENUTUP KOMITMEN JANGKA PANJANG --- */
+/* --- BAGIAN 6: BANNER PENUTUP PUSAT MEDIA --- */
 .closing-banner{background:linear-gradient(120deg,rgba(255,255,255,.95) 0%,rgba(232,254,252,.95) 100%);border:1px solid rgba(11,110,106,.22);border-radius:28px;padding:36px 42px;box-shadow:0 14px 36px rgba(11,59,58,.08);display:grid;grid-template-columns:1.5fr 1fr;gap:30px;align-items:center}
 .cb-title{font-size:22px;font-weight:800;color:var(--teal-deep);margin:0 0 10px}
 .cb-text{font-size:14.5px;line-height:1.7;color:var(--ink);margin:0}
@@ -234,10 +224,10 @@ body.menu-locked #container{overflow:hidden}
   .ov-svg { display: none !important; }
 
   .page-body { margin: 20px 0 0 !important; gap: 28px !important; }
-  .hero-editorial, .quad-grid, .scope-panel.active, .dual-matrix, .closing-banner, .gov-grid, .sp-checklist, .v-step { grid-template-columns: 1fr !important; }
-  .hero-left, .hero-right, .quad-card, .scope-shell, .timeline-card-shell, .matrix-dark, .matrix-light, .closing-banner { padding: 24px 20px !important; border-radius: 20px !important; }
-  .hero-h1 { font-size: 25px !important; }
-  .id-quote { font-size: 16px !important; }
+  .pub-hero, .format-bento, .archive-panel.active, .dual-matrix, .closing-banner, .gov-grid, .ap-list, .val-step { grid-template-columns: 1fr !important; }
+  .pub-hero-left, .pub-hero-right, .format-card, .archive-shell, .validation-shell, .matrix-dark, .matrix-light, .closing-banner { padding: 24px 20px !important; border-radius: 20px !important; }
+  .pub-h1 { font-size: 25px !important; }
+  .pr-quote { font-size: 16px !important; }
   .sec-head { flex-direction: column !important; align-items: flex-start !important; }
   .sec-sub { text-align: left !important; }
   .site-footer { margin: 28px 0 0 !important; flex-direction: column !important; gap: 8px; text-align: center; }
@@ -266,465 +256,387 @@ body.menu-locked #container{overflow:hidden}
             </nav>
           </header>
 
-          <!-- ============ KONTEN UTAMA HALAMAN ============ -->
+          <!-- ============ KONTEN UTAMA HALAMAN MEDIA INFORMASI & PENJELASAN ============ -->
           <div class="page-body">
 
-            <!-- BAGIAN 1: HERO EDITORIAL & IDENTITAS UTAMA -->
-            <section class="hero-editorial" aria-labelledby="hero-heading">
-              <div class="hero-left">
+            <!-- BAGIAN 1: HERO KHUSUS MEDIA INFORMASI -->
+            <section class="pub-hero" aria-labelledby="pub-heading">
+              <div class="pub-hero-left">
                 <div>
-                  <div class="kicker-row">
-                    <span class="kicker-pill"><span class="kicker-dot"></span> Media Informasi &amp; Penjelasan</span>
-                    <span class="kicker-author">Arsip Resmi Muhammad Fajri Munawar</span>
-                  </div>
-                  <h1 class="hero-h1" id="hero-heading">
-                    Pusat Informasi, Dokumentasi, <span>dan Rekam Jejak Perkembangan Terpadu</span>
+                  <span class="pub-kicker">Media Informasi &amp; Penjelasan</span>
+                  <h1 class="pub-h1" id="pub-heading">
+                    Pusat Penjelasan Komprehensif, <span>Arsip Analisis, dan Standar Publikasi</span>
                   </h1>
-                  <p class="hero-lead">
-                    <strong translate="no">INFOTRINK</strong> difungsikan sebagai wadah digital mandiri yang menghimpun, menyusun, dan memperkenalkan beragam pemikiran, kegiatan, serta karya kreatif ke dalam satu arsitektur informasi yang terstruktur, transparan, dan saling terhubung secara harmonis.
+                  <p class="pub-desc">
+                    Halaman ini menyajikan pedoman tata cara penyampaian informasi, klasifikasi materi arsip, serta format penjelasan mendalam yang diterapkan dalam <strong translate="no">INFOTRINK</strong> agar setiap gagasan, laporan, dan catatan perkembangan dapat diakses secara transparan dan terstruktur.
                   </p>
                 </div>
-                <div class="hero-jump-bar">
-                  <a class="jump-chip" href="#dimensi-arsitektur">01. Dimensi Arsitektur</a>
-                  <a class="jump-chip" href="#ekosistem-cakupan">02. Ekosistem Cakupan</a>
-                  <a class="jump-chip" href="#alur-realisasi">03. Alur Realisasi</a>
-                  <a class="jump-chip" href="#arsitektur-tata-kelola">04. Tata Kelola &amp; Relasi</a>
-                  <a class="jump-chip" href="#komitmen-jangka-panjang">05. Komitmen Jangka Panjang</a>
+                <div class="pub-tags">
+                  <span class="pub-tag-item">01. Klasifikasi Materi</span>
+                  <span class="pub-tag-item">02. Standar Redaksi</span>
+                  <span class="pub-tag-item">03. Metodologi Validasi</span>
+                  <span class="pub-tag-item">04. Struktur Arsip</span>
                 </div>
               </div>
 
-              <aside class="hero-right" aria-label="Rumusan Identitas Utama">
+              <aside class="pub-hero-right" aria-label="Ringkasan Prinsip Publikasi">
                 <div>
-                  <span class="id-badge">Rumusan Identitas Utama</span>
-                  <p class="id-quote">
-                    <span translate="no">INFOTRINK</span> adalah <em>platform informasi dan dokumentasi terpadu</em> yang berfungsi memperkenalkan, menyajikan, menghubungkan, serta merekam perkembangan berbagai <em>gagasan, kegiatan, dan karya</em> dalam satu lingkungan digital yang terstruktur, informatif, dan berkelanjutan.
+                  <span class="pr-badge">Prinsip Publikasi Utama</span>
+                  <p class="pr-quote">
+                    Informasi disajikan berdasarkan <em>kondisi faktual dan rekam proses yang transparan</em>, memisahkan antara rumusan konseptual murni dan hasil proyek yang telah terealisasi secara nyata.
                   </p>
                 </div>
-                <div class="id-meta-grid">
-                  <div class="id-stat">
-                    <span class="id-stat-label">Fungsi Utama</span>
-                    <span class="id-stat-val">Pusat Publikasi</span>
+                <div class="pr-metrics">
+                  <div class="pr-stat">
+                    <span class="pr-stat-lbl">Akurasi Data</span>
+                    <span class="pr-stat-val">Terverifikasi</span>
                   </div>
-                  <div class="id-stat">
-                    <span class="id-stat-label">Sifat Sistem</span>
-                    <span class="id-stat-val">Terstruktur</span>
-                  </div>
-                  <div class="id-stat">
-                    <span class="id-stat-label">Cakupan</span>
-                    <span class="id-stat-val">Lintas Bidang</span>
+                  <div class="pr-stat">
+                    <span class="pr-stat-lbl">Format Akses</span>
+                    <span class="pr-stat-val">Berjenjang</span>
                   </div>
                 </div>
               </aside>
             </section>
 
-            <!-- BAGIAN 2: GRID 4 KUADRAN (DIMENSI ARSITEKTUR PLATFORM) -->
-            <section id="dimensi-arsitektur">
+            <!-- BAGIAN 2: KLASIFIKASI FORMAT PENJELASAN (BENTO 3 KOLOM) -->
+            <section>
               <div class="sec-head">
                 <div>
-                  <span class="sec-eyebrow">01 / Pilar Fundamental</span>
-                  <h2 class="sec-title">Empat Dimensi Perancangan Sistem</h2>
+                  <span class="sec-eyebrow">01 / Arsitektur Penyajian</span>
+                  <h2 class="sec-title">Tiga Tingkat Kedalaman Penjelasan</h2>
                 </div>
-                <p class="sec-sub">Prinsip dasar yang menjaga agar seluruh informasi tersaji secara teratur tanpa kehilangan esensi independensi masing-masing objek.</p>
+                <p class="sec-sub">Struktur pemaparan materi dirancang secara hierarkis agar pengunjung dapat memilih tingkat detail sesuai kebutuhan penelusuran.</p>
               </div>
 
-              <div class="quad-grid">
-                <div class="quad-card">
-                  <div class="quad-header">
-                    <span class="quad-index">DIMENSI I</span>
-                    <div class="quad-icon-box">01</div>
+              <div class="format-bento">
+                <div class="format-card">
+                  <div>
+                    <div class="fc-top">
+                      <div class="fc-num">I</div>
+                      <span class="fc-badge">Pintu Masuk</span>
+                    </div>
+                    <h3 class="fc-h3">Gambaran Umum &amp; Ringkasan Eksekutif</h3>
+                    <p class="fc-p">
+                      Pemaparan tingkat awal yang merangkum esensi suatu kegiatan, proyek, atau kajian dalam bentuk poin-poin penting agar pengunjung dapat langsung menangkap tujuan utama tanpa harus membaca keseluruhan dokumen rinci.
+                    </p>
                   </div>
-                  <h3 class="quad-h3">Titik Akses Digital Terpusat</h3>
-                  <p class="quad-p">
-                    Menyatukan berbagai informasi lintas kegiatan agar tidak tersebar secara terpisah. Pengunjung dapat menelusuri seluruh perjalanan pengembangan melalui satu alamat digital yang terorganisasi rapi.
-                  </p>
-                  <ul class="quad-features">
-                    <li><span>•</span> Navigasi lintas bidang yang intuitif</li>
-                    <li><span>•</span> Pengelompokan data sesuai karakteristik</li>
-                  </ul>
+                  <div class="fc-foot">Orientasi Cepat &amp; Intuitif</div>
                 </div>
 
-                <div class="quad-card">
-                  <div class="quad-header">
-                    <span class="quad-index">DIMENSI II</span>
-                    <div class="quad-icon-box" style="background:var(--gold);color:#0B3B3A">02</div>
+                <div class="format-card">
+                  <div>
+                    <div class="fc-top">
+                      <div class="fc-num" style="background:var(--gold);color:#0B3B3A">II</div>
+                      <span class="fc-badge">Eksplorasi Menengah</span>
+                    </div>
+                    <h3 class="fc-h3">Penjelasan Kontekstual &amp; Latar Belakang</h3>
+                    <p class="fc-p">
+                      Menyajikan konteks di balik pembentukan suatu inisiatif, termasuk permasalahan yang diamati, ruang lingkup operasional, serta alasan mendasar mengapa gagasan tersebut dirumuskan.
+                    </p>
                   </div>
-                  <h3 class="quad-h3">Pemisahan Status Pengelolaan</h3>
-                  <p class="quad-p">
-                    Menegaskan kedudukan platform sebagai media pengenalan dan dokumentasi informasi, bukan sebagai badan induk atau pengelola tunggal dari seluruh kegiatan yang diperkenalkan di dalamnya.
-                  </p>
-                  <ul class="quad-features">
-                    <li><span>•</span> Kemandirian penuh setiap kegiatan</li>
-                    <li><span>•</span> Hubungan publikasi dan dokumentasi</li>
-                  </ul>
+                  <div class="fc-foot">Konteks &amp; Pemahaman Utuh</div>
                 </div>
 
-                <div class="quad-card">
-                  <div class="quad-header">
-                    <span class="quad-index">DIMENSI III</span>
-                    <div class="quad-icon-box">03</div>
+                <div class="format-card">
+                  <div>
+                    <div class="fc-top">
+                      <div class="fc-num">III</div>
+                      <span class="fc-badge">Arsip Spesifik</span>
+                    </div>
+                    <h3 class="fc-h3">Dokumentasi Detail &amp; Rekam Proses</h3>
+                    <p class="fc-p">
+                      Halaman rincian mendalam yang memuat tanggal perubahan, laporan berkala, galeri visual pendukung, serta catatan evaluasi tahap demi tahap secara kronologis dan dapat dipertanggungjawabkan.
+                    </p>
                   </div>
-                  <h3 class="quad-h3">Pencatatan Riwayat &amp; Proses</h3>
-                  <p class="quad-p">
-                    Tidak sekadar menampilkan hasil akhir, melainkan merekam setiap tahapan pembentukan mulai dari gagasan awal, perancangan, pelaksanaan, hingga evaluasi perkembangan lanjutan.
-                  </p>
-                  <ul class="quad-features">
-                    <li><span>•</span> Rekam jejak berbasis tanggal kronologis</li>
-                    <li><span>•</span> Perbandingan visual rencana vs aktual</li>
-                  </ul>
-                </div>
-
-                <div class="quad-card">
-                  <div class="quad-header">
-                    <span class="quad-index">DIMENSI IV</span>
-                    <div class="quad-icon-box" style="background:var(--gold);color:#0B3B3A">04</div>
-                  </div>
-                  <h3 class="quad-h3">Kesiapan Skala Jangka Panjang</h3>
-                  <p class="quad-p">
-                    Dirancang untuk dapat menampung penambahan inisiatif, program, maupun kajian baru di masa mendatang tanpa mengganggu kestabilan sistem atau kinerja penelusuran informasi.
-                  </p>
-                  <ul class="quad-features">
-                    <li><span>•</span> Struktur website yang mudah diperluas</li>
-                    <li><span>•</span> Pengarsipan historis yang terjaga</li>
-                  </ul>
+                  <div class="fc-foot">Arsip Kronologis Komprehensif</div>
                 </div>
               </div>
             </section>
 
-            <!-- BAGIAN 3: TAB INTERAKTIF EKOSISTEM CAKUPAN -->
-            <section id="ekosistem-cakupan">
+            <!-- BAGIAN 3: TAB INTERAKTIF ARSIP & KATEGORI MATERI -->
+            <section>
               <div class="sec-head">
                 <div>
-                  <span class="sec-eyebrow">02 / Ruang Lingkup Aktivitas</span>
-                  <h2 class="sec-title">Klasifikasi Ragam Objek &amp; Inisiatif</h2>
+                  <span class="sec-eyebrow">02 / Pengelompokan Arsip</span>
+                  <h2 class="sec-title">Kategori Materi &amp; Ruang Lingkup Publikasi</h2>
                 </div>
-                <p class="sec-sub">Pilih opsi di bawah untuk menelaah bagaimana kategori aktivitas, proyek, kajian, karya, dan saluran dipaparkan.</p>
+                <p class="sec-sub">Pilih opsi di bawah untuk meninjau jenis-jenis dokumen dan bentuk informasi yang dihimpun ke dalam sistem.</p>
               </div>
 
-              <div class="scope-shell">
-                <div class="scope-tabs" role="tablist" aria-label="Kategori Ekosistem">
-                  <button class="scope-tab active" role="tab" aria-selected="true" data-tab="tab-kegiatan">
-                    <span class="tab-num">01</span> Ragam Kegiatan
+              <div class="archive-shell">
+                <div class="archive-tabs" role="tablist" aria-label="Kategori Arsip">
+                  <button class="archive-tab active" role="tab" aria-selected="true" data-tab="tab-lap">
+                    <span class="at-num">A</span> Catatan &amp; Laporan
                   </button>
-                  <button class="scope-tab" role="tab" aria-selected="false" data-tab="tab-proyek">
-                    <span class="tab-num">02</span> Proyek &amp; Program
+                  <button class="archive-tab" role="tab" aria-selected="false" data-tab="tab-kaj">
+                    <span class="at-num">B</span> Telaah &amp; Analisis
                   </button>
-                  <button class="scope-tab" role="tab" aria-selected="false" data-tab="tab-kajian">
-                    <span class="tab-num">03</span> Kajian &amp; Analisis
+                  <button class="archive-tab" role="tab" aria-selected="false" data-tab="tab-kon">
+                    <span class="at-num">C</span> Kerangka Konsep
                   </button>
-                  <button class="scope-tab" role="tab" aria-selected="false" data-tab="tab-karya">
-                    <span class="tab-num">04</span> Karya Kreatif
-                  </button>
-                  <button class="scope-tab" role="tab" aria-selected="false" data-tab="tab-saluran">
-                    <span class="tab-num">05</span> Saluran Publikasi
+                  <button class="archive-tab" role="tab" aria-selected="false" data-tab="tab-vis">
+                    <span class="at-num">D</span> Dokumentasi Visual
                   </button>
                 </div>
 
-                <!-- Panel Tab 1 -->
-                <div class="scope-panel active" id="tab-kegiatan" role="tabpanel">
+                <!-- Tab Panel A -->
+                <div class="archive-panel active" id="tab-lap" role="tabpanel">
                   <div>
-                    <h3 class="sp-title">Gagasan, Inisiatif, dan Aktivitas Berjalan</h3>
-                    <p class="sp-text">
-                      Menampung berbagai bentuk pemikiran yang telah diterjemahkan ke dalam aktivitas nyata maupun yang masih berada pada tahap perintisan awal. Setiap bidang diperlakukan secara khusus sesuai orientasi dan karakteristik perkembangannya masing-masing.
+                    <h3 class="ap-title">Laporan Perkembangan &amp; Catatan Berkala</h3>
+                    <p class="ap-text">
+                      Menghimpun catatan kemajuan dari berbagai proyek dan kegiatan yang sedang berjalan. Setiap laporan dilengkapi dengan keterangan tanggal pembaruan, perubahan status, serta pencapaian yang telah diraih pada periode tersebut.
                     </p>
-                    <ul class="sp-checklist">
-                      <li>Latar belakang &amp; tujuan pembentukan</li>
-                      <li>Ruang lingkup &amp; bidang garapan</li>
-                      <li>Identitas resmi &amp; arah ekspansi</li>
-                      <li>Tahapan rintisan awal inisiatif</li>
+                    <ul class="ap-list">
+                      <li>Kronologi kemajuan proyek</li>
+                      <li>Catatan penyesuaian target</li>
+                      <li>Laporan status pelaksanaan</li>
+                      <li>Arsip historis berkala</li>
                     </ul>
                   </div>
-                  <div class="sp-card-side">
-                    <div class="sp-side-head"><span>Kondisi Realisasi</span><span>Penyesuaian Data</span></div>
-                    <div class="sp-side-box">
-                      <strong>Kegiatan Aktif Berjalan</strong>
-                      <p>Memperkenalkan ringkasan operasional, layanan, hasil nyata, serta catatan perkembangan terkini.</p>
+                  <div class="ap-side-card">
+                    <div class="ap-side-head"><span>Fokus Laporan</span><span>Transparan</span></div>
+                    <div class="ap-box">
+                      <strong>Pembaruan Berkala</strong>
+                      <p> Memastikan informasi yang tampil selalu mencerminkan kondisi terbaru dari suatu inisiatif.</p>
                     </div>
-                    <div class="sp-side-box">
-                      <strong>Inisiatif Tahap Persiapan</strong>
-                      <p>Menampilkan kerangka konsep, target bidang, serta persiapan sumber daya sebelum peluncuran.</p>
+                    <div class="ap-box">
+                      <strong>Rekam Historis</strong>
+                      <p>Catatan lama tidak dihapus, melainkan diarsipkan untuk memperlihatkan perjalanan waktu.</p>
                     </div>
                   </div>
                 </div>
 
-                <!-- Panel Tab 2 -->
-                <div class="scope-panel" id="tab-proyek" role="tabpanel">
+                <!-- Tab Panel B -->
+                <div class="archive-panel" id="tab-kaj" role="tabpanel">
                   <div>
-                    <h3 class="sp-title">Pengembangan Sistem, Program, dan Objek</h3>
-                    <p class="sp-text">
-                      Pengembangan dipahami sebagai rangkaian proses perancangan, pembangunan, dan evaluasi yang membutuhkan tahapan terukur. Halaman detail proyek menyajikan informasi komprehensif mulai dari rancangan visual hingga dokumentasi lapangan.
+                    <h3 class="ap-title">Telaah, Pengamatan, dan Analisis Komprehensif</h3>
+                    <p class="ap-text">
+                      Dokumentasi hasil kajian yang menguraikan latar belakang masalah, pendekatan pengumpulan data, temuan analitis, hingga kesimpulan yang menjadi landasan strategis bagi pembentukan suatu program.
                     </p>
-                    <ul class="sp-checklist">
-                      <li>Konsep perancangan &amp; spesifikasi</li>
-                      <li>Ilustrasi rancangan &amp; galeri visual</li>
-                      <li>Catatan kemajuan pelaksanaan berkala</li>
-                      <li>Evaluasi akhir &amp; kondisi penyelesaian</li>
+                    <ul class="ap-list">
+                      <li>Identifikasi permasalahan</li>
+                      <li>Metodologi pengamatan</li>
+                      <li>Temuan dan hasil analisis</li>
+                      <li>Rujukan ke proyek terkait</li>
                     </ul>
                   </div>
-                  <div class="sp-card-side">
-                    <div class="sp-side-head"><span>Prinsip Transparansi</span><span>Akurat</span></div>
-                    <div class="sp-side-box">
-                      <strong>Pemisahan Rencana vs Pelaksanaan</strong>
-                      <p>Rancangan yang masih konseptual tidak pernah disamakan dengan kegiatan yang telah beroperasi penuh.</p>
+                  <div class="ap-side-card">
+                    <div class="ap-side-head"><span>Kualitas Kajian</span><span>Objektif</span></div>
+                    <div class="ap-box">
+                      <strong>Dasar Perancangan</strong>
+                      <p>Menjadi referensi teoretis dan analitis yang memperkuat validitas setiap gagasan yang dikembangkan.</p>
                     </div>
-                    <div class="sp-side-box">
-                      <strong>Rekam Jejak Kronologis</strong>
-                      <p>Pengunjung dapat mengikuti alur transformasi objek dari tahap pemikiran awal hingga wujud terbangun.</p>
+                    <div class="ap-box">
+                      <strong>Keterhubungan Data</strong>
+                      <p>Terhubung langsung dengan halaman proyek yang lahir dari hasil telaah tersebut.</p>
                     </div>
                   </div>
                 </div>
 
-                <!-- Panel Tab 3 -->
-                <div class="scope-panel" id="tab-kajian" role="tabpanel">
+                <!-- Tab Panel C -->
+                <div class="archive-panel" id="tab-kon" role="tabpanel">
                   <div>
-                    <h3 class="sp-title">Pengamatan, Riset, dan Telaah Mendalam</h3>
-                    <p class="sp-text">
-                      Landasan berpikir sebelum suatu inisiatif dieksekusi memerlukan pengumpulan data dan analisis yang cermat. Bagian ini mendokumentasikan topik kajian, metodologi pendekatan, temuan utama, serta kesimpulan yang dihasilkan.
+                    <h3 class="ap-title">Kerangka Konsep &amp; Rencana Perintisan</h3>
+                    <p class="ap-text">
+                      Menyajikan rumusan pemikiran awal, blueprint perancangan, dan skema pemikiran yang masih berada dalam tahap eksplorasi atau persiapan sebelum diwujudkan ke dalam pelaksanaan nyata.
                     </p>
-                    <ul class="sp-checklist">
-                      <li>Rumusan permasalahan &amp; tujuan telaah</li>
-                      <li>Metode pengumpulan informasi &amp; data</li>
-                      <li>Temuan analitis &amp; kesimpulan akhir</li>
-                      <li>Referensi silang ke proyek terkait</li>
+                    <ul class="ap-list">
+                      <li>Sketsa rancangan pemikiran</li>
+                      <li>Blueprint perencanaan awal</li>
+                      <li>Target bidang &amp; orientasi</li>
+                      <li>Status kelayakan konseptual</li>
                     </ul>
                   </div>
-                  <div class="sp-card-side">
-                    <div class="sp-side-head"><span>Bentuk Publikasi</span><span>Terhubung</span></div>
-                    <div class="sp-side-box">
-                      <strong>Laporan &amp; Dokumen Ringkas</strong>
-                      <p>Hasil telaah disajikan dalam bentuk laporan terstruktur yang mudah dipelajari oleh pihak yang membutuhkan.</p>
+                  <div class="ap-side-card">
+                    <div class="ap-side-head"><span>Status Konsep</span><span>Eksploratif</span></div>
+                    <div class="ap-box">
+                      <strong>Pemisahan Status</strong>
+                      <p>Diberi keterangan jelas sebagai rencana agar tidak menimbulkan kesalahpahaman realisasi.</p>
                     </div>
-                    <div class="sp-side-box">
-                      <strong>Keterkaitan Antarobjek</strong>
-                      <p>Menghubungkan langsung kajian yang menjadi dasar lahirnya suatu proyek atau program pengembangan.</p>
+                    <div class="ap-box">
+                      <strong>Ruang Inovasi</strong>
+                      <p>Menampung pemikiran yang potensial untuk direalisasikan pada masa mendatang.</p>
                     </div>
                   </div>
                 </div>
 
-                <!-- Panel Tab 4 -->
-                <div class="scope-panel" id="tab-karya" role="tabpanel">
+                <!-- Tab Panel D -->
+                <div class="archive-panel" id="tab-vis" role="tabpanel">
                   <div>
-                    <h3 class="sp-title">Kreativitas Personal dan Hasil Cipta</h3>
-                    <p class="sp-text">
-                      Menghargai ekspresi seni, rancangan, dan karya kreatif personal yang berdiri sendiri maupun yang berkaitan dengan kegiatan tertentu. Dokumentasi mencakup latar belakang penciptaan, waktu pembuatan, hingga status pengerjaan.
+                    <h3 class="ap-title">Dokumentasi Visual &amp; Infografis Pendukung</h3>
+                    <p class="ap-text">
+                      Galeri materi visual berupa foto kegiatan, ilustrasi konsep, rancangan objek, dan infografis terstruktur yang memperjelas pemahaman pengunjung terhadap objek yang sedang dipaparkan.
                     </p>
-                    <ul class="sp-checklist">
-                      <li>Judul, kategori &amp; deskripsi karya</li>
-                      <li>Latar belakang inspirasi penciptaan</li>
-                      <li>Status pengerjaan (selesai / proses)</li>
-                      <li>Riwayat revisi dan penyempurnaan</li>
+                    <ul class="ap-list">
+                      <li>Foto dokumentasi lapangan</li>
+                      <li>Ilustrasi rancangan visual</li>
+                      <li>Diagram struktur &amp; alur</li>
+                      <li>Infografis ringkasan data</li>
                     </ul>
                   </div>
-                  <div class="sp-card-side">
-                    <div class="sp-side-head"><span>Kemandirian Ciptaan</span><span>Fleksibel</span></div>
-                    <div class="sp-side-box">
-                      <strong>Karya Mandiri</strong>
-                      <p>Karya kreatif yang tidak terikat pada aktivitas tertentu tetap ditampilkan utuh dengan identitas khususnya.</p>
+                  <div class="ap-side-card">
+                    <div class="ap-side-head"><span>Fungsi Visual</span><span>Klarifikasi</span></div>
+                    <div class="ap-box">
+                      <strong>Bukti Nyata</strong>
+                      <p>Memberikan gambaran visual yang memperkuat penjelasan teks secara objektif.</p>
                     </div>
-                    <div class="sp-side-box">
-                      <strong>Publikasi &amp; Ekstensi</strong>
-                      <p>Apabila karya dikembangkan lebih lanjut melalui media tertentu, rekam jejak tersebut dicatat secara transparan.</p>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Panel Tab 5 -->
-                <div class="scope-panel" id="tab-saluran" role="tabpanel">
-                  <div>
-                    <h3 class="sp-title">Direktori Saluran Resmi &amp; Media Mandiri</h3>
-                    <p class="sp-text">
-                      Menghimpun informasi lengkap mengenai berbagai saluran publikasi dan media khusus yang dikembangkan, termasuk fokus pembahasan, tujuan penyajian, karakteristik media, serta tautan langsung menuju sumber aslinya.
-                    </p>
-                    <ul class="sp-checklist">
-                      <li>Deskripsi fokus &amp; bidang pembahasan</li>
-                      <li>Bentuk penyajian informasi di saluran</li>
-                      <li>Tujuan komunikasi &amp; target audiens</li>
-                      <li>Tautan akses langsung ke sumber resmi</li>
-                    </ul>
-                  </div>
-                  <div class="sp-card-side">
-                    <div class="sp-side-head"><span>Fungsi Penghubung</span><span>Direktori Utama</span></div>
-                    <div class="sp-side-box">
-                      <strong>Pusat Pengarahan, Bukan Duplikasi</strong>
-                      <p><span translate="no">INFOTRINK</span> berfungsi sebagai direktori terpusat yang mengarahkan pengunjung ke saluran aslinya.</p>
-                    </div>
-                    <div class="sp-side-box">
-                      <strong>Media Mandiri Terintegrasi</strong>
-                      <p>Media khusus dengan pengelolaan tersendiri diperkenalkan bersama latar belakang pembentukannya.</p>
+                    <div class="ap-box">
+                      <strong>Keterangan Waktu</strong>
+                      <p>Setiap materi visual dilengkapi tanggal pembuatan dan konteks objek terkait.</p>
                     </div>
                   </div>
                 </div>
               </div>
             </section>
 
-            <!-- BAGIAN 4: VERTICAL PROCESS TIMELINE (ALUR REALISASI & RIWAYAT) -->
-            <section id="alur-realisasi">
+            <!-- BAGIAN 4: METODOLOGI VALIDASI DATA (VERTICAL STEPPER) -->
+            <section>
               <div class="sec-head">
                 <div>
-                  <span class="sec-eyebrow">03 / Kronologi Pencatatan</span>
-                  <h2 class="sec-title">Tahapan Standar Status &amp; Dokumentasi</h2>
+                  <span class="sec-eyebrow">03 / Standar Redaksi &amp; Validasi</span>
+                  <h2 class="sec-title">Empat Tahap Verifikasi Informasi</h2>
                 </div>
-                <p class="sec-sub">Setiap objek memiliki penanda status realisasi yang jelas agar pengunjung memahami posisi perkembangan aktual dari waktu ke waktu.</p>
+                <p class="sec-sub">Prosedur penelaahan yang dilalui setiap materi sebelum diterbitkan ke dalam pusat informasi untuk menjamin keandalan data.</p>
               </div>
 
-              <div class="timeline-card-shell">
-                <div class="v-timeline">
-                  <div class="v-step">
-                    <div class="v-badge-wrap">
-                      <span class="v-code">FASE 01</span>
-                      <span class="v-phase">Gagasan &amp; Telaah</span>
+              <div class="validation-shell">
+                <div class="val-timeline">
+                  <div class="val-step">
+                    <div class="val-badge-wrap">
+                      <span class="val-code">TAHAP I</span>
+                      <span class="val-phase">Pengumpulan</span>
                     </div>
-                    <div class="v-content-wrap">
-                      <h4>Perumusan Pemikiran &amp; Pengkajian Awal</h4>
-                      <p>Tahap awal di mana suatu ide atau masalah diidentifikasi, diteliti dasarnya, dan dirumuskan dalam kerangka konseptual sebelum melangkah ke perancangan teknis.</p>
-                    </div>
-                  </div>
-
-                  <div class="v-step">
-                    <div class="v-badge-wrap">
-                      <span class="v-code">FASE 02</span>
-                      <span class="v-phase">Perencanaan</span>
-                    </div>
-                    <div class="v-content-wrap">
-                      <h4>Penyusunan Ruang Lingkup &amp; Struktur</h4>
-                      <p>Penyusunan blueprint, penentuan kebutuhan sumber daya, serta penjadwalan tahapan pelaksanaan proyek atau kegiatan secara terukur.</p>
+                    <div class="val-content-wrap">
+                      <h4>Inventarisasi Data &amp; Dokumen Sumber</h4>
+                      <p>Mengumpulkan bahan, catatan lapangan, hasil kajian, dan materi visual langsung dari sumber kegiatan yang bersangkutan.</p>
                     </div>
                   </div>
 
-                  <div class="v-step">
-                    <div class="v-badge-wrap">
-                      <span class="v-code">FASE 03</span>
-                      <span class="v-phase">Persiapan Rintisan</span>
+                  <div class="val-step">
+                    <div class="val-badge-wrap">
+                      <span class="val-code">TAHAP II</span>
+                      <span class="val-phase">Penyaringan</span>
                     </div>
-                    <div class="v-content-wrap">
-                      <h4>Mobilisasi Sumber Daya &amp; Pembentukan Awal</h4>
-                      <p>Menyiapkan infrastruktur pendukung, membentuk tim pelaksana, serta melakukan uji coba konsep pada skala terbatas.</p>
-                    </div>
-                  </div>
-
-                  <div class="v-step">
-                    <div class="v-badge-wrap">
-                      <span class="v-code">FASE 04</span>
-                      <span class="v-phase">Pelaksanaan Aktif</span>
-                    </div>
-                    <div class="v-content-wrap">
-                      <h4>Operasional Berjalan &amp; Pemantauan Berkala</h4>
-                      <p>Kegiatan atau proyek berjalan secara penuh, dengan pembaruan dokumentasi visual dan laporan kemajuan berkala di platform.</p>
+                    <div class="val-content-wrap">
+                      <h4>Penyelarasan Terminologi &amp; Format</h4>
+                      <p>Memastikan seluruh naskah dan penjelasan mematuhi standar kebahasaan yang netral, profesional, serta bersih dari istilah yang tidak sesuai.</p>
                     </div>
                   </div>
 
-                  <div class="v-step">
-                    <div class="v-badge-wrap">
-                      <span class="v-code">FASE 05</span>
-                      <span class="v-phase">Penyelesaian &amp; Evolusi</span>
+                  <div class="val-step">
+                    <div class="val-badge-wrap">
+                      <span class="val-code">TAHAP III</span>
+                      <span class="val-phase">Verifikasi Status</span>
                     </div>
-                    <div class="v-content-wrap">
-                      <h4>Pencapaian Target Utama &amp; Pengembangan Lanjutan</h4>
-                      <p>Target utama berhasil diselesaikan, dicatat sebagai arsip hasil akhir, atau dilanjutkan ke fase inovasi berikutnya.</p>
+                    <div class="val-content-wrap">
+                      <h4>Pencocokan Kondisi Aktual &amp; Realisasi</h4>
+                      <p>Menetapkan status kejelasan (apakah masih berupa gagasan, dalam tahap perancangan, atau sudah berjalan aktif) secara jujur.</p>
                     </div>
                   </div>
 
-                  <div class="v-step paused">
-                    <div class="v-badge-wrap">
-                      <span class="v-code">CATATAN KHUSUS</span>
-                      <span class="v-phase" style="color:#8C6D18">Penundaan / Penghentian</span>
+                  <div class="val-step">
+                    <div class="val-badge-wrap">
+                      <span class="val-code">TAHAP IV</span>
+                      <span class="val-phase">Publikasi &amp; Arsip</span>
                     </div>
-                    <div class="v-content-wrap">
-                      <h4>Transparansi Perubahan Arah atau Penghentian</h4>
-                      <p>Apabila suatu inisiatif ditunda atau tidak dilanjutkan karena penyesuaian kondisi, status tersebut dicatat secara jujur sebagai bagian dari rekam jejak historis.</p>
+                    <div class="val-content-wrap">
+                      <h4>Penyusunan ke Sistem &amp; Pembaruan Berkala</h4>
+                      <p>Menerbitkan informasi ke dalam halaman yang sesuai serta menghubungkannya dengan referensi silang antarhalaman yang relevan.</p>
                     </div>
                   </div>
                 </div>
               </div>
             </section>
 
-            <!-- BAGIAN 5: DUAL MATRIX (ARSITEKTUR KETERHUBUNGAN & KELOLA TEKNIS) -->
-            <section id="arsitektur-tata-kelola">
+            <!-- BAGIAN 5: DUAL MATRIX (STRUKTUR PUBLIKASI vs KEAMANAN AKSES) -->
+            <section>
               <div class="sec-head">
                 <div>
-                  <span class="sec-eyebrow">04 / Sistem Integrasi</span>
-                  <h2 class="sec-title">Keterhubungan Objek &amp; Operasional Teknis</h2>
+                  <span class="sec-eyebrow">04 / Tata Kelola &amp; Aksesibilitas</span>
+                  <h2 class="sec-title">Arsitektur Akses &amp; Integrasi Konten</h2>
                 </div>
-                <p class="sec-sub">Mekanisme penghubung antarhalaman yang proporsional serta standar pengelolaan informasi yang aman dan terstruktur.</p>
+                <p class="sec-sub">Pengaturan distribusi informasi publik dan perlindungan data terbatas demi kenyamanan serta keamanan penelusuran.</p>
               </div>
 
               <div class="dual-matrix">
                 <!-- Kolom Kiri Gelap -->
                 <div class="matrix-dark">
-                  <span class="mx-tag">Referensi Silang Antarhalaman</span>
-                  <h3 class="mx-h3">Keterikatan Kontekstual yang Relevan</h3>
+                  <span class="mx-tag">Struktur Informasi Publik</span>
+                  <h3 class="mx-h3">Keterhubungan Navigasi yang Terarah</h3>
                   <p class="mx-p">
-                    Informasi di dalam <span translate="no">INFOTRINK</span> dirancang agar dapat saling menautkan objek yang memiliki hubungan nyata, tanpa memaksakan penyatuan pada hal-hal yang berdiri sendiri secara mandiri.
+                    Setiap halaman penjelasan dihubungkan melalui sistem referensi silang yang memudahkan pengunjung menelusuri topik terkait tanpa hambatan struktural.
                   </p>
                   <div class="node-chain">
                     <div class="node-row">
-                      <strong>Telaah Kajian &rarr; Proyek</strong>
-                      <span>Menampilkan dasar pemikiran perancangan</span>
+                      <strong>Beranda &rarr; Pusat Publikasi</strong>
+                      <span>Akses ringkasan informasi utama</span>
                     </div>
                     <div class="node-row">
-                      <strong>Aktivitas &rarr; Pihak Pengembang</strong>
-                      <span>Menjelaskan penanggung jawab kegiatan</span>
+                      <strong>Kajian &rarr; Halaman Proyek</strong>
+                      <span>Menelusuri latar belakang teknis</span>
                     </div>
                     <div class="node-row">
-                      <strong>Proyek &rarr; Galeri Visual</strong>
-                      <span>Menyajikan bukti dokumentasi lapangan</span>
+                      <strong>Proyek &rarr; Dokumentasi Visual</strong>
+                      <span>Meninjau bukti galeri lapangan</span>
                     </div>
                     <div class="node-row">
                       <strong>Hasil &rarr; Saluran Resmi</strong>
-                      <span>Mengarahkan ke media publikasi terkait</span>
+                      <span>Mengarahkan ke media rujukan</span>
                     </div>
                   </div>
                 </div>
 
                 <!-- Kolom Kanan Terang -->
                 <div class="matrix-light">
-                  <span class="mx-tag">Standar Pengelolaan &amp; Teknologi</span>
-                  <h3 class="mx-h3">Kelola Berkelanjutan &amp; Keamanan Data</h3>
+                  <span class="mx-tag">Pengelolaan &amp; Privasi</span>
+                  <h3 class="mx-h3">Standar Keamanan dan Hak Akses Data</h3>
                   <p class="mx-p">
-                    Penerapan struktur berjenjang, pencarian berbasis kata kunci, serta pemisahan ketat antara informasi publik dan catatan internal yang bersifat terbatas.
+                    Penerapan pemisahan tegas antara dokumen yang bersifat terbuka untuk umum dan catatan internal terbatas demi melindungi hak cipta serta kerahasiaan operasional.
                   </p>
                   <div class="gov-grid">
                     <div class="gov-box">
-                      <strong>Navigasi Berjenjang</strong>
-                      <p>Pintu masuk utama, halaman kelompok pengantar, hingga halaman detail objek yang mendalam.</p>
+                      <strong>Pemisahan Publik</strong>
+                      <p>Informasi terbuka disaring secara cermat agar mudah dipahami masyarakat luas.</p>
                     </div>
                     <div class="gov-box">
-                      <strong>Pengarsipan Historis</strong>
-                      <p>Catatan lama yang digantikan pembaruan tetap tersimpan rapi sebagai rekam jejak masa lalu.</p>
+                      <strong>Proteksi Internal</strong>
+                      <p>Catatan terbatas dikelola dengan pembatasan hak akses yang ketat dan aman.</p>
                     </div>
                     <div class="gov-box">
-                      <strong>Pemisahan Akses Data</strong>
-                      <p>Proteksi terhadap materi visual eksklusif dan pemisahan tegas dari informasi terbuka publik.</p>
+                      <strong>Perlindungan Hak Cipta</strong>
+                      <p>Seluruh materi visual dan naskah dijaga kepemilikan dan izin penggunaannya.</p>
                     </div>
                     <div class="gov-box">
-                      <strong>Responsif Lintas Perangkat</strong>
-                      <p>Tata letak otomatis yang menyesuaikan layar komputer, tablet, maupun telepon genggam.</p>
+                      <strong>Kinerja Cepat</strong>
+                      <p>Sistem arsip dioptimalkan agar pencarian topik dapat dilakukan secara instan.</p>
                     </div>
                   </div>
                 </div>
               </div>
             </section>
 
-            <!-- BAGIAN 6: BANNER PENUTUP KOMITMEN JANGKA PANJANG -->
-            <section id="komitmen-jangka-panjang">
+            <!-- BAGIAN 6: BANNER PENUTUP PUSAT MEDIA -->
+            <section>
               <div class="closing-banner">
                 <div>
-                  <span class="sec-eyebrow">05 / Visi Berkelanjutan</span>
-                  <h2 class="cb-title">Menjaga Kesinambungan Gagasan Lintas Waktu</h2>
+                  <span class="sec-eyebrow">05 / Komitmen Informasi</span>
+                  <h2 class="cb-title">Menghadirkan Kejelasan dan Keterbukaan Arsip</h2>
                   <p class="cb-text">
-                    Keberadaan <strong translate="no">INFOTRINK</strong> melampaui sekadar catatan hasil akhir; platform ini adalah wujud komitmen untuk merekam proses, merawat rekam jejak pemikiran, serta menyediakan pusat informasi yang dapat diandalkan dalam jangka panjang.
+                    Melalui halaman <strong translate="no">Media Informasi &amp; Penjelasan</strong> ini, seluruh rangkaian aktivitas dan pemikiran diperkenalkan secara utuh, objektif, dan terstruktur demi mewujudkan pusat dokumentasi yang berwibawa dan berkelanjutan.
                   </p>
                 </div>
                 <div class="cb-actions">
-                  <a class="cb-cta" href="mengenal-infotrink.html">
-                    <span>Pelajari Halaman Mengenal INFOTRINK</span>
-                    <span>&rarr;</span>
-                  </a>
-                  <a class="cb-cta secondary" href="gagasan-konsep.html">
-                    <span>Telusuri Gagasan &amp; Konsep Pengembangan</span>
+                  <a class="cb-cta" href="hasil-riset.html">
+                    <span>Telusuri Hasil Kajian dan Pengamatan</span>
                     <span>&rarr;</span>
                   </a>
                   <a class="cb-cta secondary" href="laporan.html">
                     <span>Lihat Laporan &amp; Catatan Perkembangan</span>
+                    <span>&rarr;</span>
+                  </a>
+                  <a class="cb-cta secondary" href="mengenal-infotrink.html">
+                    <span>Kunjungi Halaman Mengenal INFOTRINK</span>
                     <span>&rarr;</span>
                   </a>
                 </div>
@@ -832,9 +744,9 @@ function renderOverlays(){
   host.innerHTML = html;
 }
 
-function initScopeTabs(){
-  var tabs = $$(".scope-tab");
-  var panels = $$(".scope-panel");
+function initArchiveTabs(){
+  var tabs = $$(".archive-tab");
+  var panels = $$(".archive-panel");
   tabs.forEach(function(tab){
     tab.addEventListener("click", function(){
       var targetId = tab.getAttribute("data-tab");
@@ -954,7 +866,7 @@ function onResize(){
 
 function init(){
   renderOverlays();
-  initScopeTabs();
+  initArchiveTabs();
   if(window.innerWidth > 768){
     updateScale(); applyZoom();
     requestAnimationFrame(function(){ measureContentHeight(); measureNavPositions(); });
