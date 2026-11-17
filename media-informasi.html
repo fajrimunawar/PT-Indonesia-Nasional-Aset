@@ -35,7 +35,7 @@ body.menu-locked #container{overflow:hidden}
 #content{position:absolute;top:0;left:0;width:1280px;transform-origin:top left}
 
 /* ============ HEADER & NAVIGASI ============ */
-.slide{position:relative;width:1280px;height:auto;min-height:180px;overflow:hidden;background:var(--bg-grad);padding-bottom:10px}
+.slide{position:relative;width:1280px;height:auto;min-height:220px;overflow:hidden;background:var(--bg-grad);padding-bottom:10px}
 .hero-dim{transition:opacity .3s ease}
 .slide.menu-open .hero-dim{opacity:.22;pointer-events:none}
 
@@ -49,9 +49,9 @@ body.menu-locked #container{overflow:hidden}
 .nav-link.on{font-weight:700;color:var(--teal);border-bottom-color:var(--teal)}
 
 /* ============ AREA UTAMA KOSONG ============ */
-.main-content-area{max-width:1280px;margin:20px 70px;min-height:220px}
+.main-content-area{max-width:1280px;margin:20px 70px;min-height:300px}
 
-/* ============ DAFTAR ISI OVERLAY (ANIMASI & POSISI DIPERBAIKI) ============ */
+/* ============ DAFTAR ISI OVERLAY (POSISI & ANIMASI RAPI) ============ */
 .overlay-menu{position:absolute;inset:0;visibility:hidden;pointer-events:none;transition:visibility 0s linear .7s;z-index:100}
 .overlay-menu.open{visibility:visible;transition-delay:0s}
 .overlay-menu.open .ov-box,.overlay-menu.open .ov-x{pointer-events:auto}
@@ -83,31 +83,6 @@ body.menu-locked #container{overflow:hidden}
 .overlay-menu.open .ov-x{opacity:1;transform:scale(1) rotate(0);transition-delay:.55s}
 .overlay-menu.open .ov-x:hover{background:#d32f2f;transform:scale(1.1) rotate(0);transition-delay:0s}
 
-/* ============ FOOTER UTAMA ============ */
-.sec-footer{position:relative;background:linear-gradient(180deg,var(--teal-deep),var(--teal) 60%,var(--teal-deep));overflow:hidden}
-.sec-footer .blob{position:absolute;border-radius:50%}
-.sec-footer .b1{top:-150px;right:-150px;width:400px;height:400px;background:rgba(129,246,239,.08)}
-.sec-footer .b2{bottom:-100px;left:-100px;width:300px;height:300px;background:rgba(129,246,239,.06)}
-.footer-cols{position:relative;padding:40px 80px 24px;display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px}
-.footer-brand{display:flex;align-items:center;gap:10px;margin-bottom:16px}
-.footer-brand img.icon{width:36px;height:36px;object-fit:contain}
-.footer-brand img.text{width:110px;height:36px;object-fit:contain}
-.footer-desc{font-size:12.5px;line-height:1.65;color:rgba(255,255,255,.7);margin:0 0 16px;text-align:justify}
-.footer-tags{display:flex;gap:8px}
-.footer-tags .ftag{font-size:10px;font-weight:700;color:#fff;padding:3px 10px;border-radius:6px;letter-spacing:.3px}
-.footer-tags .ftag-m{background:rgba(59,130,246,.25);border:1px solid rgba(59,130,246,.5)}
-.footer-tags .ftag-p{background:rgba(16,185,129,.25);border:1px solid rgba(16,185,129,.5)}
-.footer-tags .ftag-pe{background:rgba(245,158,11,.25);border:1px solid rgba(245,158,11,.5)}
-.footer-tags .ftag-l{background:rgba(139,92,246,.25);border:1px solid rgba(139,92,246,.5)}
-.footer-cols h4{font-size:12px;font-weight:700;color:var(--cyan);letter-spacing:1px;margin:0 0 16px}
-.footer-cols ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:9px}
-.footer-cols ul a{font-size:13px;color:rgba(255,255,255,.75);text-decoration:none}
-.footer-bottom{position:relative;padding:18px 80px;background:rgba(0,0,0,.25);display:flex;align-items:center;gap:28px}
-.footer-copy{font-size:11.5px;color:rgba(255,255,255,.65);line-height:1.55;flex:1;min-width:0}
-.footer-rule{width:1px;align-self:stretch;background:rgba(129,246,239,.2);flex-shrink:0}
-.footer-legal{display:flex;gap:12px;font-size:11px;color:rgba(255,255,255,.5);letter-spacing:.3px;flex-shrink:0;white-space:nowrap}
-.footer-legal .sep{opacity:.4}
-
 /* =========================================================
    MEDIA QUERY RESPONSIVE KHUSUS PERANGKAT HP (MAX 768px)
    ========================================================= */
@@ -117,16 +92,12 @@ body.menu-locked #container{overflow:hidden}
   #wrapper { height: auto !important; overflow: visible !important; }
   #content { position: relative !important; width: 100% !important; transform: none !important; zoom: 1 !important; }
 
-  .slide { width: 100% !important; height: auto !important; padding: 20px 20px 20px !important; }
-  .site-header { margin: 0 0 20px 0 !important; flex-direction: column !important; align-items: stretch !important; gap: 15px; }
+  .slide { width: 100% !important; height: auto !important; padding: 20px 20px 10px !important; }
+  .site-header { margin: 0 0 15px 0 !important; flex-direction: column !important; align-items: stretch !important; gap: 15px; }
   .site-nav { width: 100% !important; justify-content: space-between !important; gap: 8px; padding: 10px 14px; overflow-x: auto; }
   .nav-link { font-size: 12.5px !important; white-space: nowrap; }
 
   .main-content-area { padding: 0 20px !important; }
-
-  .footer-cols { padding: 30px 20px !important; grid-template-columns: 1fr !important; gap: 25px !important; }
-  .footer-bottom { padding: 20px !important; flex-direction: column !important; align-items: flex-start !important; gap: 15px !important; }
-  .footer-rule { display: none !important; }
 
   .overlay-menu { position: fixed !important; }
   .ov-box { left: 16px !important; top: 30px !important; width: calc(100% - 32px) !important; height: auto !important; max-height: 85vh !important; overflow-y: auto !important; padding: 24px 18px !important; }
@@ -163,58 +134,10 @@ body.menu-locked #container{overflow:hidden}
         <div class="overlays" data-overlays></div>
       </div>
 
-      <!-- ============ AREA KOSONG BEBAS DISUSUN ============ -->
+      <!-- ============ AREA UTAMA KOSONG (BEBAS DISUSUN SENDIRI) ============ -->
       <main class="main-content-area">
         <!-- Silakan susun halaman Anda sendiri di sini -->
       </main>
-
-      <!-- ============ FOOTER UTAMA ============ -->
-      <footer class="sec-footer">
-        <div class="blob b1"></div>
-        <div class="blob b2"></div>
-        <div class="footer-cols">
-          <div>
-            <div class="footer-brand"><img class="icon" src="1000007372.png" alt="Infotrink"><img class="text" src="1000007373.png" alt="Infotrink"></div>
-            <p class="footer-desc">Tempat perjalanan gagasan dan karya diperkenalkan melalui informasi dan dokumentasi.</p>
-            <div class="footer-tags"><span class="ftag ftag-m">M</span><span class="ftag ftag-p">P</span><span class="ftag ftag-pe">Pe</span><span class="ftag ftag-l">L</span></div>
-          </div>
-          <div>
-            <h4>NAVIGASI</h4>
-            <ul>
-              <li><a href="index.html" data-nav="Beranda">Beranda</a></li>
-              <li><a href="media-informasi.html" data-nav="Publikasi">Publikasi</a></li>
-              <li><a href="#" data-nav="Informasi">Informasi</a></li>
-              <li><a href="#" data-nav="Galeri">Galeri</a></li>
-              <li><a href="mengenal-infotrink.html" data-nav="Mengenal INFOTRINK"><span translate="no">Mengenal INFOTRINK</span></a></li>
-            </ul>
-          </div>
-          <div>
-            <h4>BIDANG</h4>
-            <ul>
-              <li><a href="media-digital.html">Media Digital</a></li>
-              <li><a href="pembangunan.html">Pembangunan</a></li>
-              <li><a href="personal.html">Personal</a></li>
-              <li><a href="bidang-lainnya.html">Bidang Lainnya</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4>JENIS MATERI</h4>
-            <ul>
-              <li><a href="media-informasi.html">Media Informasi</a></li>
-              <li><a href="hasil-riset.html">Hasil Riset</a></li>
-              <li><a href="kajian-analisis.html">Kajian &amp; Analisis</a></li>
-              <li><a href="laporan.html">Laporan</a></li>
-              <li><a href="data-referensi.html">Data &amp; Referensi</a></li>
-              <li><a href="gagasan-konsep.html">Gagasan</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="footer-bottom">
-          <div class="footer-copy">© 2026 <span translate="no">INFOTRINK</span>. Hak cipta dilindungi. Seluruh materi yang dipublikasikan merupakan hasil riset, kajian, pemikiran, dan dokumentasi yang dikelola secara terstruktur untuk kepentingan pengetahuan.</div>
-          <div class="footer-rule"></div>
-          <div class="footer-legal"><span>Syarat &amp; Ketentuan</span><span class="sep">•</span><span>Kebijakan Privasi</span></div>
-        </div>
-      </footer>
 
     </div>
   </div>
