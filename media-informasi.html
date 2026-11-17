@@ -35,11 +35,11 @@ body.menu-locked #container{overflow:hidden}
 #content{position:absolute;top:0;left:0;width:1280px;transform-origin:top left}
 
 /* ============ HEADER & NAVIGASI ============ */
-.slide{position:relative;width:1280px;height:auto;min-height:220px;overflow:hidden;background:var(--bg-grad);padding-bottom:10px}
+.slide{position:relative;width:1280px;min-height:760px;overflow:visible;background:transparent;padding-bottom:40px}
 .hero-dim{transition:opacity .3s ease}
 .slide.menu-open .hero-dim{opacity:.22;pointer-events:none}
 
-.site-header{position:relative;margin:32px 70px 0 70px;display:flex;align-items:center;justify-content:space-between;z-index:10}
+.site-header{position:relative;padding-top:32px;margin:0 70px;display:flex;align-items:center;justify-content:space-between;z-index:10}
 .logo-pill{display:flex;align-items:center;gap:12px;padding:8px 22px 8px 10px;background:rgba(255,255,255,.85);backdrop-filter:blur(10px);border-radius:999px;box-shadow:0 4px 16px rgba(11,59,58,.12);border:1px solid rgba(255,255,255,.6);text-decoration:none;cursor:pointer}
 .logo-pill .icon{width:42px;height:42px;object-fit:contain;filter:drop-shadow(0 2px 4px rgba(11,59,58,.15))}
 .logo-pill .text{width:125px;height:40px;object-fit:contain}
@@ -48,11 +48,8 @@ body.menu-locked #container{overflow:hidden}
 .nav-link:hover{color:var(--teal)}
 .nav-link.on{font-weight:700;color:var(--teal);border-bottom-color:var(--teal)}
 
-/* ============ AREA UTAMA KOSONG ============ */
-.main-content-area{max-width:1280px;margin:20px 70px;min-height:300px}
-
-/* ============ DAFTAR ISI OVERLAY (POSISI & ANIMASI RAPI) ============ */
-.overlay-menu{position:absolute;inset:0;visibility:hidden;pointer-events:none;transition:visibility 0s linear .7s;z-index:100}
+/* ============ DAFTAR ISI OVERLAY ============ */
+.overlay-menu{position:absolute;inset:0;visibility:hidden;pointer-events:none;transition:visibility 0s linear .7s;z-index:20}
 .overlay-menu.open{visibility:visible;transition-delay:0s}
 .overlay-menu.open .ov-box,.overlay-menu.open .ov-x{pointer-events:auto}
 .ov-svg{position:absolute;inset:0;pointer-events:none;z-index:20}
@@ -88,16 +85,14 @@ body.menu-locked #container{overflow:hidden}
    ========================================================= */
 @media (max-width: 768px) {
   body { overflow: auto !important; }
-  #container { position: relative !important; inset: auto !important; height: auto !important; overflow: visible !important; }
+  #container { position: relative !important; inset: auto !important; min-height: 100vh !important; height: auto !important; overflow: visible !important; }
   #wrapper { height: auto !important; overflow: visible !important; }
   #content { position: relative !important; width: 100% !important; transform: none !important; zoom: 1 !important; }
 
-  .slide { width: 100% !important; height: auto !important; padding: 20px 20px 10px !important; }
-  .site-header { margin: 0 0 15px 0 !important; flex-direction: column !important; align-items: stretch !important; gap: 15px; }
+  .slide { width: 100% !important; min-height: 100vh !important; height: auto !important; padding: 20px !important; }
+  .site-header { padding-top: 0 !important; margin: 0 0 25px 0 !important; flex-direction: column !important; align-items: stretch !important; gap: 15px; }
   .site-nav { width: 100% !important; justify-content: space-between !important; gap: 8px; padding: 10px 14px; overflow-x: auto; }
   .nav-link { font-size: 12.5px !important; white-space: nowrap; }
-
-  .main-content-area { padding: 0 20px !important; }
 
   .overlay-menu { position: fixed !important; }
   .ov-box { left: 16px !important; top: 30px !important; width: calc(100% - 32px) !important; height: auto !important; max-height: 85vh !important; overflow-y: auto !important; padding: 24px 18px !important; }
@@ -133,11 +128,6 @@ body.menu-locked #container{overflow:hidden}
 
         <div class="overlays" data-overlays></div>
       </div>
-
-      <!-- ============ AREA UTAMA KOSONG (BEBAS DISUSUN SENDIRI) ============ -->
-      <main class="main-content-area">
-        <!-- Silakan susun halaman Anda sendiri di sini -->
-      </main>
 
     </div>
   </div>
@@ -241,8 +231,8 @@ function applyZoom(){
 function measureContentHeight(){
   if(window.innerWidth <= 768) return;
   var c = $("#content"); if(!c) return;
-  var h = c.scrollHeight * state.scale;
-  if(h>0){ var w=$("#wrapper"); if(w) w.style.height = h+"px"; }
+  var h = Math.max(c.scrollHeight * state.scale, window.innerHeight);
+  var w = $("#wrapper"); if(w) w.style.height = h+"px";
 }
 function measureNavPositions(){
   if(window.innerWidth <= 768) return;
