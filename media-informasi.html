@@ -86,8 +86,68 @@ body.menu-locked #container{overflow:hidden}
 .overlay-menu.open .ov-x{opacity:1;transform:scale(1) rotate(0);transition-delay:.55s}
 .overlay-menu.open .ov-x:hover{background:#d32f2f;transform:scale(1.1) rotate(0);transition-delay:0s}
 
-/* ============ AREA KONTEN KOSONG (SIAP DIISI PELAN-PELAN) ============ */
-.page-body{margin:40px 70px 0;flex:1;min-height:460px}
+/* ============ KONTEN HALAMAN 1: MEDIA INFORMASI & PENJELASAN ============ */
+.page-body{margin:40px 70px 0;flex:1;display:flex;flex-direction:column;gap:52px;padding-bottom:50px}
+
+/* HERO SECTION */
+.pub-hero{display:grid;grid-template-columns:1.35fr 1fr;gap:28px;align-items:stretch}
+.pub-hero-left{background:var(--glass-strong);backdrop-filter:blur(14px);border-radius:28px;padding:44px;border:1px solid var(--border-glass);box-shadow:0 16px 40px rgba(11,59,58,.08);display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
+.pub-hero-left::before{content:"";position:absolute;top:0;left:0;width:6px;height:100%;background:linear-gradient(180deg,var(--teal),var(--gold))}
+.pub-kicker{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;border-radius:999px;background:rgba(11,110,106,.1);color:var(--teal);font-size:12px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;width:fit-content;margin-bottom:16px}
+.pub-h1{font-size:34px;font-weight:800;line-height:1.2;color:var(--teal-deep);margin:0 0 16px;letter-spacing:-.5px}
+.pub-h1 span{color:var(--teal)}
+.pub-desc{font-size:15px;line-height:1.75;color:var(--ink);margin:0 0 24px}
+.pub-tags{display:flex;flex-wrap:wrap;gap:10px;padding-top:18px;border-top:1px solid rgba(11,59,58,.1)}
+.pub-tag-item{padding:7px 14px;border-radius:999px;background:#F2FBF9;border:1px solid rgba(11,110,106,.18);color:var(--teal-deep);font-size:12px;font-weight:700}
+
+.pub-hero-right{background:linear-gradient(145deg,#0B3B3A,#104F4D);color:#fff;border-radius:28px;padding:40px;box-shadow:0 20px 45px rgba(11,59,58,.25);display:flex;flex-direction:column;justify-content:space-between;border:1px solid rgba(255,255,255,.15)}
+.pr-badge{display:inline-block;font-size:11.5px;font-weight:800;text-transform:uppercase;letter-spacing:1px;padding:6px 14px;border-radius:8px;background:rgba(217,180,91,.22);color:#F8DE9C;width:fit-content;margin-bottom:16px}
+.pr-quote{font-size:16.5px;font-weight:700;line-height:1.6;color:#FFFFFF;margin:0 0 24px}
+.pr-quote em{color:#81F6EF;font-style:normal}
+.pr-metrics{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;padding-top:18px;border-top:1px solid rgba(255,255,255,.15)}
+.pr-stat{background:rgba(255,255,255,.07);padding:14px;border-radius:14px}
+.pr-stat-lbl{font-size:11px;text-transform:uppercase;letter-spacing:.7px;color:#A3E8E2;font-weight:700;display:block;margin-bottom:4px}
+.pr-stat-val{font-size:14px;font-weight:700;color:#fff}
+
+/* SECTION HEADER GLOBAL */
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:22px}
+.sec-eyebrow{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;color:var(--teal);display:block;margin-bottom:4px}
+.sec-title{font-size:28px;font-weight:800;color:var(--teal-deep);margin:0;letter-spacing:-.4px}
+.sec-sub{font-size:14px;color:var(--teal-soft);max-width:480px;margin:0;line-height:1.55;text-align:right}
+
+/* BENTO GRID FITUR UTAMA */
+.format-bento{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.format-card{background:var(--glass-strong);backdrop-filter:blur(12px);border-radius:24px;padding:30px;border:1px solid var(--border-glass);box-shadow:0 12px 32px rgba(11,59,58,.06);display:flex;flex-direction:column;justify-content:space-between;transition:transform .25s,box-shadow .25s}
+.format-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(11,59,58,.12)}
+.fc-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+.fc-num{width:42px;height:42px;border-radius:12px;background:var(--teal-deep);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px}
+.fc-badge{font-size:11.5px;font-weight:700;padding:5px 12px;border-radius:999px;background:rgba(11,110,106,.1);color:var(--teal)}
+.fc-h3{font-size:18px;font-weight:800;color:var(--teal-deep);margin:0 0 10px;line-height:1.4}
+.fc-p{font-size:14px;line-height:1.7;color:var(--ink);margin:0}
+.fc-foot{margin-top:20px;padding-top:14px;border-top:1px dashed rgba(11,59,58,.14);font-size:12.5px;font-weight:700;color:var(--teal)}
+
+/* SEKSI PENJELASAN UTAMA & FILOSOFI PUSAT AKSES */
+.core-shell{background:var(--glass-strong);backdrop-filter:blur(16px);border-radius:28px;padding:40px;border:1px solid var(--border-glass);box-shadow:0 16px 40px rgba(11,59,58,.07);display:grid;grid-template-columns:1.2fr 1fr;gap:36px;align-items:center}
+.cs-title{font-size:24px;font-weight:800;color:var(--teal-deep);margin:0 0 14px;line-height:1.35}
+.cs-text{font-size:14.5px;line-height:1.75;color:var(--ink);margin:0 0 16px}
+.cs-box-list{display:flex;flex-direction:column;gap:12px}
+.cs-item{background:#F0FAF8;border:1px solid rgba(11,110,106,.16);border-radius:16px;padding:16px 20px;display:flex;align-items:flex-start;gap:14px}
+.cs-item-icon{width:28px;height:28px;border-radius:50%;background:var(--teal);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;flex-shrink:0;margin-top:2px}
+.cs-item-content strong{display:block;font-size:14px;color:var(--teal-deep);margin-bottom:3px}
+.cs-item-content p{margin:0;font-size:13px;line-height:1.6;color:var(--ink)}
+
+/* BANNER PENUTUP HALAMAN 1 */
+.closing-banner{background:linear-gradient(120deg,rgba(255,255,255,.96) 0%,rgba(232,254,252,.96) 100%);border:1px solid rgba(11,110,106,.22);border-radius:28px;padding:36px 42px;box-shadow:0 16px 40px rgba(11,59,58,.08);display:grid;grid-template-columns:1.5fr 1fr;gap:32px;align-items:center}
+.cb-title{font-size:22px;font-weight:800;color:var(--teal-deep);margin:0 0 10px}
+.cb-text{font-size:14.5px;line-height:1.75;color:var(--ink);margin:0}
+.cb-actions{display:flex;flex-direction:column;gap:10px;background:#F0FAF8;padding:20px;border-radius:18px;border:1px solid rgba(11,110,106,.15)}
+.cb-cta{display:flex;align-items:center;justify-content:space-between;padding:12px 18px;border-radius:12px;background:var(--teal);color:#fff;text-decoration:none;font-size:13.5px;font-weight:700;transition:background .2s,transform .2s}
+.cb-cta:hover{background:var(--teal-deep);transform:translateX(3px)}
+.cb-cta.secondary{background:#fff;color:var(--teal-deep);border:1px solid rgba(11,110,106,.2)}
+.cb-cta.secondary:hover{background:#E3F6F2}
+
+/* FOOTER */
+.site-footer{margin:34px 70px 0;padding-top:22px;border-top:1px solid rgba(11,59,58,.14);display:flex;align-items:center;justify-content:space-between;font-size:13px;color:var(--teal-soft);font-weight:600}
 
 /* =========================================================
    MEDIA QUERY RESPONSIVE KHUSUS PERANGKAT HP (MAX 768px)
@@ -110,7 +170,14 @@ body.menu-locked #container{overflow:hidden}
   .ov-card { width: 100% !important; }
   .ov-svg { display: none !important; }
 
-  .page-body { margin: 20px 0 0 !important; min-height: 55vh !important; }
+  .page-body { margin: 20px 0 0 !important; gap: 28px !important; }
+  .pub-hero, .format-bento, .core-shell, .closing-banner { grid-template-columns: 1fr !important; }
+  .pub-hero-left, .pub-hero-right, .format-card, .core-shell, .closing-banner { padding: 24px 20px !important; border-radius: 20px !important; }
+  .pub-h1 { font-size: 26px !important; }
+  .pr-quote { font-size: 16px !important; }
+  .sec-head { flex-direction: column !important; align-items: flex-start !important; }
+  .sec-sub { text-align: left !important; }
+  .site-footer { margin: 28px 0 0 !important; flex-direction: column !important; gap: 8px; text-align: center; }
 }
 </style>
 </head>
@@ -136,10 +203,180 @@ body.menu-locked #container{overflow:hidden}
             </nav>
           </header>
 
-          <!-- ============ AREA KONTEN HALAMAN MEDIA INFORMASI & PENJELASAN (KOSONG) ============ -->
+          <!-- ============ KONTEN UTAMA HALAMAN 1: MEDIA INFORMASI & PENJELASAN ============ -->
           <div class="page-body">
-            <!-- Isi konten halaman akan ditambahkan bertahap di sini -->
+
+            <!-- KONTEN 1: HERO UTAMA PLATFORM -->
+            <section class="pub-hero" aria-labelledby="pub-heading">
+              <div class="pub-hero-left">
+                <div>
+                  <span class="pub-kicker">Media Informasi &amp; Penjelasan</span>
+                  <h1 class="pub-h1" id="pub-heading">
+                    Satu Pintu Akses Dokumentasi <span>Perjalanan, Entitas &amp; Karya</span>
+                  </h1>
+                  <p class="pub-desc">
+                    <strong translate="no">INFOTRINK</strong> adalah pusat informasi digital terintegrasi yang mendokumentasikan latar belakang, tahapan pembangunan, dan hasil perkembangan seluruh inisiatif dalam ruang lingkup aktivitas <strong>Muhammad Fajri Munawar</strong>—menyatukan unit usaha, organisasi, proyek, kajian, hingga karya personal tanpa mencampuradukkan status hukumnya.
+                  </p>
+                </div>
+                <div class="pub-tags">
+                  <span class="pub-tag-item">01. Lintas Sektor</span>
+                  <span class="pub-tag-item">02. Transparansi Status</span>
+                  <span class="pub-tag-item">03. Rekam Proses Utuh</span>
+                  <span class="pub-tag-item">04. Penghubung Ekosistem</span>
+                </div>
+              </div>
+
+              <aside class="pub-hero-right" aria-label="Prinsip Penyajian INFOTRINK">
+                <div>
+                  <span class="pr-badge">Kaidah Penyajian Utama</span>
+                  <p class="pr-quote">
+                    Setiap informasi disajikan berdasarkan <em>status realisasi yang sebenarnya</em>—membedakan secara tegas antara gagasan awal, tahap persiapan, hingga operasional nyata.
+                  </p>
+                </div>
+                <div class="pr-metrics">
+                  <div class="pr-stat">
+                    <span class="pr-stat-lbl">Orientasi Konten</span>
+                    <span class="pr-stat-val">Proses &amp; Hasil</span>
+                  </div>
+                  <div class="pr-stat">
+                    <span class="pr-stat-lbl">Kedudukan Hukum</span>
+                    <span class="pr-stat-val">Terpisah Jelas</span>
+                  </div>
+                </div>
+              </aside>
+            </section>
+
+            <!-- KONTEN 2: MATRIKS KARAKTERISTIK PLATFORM (BENTO 3 KOLOM) -->
+            <section>
+              <div class="sec-head">
+                <div>
+                  <span class="sec-eyebrow">01 / Karakteristik Platform</span>
+                  <h2 class="sec-title">Mengapa <span translate="no">INFOTRINK</span> Berbeda</h2>
+                </div>
+                <p class="sec-sub">Dirancang melampaui batas situs konvensional dengan menggabungkan pemetaan lintas bidang dan catatan kronologis.</p>
+              </div>
+
+              <div class="format-bento">
+                <div class="format-card">
+                  <div>
+                    <div class="fc-top">
+                      <div class="fc-num">01</div>
+                      <span class="fc-badge">Bukan Sekadar Portofolio</span>
+                    </div>
+                    <h3 class="fc-h3">Mencakup Entitas &amp; Ekosistem</h3>
+                    <p class="fc-p">
+                      Portofolio hanya menampilkan keahlian individu. <strong translate="no">INFOTRINK</strong> memetakan badan usaha, lembaga non-komersial, proyek infrastruktur, riset, dan saluran media dalam satu jaringan informasi.
+                    </p>
+                  </div>
+                  <div class="fc-foot">Cakupan Lintas Badan &amp; Sektor</div>
+                </div>
+
+                <div class="format-card">
+                  <div>
+                    <div class="fc-top">
+                      <div class="fc-num" style="background:var(--gold);color:#0B3B3A">02</div>
+                      <span class="fc-badge">Bukan Portal Berita</span>
+                    </div>
+                    <h3 class="fc-h3">Dokumentasi Berkelanjutan</h3>
+                    <p class="fc-p">
+                      Alih-alih mengejar peristiwa harian, platform ini mencatat evolusi setiap inisiatif dari waktu ke waktu—termasuk perubahan arah, evaluasi, dan penyesuaian rencana.
+                    </p>
+                  </div>
+                  <div class="fc-foot">Rekam Jejak dari Ide ke Realisasi</div>
+                </div>
+
+                <div class="format-card">
+                  <div>
+                    <div class="fc-top">
+                      <div class="fc-num">03</div>
+                      <span class="fc-badge">Bukan Repositori Pasif</span>
+                    </div>
+                    <h3 class="fc-h3">Terstruktur &amp; Kontekstual</h3>
+                    <p class="fc-p">
+                      Bukan sekadar tempat menyimpan berkas mentah atau kumpulan tautan media sosial, melainkan ruang baca sistematis yang menjelaskan hubungan serta fungsi setiap entitas.
+                    </p>
+                  </div>
+                  <div class="fc-foot">Navigasi Terarah bagi Publik</div>
+                </div>
+              </div>
+            </section>
+
+            <!-- KONTEN 3: FILOSOFI PUSAT AKSES & REKAM PERJALANAN -->
+            <section>
+              <div class="sec-head">
+                <div>
+                  <span class="sec-eyebrow">02 / Esensi &amp; Tujuan</span>
+                  <h2 class="sec-title">Pusat Informasi &amp; Dokumentasi Terpadu</h2>
+                </div>
+                <p class="sec-sub">Menghubungkan berbagai inisiatif yang sedang dirintis, dibangun, dan dikembangkan dalam satu kendali terstruktur.</p>
+              </div>
+
+              <div class="core-shell">
+                <div>
+                  <h3 class="cs-title">Bukan Hanya Hasil Akhir, Melainkan Proses yang Bertumbuh</h3>
+                  <p class="cs-text">
+                    Inti paling kuat dari <strong translate="no">INFOTRINK</strong> adalah komitmen untuk memperlihatkan apa yang sedang dibangun, apa yang sedang berkembang, dan bagaimana semuanya terbentuk dari waktu ke waktu.
+                  </p>
+                  <p class="cs-text">
+                    Setiap perusahaan, proyek teknologi, riset, maupun karya personal mempunyai catatan perjalanan tersendiri yang disajikan secara transparan tanpa klaim berlebihan.
+                  </p>
+                </div>
+                <div class="cs-box-list">
+                  <div class="cs-item">
+                    <div class="cs-item-icon">✓</div>
+                    <div class="cs-item-content">
+                      <strong>Satu Pintu Akses Terstruktur</strong>
+                      <p>Menyatukan informasi dari berbagai platform dan media yang sebelumnya tersebar.</p>
+                    </div>
+                  </div>
+                  <div class="cs-item">
+                    <div class="cs-item-icon">✓</div>
+                    <div class="cs-item-content">
+                      <strong>Transparansi Status Riil</strong>
+                      <p>Membedakan dengan tegas antara gagasan konseptual, tahap persiapan, hingga operasional nyata.</p>
+                    </div>
+                  </div>
+                  <div class="cs-item">
+                    <div class="cs-item-icon">✓</div>
+                    <div class="cs-item-content">
+                      <strong>Dokumentasi Jangka Panjang</strong>
+                      <p>Terus bertumbuh mengikuti perkembangan inisiatif dari masa perintisan hingga masa depan.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- KONTEN 4: BANNER PENUTUP HALAMAN 1 -->
+            <section>
+              <div class="closing-banner">
+                <div>
+                  <span class="sec-eyebrow">03 / Kelanjutan Navigasi</span>
+                  <h2 class="cb-title">Telusuri Lebih Lanjut Ruang Lingkup INFOTRINK</h2>
+                  <p class="cb-text">
+                    Pahami lebih mendalam bagaimana seluruh entitas, perusahaan, proyek pembangunan, dan karya personal diklasifikasikan dalam struktur platform ini.
+                  </p>
+                </div>
+                <div class="cb-actions">
+                  <a class="cb-cta" href="mengenal-infotrink.html">
+                    <span>Pelajari Halaman Mengenal INFOTRINK</span>
+                    <span>&rarr;</span>
+                  </a>
+                  <a class="cb-cta secondary" href="#" onclick="openMenu('Publikasi'); return false;">
+                    <span>Lihat Daftar Menu Publikasi Lainnya</span>
+                    <span>&rarr;</span>
+                  </a>
+                </div>
+              </div>
+            </section>
+
           </div>
+
+          <!-- FOOTER -->
+          <footer class="site-footer">
+            <span>&copy; <span translate="no">INFOTRINK</span> &mdash; Platform Informasi &amp; Dokumentasi Terpadu</span>
+            <span>Muhammad Fajri Munawar</span>
+          </footer>
         </div>
 
         <div class="overlays" data-overlays></div>
@@ -315,6 +552,8 @@ function updateNavHighlight(){
     l.classList.toggle("on", on);
   });
 }
+
+window.openMenu = openMenu;
 
 function onClick(e){
   var navEl = e.target.closest("[data-nav]");
