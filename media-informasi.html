@@ -64,7 +64,7 @@ body.menu-locked #container{overflow:hidden}
 .page-title{font-weight:800;font-size:38px;line-height:1.25;color:var(--teal-deep);letter-spacing:-.5px;text-transform:uppercase;margin:0 0 16px 0}
 .page-lede{font-size:17px;line-height:1.8;color:var(--ink);text-align:justify;text-justify:inter-word;max-width:1040px;margin:0}
 
-/* ============ KONTEN UTAMA YANG DIPERBARUI & DIPERPANJANG ============ */
+/* ============ KONTEN UTAMA ============ */
 .content-section{position:relative;padding:60px 70px;background:#fff;border-top:1px solid rgba(11,110,106,.15);border-bottom:1px solid rgba(11,110,106,.15)}
 .content-section.alt-bg{background:linear-gradient(180deg,#F7FCFB 0%,#FFFFFF 50%,#F4FBF9 100%)}
 
@@ -72,7 +72,6 @@ body.menu-locked #container{overflow:hidden}
 .sec-header-block h2{font-size:28px;font-weight:800;color:var(--teal-deep);margin:0 0 12px 0;text-transform:uppercase;letter-spacing:.3px}
 .sec-header-block p{font-size:15.5px;line-height:1.75;color:#325855;margin:0;max-width:960px;text-align:justify}
 
-/* Grid Kartu Bervariasi (3 Kolom & 2 Kolom) */
 .cards-grid-3{display:grid;grid-template-columns:repeat(3, minmax(0, 1fr));gap:24px}
 .cards-grid-2{display:grid;grid-template-columns:repeat(2, minmax(0, 1fr));gap:30px}
 
@@ -84,7 +83,6 @@ body.menu-locked #container{overflow:hidden}
 .card-link{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:700;color:var(--teal);text-decoration:none;transition:color .2s,transform .2s}
 .card-link:hover{color:var(--teal-deep);transform:translateX(4px)}
 
-/* Layout Artikel Split dengan Panel Sorotan Khusus */
 .article-split{display:grid;grid-template-columns:1fr 420px;gap:40px;align-items:center}
 .article-text p{font-size:15.5px;line-height:1.85;color:var(--ink);margin:0 0 18px 0;text-align:justify}
 .highlight-box{background:linear-gradient(145deg,#0B3B3A 0%,#0E5956 100%);color:#fff;border-radius:20px;padding:34px;box-shadow:0 12px 35px rgba(11,59,58,.2);position:relative;overflow:hidden}
@@ -94,12 +92,23 @@ body.menu-locked #container{overflow:hidden}
 .highlight-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 22px;background:var(--cyan);color:var(--teal-deep);border-radius:999px;font-size:13px;font-weight:800;text-decoration:none;transition:background .2s,transform .2s}
 .highlight-btn:hover{background:#fff;transform:translateX(3px)}
 
-/* Timeline / Alur Penjelasan Panjang */
 .timeline-container{display:flex;flex-direction:column;gap:20px;margin-top:20px}
 .timeline-item{display:flex;gap:20px;background:#fff;border:1px solid rgba(11,110,106,.15);border-radius:16px;padding:24px;box-shadow:0 6px 18px rgba(11,59,58,.04);align-items:flex-start}
 .timeline-badge{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--teal-deep));color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;flex-shrink:0;box-shadow:0 4px 12px rgba(11,59,58,.15)}
 .timeline-content h4{font-size:17px;font-weight:800;color:var(--teal-deep);margin:0 0 6px 0;text-transform:uppercase}
 .timeline-content p{font-size:14.5px;line-height:1.7;color:var(--ink);margin:0;text-align:justify}
+
+/* ============ BAGIAN PENGGANTI BAWAH (DIREKTORI KHUSUS PUBLIKASI) ============ */
+.sec-custom-subnav{position:relative;padding:60px 70px;background:linear-gradient(180deg,#F4FBF9 0%,#E8FEFC 100%);border-top:1px solid rgba(11,110,106,.15)}
+.subnav-box{background:#fff;border:2px solid var(--teal);border-radius:24px;padding:40px;box-shadow:0 12px 35px rgba(11,59,58,.08);display:flex;flex-direction:column;gap:24px}
+.subnav-header h3{font-size:22px;font-weight:800;color:var(--teal-deep);margin:0 0 8px 0;text-transform:uppercase}
+.subnav-header p{font-size:15px;color:var(--teal-soft);margin:0;max-width:900px;text-align:justify}
+.subnav-links-grid{display:grid;grid-template-columns:repeat(3, minmax(0, 1fr));gap:16px;margin-top:10px}
+.subnav-pill-item{display:flex;flex-direction:column;gap:6px;padding:16px 20px;background:#F0FAF8;border:1px solid rgba(11,110,106,.2);border-radius:14px;text-decoration:none;transition:all .2s ease}
+.subnav-pill-item:hover{background:var(--teal);border-color:var(--teal);transform:translateY(-2px);box-shadow:0 6px 16px rgba(11,59,58,.15)}
+.subnav-pill-item:hover .sp-title, .subnav-pill-item:hover .sp-desc{color:#fff}
+.sp-title{font-size:14px;font-weight:800;color:var(--teal-deep);text-transform:uppercase;transition:color .2s}
+.sp-desc{font-size:12px;color:#5B7A78;line-height:1.4;transition:color .2s}
 
 /* ============ DAFTAR ISI OVERLAY ============ */
 .overlay-menu{position:absolute;inset:0;visibility:hidden;pointer-events:none;transition:visibility 0s linear .7s}
@@ -133,24 +142,16 @@ body.menu-locked #container{overflow:hidden}
 .overlay-menu.open .ov-x{opacity:1;transform:scale(1) rotate(0);transition-delay:.55s}
 .overlay-menu.open .ov-x:hover{background:#d32f2f;transform:scale(1.1) rotate(0);transition-delay:0s}
 
-/* ============ FOOTER (TETAP UTUH & AMAN) ============ */
+/* ============ FOOTER UTAMA (TETAP AMAN & TIDAK DIHAPUS) ============ */
 .sec-footer{position:relative;background:linear-gradient(180deg,var(--teal-deep),var(--teal) 60%,var(--teal-deep));overflow:hidden}
 .sec-footer .blob{position:absolute;border-radius:50%}
 .sec-footer .b1{top:-150px;right:-150px;width:400px;height:400px;background:rgba(129,246,239,.08)}
 .sec-footer .b2{bottom:-100px;left:-100px;width:300px;height:300px;background:rgba(129,246,239,.06)}
-.footer-main{position:relative;padding:40px 80px 30px}
-.footer-main .row{display:flex;align-items:flex-start;justify-content:space-between;gap:60px}
-.footer-main .lead{flex:1;min-width:0;max-width:829px}
-.footer-main h2{font-size:22px;font-weight:800;color:#fff;margin:0 0 16px;letter-spacing:.2px;line-height:1.35;text-transform:uppercase}
-.footer-main p{font-size:16px;line-height:1.7;color:rgba(255,255,255,.85);margin:0;text-align:justify;text-justify:inter-word}
-.footer-ctas{display:flex;flex-direction:column;gap:14px;min-width:220px}
-.cta-primary{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:16px 32px;background:#FDEEC5;color:var(--teal-deep);border:2px solid var(--teal-deep);border-radius:999px;font-size:15px;font-weight:700;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.2);letter-spacing:.3px;white-space:nowrap}
-.cta-secondary{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:16px 32px;background:rgba(255,255,255,.1);color:#fff;border:2px solid rgba(255,255,255,.4);border-radius:999px;font-size:15px;font-weight:700;text-decoration:none;letter-spacing:.3px;white-space:nowrap}
-.footer-cols{position:relative;padding:32px 80px 24px;display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px}
+.footer-cols{position:relative;padding:40px 80px 24px;display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px}
 .footer-brand{display:flex;align-items:center;gap:10px;margin-bottom:16px}
 .footer-brand img.icon{width:36px;height:36px;object-fit:contain}
 .footer-brand img.text{width:110px;height:36px;object-fit:contain}
-.footer-desc{font-size:12.5px;line-height:1.65;color:rgba(255,255,255,.7);margin:0 0 16px;text-align:justify;text-justify:inter-word}
+.footer-desc{font-size:12.5px;line-height:1.65;color:rgba(255,255,255,.7);margin:0 0 16px;text-align:justify}
 .footer-tags{display:flex;gap:8px}
 .footer-tags .ftag{font-size:10px;font-weight:700;color:#fff;padding:3px 10px;border-radius:6px;letter-spacing:.3px}
 .footer-tags .ftag-m{background:rgba(59,130,246,.25);border:1px solid rgba(59,130,246,.5)}
@@ -184,12 +185,10 @@ body.menu-locked #container{overflow:hidden}
   .page-title { font-size: 26px !important; }
   .page-lede { font-size: 15px !important; }
 
-  .content-section { padding: 40px 20px !important; }
-  .cards-grid-3, .cards-grid-2, .article-split { grid-template-columns: 1fr !important; gap: 20px !important; }
-  .feature-card { padding: 20px !important; }
+  .content-section, .sec-custom-subnav { padding: 40px 20px !important; }
+  .cards-grid-3, .cards-grid-2, .article-split, .subnav-links-grid { grid-template-columns: 1fr !important; gap: 16px !important; }
+  .feature-card, .subnav-box { padding: 20px !important; }
 
-  .footer-main { padding: 30px 20px !important; }
-  .footer-main .row { flex-direction: column !important; gap: 20px !important; }
   .footer-cols { padding: 30px 20px !important; grid-template-columns: 1fr !important; gap: 25px !important; }
   .footer-bottom { padding: 20px !important; flex-direction: column !important; align-items: flex-start !important; gap: 15px !important; }
   .footer-rule { display: none !important; }
@@ -375,22 +374,47 @@ body.menu-locked #container{overflow:hidden}
           </div>
         </section>
 
-        <!-- ============ FOOTER (UTUH DAN TIDAK DIHAPUS) ============ -->
+        <!-- ============ PENGGANTI BAGIAN BAWAH: DIREKTORI SUB-MENU PUBLIKASI ============ -->
+        <section class="sec-custom-subnav">
+          <div class="subnav-box">
+            <div class="subnav-header">
+              <div class="pill-badge">EKSPLORASI LANJUTAN</div>
+              <h3>Jelajahi Kategori Publikasi Lainnya di Dalam Wadah Ini</h3>
+              <p>Pilih langsung topik spesifik di bawah untuk berpindah ke arsip kajian, laporan, atau referensi data yang Anda butuhkan secara instan.</p>
+            </div>
+            <div class="subnav-links-grid">
+              <a class="subnav-pill-item" href="media-informasi.html">
+                <span class="sp-title">01 • Media Informasi</span>
+                <span class="sp-desc">Penjelasan komprehensif &amp; latar belakang</span>
+              </a>
+              <a class="subnav-pill-item" href="hasil-riset.html">
+                <span class="sp-title">02 • Hasil Riset</span>
+                <span class="sp-desc">Kumpulan dokumen penelitian &amp; riset pilihan</span>
+              </a>
+              <a class="subnav-pill-item" href="kajian-analisis.html">
+                <span class="sp-title">03 • Kajian &amp; Analisis</span>
+                <span class="sp-desc">Tinjauan mendalam atas berbagai topik</span>
+              </a>
+              <a class="subnav-pill-item" href="laporan.html">
+                <span class="sp-title">04 • Laporan &amp; Catatan</span>
+                <span class="sp-desc">Rekam jejak kemajuan &amp; pembaruan berkala</span>
+              </a>
+              <a class="subnav-pill-item" href="data-referensi.html">
+                <span class="sp-title">05 • Data &amp; Referensi</span>
+                <span class="sp-desc">Arsip rujukan &amp; dokumentasi pendukung</span>
+              </a>
+              <a class="subnav-pill-item" href="gagasan-konsep.html">
+                <span class="sp-title">06 • Gagasan &amp; Konsep</span>
+                <span class="sp-desc">Kerangka pemikiran awal &amp; rencana rintisan</span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ FOOTER UTAMA (HAK CIPTA TETAP AMAN) ============ -->
         <section class="sec-footer">
           <div class="blob b1"></div>
           <div class="blob b2"></div>
-          <div class="footer-main">
-            <div class="row">
-              <div class="lead">
-                <h2>Dokumentasi yang Terhimpun Menanti untuk Ditelusuri</h2>
-                <p>Berbagai gagasan, karya, dan inisiatif telah terdokumentasi dalam satu wadah yang terstruktur. Setiap catatan memuat konteks dan tahapan perkembangannya sehingga siap dijelajahi dan dimanfaatkan kembali kapan saja.</p>
-              </div>
-              <div class="footer-ctas">
-                <a class="cta-primary" href="telusuri.html">Telusuri →</a>
-                <a class="cta-secondary" href="mengenal-infotrink.html">Kenali <span translate="no">INFOTRINK</span></a>
-              </div>
-            </div>
-          </div>
           <div class="footer-cols">
             <div>
               <div class="footer-brand"><img class="icon" src="1000007372.png" alt="Infotrink"><img class="text" src="1000007373.png" alt="Infotrink"></div>
