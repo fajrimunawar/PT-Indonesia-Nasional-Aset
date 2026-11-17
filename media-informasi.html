@@ -33,7 +33,7 @@ body{font-family:var(--font);background:var(--bg-grad);color:var(--teal-deep);-w
 body.menu-locked{overflow:hidden}
 
 /* ============ HEADER & NAVIGASI ============ */
-.slide{position:relative;width:100%;max-width:1280px;margin:0 auto;min-height:220px;overflow:hidden;background:transparent;padding-bottom:20px}
+.slide{position:relative;width:100%;max-width:1280px;margin:0 auto;min-height:140px;overflow:hidden;background:transparent;padding-bottom:10px}
 .hero-dim{transition:opacity .3s ease}
 .slide.menu-open .hero-dim{opacity:.22;pointer-events:none}
 
@@ -46,16 +46,8 @@ body.menu-locked{overflow:hidden}
 .nav-link:hover{color:var(--teal)}
 .nav-link.on{font-weight:700;color:var(--teal);border-bottom-color:var(--teal)}
 
-/* ============ BREADCRUMB / JEJAK NAVIGASI ============ */
-.breadcrumb-container{max-width:1280px;margin:20px 70px 0 70px;position:relative;z-index:5}
-.breadcrumb-wrap{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:700;color:var(--teal-soft);letter-spacing:.5px}
-.breadcrumb-wrap a{color:var(--teal);text-decoration:none;transition:color .2s}
-.breadcrumb-wrap a:hover{color:var(--teal-deep)}
-.breadcrumb-wrap .separator{color:var(--teal);font-weight:800}
-.breadcrumb-wrap .current{color:var(--teal-deep);font-weight:800}
-
-/* ============ AREA UTAMA KOSONG (BEBAS DIISI) ============ */
-.main-content-area{max-width:1280px;margin:30px auto;padding:0 70px;min-height:200px}
+/* ============ AREA UTAMA KOSONG (BEBAS DISUSUN SENDIRI) ============ */
+.main-content-area{max-width:1280px;margin:20px auto;padding:0 70px;min-height:250px}
 
 /* ============ DAFTAR ISI OVERLAY ============ */
 .overlay-menu{position:fixed;inset:0;visibility:hidden;pointer-events:none;transition:visibility 0s linear .7s;z-index:100}
@@ -122,7 +114,6 @@ body.menu-locked{overflow:hidden}
   .site-nav { width: 100% !important; justify-content: space-between !important; gap: 8px; padding: 10px 14px; overflow-x: auto; }
   .nav-link { font-size: 12.5px !important; white-space: nowrap; }
 
-  .breadcrumb-container { margin: 15px 20px 0 20px !important; }
   .main-content-area { padding: 0 20px !important; }
 
   .footer-cols { padding: 30px 20px !important; grid-template-columns: 1fr !important; gap: 25px !important; }
@@ -161,20 +152,9 @@ body.menu-locked{overflow:hidden}
     <div class="overlays" data-overlays></div>
   </div>
 
-  <!-- JEJAK NAVIGASI / BREADCRUMB -->
-  <div class="breadcrumb-container">
-    <div class="breadcrumb-wrap">
-      <a href="index.html">Beranda</a>
-      <span class="separator">›</span>
-      <a href="#">Publikasi</a>
-      <span class="separator">›</span>
-      <span class="current">Media Informasi & Penjelasan</span>
-    </div>
-  </div>
-
   <!-- ============ AREA UTAMA KOSONG (BEBAS DISUSUN SENDIRI) ============ -->
   <main class="main-content-area">
-    <!-- Silakan ketik atau susun halaman Anda sendiri di sini -->
+    <!-- Silakan ketik atau susun halaman Anda sendiri di sini tanpa ada teks bawaan lagi -->
   </main>
 
   <!-- ============ FOOTER UTAMA (HAK CIPTA TETAP UTUH & AMAN) ============ -->
