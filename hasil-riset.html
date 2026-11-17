@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hasil Kajian dan Pengamatan — Infotrink</title>
+<meta name="description" content="Pusat Arsip Hasil Kajian, Pengamatan Komprehensif, Telaah Strategis, dan Metodologi Analisis INFOTRINK.">
+<meta name="theme-color" content="#81F6EF">
+<link rel="icon" href="1000007372.png" sizes="any">
+<link rel="icon" href="1000007372.png" type="image/png" sizes="32x32">
+<link rel="icon" href="1000007372.png" type="image/png" sizes="16x16">
+<link rel="apple-touch-icon" href="1000007372.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ============ VARIABEL & DASAR ============ */
+:root{
+  --teal-deep:#0B3B3A;
+  --teal:#0B6E6A;
+  --teal-mid:#125956;
+  --teal-soft:#4B6B69;
+  --cyan:#81F6EF;
+  --gold:#D9B45B;
+  --gold-soft:rgba(217,180,91,.18);
+  --ink:#1F2937;
+  --glass:rgba(255,255,255,.78);
+  --glass-strong:rgba(255,255,255,.94);
+  --border-glass:rgba(255,255,255,.75);
+  --font:'Open Sans','Segoe UI',Tahoma,sans-serif;
+  --bg-grad:linear-gradient(180deg,#81F6EF 0%,#9CF4ED 14%,#B2FBF6 30%,#CFFCF6 52%,#E1FFFD 76%,#E8FEFC 100%);
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;padding:0;scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--cyan);color:var(--teal-deep);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow:hidden}
+#container{position:fixed;inset:0;overflow-y:auto;overflow-x:hidden;scrollbar-gutter:stable;background:var(--bg-grad)}
+body.menu-locked #container{overflow:hidden}
+#wrapper{width:100%;position:relative;overflow:hidden}
+#content{position:absolute;top:0;left:0;width:1280px;transform-origin:top left}
+
+/* ============ HEADER & NAVIGASI ============ */
+.site-header{position:relative;padding-top:32px;margin:0 70px;display:flex;align-items:center;justify-content:space-between;z-index:10}
+.logo-pill{display:flex;align-items:center;gap:12px;padding:8px 22px 8px 10px;background:rgba(255,255,255,.88);backdrop-filter:blur(10px);border-radius:999px;box-shadow:0 4px 16px rgba(11,59,58,.12);border:1px solid rgba(255,255,255,.7);text-decoration:none;cursor:pointer;transition:transform .2s}
+.logo-pill:hover{transform:translateY(-1px)}
+.logo-pill .icon{width:42px;height:42px;object-fit:contain;filter:drop-shadow(0 2px 4px rgba(11,59,58,.15))}
+.logo-pill .text{width:125px;height:40px;object-fit:contain}
+.site-nav{display:flex;align-items:center;gap:32px;padding:10px 26px;background:rgba(255,255,255,.65);backdrop-filter:blur(10px);border-radius:999px;box-shadow:0 4px 16px rgba(11,59,58,.10);border:1px solid rgba(255,255,255,.6)}
+.nav-link{font-size:15px;font-weight:600;color:var(--teal-deep);text-decoration:none;padding:4px 0;border-bottom:2px solid transparent;letter-spacing:.2px;cursor:pointer;display:inline-block;transition:color .2s,border-color .2s}
+.nav-link:hover{color:var(--teal)}
+.nav-link.on{font-weight:700;color:var(--teal);border-bottom-color:var(--teal)}
+
+/* ============ DAFTAR ISI OVERLAY ============ */
+.overlay-menu{position:absolute;inset:0;visibility:hidden;pointer-events:none;transition:visibility 0s linear .7s;z-index:20}
+.overlay-menu.open{visibility:visible;transition-delay:0s}
+.overlay-menu.open .ov-box,.overlay-menu.open .ov-x{pointer-events:auto}
+.ov-svg{position:absolute;inset:0;pointer-events:none;z-index:20}
+.ov-dot-start,.ov-dot-end{fill:var(--teal);opacity:0;transform:scale(0);transform-origin:center;transform-box:fill-box;transition:opacity .25s ease,transform .25s ease}
+.ov-dot-end{transition-delay:.1s}
+.ov-dot-start{transition-delay:.4s}
+.overlay-menu.open .ov-dot-start{opacity:1;transform:scale(1);transition-delay:.05s}
+.overlay-menu.open .ov-dot-end{opacity:1;transform:scale(1);transition-delay:.4s}
+.ov-line{stroke:var(--teal);stroke-width:3;fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset .45s ease;transition-delay:.15s}
+.overlay-menu.open .ov-line{stroke-dashoffset:0;transition-delay:.1s}
+.ov-box{position:absolute;left:70px;top:130px;width:1140px;height:560px;background:rgba(255,255,255,.98);border-radius:0 0 20px 20px;box-shadow:0 12px 40px rgba(11,59,58,0.22);z-index:15;padding:28px 36px;overflow-y:auto;opacity:0;transform:scaleY(0);transform-origin:center top;transition:opacity .4s ease,transform .4s ease;transition-delay:.05s}
+.overlay-menu.open .ov-box{opacity:1;transform:scaleY(1);transition-delay:.25s}
+.ov-head{opacity:0;transform:translateY(10px);transition:opacity .3s ease,transform .3s ease}
+.overlay-menu.open .ov-head{opacity:1;transform:translateY(0);transition-delay:.45s}
+.ov-h2{font-size:28px;font-weight:800;color:var(--teal-deep);margin:0;letter-spacing:-.3px}
+.ov-desc{font-size:14px;color:var(--teal-soft);margin:4px 0 0;font-weight:500}
+.ov-divider{height:2px;background:linear-gradient(90deg,var(--teal),rgba(11,110,106,.1));margin:14px 0 18px;opacity:0;transform:scaleX(0);transform-origin:left center;transition:opacity .25s ease,transform .35s ease}
+.overlay-menu.open .ov-divider{opacity:1;transform:scaleX(1);transition-delay:.5s}
+.ov-cards{display:grid;grid-template-columns:repeat(3, minmax(0, 1fr));gap:14px}
+.ov-card{padding:16px 18px;background:linear-gradient(135deg,#F0FAF8,#DCF3EC);border-radius:14px;border:1px solid rgba(11,110,106,.15);opacity:0;transform:translateY(20px);transition:all .3s ease;box-shadow:0 4px 14px rgba(11,59,58,.05)}
+.ov-card:hover{transform:translateY(-3px);box-shadow:0 8px 22px rgba(11,59,58,.12);border-color:var(--teal)}
+.overlay-menu.open .ov-card{opacity:1;transform:translateY(0);transition-delay:var(--d,0s)}
+.ov-num{display:inline-block;font-size:11px;font-weight:700;color:var(--teal);background:rgba(11,110,106,.1);padding:3px 9px;border-radius:6px;margin-bottom:8px;letter-spacing:.5px}
+.ov-title{font-size:14px;font-weight:700;color:var(--teal-deep);min-height:38px;line-height:1.35}
+.ov-btn{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;background:var(--teal);color:#fff;border:none;border-radius:999px;font-family:var(--font);font-size:11px;font-weight:700;cursor:pointer;margin-top:10px;letter-spacing:.3px;transition:background .2s,transform .2s;text-decoration:none}
+.ov-btn:hover{background:var(--teal-deep);transform:translateX(3px)}
+.ov-x{position:absolute;left:1154px;top:146px;width:38px;height:38px;border-radius:50%;background:var(--teal-deep);color:#fff;border:none;font-family:var(--font);font-size:16px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:18;opacity:0;transform:scale(0) rotate(-90deg);box-shadow:0 4px 12px rgba(11,59,58,.25);transition:opacity .25s,transform .25s,background .2s}
+.overlay-menu.open .ov-x{opacity:1;transform:scale(1) rotate(0);transition-delay:.55s}
+.overlay-menu.open .ov-x:hover{background:#d32f2f;transform:scale(1.1) rotate(0);transition-delay:0s}
+
+/* ============ KONTEN UTAMA HALAMAN HASIL KAJIAN & PENGAMATAN ============ */
+.page-body{margin:40px 70px 0;display:flex;flex-direction:column;gap:50px}
+
+/* --- SECTION HEADER GLOBAL --- */
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:22px}
+.sec-eyebrow{font-size:11.5px;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;color:var(--teal);display:block;margin-bottom:4px}
+.sec-title{font-size:28px;font-weight:800;color:var(--teal-deep);margin:0;letter-spacing:-.4px}
+.sec-sub{font-size:14px;color:var(--teal-soft);max-width:480px;margin:0;line-height:1.52;text-align:right}
+
+/* --- BAGIAN 1: HERO KHUSUS KAJIAN & PENGAMATAN --- */
+.kaj-hero{display:grid;grid-template-columns:1.4fr 1fr;gap:32px;align-items:stretch}
+.kaj-hero-left{background:var(--glass-strong);backdrop-filter:blur(14px);border-radius:28px;padding:44px 46px;border:1px solid var(--border-glass);box-shadow:0 14px 38px rgba(11,59,58,.08);display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
+.kaj-hero-left::before{content:"";position:absolute;top:0;left:0;width:6px;height:100%;background:linear-gradient(180deg,var(--teal),var(--gold))}
+.kaj-kicker{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:999px;background:rgba(11,110,106,.1);color:var(--teal);font-size:12px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;width:fit-content;margin-bottom:16px}
+.kaj-h1{font-size:34px;font-weight:800;line-height:1.2;color:var(--teal-deep);margin:0 0 16px;letter-spacing:-.4px}
+.kaj-h1 span{color:var(--teal)}
+.kaj-desc{font-size:15px;line-height:1.72;color:var(--ink);margin:0 0 24px}
+.kaj-tags{display:flex;flex-wrap:wrap;gap:8px;padding-top:16px;border-top:1px solid rgba(11,59,58,.1)}
+.kaj-tag-item{padding:6px 14px;border-radius:999px;background:#F2FBF9;border:1px solid rgba(11,110,106,.18);color:var(--teal-deep);font-size:12px;font-weight:700}
+
+.kaj-hero-right{background:linear-gradient(145deg,#0B3B3A,#104F4D);color:#fff;border-radius:28px;padding:40px 38px;box-shadow:0 18px 40px rgba(11,59,58,.22);display:flex;flex-direction:column;justify-content:space-between;border:1px solid rgba(255,255,255,.15)}
+.kj-badge{display:inline-block;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;padding:5px 12px;border-radius:8px;background:rgba(217,180,91,.2);color:#F8DE9C;width:fit-content;margin-bottom:16px}
+.kj-quote{font-size:16.5px;font-weight:700;line-height:1.6;color:#FFFFFF;margin:0 0 20px}
+.kj-quote em{color:#81F6EF;font-style:normal}
+.kj-metrics{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;padding-top:18px;border-top:1px solid rgba(255,255,255,.15)}
+.kj-stat{background:rgba(255,255,255,.07);padding:12px 14px;border-radius:14px}
+.kj-stat-lbl{font-size:10.5px;text-transform:uppercase;letter-spacing:.6px;color:#A3E8E2;font-weight:700;display:block;margin-bottom:3px}
+.kj-stat-val{font-size:13.5px;font-weight:700;color:#fff}
+
+/* --- BAGIAN 2: BENTO METODOLOGI ANALISIS (3 KOLOM) --- */
+.method-bento{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.method-card{background:var(--glass-strong);backdrop-filter:blur(12px);border-radius:24px;padding:32px 28px;border:1px solid var(--border-glass);box-shadow:0 10px 28px rgba(11,59,58,.06);display:flex;flex-direction:column;justify-content:space-between;transition:transform .25s,box-shadow .25s}
+.method-card:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(11,59,58,.11)}
+.mc-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+.mc-num{width:42px;height:42px;border-radius:12px;background:var(--teal-deep);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px}
+.mc-badge{font-size:11px;font-weight:700;padding:4px 10px;border-radius:999px;background:rgba(11,110,106,.1);color:var(--teal)}
+.mc-h3{font-size:18px;font-weight:800;color:var(--teal-deep);margin:0 0 10px;line-height:1.35}
+.mc-p{font-size:14px;line-height:1.68;color:var(--ink);margin:0}
+.mc-foot{margin-top:20px;padding-top:14px;border-top:1px dashed rgba(11,59,58,.14);font-size:12.5px;font-weight:700;color:var(--teal)}
+
+/* --- BAGIAN 3: TAB INTERAKTIF KLASIFIKASI TOPIK KAJIAN --- */
+.topic-shell{background:var(--glass-strong);backdrop-filter:blur(14px);border-radius:28px;padding:36px 38px;border:1px solid var(--border-glass);box-shadow:0 14px 36px rgba(11,59,58,.07)}
+.topic-tabs{display:flex;gap:10px;flex-wrap:wrap;padding-bottom:20px;border-bottom:1px solid rgba(11,59,58,.1);margin-bottom:26px}
+.topic-tab{padding:11px 18px;border-radius:14px;border:1px solid rgba(11,110,106,.18);background:#F4FBF9;color:var(--teal-deep);font-family:var(--font);font-size:13.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:all .2s}
+.topic-tab:hover{background:#E3F6F2;border-color:var(--teal)}
+.topic-tab.active{background:var(--teal-deep);color:#fff;border-color:var(--teal-deep);box-shadow:0 6px 16px rgba(11,59,58,.2)}
+.topic-tab .tt-num{font-size:11px;padding:2px 7px;border-radius:6px;background:rgba(11,110,106,.12);color:var(--teal)}
+.topic-tab.active .tt-num{background:rgba(129,246,239,.2);color:var(--cyan)}
+
+.topic-panel{display:none;animation:fadeSlide .3s ease}
+.topic-panel.active{display:grid;grid-template-columns:1.25fr 1fr;gap:30px;align-items:start}
+@keyframes fadeSlide{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+.tp-title{font-size:22px;font-weight:800;color:var(--teal-deep);margin:0 0 12px}
+.tp-text{font-size:14.5px;line-height:1.72;color:var(--ink);margin:0 0 14px}
+.tp-list{list-style:none;padding:0;margin:16px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.tp-list li{background:#F3FBF9;border:1px solid rgba(11,110,106,.14);padding:10px 14px;border-radius:12px;font-size:13px;font-weight:600;color:var(--teal-deep);display:flex;align-items:center;gap:8px}
+.tp-list li::before{content:"✓";display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:var(--teal);color:#fff;font-size:11px;font-weight:800;flex-shrink:0}
+
+.tp-side-card{background:linear-gradient(145deg,#F0FAF8,#E0F4EF);border-radius:20px;padding:24px;border:1px solid rgba(11,110,106,.18)}
+.tp-side-head{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.7px;color:var(--teal);margin:0 0 12px;display:flex;align-items:center;justify-content:space-between}
+.tp-box{background:#fff;border-radius:14px;padding:16px;margin-bottom:12px;border-left:4px solid var(--gold);box-shadow:0 4px 12px rgba(11,59,58,.04)}
+.tp-box:last-child{margin-bottom:0;border-left-color:var(--teal)}
+.tp-box strong{display:block;font-size:13.5px;color:var(--teal-deep);margin-bottom:4px}
+.tp-box p{margin:0;font-size:13px;line-height:1.58;color:var(--ink)}
+
+/* --- BAGIAN 4: VERTICAL STEPPER (ALUR PELAKSANAAN TELAAH) --- */
+.process-shell{background:var(--glass-strong);backdrop-filter:blur(12px);border-radius:28px;padding:36px 38px;border:1px solid var(--border-glass);box-shadow:0 12px 32px rgba(11,59,58,.06)}
+.proc-timeline{display:flex;flex-direction:column;gap:16px;margin-top:24px}
+.proc-step{display:grid;grid-template-columns:140px 1fr;gap:20px;background:#F5FCFA;border:1px solid rgba(11,110,106,.16);border-radius:18px;padding:20px 24px;align-items:center;transition:transform .2s,background .2s}
+.proc-step:hover{transform:translateX(4px);background:#fff;border-color:var(--teal)}
+.proc-badge-wrap{display:flex;flex-direction:column;gap:4px}
+.proc-code{font-size:11px;font-weight:800;color:var(--teal);background:rgba(11,110,106,.12);padding:4px 10px;border-radius:6px;width:fit-content;letter-spacing:.5px}
+.proc-phase{font-size:14px;font-weight:800;color:var(--teal-deep)}
+.proc-content-wrap h4{margin:0 0 4px;font-size:15px;font-weight:800;color:var(--teal-deep)}
+.proc-content-wrap p{margin:0;font-size:13.5px;line-height:1.6;color:var(--ink)}
+
+/* --- BAGIAN 5: DUAL MATRIX (SINTESIS KAJIAN & HUBUNGAN PROYEK) --- */
+.dual-matrix{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.matrix-dark{background:linear-gradient(160deg,#0B3B3A,#104F4D);color:#fff;border-radius:28px;padding:36px 38px;box-shadow:0 16px 38px rgba(11,59,58,.18)}
+.matrix-light{background:var(--glass-strong);backdrop-filter:blur(12px);border:1px solid var(--border-glass);border-radius:28px;padding:36px 38px;box-shadow:0 12px 32px rgba(11,59,58,.06)}
+
+.mx-tag{display:inline-block;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;padding:5px 12px;border-radius:999px;margin-bottom:14px}
+.matrix-dark .mx-tag{background:rgba(129,246,239,.15);color:var(--cyan)}
+.matrix-light .mx-tag{background:rgba(11,110,106,.1);color:var(--teal)}
+
+.mx-h3{font-size:22px;font-weight:800;margin:0 0 12px;line-height:1.3}
+.matrix-dark .mx-h3{color:#fff}
+.matrix-light .mx-h3{color:var(--teal-deep)}
+
+.mx-p{font-size:14px;line-height:1.68;margin:0 0 20px}
+.matrix-dark .mx-p{color:#D5F2EF}
+.matrix-light .mx-p{color:var(--ink)}
+
+.node-chain{display:flex;flex-direction:column;gap:10px}
+.node-row{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:13px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.node-row strong{font-size:13.5px;color:#fff}
+.node-row span{font-size:12px;color:#9CE6DF;text-align:right}
+
+.gov-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.gov-box{background:#F3FBF9;border:1px solid rgba(11,110,106,.15);border-radius:14px;padding:15px}
+.gov-box strong{display:block;font-size:13.5px;color:var(--teal-deep);margin-bottom:4px}
+.gov-box p{margin:0;font-size:12.5px;line-height:1.52;color:var(--teal-soft)}
+
+/* --- BAGIAN 6: BANNER PENUTUP PUSAT KAJIAN --- */
+.closing-banner{background:linear-gradient(120deg,rgba(255,255,255,.95) 0%,rgba(232,254,252,.95) 100%);border:1px solid rgba(11,110,106,.22);border-radius:28px;padding:36px 42px;box-shadow:0 14px 36px rgba(11,59,58,.08);display:grid;grid-template-columns:1.5fr 1fr;gap:30px;align-items:center}
+.cb-title{font-size:22px;font-weight:800;color:var(--teal-deep);margin:0 0 10px}
+.cb-text{font-size:14.5px;line-height:1.7;color:var(--ink);margin:0}
+.cb-actions{display:flex;flex-direction:column;gap:10px;background:#F0FAF8;padding:20px;border-radius:18px;border:1px solid rgba(11,110,106,.15)}
+.cb-cta{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-radius:12px;background:var(--teal);color:#fff;text-decoration:none;font-size:13.5px;font-weight:700;transition:background .2s,transform .2s}
+.cb-cta:hover{background:var(--teal-deep);transform:translateX(3px)}
+.cb-cta.secondary{background:#fff;color:var(--teal-deep);border:1px solid rgba(11,110,106,.2)}
+.cb-cta.secondary:hover{background:#E3F6F2}
+
+.site-footer{margin:34px 70px 0;padding-top:20px;border-top:1px solid rgba(11,59,58,.14);display:flex;align-items:center;justify-content:space-between;font-size:13px;color:var(--teal-soft);font-weight:600}
+
+/* =========================================================
+   MEDIA QUERY RESPONSIVE KHUSUS PERANGKAT HP (MAX 768px)
+   ========================================================= */
+@media (max-width: 768px) {
+  body { overflow: auto !important; }
+  #container { position: relative !important; inset: auto !important; min-height: 100vh !important; height: auto !important; overflow: visible !important; }
+  #wrapper { height: auto !important; overflow: visible !important; }
+  #content { position: relative !important; width: 100% !important; transform: none !important; zoom: 1 !important; }
+
+  .slide { width: 100% !important; min-height: 100vh !important; height: auto !important; padding: 18px 18px 40px !important; }
+  .site-header { padding-top: 0 !important; margin: 0 0 22px 0 !important; flex-direction: column !important; align-items: stretch !important; gap: 12px; }
+  .site-nav { width: 100% !important; justify-content: space-between !important; gap: 8px; padding: 10px 14px; overflow-x: auto; }
+  .nav-link { font-size: 12.5px !important; white-space: nowrap; }
+
+  .overlay-menu { position: fixed !important; }
+  .ov-box { left: 16px !important; top: 30px !important; width: calc(100% - 32px) !important; height: auto !important; max-height: 85vh !important; overflow-y: auto !important; padding: 24px 18px !important; }
+  .ov-x { left: auto !important; right: 16px !important; top: 16px !important; z-index: 30 !important; }
+  .ov-cards { grid-template-columns: 1fr !important; gap: 12px !important; }
+  .ov-card { width: 100% !important; }
+  .ov-svg { display: none !important; }
+
+  .page-body { margin: 20px 0 0 !important; gap: 28px !important; }
+  .kaj-hero, .method-bento, .topic-panel.active, .dual-matrix, .closing-banner, .gov-grid, .tp-list, .proc-step { grid-template-columns: 1fr !important; }
+  .kaj-hero-left, .kaj-hero-right, .method-card, .topic-shell, .process-shell, .matrix-dark, .matrix-light, .closing-banner { padding: 24px 20px !important; border-radius: 20px !important; }
+  .kaj-h1 { font-size: 25px !important; }
+  .kj-quote { font-size: 16px !important; }
+  .sec-head { flex-direction: column !important; align-items: flex-start !important; }
+  .sec-sub { text-align: left !important; }
+  .site-footer { margin: 28px 0 0 !important; flex-direction: column !important; gap: 8px; text-align: center; }
+}
+</style>
+</head>
+<body>
+<main id="container">
+  <div id="wrapper">
+    <div id="content">
+
+      <!-- ============ KEPALA & NAVIGASI HALAMAN ============ -->
+      <div class="slide" data-slide>
+        <div class="hero-dim">
+          <header class="site-header">
+            <a class="logo-pill" href="index.html" data-nav="Beranda">
+              <img class="icon" src="1000007372.png" alt="Infotrink logo">
+              <img class="text" src="1000007373.png" alt="Infotrink">
+            </a>
+            <nav class="site-nav">
+              <a class="nav-link" href="index.html" data-nav="Beranda">Beranda</a>
+              <a class="nav-link on" href="hasil-riset.html" data-nav="Publikasi">Publikasi</a>
+              <a class="nav-link" href="#" data-nav="Informasi">Informasi</a>
+              <a class="nav-link" href="#" data-nav="Galeri">Galeri</a>
+              <a class="nav-link" href="mengenal-infotrink.html" data-nav="Mengenal INFOTRINK"><span translate="no">Mengenal INFOTRINK</span></a>
+            </nav>
+          </header>
+
+          <!-- ============ KONTEN UTAMA HALAMAN HASIL KAJIAN & PENGAMATAN ============ -->
+          <div class="page-body">
+
+            <!-- BAGIAN 1: HERO KHUSUS KAJIAN & PENGAMATAN -->
+            <section class="kaj-hero" aria-labelledby="kaj-heading">
+              <div class="kaj-hero-left">
+                <div>
+                  <span class="kaj-kicker">Hasil Kajian dan Pengamatan</span>
+                  <h1 class="kaj-h1" id="kaj-heading">
+                    Pusat Telaah Strategis, <span>Analisis Kontekstual, dan Rekam Observasi</span>
+                  </h1>
+                  <p class="kaj-desc">
+                    Halaman ini menghimpun berbagai dokumen pengamatan, telaah analitis, dan kajian mendalam yang menjadi fondasi intelektual serta landasan perancangan berbagai inisiatif dan program pengembangan dalam ekosistem <strong translate="no">INFOTRINK</strong>.
+                  </p>
+                </div>
+                <div class="kaj-tags">
+                  <span class="kaj-tag-item">01. Metodologi Telaah</span>
+                  <span class="kaj-tag-item">02. Klasifikasi Topik</span>
+                  <span class="kaj-tag-item">03. Alur Observasi</span>
+                  <span class="kaj-tag-item">04. Sintesis Temuan</span>
+                </div>
+              </div>
+
+              <aside class="kaj-hero-right" aria-label="Prinsip Kajian Utama">
+                <div>
+                  <span class="kj-badge">Esensi Telaah Sistem</span>
+                  <p class="kj-quote">
+                    Setiap kajian disusun melalui <em>pengumpulan data objektif dan analisis empiris</em> guna memastikan keberhasilan setiap proyek memiliki landasan pemikiran yang teruji.
+                  </p>
+                </div>
+                <div class="kj-metrics">
+                  <div class="kj-stat">
+                    <span class="kj-stat-lbl">Validitas Data</span>
+                    <span class="kj-stat-val">Empiris &amp; Aktual</span>
+                  </div>
+                  <div class="kj-stat">
+                    <span class="kj-stat-lbl">Orientasi Hasil</span>
+                    <span class="kj-stat-val">Landasan Proyek</span>
+                  </div>
+                </div>
+              </aside>
+            </section>
+
+            <!-- BAGIAN 2: BENTO METODOLOGI ANALISIS (3 KOLOM) -->
+            <section>
+              <div class="sec-head">
+                <div>
+                  <span class="sec-eyebrow">01 / Kerangka Metodologis</span>
+                  <h2 class="sec-title">Tiga Pilar Pendekatan Analisis</h2>
+                </div>
+                <p class="sec-sub">Metode baku yang diterapkan dalam mengkaji setiap permasalahan sebelum dirumuskan menjadi rekomendasi atau program nyata.</p>
+              </div>
+
+              <div class="method-bento">
+                <div class="method-card">
+                  <div>
+                    <div class="mc-top">
+                      <div class="mc-num">I</div>
+                      <span class="mc-badge">Observasi Lapangan</span>
+                    </div>
+                    <h3 class="mc-h3">Pengamatan Fakta &amp; Kondisi Nyata</h3>
+                    <p class="mc-p">
+                      Mengumpulkan data langsung dari fenomena di lapangan secara cermat untuk mengidentifikasi pola, tantangan mendasar, serta peluang pengembangan yang ada tanpa asumsi subjektif.
+                    </p>
+                  </div>
+                  <div class="mc-foot">Faktual &amp; Objektif</div>
+                </div>
+
+                <div class="method-card">
+                  <div>
+                    <div class="mc-top">
+                      <div class="mc-num" style="background:var(--gold);color:#0B3B3A">II</div>
+                      <span class="mc-badge">Telaah Konseptual</span>
+                    </div>
+                    <h3 class="mc-h3">Analisis Struktur &amp; Teoretis</h3>
+                    <p class="mc-p">
+                      Membedah permasalahan menggunakan kerangka konseptual yang sistematis guna memahami hubungan antarvariabel serta dampak jangka panjang dari setiap alternatif pemecahan.
+                    </p>
+                  </div>
+                  <div class="mc-foot">Sistematis &amp; Terstruktur</div>
+                </div>
+
+                <div class="method-card">
+                  <div>
+                    <div class="mc-top">
+                      <div class="mc-num">III</div>
+                      <span class="mc-badge">Sintesis Strategis</span>
+                    </div>
+                    <h3 class="mc-h3">Perumusan Kesimpulan &amp; Arah</h3>
+                    <p class="mc-p">
+                      Menarik kesimpulan komprehensif dari hasil temuan pengamatan dan telaah teoretis untuk diterjemahkan menjadi rekomendasi praktis bagi perancangan proyek atau inisiatif lanjutan.
+                    </p>
+                  </div>
+                  <div class="mc-foot">Aksiable &amp; Terarah</div>
+                </div>
+              </div>
+            </section>
+
+            <!-- BAGIAN 3: TAB INTERAKTIF KLASIFIKASI TOPIK KAJIAN -->
+            <section>
+              <div class="sec-head">
+                <div>
+                  <span class="sec-eyebrow">02 / Klasifikasi Fokus</span>
+                  <h2 class="sec-title">Kategori Bidang &amp; Domain Pengamatan</h2>
+                </div>
+                <p class="sec-sub">Pilih opsi di bawah untuk meninjau cakupan topik telaah yang didokumentasikan di dalam pusat arsip.</p>
+              </div>
+
+              <div class="topic-shell">
+                <div class="topic-tabs" role="tablist" aria-label="Klasifikasi Topik">
+                  <button class="topic-tab active" role="tab" aria-selected="true" data-tab="topic-str">
+                    <span class="tt-num">A</span> Strategi Organisasi
+                  </button>
+                  <button class="topic-tab" role="tab" aria-selected="false" data-tab="topic-tek">
+                    <span class="tt-num">B</span> Pengembangan Sistem
+                  </button>
+                  <button class="topic-tab" role="tab" aria-selected="false" data-tab="topic-eko">
+                    <span class="tt-num">C</span> Dinamika Ekonomi
+                  </button>
+                  <button class="topic-tab" role="tab" aria-selected="false" data-tab="topic-sos">
+                    <span class="tt-num">D</span> Sosio-Kultural
+                  </button>
+                </div>
+
+                <!-- Tab Panel A -->
+                <div class="topic-panel active" id="topic-str" role="tabpanel">
+                  <div>
+                    <h3 class="tp-title">Tata Kelola, Struktur, dan Strategi Pengelolaan</h3>
+                    <p class="tp-text">
+                      Kajian yang memfokuskan pengamatan pada efektivitas struktur holding, pembagian peran subsidiary, serta optimalisasi koordinasi lintas unit agar operasional berjalan secara selaras dan terukur.
+                    </p>
+                    <ul class="tp-list">
+                      <li>Efisiensi koordinasi korporasi</li>
+                      <li>Evaluasi tata kelola manajerial</li>
+                      <li>Desain alur kerja terpadu</li>
+                      <li>Mitigasi risiko struktural</li>
+                    </ul>
+                  </div>
+                  <div class="tp-side-card">
+                    <div class="tp-side-head"><span>Fokus Telaah</span><span>Manajerial</span></div>
+                    <div class="tp-box">
+                      <strong>Kejelasan Kedudukan</strong>
+                      <p>Memastikan setiap entitas memiliki batasan fungsi dan tanggung jawab yang tidak saling tumpang tindih.</p>
+                    </div>
+                    <div class="tp-box">
+                      <strong>Kinerja Jangka Panjang</strong>
+                      <p>Mengkaji ketahanan model organisasi dalam menghadapi dinamika ekspansi.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Tab Panel B -->
+                <div class="topic-panel" id="topic-tek" role="tabpanel">
+                  <div>
+                    <h3 class="tp-title">Arsitektur Digital &amp; Platform Teknologi</h3>
+                    <p class="tp-text">
+                      Telaah mendalam terhadap perancangan platform berbasis website, integrasi sistem informasi, skalabilitas database, serta kenyamanan pengalaman pengguna dalam ekosistem digital.
+                    </p>
+                    <ul class="tp-list">
+                      <li>Evaluasi kerangka arsitektur web</li>
+                      <li>Optimalisasi kecepatan &amp; respons</li>
+                      <li>Keamanan akses &amp; privasi data</li>
+                      <li>Standar antarmuka pengguna</li>
+                    </ul>
+                  </div>
+                  <div class="tp-side-card">
+                    <div class="tp-side-head"><span>Fokus Telaah</span><span>Teknis</span></div>
+                    <div class="tp-box">
+                      <strong>Stabilitas Sistem</strong>
+                      <p>Menguji ketahanan infrastruktur digital dalam menampung arus informasi besar.</p>
+                    </div>
+                    <div class="tp-box">
+                      <strong>Kemudahan Akses</strong>
+                      <p>Memastikan konsistensi tampilan di berbagai perangkat (desktop hingga ponsel).</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Tab Panel C -->
+                <div class="topic-panel" id="topic-eko" role="tabpanel">
+                  <div>
+                    <h3 class="tp-title">Integrasi Ekonomi, Pasar, dan Finansial</h3>
+                    <p class="tp-text">
+                      Pengamatan terhadap mekanisme pasar, pengelolaan aset multi-mata uang, efisiensi transfer lintas wilayah, serta analisis peluang investasi global untuk mendukung stabilitas inisiatif ekonomi.
+                    </p>
+                    <ul class="tp-list">
+                      <li>Analisis tren pasar global</li>
+                      <li>Strategi efisiensi biaya &amp; aset</li>
+                      <li>Evaluasi instrumen investasi</li>
+                      <li>Mitigasi fluktuasi nilai tukar</li>
+                    </ul>
+                  </div>
+                  <div class="tp-side-card">
+                    <div class="tp-side-head"><span>Fokus Telaah</span><span>Finansial</span></div>
+                    <div class="tp-box">
+                      <strong>Ketahanan Finansial</strong>
+                      <p>Menilai kelayakan skema alokasi dana dan pengelolaan portofolio aset.</p>
+                    </div>
+                    <div class="tp-box">
+                      <strong>Peluang Ekspansi</strong>
+                      <p>Mengidentifikasi sektor potensial untuk pertumbuhan ekonomi jangka panjang.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Tab Panel D -->
+                <div class="topic-panel" id="topic-sos" role="tabpanel">
+                  <div>
+                    <h3 class="tp-title">Dinamika Sosial, Tren Gaya Hidup &amp; Kreativitas</h3>
+                    <p class="tp-text">
+                      Telaah terhadap perubahan perilaku masyarakat, tren industri kreatif, estetika desain modern, serta preferensi audiens dalam menikmati media hiburan dan publikasi informasi.
+                    </p>
+                    <ul class="tp-list">
+                      <li>Analisis preferensi audiens media</li>
+                      <li>Tren estetika desain &amp; branding</li>
+                      <li>Dinamika konsumsi konten digital</li>
+                      <li>Kajian dampak sosial inisiatif</li>
+                    </ul>
+                  </div>
+                  <div class="tp-side-card">
+                    <div class="tp-side-head"><span>Fokus Telaah</span><span>Kultural</span></div>
+                    <div class="tp-box">
+                      <strong>Relevansi Publik</strong>
+                      <p>Memastikan setiap bentuk karya dan publikasi selaras dengan kebutuhan zaman.</p>
+                    </div>
+                    <div class="tp-box">
+                      <strong>Estetika Visual</strong>
+                      <p>Menjaga standar kualitas estetika yang profesional dan berwibawa.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- BAGIAN 4: VERTICAL STEPPER (ALUR PELAKSANAAN TELAAH) -->
+            <section>
+              <div class="sec-head">
+                <div>
+                  <span class="sec-eyebrow">03 / Prosedur Pengamatan</span>
+                  <h2 class="sec-title">Empat Tahap Pelaksanaan Telaah</h2>
+                </div>
+                <p class="sec-sub">Alur kerja sistematis yang dilalui setiap topik pengamatan dari tahap perumusan masalah hingga publikasi hasil.</p>
+              </div>
+
+              <div class="process-shell">
+                <div class="proc-timeline">
+                  <div class="proc-step">
+                    <div class="proc-badge-wrap">
+                      <span class="proc-code">FASE 01</span>
+                      <span class="proc-phase">Perumusan Topik</span>
+                    </div>
+                    <div class="proc-content-wrap">
+                      <h4>Identifikasi Kebutuhan &amp; Rumusan Masalah</h4>
+                      <p>Menentukan fokus kajian berdasarkan urgensi permasalahan nyata atau kebutuhan strategis dalam pengembangan suatu inisiatif.</p>
+                    </div>
+                  </div>
+
+                  <div class="proc-step">
+                    <div class="proc-badge-wrap">
+                      <span class="proc-code">FASE 02</span>
+                      <span class="proc-phase">Pengumpulan Data</span>
+                    </div>
+                    <div class="proc-content-wrap">
+                      <h4>Observasi, Wawancara &amp; Studi Literatur</h4>
+                      <p>Menghimpun data primer dari pengamatan lapangan serta data sekunder dari dokumen referensi yang relevan dan terpercaya.</p>
+                    </div>
+                  </div>
+
+                  <div class="proc-step">
+                    <div class="proc-badge-wrap">
+                      <span class="proc-code">FASE 03</span>
+                      <span class="proc-phase">Analisis Kritis</span>
+                    </div>
+                    <div class="proc-content-wrap">
+                      <h4>Pengujian Hipotesis &amp; Sintesis Temuan</h4>
+                      <p>Menganalisis data yang terkumpul menggunakan kerangka berpikir yang objektif untuk menemukan akar permasalahan dan solusi.</p>
+                    </div>
+                  </div>
+
+                  <div class="proc-step">
+                    <div class="proc-badge-wrap">
+                      <span class="proc-code">FASE 04</span>
+                      <span class="proc-phase">Dokumentasi</span>
+                    </div>
+                    <div class="proc-content-wrap">
+                      <h4>Penyusunan Laporan &amp; Referensi Proyek</h4>
+                      <p>Menuliskan hasil kajian ke dalam format laporan terstruktur serta menghubungkannya langsung dengan halaman proyek terkait.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- BAGIAN 5: DUAL MATRIX (SINTESIS KAJIAN & HUBUNGAN PROYEK) -->
+            <section>
+              <div class="sec-head">
+                <div>
+                  <span class="sec-eyebrow">04 / Integrasi Pengetahuan</span>
+                  <h2 class="sec-title">Sintesis Kajian &amp; Referensi Proyek</h2>
+                </div>
+                <p class="sec-sub">Mekanisme bagaimana hasil pengamatan ditransformasikan menjadi aksi nyata dalam pembangunan berbagai inisiatif.</p>
+              </div>
+
+              <div class="dual-matrix">
+                <!-- Kolom Kiri Gelap -->
+                <div class="matrix-dark">
+                  <span class="mx-tag">Transformasi Pengetahuan</span>
+                  <h3 class="mx-h3">Dari Hasil Telaah Menuju Eksekusi Nyata</h3>
+                  <p class="mx-p">
+                    Setiap kajian di <span translate="no">INFOTRINK</span> tidak berhenti sebagai arsip teoretis, melainkan langsung dihubungkan dengan proyek dan program yang membutuhkan landasan empiris tersebut.
+                  </p>
+                  <div class="node-chain">
+                    <div class="node-row">
+                      <strong>Kajian Organisasi &rarr; Holding</strong>
+                      <span>Menjadi pedoman struktur anak perusahaan</span>
+                    </div>
+                    <div class="node-row">
+                      <strong>Telaah Teknologi &rarr; Super-App</strong>
+                      <span>Mendasari perancangan platform digital</span>
+                    </div>
+                    <div class="node-row">
+                      <strong>Analisis Pasar &rarr; Strategi Usaha</strong>
+                      <span>Memandu arah ekspansi kegiatan</span>
+                    </div>
+                    <div class="node-row">
+                      <strong>Observasi Tren &rarr; Karya Kreatif</strong>
+                      <span>Menginspirasi proses penciptaan desain</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Kolom Kanan Terang -->
+                <div class="matrix-light">
+                  <span class="mx-tag">Standar Aksesibilitas</span>
+                  <h3 class="mx-h3">Keterbacaan dan Validitas Arsip Kajian</h3>
+                  <p class="mx-p">
+                    Penerapan struktur penulisan yang sistematis, ringkasan eksekutif yang padat, serta kemudahan penelusuran dokumen bagi pihak yang memerlukan rujukan.
+                  </p>
+                  <div class="gov-grid">
+                    <div class="gov-box">
+                      <strong>Ringkasan Padat</strong>
+                      <p>Setiap dokumen kajian dilengkapi intisari agar cepat dipahami.</p>
+                    </div>
+                    <div class="gov-box">
+                      <strong>Rujukan Terbuka</strong>
+                      <p>Sumber data dan literatur dicantumkan secara transparan.</p>
+                    </div>
+                    <div class="gov-box">
+                      <strong>Pembaruan Arsip</strong>
+                      <p>Kajian ditinjau ulang apabila terjadi perubahan kondisi lapangan.</p>
+                    </div>
+                    <div class="gov-box">
+                      <strong>Koneksi Silang</strong>
+                      <p>Tautan langsung menuju halaman proyek atau laporan terkait.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- BAGIAN 6: BANNER PENUTUP PUSAT KAJIAN -->
+            <section>
+              <div class="closing-banner">
+                <div>
+                  <span class="sec-eyebrow">05 / Visi Intelektual</span>
+                  <h2 class="cb-title">Menghadirkan Landasan Berpikir yang Teruji</h2>
+                  <p class="cb-text">
+                    Melalui halaman <strong translate="no">Hasil Kajian dan Pengamatan</strong> ini, seluruh proses analisis dan observasi disajikan secara objektif, mendalam, dan berkelanjutan untuk memperkuat setiap langkah pengembangan ke depan.
+                  </p>
+                </div>
+                <div class="cb-actions">
+                  <a class="cb-cta" href="media-informasi.html">
+                    <span>Kembali ke Media Informasi &amp; Penjelasan</span>
+                    <span>&rarr;</span>
+                  </a>
+                  <a class="cb-cta secondary" href="laporan.html">
+                    <span>Lihat Laporan &amp; Catatan Perkembangan</span>
+                    <span>&rarr;</span>
+                  </a>
+                  <a class="cb-cta secondary" href="mengenal-infotrink.html">
+                    <span>Kunjungi Halaman Mengenal INFOTRINK</span>
+                    <span>&rarr;</span>
+                  </a>
+                </div>
+              </div>
+            </section>
+
+          </div>
+
+          <footer class="site-footer">
+            <span>&copy; <span translate="no">INFOTRINK</span> &mdash; Platform Informasi &amp; Dokumentasi Terpadu</span>
+            <span>Muhammad Fajri Munawar</span>
+          </footer>
+        </div>
+
+        <div class="overlays" data-overlays></div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<script>
+(function(){
+"use strict";
+
+var $ = function(s,c){ return (c||document).querySelector(s); };
+var $$ = function(s,c){ return Array.prototype.slice.call((c||document).querySelectorAll(s)); };
+function esc(s){
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+}
+function brand(s){
+  var parts = String(s).split("INFOTRINK"), out = "";
+  for(var i=0;i<parts.length;i++){ out += esc(parts[i]); if(i<parts.length-1) out += '<span translate="no">INFOTRINK</span>'; }
+  return out;
+}
+
+var SUB_MENU_URLS = {
+  "Media Informasi & Penjelasan": "media-informasi.html",
+  "Hasil Kajian dan Pengamatan": "hasil-riset.html",
+  "Kajian dan Analisis": "kajian-analisis.html",
+  "Laporan & Catatan Perkembangan": "laporan.html",
+  "Data dan Referensi": "data-referensi.html",
+  "Gagasan & Konsep Pengembangan": "gagasan-konsep.html",
+
+  "Saluran Publikasi": "media-digital.html",
+  "Pengembangan & Proyek": "pembangunan.html",
+  "Karya Personal": "personal.html",
+  "Bidang lainnya": "bidang-lainnya.html",
+
+  "Dokumentasi kajian": "dok-riset.html",
+  "Dokumentasi saluran publikasi": "dok-digital.html",
+  "Dokumentasi proyek": "dok-pembangunan.html",
+  "Dokumentasi karya personal": "dok-personal.html",
+  "Visual dan infografis": "visual-infografis.html",
+
+  "Pengenalan INFOTRINK": "mengenal-infotrink.html",
+  "Latar Belakang": "latar-belakang.html",
+  "Tujuan dan Fungsi": "tujuan-fungsi.html",
+  "Ruang Lingkup": "ruang-lingkup.html",
+  "Prinsip Pengelolaan": "prinsip-pengelolaan.html"
+};
+
+var SUB_MENUS = {
+  Publikasi:{ description:"Pusat seluruh informasi, kajian, dan catatan perkembangan yang diterbitkan.", items:["Media Informasi & Penjelasan","Hasil Kajian dan Pengamatan","Kajian dan Analisis","Laporan & Catatan Perkembangan","Data dan Referensi","Gagasan & Konsep Pengembangan"] },
+  Informasi:{ description:"Pengelompokan informasi berdasarkan bidang kegiatan dan karya.", items:["Saluran Publikasi","Pengembangan & Proyek","Karya Personal","Bidang lainnya"] },
+  Galeri:{ description:"Arsip visual dan dokumentasi perkembangan lintas objek.", items:["Dokumentasi kajian","Dokumentasi saluran publikasi","Dokumentasi proyek","Dokumentasi karya personal","Visual dan infografis"] },
+  "Mengenal INFOTRINK":{ description:"Menjelaskan konsep dan keberadaan INFOTRINK sebagai platform informasi terpadu.", items:["Pengenalan INFOTRINK","Latar Belakang","Tujuan dan Fungsi","Ruang Lingkup","Prinsip Pengelolaan"] }
+};
+var NAV_X = { Publikasi:910, Informasi:1000, Galeri:1085, "Mengenal INFOTRINK":1190 };
+
+var state = { activeMenu:null, lastActiveMenu:null, scale:0, navPositions:{} };
+
+function renderOverlays(){
+  var host = $("[data-overlays]"); if(!host) return;
+  var html = "";
+  for(var menu in SUB_MENUS){
+    var data = SUB_MENUS[menu];
+    var x = NAV_X[menu] || 910;
+    var path = "M "+x+" 78 L "+x+" 130 L 70 130";
+    var cards = "";
+    for(var i=0;i<data.items.length;i++){
+      var itemTitle = data.items[i];
+      var targetUrl = SUB_MENU_URLS[itemTitle] || "#";
+      var delay = (0.55 + i*0.06).toFixed(2);
+      cards += '<div class="ov-card" style="--d:'+delay+'s">'
+        + '<span class="ov-num">'+String(i+1).padStart(2,"0")+'</span>'
+        + '<div class="ov-title">'+brand(itemTitle)+'</div>'
+        + '<a class="ov-btn" href="'+targetUrl+'">Telusuri \u2192</a>'
+        + '</div>';
+    }
+    html += '<div class="overlay-menu" data-menu="'+esc(menu)+'">'
+      + '<svg class="ov-svg" width="1280" height="720" aria-hidden="true">'
+      + '<circle class="ov-dot-start" cx="'+x+'" cy="78" r="5"></circle>'
+      + '<path class="ov-line" d="'+path+'" pathLength="1"></path>'
+      + '<circle class="ov-dot-end" cx="70" cy="130" r="5"></circle>'
+      + '</svg>'
+      + '<div class="ov-box">'
+      + '<div class="ov-head"><h2 class="ov-h2">'+brand(menu)+'</h2><p class="ov-desc">'+esc(data.description)+'</p></div>'
+      + '<div class="ov-divider"></div>'
+      + '<div class="ov-cards">'+cards+'</div>'
+      + '</div>'
+      + '<button class="ov-x" data-close aria-label="Tutup daftar isi">\u2715</button>'
+      + '</div>';
+  }
+  host.innerHTML = html;
+}
+
+function initTopicTabs(){
+  var tabs = $$(".topic-tab");
+  var panels = $$(".topic-panel");
+  tabs.forEach(function(tab){
+    tab.addEventListener("click", function(){
+      var targetId = tab.getAttribute("data-tab");
+      tabs.forEach(function(t){
+        var isOn = (t === tab);
+        t.classList.toggle("active", isOn);
+        t.setAttribute("aria-selected", isOn ? "true" : "false");
+      });
+      panels.forEach(function(p){
+        p.classList.toggle("active", p.id === targetId);
+      });
+      requestAnimationFrame(measureContentHeight);
+    });
+  });
+}
+
+function updateScale(){
+  if(window.innerWidth <= 768) return;
+  var el = $("#container"); if(!el) return;
+  state.scale = Math.max(el.clientWidth/1280, 0.5);
+}
+function applyZoom(){
+  if(window.innerWidth <= 768) return;
+  var c = $("#content"); if(c && state.scale>0) c.style.zoom = state.scale;
+}
+function measureContentHeight(){
+  if(window.innerWidth <= 768) return;
+  var c = $("#content"); if(!c) return;
+  var h = Math.max(c.scrollHeight * state.scale, window.innerHeight);
+  var w = $("#wrapper"); if(w) w.style.height = h+"px";
+}
+function measureNavPositions(){
+  if(window.innerWidth <= 768) return;
+  var slide = $("[data-slide]"); if(!slide) return;
+  var sr = slide.getBoundingClientRect();
+  var sc = sr.width/1280; if(sc===0) return;
+  var pos = {};
+  $$("[data-nav]", slide).forEach(function(el){
+    var nKey = el.getAttribute("data-nav");
+    if(nKey && nKey !== "Beranda"){
+      var r = el.getBoundingClientRect();
+      pos[nKey] = (r.left + r.width/2 - sr.left)/sc;
+    }
+  });
+  state.navPositions = pos;
+  updateOverlayPositions();
+}
+function updateOverlayPositions(){
+  if(window.innerWidth <= 768) return;
+  var slide = $("[data-slide]"); if(!slide) return;
+  $$(".overlay-menu", slide).forEach(function(ov){
+    var key = ov.getAttribute("data-menu");
+    var x = (state.navPositions[key]!=null) ? state.navPositions[key] : (NAV_X[key] || 910);
+    var path = ov.querySelector("path"); if(path) path.setAttribute("d", "M "+x+" 78 L "+x+" 130 L 70 130");
+    var dot = ov.querySelector(".ov-dot-start"); if(dot) dot.setAttribute("cx", x);
+  });
+}
+
+function getOverlay(slide, item){
+  var list = $$(".overlay-menu", slide);
+  for(var i=0;i<list.length;i++){ if(list[i].getAttribute("data-menu")===item) return list[i]; }
+  return null;
+}
+var NAV_AFTER_CLOSE_MS = 600;
+var navHighlightTimer = null;
+function scheduleNavHighlight(){ clearTimeout(navHighlightTimer); navHighlightTimer = setTimeout(updateNavHighlight, NAV_AFTER_CLOSE_MS); }
+function cancelNavHighlight(){ clearTimeout(navHighlightTimer); navHighlightTimer = null; }
+function openMenu(item){
+  var slide = $("[data-slide]"); if(!slide) return;
+  if(state.activeMenu === item){ closeMenu(); return; }
+  if(state.activeMenu){ var old = getOverlay(slide, state.activeMenu); if(old) old.classList.remove("open"); }
+  measureNavPositions();
+  state.activeMenu = item; state.lastActiveMenu = item;
+  var ov = getOverlay(slide, item); if(ov) ov.classList.add("open");
+  slide.classList.add("menu-open");
+  document.body.classList.add("menu-locked");
+  cancelNavHighlight(); updateNavHighlight();
+}
+function closeMenu(){
+  if(!state.activeMenu) return;
+  var slide = $("[data-slide]");
+  if(slide){
+    var ov = getOverlay(slide, state.activeMenu); if(ov) ov.classList.remove("open");
+    slide.classList.remove("menu-open");
+  }
+  document.body.classList.remove("menu-locked");
+  state.activeMenu = null;
+  scheduleNavHighlight();
+}
+function updateNavHighlight(){
+  $$(".nav-link").forEach(function(l){
+    var item = l.getAttribute("data-nav");
+    var on = state.activeMenu ? (state.activeMenu===item) : (item==="Publikasi");
+    l.classList.toggle("on", on);
+  });
+}
+
+function onClick(e){
+  var navEl = e.target.closest("[data-nav]");
+  if(navEl){
+    var item = navEl.getAttribute("data-nav");
+    if(item !== "Beranda" && SUB_MENUS[item]){
+      e.preventDefault();
+      openMenu(item);
+      return;
+    }
+  }
+  if(e.target.closest("[data-close]")){ e.preventDefault(); closeMenu(); return; }
+  var a = e.target.closest('a[href="#"]');
+  if(a) e.preventDefault();
+}
+function onKeydown(e){ if(e.key === "Escape") closeMenu(); }
+function onResize(){
+  if(window.innerWidth <= 768) return;
+  updateScale(); applyZoom(); measureContentHeight(); measureNavPositions();
+}
+
+function init(){
+  renderOverlays();
+  initTopicTabs();
+  if(window.innerWidth > 768){
+    updateScale(); applyZoom();
+    requestAnimationFrame(function(){ measureContentHeight(); measureNavPositions(); });
+  }
+  updateNavHighlight();
+  document.addEventListener("click", onClick);
+  document.addEventListener("keydown", onKeydown);
+  window.addEventListener("resize", onResize);
+  window.addEventListener("orientationchange", function(){ setTimeout(onResize, 100); });
+  if(document.fonts && document.fonts.ready) document.fonts.ready.then(function(){ if(window.innerWidth > 768){ measureNavPositions(); measureContentHeight(); } });
+  setTimeout(onResize, 100);
+  setTimeout(onResize, 500);
+}
+if(document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
+else init();
+})();
+</script>
+</body>
+</html>
