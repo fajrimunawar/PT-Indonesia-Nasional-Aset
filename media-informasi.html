@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Infotrink</title>
-<meta name="description" content="INFOTRINK — satu wadah untuk perjalanan gagasan dan berbagai karya. Menghimpun informasi dan dokumentasi di beragam bidang, dirangkum dari awal mula hingga pengembangannya.">
+<title>Media Informasi & Penjelasan — Infotrink</title>
+<meta name="description" content="INFOTRINK — Pusat Media Informasi dan Penjelasan mengenai perjalanan gagasan, dokumentasi, dan berbagai lini terstruktur.">
 <meta name="theme-color" content="#81F6EF">
 <link rel="icon" href="1000007372.png" sizes="any">
 <link rel="icon" href="1000007372.png" type="image/png" sizes="32x32">
@@ -37,12 +37,12 @@ body.menu-locked #container{overflow:hidden}
 @keyframes marqueeHero{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 @keyframes marqueeFoot{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
-/* ============ HERO SLIDE ============ */
-.slide{position:relative;width:1280px;height:720px;overflow:hidden;background:var(--bg-grad)}
+/* ============ HEADER & NAVIGASI ============ */
+.slide{position:relative;width:1280px;height:auto;min-height:720px;overflow:hidden;background:var(--bg-grad);padding-bottom:60px}
 .hero-dim{transition:opacity .3s ease}
 .slide.menu-open .hero-dim{opacity:.22;pointer-events:none}
 
-.site-header{position:absolute;top:32px;left:70px;right:70px;display:flex;align-items:center;justify-content:space-between;z-index:10}
+.site-header{position:relative;margin:32px 70px 0 70px;display:flex;align-items:center;justify-content:space-between;z-index:10}
 .logo-pill{display:flex;align-items:center;gap:12px;padding:8px 22px 8px 10px;background:rgba(255,255,255,.85);backdrop-filter:blur(10px);border-radius:999px;box-shadow:0 4px 16px rgba(11,59,58,.12);border:1px solid rgba(255,255,255,.6);text-decoration:none;cursor:pointer}
 .logo-pill .icon{width:42px;height:42px;object-fit:contain;filter:drop-shadow(0 2px 4px rgba(11,59,58,.15))}
 .logo-pill .text{width:125px;height:40px;object-fit:contain}
@@ -51,34 +51,22 @@ body.menu-locked #container{overflow:hidden}
 .nav-link:hover{color:var(--teal)}
 .nav-link.on{font-weight:700;color:var(--teal);border-bottom-color:var(--teal)}
 
-.hero-text{position:absolute;left:70px;top:150px;width:560px;z-index:5}
-.hero-title{font-weight:800;font-size:32px;line-height:1.3;color:var(--teal-deep);letter-spacing:-.5px;text-transform:uppercase;margin:0;text-align:left}
-.hero-quote{display:flex;align-items:flex-start;margin-top:44px;gap:10px}
-.hero-quote img{flex-shrink:0;width:48px;height:34px;margin-top:-12px;user-select:none}
-.hero-quote p{font-weight:400;font-size:16.5px;line-height:1.6;color:var(--ink);text-align:justify;text-justify:inter-word;width:470px;margin:0}
-.hero-actions{display:flex;justify-content:space-between;align-items:center;margin-top:52px;margin-left:58px;width:470px;position:relative;z-index:10}
-.btn-image{position:relative;display:inline-flex;align-items:center;height:44px;cursor:pointer;text-decoration:none;z-index:5}
-.btn-image img{position:absolute;inset:0;width:100%;height:100%;object-fit:fill;display:block;z-index:0}
-.btn-image span{position:relative;z-index:1;font-size:16px;font-weight:700;color:#1a1a1a;letter-spacing:.3px;pointer-events:none}
-.btn-telusuri{justify-content:flex-end;padding-right:40px;padding-left:60px}
-.btn-kenali{justify-content:flex-start;padding-left:40px;padding-right:60px}
+/* ============ HALAMAN UTAMA: MEDIA INFORMASI ============ */
+.page-hero-content{padding:60px 70px 20px 70px;position:relative;z-index:5}
+.pill-badge{display:inline-block;font-size:13px;font-weight:700;color:var(--teal);background:rgba(11,110,106,.1);padding:6px 14px;border-radius:999px;letter-spacing:1px;margin-bottom:18px}
+.page-title{font-weight:800;font-size:36px;line-height:1.3;color:var(--teal-deep);letter-spacing:-.5px;text-transform:uppercase;margin:0 0 16px 0}
+.page-lede{font-size:17px;line-height:1.75;color:var(--ink);text-align:justify;text-justify:inter-word;max-width:980px;margin:0}
 
-.hero-marquee{margin-top:44px;margin-left:58px;width:470px;padding:10px 0;background:rgba(11,110,106,.07);border-radius:999px;border:1px solid rgba(11,110,106,.22);overflow:hidden;white-space:nowrap;-webkit-mask-image:linear-gradient(90deg,transparent,black 8%,black 92%,transparent);mask-image:linear-gradient(90deg,transparent,black 8%,black 92%,transparent)}
-.hero-marquee-inner{display:inline-flex;align-items:center;animation:marqueeHero 40s linear infinite;will-change:transform}
-.hm-group{display:inline-flex;align-items:center}
-.hm-item{display:inline-flex;align-items:center}
-.hm-text{font-size:12px;font-weight:600;letter-spacing:2px;color:rgba(11,110,106,.85);padding:0 22px;white-space:nowrap}
-.hm-dot{color:rgba(11,110,106,.4);font-size:11px;margin:0 5px}
-
-.hero-photos{position:absolute;left:660px;top:150px;width:550px;height:555px;z-index:3}
-.photo-card{position:absolute;width:256px;height:256px}
-.photo-card::before{content:"";position:absolute;top:18px;left:-18px;width:100%;height:100%;background:linear-gradient(135deg,#0B6E6A,#5B7A78);border-radius:18px;opacity:.3}
-.photo-frame{position:relative;width:100%;height:100%;padding:8px;background:linear-gradient(155deg,rgba(255,255,255,.62),rgba(255,255,255,.36) 55%,rgba(129,246,239,.38));border:1px solid rgba(255,255,255,.7);border-radius:18px;box-shadow:0 8px 22px rgba(11,59,58,.12);backdrop-filter:blur(6px)}
-.photo-frame img{width:240px;height:240px;object-fit:cover;border-radius:12px;display:block}
-.photo-tl{top:0;left:0}
-.photo-tr{top:20px;left:294px}
-.photo-bl{top:279px;left:0}
-.photo-br{top:299px;left:294px}
+/* ============ KONTEN ARTIKEL & KARTU INFORMASI ============ */
+.info-section{position:relative;padding:40px 70px 60px 70px;background:#fff;border-top:1px solid rgba(11,110,106,.15);border-bottom:1px solid rgba(11,110,106,.15)}
+.info-grid{display:grid;grid-template-columns:repeat(2, minmax(0, 1fr));gap:30px;margin-top:40px}
+.info-card{background:linear-gradient(135deg,#F0FAF8,#DCF3EC);border:1px solid rgba(11,110,106,.18);border-radius:20px;padding:32px;box-shadow:0 10px 30px rgba(11,59,58,.06);display:flex;flex-direction:column;justify-content:space-between;transition:transform .25s ease,box-shadow .25s ease}
+.info-card:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(11,59,58,.12);border-color:var(--teal)}
+.info-card-num{display:inline-block;font-size:11px;font-weight:800;color:var(--teal);background:rgba(11,110,106,.12);padding:4px 12px;border-radius:6px;margin-bottom:14px;letter-spacing:1px;width:fit-content}
+.info-card-title{font-size:20px;font-weight:800;color:var(--teal-deep);margin:0 0 12px 0;line-height:1.35;text-transform:uppercase}
+.info-card-desc{font-size:15px;line-height:1.75;color:var(--ink);margin:0 0 24px 0;text-align:justify;text-justify:inter-word}
+.info-card-link{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;background:var(--teal);color:#fff;border-radius:999px;font-size:13px;font-weight:700;text-decoration:none;width:fit-content;transition:background .2s,transform .2s}
+.info-card-link:hover{background:var(--teal-deep);transform:translateX(4px)}
 
 /* ============ DAFTAR ISI OVERLAY ============ */
 .overlay-menu{position:absolute;inset:0;visibility:hidden;pointer-events:none;transition:visibility 0s linear .7s}
@@ -112,200 +100,12 @@ body.menu-locked #container{overflow:hidden}
 .overlay-menu.open .ov-x{opacity:1;transform:scale(1) rotate(0);transition-delay:.55s}
 .overlay-menu.open .ov-x:hover{background:#d32f2f;transform:scale(1.1) rotate(0);transition-delay:0s}
 
-/* ============ SECTION BERSAMA ============ */
-.sections{position:relative;width:1280px}
-.pill-badge{display:inline-block;font-size:13px;font-weight:700;color:var(--teal);background:rgba(11,110,106,.1);padding:6px 14px;border-radius:999px;letter-spacing:1px;margin-bottom:18px}
-
-/* ============ SECTION 1: INTRO ============ */
-.sec-intro{position:relative;min-height:700px;padding:50px 80px 44px;background:#fff}
-.sec-intro::after{content:"";display:table;clear:both}
-.sec-intro .float-img{float:right;margin-top:54px;margin-left:40px;margin-bottom:24px;position:relative}
-.sec-intro .float-img::before{content:"";position:absolute;top:18px;left:-18px;width:100%;height:100%;background:linear-gradient(135deg,#0B6E6A,#5B7A78);border-radius:22px;opacity:.3}
-.sec-intro .img-frame{position:relative;width:516px;height:348px;border-radius:22px;overflow:hidden;background:#fff;box-shadow:0 0 0 1px rgba(11,110,106,.10),0 14px 34px rgba(11,59,58,.18);border:6px solid #fff}
-.sec-intro .img-frame img{width:100%;height:100%;object-fit:cover;display:block}
-.sec-intro .img-badge{position:absolute;bottom:16px;left:16px;padding:10px 16px;background:rgba(255,255,255,.95);border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.1)}
-.sec-intro .img-badge .label{font-size:11px;color:var(--teal-soft);font-weight:600;letter-spacing:.5px}
-.sec-intro .img-badge .title{font-size:14px;color:var(--teal-deep);font-weight:700}
-.sec-intro h2{font-size:25.5px;font-weight:800;color:var(--teal-deep);margin:0 0 22px;letter-spacing:.3px;line-height:1.3;text-transform:uppercase;white-space:nowrap}
-.sec-intro p{font-size:16.5px;line-height:1.75;color:var(--ink);margin:0;text-align:justify;text-justify:inter-word}
-
-/* ============ SECTION 2: ALUR PERJALANAN ============ */
-.sec-flow{position:relative;padding:56px 80px 58px;background:#fff;border-top:1px solid rgba(11,110,106,.12);border-bottom:1px solid rgba(11,110,106,.12);background-image:linear-gradient(rgba(11,110,106,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(11,110,106,.035) 1px,transparent 1px);background-size:40px 40px;overflow:hidden}
-.sec-flow .pill-badge{font-size:12.5px;letter-spacing:1.5px;margin-bottom:16px}
-.sec-flow h2{font-size:27px;font-weight:800;color:var(--teal-deep);margin:0 0 12px;letter-spacing:.5px;line-height:1.3;max-width:1060px;text-transform:uppercase}
-.sec-flow .lede{font-size:15px;line-height:1.72;color:#37605D;margin:0 0 10px;text-align:justify;text-justify:inter-word}
-.flow-chart{position:relative;height:472px;margin-top:14px}
-.flow-chart svg{position:absolute;inset:0}
-.flow-bg{fill:none;stroke:rgba(11,110,106,.08);stroke-width:9;stroke-linecap:round}
-.flow-line{fill:none;stroke:var(--teal);stroke-width:2;stroke-dasharray:7 7;stroke-linecap:round;opacity:.5}
-.flow-cap{stroke:var(--teal);stroke-width:2;stroke-dasharray:5 6;opacity:.45;fill:none}
-.flow-dot{fill:var(--teal);opacity:.45}
-.flow-arrow{fill:var(--teal);opacity:.7}
-.stage{position:absolute;width:48px;height:48px;border-radius:50%;background:#fff;border:2px solid var(--teal);box-shadow:0 0 0 6px rgba(11,110,106,.09),0 6px 14px rgba(11,59,58,.14);display:flex;align-items:center;justify-content:center;z-index:1}
-.stage-icon{display:block}
-.stage-label{position:absolute;text-align:center;display:flex;flex-direction:column;gap:4px}
-.stage-name{font-size:14.5px;font-weight:800;color:var(--teal-deep);letter-spacing:.2px;text-transform:uppercase;white-space:nowrap}
-.stage-desc{font-size:12.3px;line-height:1.5;color:#4A6A67}
-.stage--1{left:56px;top:321px} .stage-label--1{left:2px;top:366px;width:156px}
-.stage--2{left:211px;top:86px} .stage-label--2{left:150px;top:2px;width:170px}
-.stage--3{left:366px;top:321px} .stage-label--3{left:305px;top:366px;width:170px}
-.stage--4{left:521px;top:86px} .stage-label--4{left:460px;top:2px;width:170px}
-.stage--5{left:676px;top:321px} .stage-label--5{left:615px;top:366px;width:170px}
-.stage--6{left:831px;top:86px} .stage-label--6{left:770px;top:2px;width:170px}
-.stage--7{left:986px;top:321px} .stage-label--7{left:925px;top:366px;width:170px}
-
-.mobile-flow-list { display: none !important; }
-
-/* ============ SECTION 2B: PETA BIDANG (POHON HIERARKI) ============ */
-.sec-scope{position:relative;padding:56px 80px 58px;background:#fff;border-bottom:1px solid rgba(11,110,106,.12);background-image:linear-gradient(rgba(11,110,106,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(11,110,106,.03) 1px,transparent 1px);background-size:60px 60px;overflow:hidden}
-.sec-scope .pill-badge{font-size:12.5px;letter-spacing:1.5px;margin-bottom:16px}
-.sec-scope h2{font-size:27px;font-weight:800;color:var(--teal-deep);margin:0 0 12px;letter-spacing:.5px;line-height:1.3;max-width:1060px;text-transform:uppercase}
-.sec-scope .lede{font-size:15px;line-height:1.72;color:#37605D;margin:0 0 10px;text-align:justify;text-justify:inter-word}
-.tree-chart{position:relative;height:560px;margin-top:26px}
-.tree-chart svg{position:absolute;inset:0}
-.tree-bg{fill:none;stroke:rgba(11,110,106,.12);stroke-width:7;stroke-linecap:round}
-.tree-line{fill:none;stroke:var(--teal);stroke-width:2;stroke-dasharray:6 6;stroke-linecap:round;opacity:.5}
-.tree-dot{fill:var(--teal);opacity:.5}
-.tree-root{position:absolute;left:0;top:205px;width:250px;height:150px;background:var(--teal-deep);border-radius:18px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:16px 20px;box-shadow:0 10px 24px rgba(11,59,58,.28);z-index:1}
-.tree-root .tag{font-size:9.5px;font-weight:700;letter-spacing:2px;color:var(--cyan);background:rgba(129,246,239,.12);border:1px solid rgba(129,246,239,.35);padding:3px 10px;border-radius:999px;margin-bottom:7px}
-.tree-root .nm{font-size:21px;font-weight:800;color:#fff;letter-spacing:.5px}
-.tree-root .sb{font-size:11px;color:rgba(255,255,255,.75);margin-top:4px;line-height:1.4}
-.tree-branch{position:absolute;left:330px;width:170px;height:118px;background:#fff;border:2px solid var(--teal);border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:10px 12px;box-shadow:0 0 0 5px rgba(11,59,58,.08),0 6px 14px rgba(11,59,58,.12);z-index:1;transition:box-shadow .2s,transform .2s}
-.tree-branch:hover{transform:translateX(3px);box-shadow:0 0 0 5px rgba(11,59,58,.14),0 8px 18px rgba(11,59,58,.16)}
-.tree-branch .num{display:inline-block;font-size:10px;font-weight:700;color:var(--teal);background:rgba(11,110,106,.1);padding:2px 9px;border-radius:6px;margin-bottom:6px;letter-spacing:.5px}
-.tree-branch .nm{font-size:15px;font-weight:800;color:var(--teal-deep);text-transform:uppercase;letter-spacing:.2px;line-height:1.25}
-.tree-branch .hint{font-size:10.5px;color:var(--teal-soft);margin-top:4px;line-height:1.3}
-.tree-sub{position:absolute;left:580px;width:540px;height:48px;background:linear-gradient(135deg,#F0FAF8,#DCF3EC);border:1px solid rgba(11,110,106,.14);border-radius:12px;display:flex;align-items:center;gap:12px;padding:0 16px;box-shadow:0 3px 10px rgba(11,59,58,.06);z-index:1;transition:border-color .2s,transform .2s}
-.tree-sub:hover{border-color:rgba(11,110,106,.4);transform:translateX(3px)}
-.tree-sub .dot{width:9px;height:9px;border-radius:50%;background:var(--teal);flex-shrink:0;box-shadow:0 0 0 3px rgba(11,110,106,.15)}
-.tree-sub .tt{font-size:13px;font-weight:800;color:var(--teal-deep);white-space:nowrap}
-.tree-sub .dd{font-size:12px;color:#4A6A67;line-height:1.35;flex:1;min-width:0}
-.branch--1{top:0}.branch--2{top:148px}.branch--3{top:296px}.branch--4{top:444px}
-.sub--1a{top:4px}.sub--1b{top:66px}.sub--2a{top:152px}.sub--2b{top:214px}
-.sub--3a{top:300px}.sub--3b{top:362px}.sub--4a{top:448px}.sub--4b{top:510px}
-.tree-note{text-align:center;font-size:12.5px;font-style:italic;color:var(--teal-soft);margin:20px auto 0;max-width:780px;line-height:1.6}
-
-.mobile-tree-list { display: none !important; }
-
-/* ============ SECTION 2C: PENJELASAN EMPAT CABANG BIDANG ============ */
-.sec-domains{position:relative;padding:64px 80px 72px;background:linear-gradient(180deg,#F7FCFB 0%,#FFFFFF 35%,#F4FBF9 100%);overflow:hidden}
-.sec-domains::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,transparent,var(--teal) 20%,var(--gold) 50%,var(--teal) 80%,transparent)}
-
-.dom-header{width:100%;margin-bottom:46px;padding-bottom:28px;border-bottom:1.5px solid rgba(11,110,106,.14)}
-.dom-header-top{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-bottom:14px}
-.dom-header .pill-badge{margin-bottom:0;font-size:12.5px;letter-spacing:1.5px}
-.dom-header h2{font-size:28px;font-weight:800;color:var(--teal-deep);margin:0 0 14px;letter-spacing:.4px;line-height:1.3;text-transform:uppercase;width:100%}
-.dom-header .lede{font-size:15.5px;line-height:1.78;color:#325855;margin:0;width:100%;text-align:justify;text-justify:inter-word}
-
-.dom-list{display:flex;flex-direction:column;gap:30px;position:relative}
-.dom-row{display:grid;grid-template-columns:410px 1fr;align-items:stretch;background:#fff;border-radius:20px;border:1px solid rgba(11,110,106,.15);box-shadow:0 12px 30px rgba(11,59,58,.07);overflow:hidden;position:relative;transition:transform .25s ease,box-shadow .25s ease}
-.dom-row:hover{transform:translateY(-3px);box-shadow:0 18px 38px rgba(11,59,58,.12)}
-.dom-row--reverse{grid-template-columns:1fr 410px}
-.dom-row--reverse .dom-title-panel{order:2}
-.dom-row--reverse .dom-desc-panel{order:1}
-
-.dom-title-panel{position:relative;padding:34px 36px;display:flex;flex-direction:column;justify-content:space-between;color:#fff;overflow:hidden}
-.dom-title-panel::after{content:"";position:absolute;right:-40px;bottom:-40px;width:170px;height:170px;border-radius:50%;background:radial-gradient(circle,rgba(129,246,239,.18),transparent 70%);pointer-events:none}
-.dom-row--reverse .dom-title-panel::after{right:auto;left:-40px}
-
-.dom-row--1 .dom-title-panel{background:linear-gradient(145deg,#0B3B3A 0%,#0E5956 100%)}
-.dom-row--2 .dom-title-panel{background:linear-gradient(145deg,#0E4F4C 0%,#0B3B3A 100%)}
-.dom-row--3 .dom-title-panel{background:linear-gradient(145deg,#093332 0%,#12635F 100%)}
-.dom-row--4 .dom-title-panel{background:linear-gradient(145deg,#105653 0%,#093130 100%)}
-
-.dom-row--1 .dom-title-panel{border-left:5px solid var(--cyan)}
-.dom-row--2 .dom-title-panel{border-right:5px solid var(--gold)}
-.dom-row--3 .dom-title-panel{border-left:5px solid var(--gold)}
-.dom-row--4 .dom-title-panel{border-right:5px solid var(--cyan)}
-
-.dom-panel-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:20px;position:relative;z-index:1}
-.dom-num-pill{display:inline-flex;align-items:center;gap:8px;padding:5px 13px;border-radius:999px;background:rgba(129,246,239,.14);border:1px solid rgba(129,246,239,.35);font-size:11px;font-weight:800;letter-spacing:1.6px;color:var(--cyan);text-transform:uppercase}
-
-.dom-panel-main{position:relative;z-index:1}
-.dom-kicker{font-size:11.5px;font-weight:700;letter-spacing:1.8px;color:var(--gold);text-transform:uppercase;margin-bottom:8px;display:block}
-.dom-title{font-size:24px;font-weight:800;color:#fff;margin:0 0 10px;line-height:1.25;letter-spacing:.3px;text-transform:uppercase}
-.dom-subtitle{font-size:13.5px;line-height:1.55;color:rgba(255,255,255,.82);margin:0}
-
-.dom-panel-foot{margin-top:22px;padding-top:14px;border-top:1px solid rgba(255,255,255,.14);display:flex;align-items:center;gap:8px;flex-wrap:wrap;position:relative;z-index:1}
-.dom-subtag{font-size:11px;font-weight:700;color:#fff;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);padding:4px 11px;border-radius:6px;letter-spacing:.4px}
-
-.dom-desc-panel{padding:34px 40px;display:flex;flex-direction:column;justify-content:center;background:#fff;position:relative}
-.dom-desc-label{display:inline-flex;align-items:center;gap:8px;font-size:11.5px;font-weight:800;letter-spacing:1.6px;color:var(--teal);text-transform:uppercase;margin-bottom:12px}
-.dom-desc-label::before{content:"";width:22px;height:2px;background:var(--gold);border-radius:2px}
-.dom-desc-text{font-size:15.5px;line-height:1.82;color:var(--ink);margin:0;text-align:justify;text-justify:inter-word}
-.dom-desc-points{margin-top:18px;padding-top:16px;border-top:1px dashed rgba(11,110,106,.2);display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.dom-point{background:#F5FBFA;border:1px solid rgba(11,110,106,.12);border-radius:10px;padding:11px 14px}
-.dom-point strong{display:block;font-size:12.5px;font-weight:800;color:var(--teal-deep);margin-bottom:4px;letter-spacing:.2px}
-.dom-point span{display:block;font-size:12.5px;line-height:1.55;color:#466663;text-align:justify;text-justify:inter-word}
-
-/* ============ SECTION BARU: EKSPLORASI HALAMAN INTERAKTIF (5 PART) ============ */
-.sec-showcase{position:relative;padding:64px 80px 72px;background:#fff;border-top:1px solid rgba(11,110,106,.12);border-bottom:1px solid rgba(11,110,106,.12);user-select:none}
-.showcase-header{width:100%;margin-bottom:44px;padding-bottom:24px;border-bottom:1.5px solid rgba(11,110,106,.14)}
-.showcase-header h2{font-size:28px;font-weight:800;color:var(--teal-deep);margin:0 0 12px;letter-spacing:.4px;line-height:1.3;text-transform:uppercase}
-.showcase-header .lede{font-size:15.5px;line-height:1.78;color:#325855;margin:0;text-align:justify;text-justify:inter-word}
-
-.showcase-slides-wrap{position:relative;min-height:480px;overflow:hidden;touch-action:pan-y}
-.showcase-slide{display:none;grid-template-columns:1fr 480px;gap:60px;align-items:center;animation:fadeInShowcase .4s ease forwards}
-.showcase-slide.active{display:grid}
-
-@keyframes fadeInShowcase{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
-
-.showcase-text-col{display:flex;flex-direction:column;justify-content:center;height:100%}
-.showcase-text-col p{font-size:16px;line-height:1.85;color:var(--ink);margin:0;text-align:justify;text-justify:inter-word}
-
-.showcase-visual-col{position:relative;display:flex;flex-direction:column;gap:18px}
-.showcase-visual-col::before{content:"";position:absolute;top:20px;left:-20px;width:100%;height:calc(100% - 40px);background:linear-gradient(135deg,#0B6E6A,#5B7A78);border-radius:24px;opacity:.25;z-index:0}
-
-.showcase-img-frame{position:relative;width:100%;height:310px;border-radius:22px;overflow:hidden;background:#fff;box-shadow:0 12px 36px rgba(11,59,58,.16);border:5px solid #fff;z-index:1}
-.showcase-img-frame img{width:100%;height:100%;object-fit:cover;display:block}
-
-.showcase-content-box{position:relative;z-index:1;display:flex;flex-direction:column;gap:10px}
-.showcase-item-title{font-size:20px;font-weight:800;color:var(--teal-deep);margin:0;text-transform:uppercase;letter-spacing:.3px}
-.showcase-btn{display:inline-flex;align-items:center;gap:8px;padding:11px 24px;background:var(--teal);color:#fff;border-radius:999px;font-size:13.5px;font-weight:700;text-decoration:none;width:fit-content;transition:background .2s,transform .2s;box-shadow:0 4px 14px rgba(11,59,58,.15)}
-.showcase-btn:hover{background:var(--teal-deep);transform:translateX(4px)}
-
-.showcase-nav-dots{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:45px}
-.showcase-dot{width:40px;height:40px;border-radius:50%;background:#F0FAF8;border:2px solid var(--teal);color:var(--teal);font-size:14px;font-weight:800;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s ease;box-shadow:0 4px 10px rgba(11,59,58,.08)}
-.showcase-dot:hover{background:rgba(11,110,106,.15);transform:scale(1.08)}
-.showcase-dot.active{background:var(--teal-deep);color:#fff;border-color:var(--teal-deep);box-shadow:0 6px 16px rgba(11,59,58,.2)}
-
-/* ============ SECTION 3: KUTIPAN SEMANGAT ============ */
-.sec-quote{position:relative;overflow:hidden;background:linear-gradient(180deg,#A5F4EC,#C4FAF3 45%,#E2FEFA)}
-.sec-quote .rule{height:3px;background:linear-gradient(90deg,transparent,var(--teal) 18%,#D9B45B 50%,var(--teal) 82%,transparent)}
-.sec-quote .glow{position:absolute;top:-120px;left:50%;transform:translateX(-50%);width:760px;height:300px;border-radius:50%;background:radial-gradient(closest-side,rgba(255,255,255,.55),rgba(255,255,255,0))}
-.sec-quote .mark{position:absolute;font-family:Georgia,'Times New Roman',serif;font-size:110px;line-height:1;color:rgba(11,110,106,.16);user-select:none}
-.sec-quote .mark.l{top:34px;left:34px}
-.sec-quote .mark.r{bottom:-30px;right:34px}
-.sec-quote .corners{position:absolute;top:30px;bottom:30px;left:44px;right:44px;pointer-events:none}
-.sec-quote .corner{position:absolute;width:38px;height:38px;border-color:rgba(11,110,106,.45);border-style:solid}
-.sec-quote .corner.tl{top:0;left:0;border-width:2px 0 0 2px}
-.sec-quote .corner.tr{top:0;right:0;border-width:2px 2px 0 0}
-.sec-quote .corner.bl{bottom:0;left:0;border-width:0 0 2px 2px}
-.sec-quote .corner.br{bottom:0;right:0;border-width:0 2px 2px 0}
-.sec-quote .body{position:relative;padding:58px 96px}
-.sec-quote .tag-wrap{display:flex;justify-content:center}
-.sec-quote .quote-tag{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:800;color:var(--teal);background:rgba(255,255,255,.8);border:1px solid rgba(11,110,106,.35);padding:8px 22px;border-radius:999px;letter-spacing:3px;box-shadow:0 3px 12px rgba(11,59,58,.08)}
-.sec-quote .quote-tag i{width:6px;height:6px;border-radius:50%;background:#D9B45B;display:inline-block;font-style:normal}
-.sec-quote h2{font-size:36px;font-weight:800;color:var(--teal-deep);text-align:center;white-space:nowrap;line-height:1.25;letter-spacing:.5px;text-transform:uppercase;margin:24px 0 0}
-.sec-quote .divider{display:flex;align-items:center;justify-content:center;gap:14px;width:460px;margin:24px auto 26px}
-.sec-quote .divider .ln{flex:1;height:1.5px;background:linear-gradient(90deg,transparent,rgba(11,110,106,.6))}
-.sec-quote .divider .ln.r{background:linear-gradient(270deg,transparent,rgba(11,110,106,.6))}
-.sec-quote .divider .dot{width:9px;height:9px;transform:rotate(45deg);background:#D9B45B;box-shadow:0 0 0 3px rgba(217,180,91,.25)}
-.sec-quote p{font-size:17px;line-height:1.9;color:#1F4E4B;font-weight:500;text-align:justify;text-justify:inter-word;margin:0}
-
-/* ============ SECTION 4: FOOTER ============ */
+/* ============ FOOTER ============ */
 .sec-footer{position:relative;background:linear-gradient(180deg,var(--teal-deep),var(--teal) 60%,var(--teal-deep));overflow:hidden}
 .sec-footer .blob{position:absolute;border-radius:50%}
 .sec-footer .b1{top:-150px;right:-150px;width:400px;height:400px;background:rgba(129,246,239,.08)}
 .sec-footer .b2{bottom:-100px;left:-100px;width:300px;height:300px;background:rgba(129,246,239,.06)}
-.sec-footer .b3{top:40%;left:35%;width:150px;height:150px;background:rgba(129,246,239,.04)}
-.footer-marquee{display:block;max-width:829px;margin-bottom:18px;padding:11px 0;background:rgba(129,246,239,.08);border-radius:999px;border:1px solid rgba(129,246,239,.25);overflow:hidden;white-space:nowrap;-webkit-mask-image:linear-gradient(90deg,transparent,black 7%,black 93%,transparent);mask-image:linear-gradient(90deg,transparent,black 7%,black 93%,transparent)}
-.fm-inner{display:inline-flex;align-items:center;animation:marqueeFoot 26s linear infinite;will-change:transform}
-.fm-group{display:inline-flex;align-items:center}
-.fm-item{display:inline-flex;align-items:center}
-.fm-text{font-size:13px;font-weight:700;letter-spacing:2.5px;color:#FFFFFF;padding:0 20px;white-space:nowrap}
-.fm-dot{color:rgba(255,255,255,.6);font-size:11px}
-.footer-main{position:relative;padding:30px 80px 24px}
+.footer-main{position:relative;padding:40px 80px 30px}
 .footer-main .row{display:flex;align-items:flex-start;justify-content:space-between;gap:60px}
 .footer-main .lead{flex:1;min-width:0;max-width:829px}
 .footer-main h2{font-size:22px;font-weight:800;color:#fff;margin:0 0 16px;letter-spacing:.2px;line-height:1.35;text-transform:uppercase}
@@ -343,75 +143,17 @@ body.menu-locked #container{overflow:hidden}
   #content { position: relative !important; width: 100% !important; transform: none !important; zoom: 1 !important; }
 
   .slide { width: 100% !important; height: auto !important; padding: 20px 20px 40px !important; }
-  .site-header { position: relative !important; top: 0 !important; left: 0 !important; right: 0 !important; flex-direction: column !important; align-items: stretch !important; gap: 15px; padding: 0 !important; margin-bottom: 25px; }
+  .site-header { margin: 0 0 25px 0 !important; flex-direction: column !important; align-items: stretch !important; gap: 15px; }
   .site-nav { width: 100% !important; justify-content: space-between !important; gap: 8px; padding: 10px 14px; overflow-x: auto; }
   .nav-link { font-size: 12.5px !important; white-space: nowrap; }
 
-  .hero-text { position: relative !important; left: 0 !important; top: 0 !important; width: 100% !important; margin-top: 10px; }
-  .hero-title { font-size: 24px !important; text-align: left !important; }
-  .hero-quote { width: 100% !important; margin-top: 20px; }
-  .hero-quote p { width: 100% !important; font-size: 14.5px !important; }
-  .hero-actions { width: 100% !important; margin-left: 0 !important; margin-top: 20px; justify-content: space-between; gap: 10px; }
-  .btn-image { flex: 1; justify-content: center !important; padding: 0 !important; height: 42px; }
-  .btn-image span { font-size: 14px !important; }
-  .hero-marquee { width: 100% !important; margin-left: 0 !important; margin-top: 20px; }
+  .page-hero-content { padding: 20px 0 !important; }
+  .page-title { font-size: 24px !important; }
+  .page-lede { font-size: 15px !important; }
 
-  .hero-photos { position: relative !important; left: 0 !important; top: 0 !important; width: 100% !important; height: auto !important; display: grid !important; grid-template-columns: repeat(2, 1fr) !important; gap: 12px; margin-top: 25px; }
-  .photo-card { position: relative !important; width: 100% !important; height: auto !important; aspect-ratio: 1; top: 0 !important; left: 0 !important; }
-  .photo-frame img { width: 100% !important; height: 100% !important; }
-
-  .sections { width: 100% !important; }
-  
-  .sec-intro { min-height: auto !important; padding: 40px 20px !important; }
-  .sec-intro .float-img { float: none !important; margin: 0 0 25px 0 !important; width: 100% !important; }
-  .sec-intro .img-frame { width: 100% !important; height: auto !important; aspect-ratio: 4/3 !important; }
-  .sec-intro h2 { font-size: 22px !important; white-space: normal !important; }
-  .sec-intro p { font-size: 15px !important; }
-
-  .sec-flow { padding: 40px 20px !important; }
-  .sec-flow h2 { font-size: 22px !important; max-width: 100% !important; }
-  .flow-chart { display: none !important; }
-  .mobile-flow-list { display: flex !important; flex-direction: column !important; gap: 14px !important; margin-top: 20px !important; }
-  .mob-flow-card { background: #fff; border: 1px solid rgba(11,110,106,.2); border-radius: 14px; padding: 16px; display: flex; align-items: flex-start; gap: 14px; box-shadow: 0 4px 12px rgba(11,59,58,.06); }
-  .mob-flow-icon { width: 38px; height: 38px; border-radius: 50%; background: #F0FAF8; border: 2px solid var(--teal); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-  .mob-flow-content { flex: 1; }
-  .mob-flow-title { font-size: 14.5px; font-weight: 800; color: var(--teal-deep); text-transform: uppercase; margin-bottom: 4px; }
-  .mob-flow-desc { font-size: 13px; line-height: 1.5; color: #4A6A67; margin: 0; }
-
-  .sec-scope { padding: 40px 20px !important; }
-  .sec-scope h2 { font-size: 22px !important; max-width: 100% !important; }
-  .tree-chart { display: none !important; }
-  .mobile-tree-list { display: flex !important; flex-direction: column !important; gap: 16px !important; margin-top: 20px !important; }
-  .mob-tree-card { background: #fff; border: 2px solid var(--teal); border-radius: 16px; padding: 18px; box-shadow: 0 6px 16px rgba(11,59,58,.08); }
-  .mob-tree-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
-  .mob-tree-num { font-size: 11px; font-weight: 700; color: var(--teal); background: rgba(11,110,106,.1); padding: 2px 8px; border-radius: 6px; }
-  .mob-tree-title { font-size: 16px; font-weight: 800; color: var(--teal-deep); text-transform: uppercase; margin-bottom: 4px; }
-  .mob-tree-hint { font-size: 12px; color: var(--teal-soft); margin-bottom: 12px; }
-  .mob-tree-subs { display: flex; flex-direction: column; gap: 8px; border-top: 1px solid rgba(11,110,106,.12); padding-top: 12px; }
-  .mob-tree-sub { background: linear-gradient(135deg,#F0FAF8,#DCF3EC); padding: 10px 12px; border-radius: 10px; font-size: 12px; color: #4A6A67; line-height: 1.4; }
-  .mob-tree-sub strong { display: block; color: var(--teal-deep); margin-bottom: 2px; }
-
-  .sec-domains { padding: 40px 20px !important; }
-  .dom-header h2 { font-size: 22px !important; }
-  .dom-row, .dom-row--reverse { display: flex !important; flex-direction: column !important; grid-template-columns: 1fr !important; }
-  .dom-title-panel, .dom-desc-panel { padding: 24px 20px !important; width: 100% !important; }
-  .dom-desc-points { grid-template-columns: 1fr !important; }
-
-  /* Responsive Showcase */
-  .sec-showcase { padding: 40px 20px !important; }
-  .showcase-header h2 { font-size: 22px !important; }
-  .showcase-slide { display: none !important; flex-direction: column !important; gap: 24px !important; }
-  .showcase-slide.active { display: flex !important; }
-  .showcase-visual-col { width: 100% !important; }
-  .showcase-visual-col::before { display: none !important; }
-  .showcase-img-frame { width: 100% !important; height: auto !important; aspect-ratio: 16/10 !important; }
-  .showcase-img-frame img { width: 100% !important; height: 100% !important; object-fit: cover !important; }
-
-  .sec-quote .body { padding: 40px 20px !important; }
-  .sec-quote h2 { font-size: 24px !important; white-space: normal !important; }
-  .sec-quote .divider { width: 100% !important; }
-  .sec-quote p { font-size: 15px !important; }
-  .sec-quote .corners, .sec-quote .mark { display: none !important; }
+  .info-section { padding: 30px 20px !important; }
+  .info-grid { grid-template-columns: 1fr !important; gap: 20px !important; margin-top: 25px !important; }
+  .info-card { padding: 22px !important; }
 
   .footer-main { padding: 30px 20px !important; }
   .footer-main .row { flex-direction: column !important; gap: 20px !important; }
@@ -433,432 +175,84 @@ body.menu-locked #container{overflow:hidden}
   <div id="wrapper">
     <div id="content">
 
-      <!-- ============ HERO ============ -->
+      <!-- ============ KEPALA & NAVIGASI HALAMAN ============ -->
       <div class="slide" data-slide>
         <div class="hero-dim">
           <header class="site-header">
-            <a class="logo-pill" href="#" data-nav="Beranda">
+            <a class="logo-pill" href="index.html" data-nav="Beranda">
               <img class="icon" src="1000007372.png" alt="Infotrink logo">
               <img class="text" src="1000007373.png" alt="Infotrink">
             </a>
             <nav class="site-nav">
-              <a class="nav-link" href="#" data-nav="Beranda">Beranda</a>
-              <a class="nav-link" href="#" data-nav="Publikasi">Publikasi</a>
+              <a class="nav-link" href="index.html" data-nav="Beranda">Beranda</a>
+              <a class="nav-link on" href="media-informasi.html" data-nav="Publikasi">Publikasi</a>
               <a class="nav-link" href="#" data-nav="Informasi">Informasi</a>
               <a class="nav-link" href="#" data-nav="Galeri">Galeri</a>
-              <a class="nav-link" href="#" data-nav="Mengenal INFOTRINK"><span translate="no">Mengenal INFOTRINK</span></a>
+              <a class="nav-link" href="mengenal-infotrink.html" data-nav="Mengenal INFOTRINK"><span translate="no">Mengenal INFOTRINK</span></a>
             </nav>
           </header>
 
-          <div class="hero-text">
-            <h1 class="hero-title">Satu Wadah untuk Perjalanan<br>Gagasan dan Berbagai Karya</h1>
-            <div class="hero-quote">
-              <img src="slide/quote.svg" alt="">
-              <p><span translate="no">INFOTRINK</span> menghimpun informasi dan dokumentasi di beragam bidang, dirangkum mulai dari awal mula, perencanaan, sampai perwujudan dan pengembangannya — semuanya tertata rapi dan terus diperbarui, sehingga perjalanan di balik setiap gagasan dan karya dapat dikenali dengan jelas.</p>
-            </div>
-            <div class="hero-actions">
-              <a class="btn-image btn-telusuri" href="telusuri.html"><img src="1000007369.png" alt="Tombol Telusuri"><span>Telusuri</span></a>
-              <a class="btn-image btn-kenali" href="mengenal-infotrink.html"><img src="1000007370.png" alt="Tombol Kenali"><span>Kenali</span></a>
-            </div>
-            <div class="hero-marquee" aria-label="Instagram @jri_munawar, Twitter @Jri_munawar, Bagian dari jaringan JRI MUNAWAR GROUP">
-              <div class="hero-marquee-inner">
-                <span class="hm-group">
-                  <span class="hm-item"><span class="hm-text">Instagram @jri_munawar</span><span class="hm-dot">•</span></span>
-                  <span class="hm-item"><span class="hm-text">Twitter @Jri_munawar</span><span class="hm-dot">•</span></span>
-                  <span class="hm-item"><span class="hm-text">Bagian dari jaringan JRI MUNAWAR GROUP</span><span class="hm-dot">•</span></span>
-                </span>
-                <span class="hm-group" aria-hidden="true">
-                  <span class="hm-item"><span class="hm-text">Instagram @jri_munawar</span><span class="hm-dot">•</span></span>
-                  <span class="hm-item"><span class="hm-text">Twitter @Jri_munawar</span><span class="hm-dot">•</span></span>
-                  <span class="hm-item"><span class="hm-text">Bagian dari jaringan JRI MUNAWAR GROUP</span><span class="hm-dot">•</span></span>
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <div class="hero-photos">
-            <div class="photo-card photo-tl"><div class="photo-frame"><img src="1000007373.png" alt="Logo Text"></div></div>
-            <div class="photo-card photo-tr"><div class="photo-frame"><img src="slide/hero_4_narasumber.jpg" alt="Narasumber menyampaikan penjelasan saat sesi wawancara" width="240" height="240"></div></div>
-            <div class="photo-card photo-bl"><div class="photo-frame"><img src="slide/hero_berbagi_sesama.jpg" alt="Relawan menyerahkan bantuan kepada warga dalam kegiatan berbagi bersama" width="240" height="240"></div></div>
-            <div class="photo-card photo-br"><div class="photo-frame"><img src="slide/hero_pembangunan.jpg" alt="Petugas memeriksa denah pembangunan di lokasi proyek konstruksi" width="240" height="240"></div></div>
+          <div class="page-hero-content">
+            <div class="pill-badge">PUSAT PUBLIKASI &amp; PENJELASAN</div>
+            <h1 class="page-title">Media Informasi &amp; Penjelasan</h1>
+            <p class="page-lede">Menghimpun seluruh materi penjelasan resmi, dokumentasi terstruktur, dan pemahaman komprehensif mengenai berbagai lini gagasan yang disajikan secara transparan, mendalam, serta mudah diakses.</p>
           </div>
         </div>
 
         <div class="overlays" data-overlays></div>
       </div>
 
-      <!-- ============ KONTEN DI BAWAH HERO ============ -->
+      <!-- ============ KONTEN UTAMA: DAFTAR MEDIA INFORMASI ============ -->
       <div class="sections">
+        <section class="info-section">
+          <div class="pill-badge">ARSIP MATERI TERSTRUKTUR</div>
+          <h2 style="font-size: 26px; font-weight: 800; color: var(--teal-deep); margin: 0 0 10px 0; text-transform: uppercase;">Kumpulan Topik &amp; Penjelasan Terpilih</h2>
+          <p style="font-size: 15px; color: var(--teal-soft); margin: 0; max-width: 900px; text-align: justify;">Pilih dan telusuri berbagai kategori penjelasan di bawah ini untuk melihat rincian alur, latar belakang, serta catatan perkembangannya dari awal hingga tahap implementasinya.</p>
 
-        <!-- SECTION 1: PENGENALAN SINGKAT -->
-        <section class="sec-intro">
-          <div class="float-img">
-            <div class="img-frame">
-              <img src="1000007538.png" alt="Suasana kerja kolaboratif">
-              <div class="img-badge">
-                <div class="label">RUANG DOKUMENTASI</div>
-                <div class="title">Perjalanan Gagasan dan Karya</div>
+          <div class="info-grid">
+            <article class="info-card">
+              <div>
+                <span class="info-card-num">01 • PENGANTAR</span>
+                <h3 class="info-card-title">Konsep Dasar &amp; Latar Belakang Wadah</h3>
+                <p class="info-card-desc">Penjelasan mendalam mengenai alasan lahirnya <span translate="no">INFOTRINK</span> sebagai wadah dokumentasi perjalanan gagasan, bukan sebagai lembaga atau perusahaan komersial.</p>
               </div>
-            </div>
-          </div>
-          <div>
-            <div class="pill-badge">TENTANG PLATFORM</div>
-            <h2>Setiap Pembangunan Mempunyai Awal</h2>
-            <p>Keyakinan sederhana itulah yang melatarbelakangi <span translate="no">INFOTRINK</span>: hampir semua hal yang berdiri hari ini bermula dari sebuah gagasan yang dirumuskan dan dirancang sebelum akhirnya diwujudkan sedikit demi sedikit. Atas dasar itu, perjalanan pada berbagai lini dicatat sesuai tahapannya, mulai dari perencanaan dan perintisan, berlanjut ke perwujudan dan pelaksanaan, hingga pengelolaan dan pengembangannya. Penyajiannya dibuat jujur pada posisinya. Yang masih berupa gagasan diperkenalkan sebagai gagasan, sedangkan yang sudah berjalan dipaparkan sebagaimana perkembangannya, tanpa diperbesar dan tanpa diperkecil. Kedudukannya pun dijaga dengan batas yang jelas. <span translate="no">INFOTRINK</span> tidak berperan sebagai pihak yang memiliki atau membawahi apa yang diperkenalkan, dan setiap hal tetap berada di bawah pengelolaan pihaknya masing-masing. Yang tersaji di sini hanyalah gambaran, uraian, dan tautan yang mengarah pada sumbernya, bukan pengganti dari peran resminya. Berbeda dengan unggahan yang cepat berganti atau pemberitaan yang mudah berlalu, dokumentasi semacam ini disusun untuk bertahan lebih lama: setiap kemajuan ditambahkan, setiap perubahan diperbarui, agar yang terbaca selalu sesuai keadaan terkininya dan tidak berhenti pada versi lama. Dengan cara itulah sebuah awal tidak berhenti sebagai kenangan, melainkan terus hidup sebagai catatan yang berguna, baik bagi pihak yang melanjutkan perjalanannya maupun bagi siapa pun yang ingin memahami dari mana semuanya dimulai.</p>
-          </div>
-        </section>
-
-        <!-- SECTION 2: ALUR PERJALANAN -->
-        <section class="sec-flow">
-          <div class="pill-badge">FILOSOFI DASAR</div>
-          <h2>Menumbuhkan Pembangunan Langkah demi Langkah</h2>
-          <p class="lede">Seperti menumbuhkan sesuatu dari tanah, sebuah pembangunan tidak langsung berdiri dalam bentuk akhirnya. Ia melewati urutan tahap yang saling menyambung — dimulai dari pemikiran yang dirumuskan, disusun dan dirancang, diwujudkan, kemudian dirawat dan terus dikembangkan. Jalur di bawah ini menggambarkan alur itulah yang dicatat pada setiap dokumentasi, sehingga yang terbaca bukan hanya bentuk jadinya, tetapi juga perjalanan yang membentuknya.</p>
-          <div class="flow-chart" data-flow>
-            <svg width="1120" height="472" viewBox="0 0 1120 472" role="img" aria-label="Jalur tahapan pembangunan dari gagasan hingga pengembangan">
-              <path class="flow-bg" d="M 80 345 C 140 345 175 110 235 110 C 295 110 330 345 390 345 C 450 345 485 110 545 110 C 605 110 640 345 700 345 C 760 345 795 110 855 110 C 915 110 950 345 1010 345"/>
-              <path class="flow-line" d="M 80 345 C 140 345 175 110 235 110 C 295 110 330 345 390 345 C 450 345 485 110 545 110 C 605 110 640 345 700 345 C 760 345 795 110 855 110 C 915 110 950 345 1010 345"/>
-              <line class="flow-cap" x1="34" y1="345" x2="76" y2="345"/>
-              <circle class="flow-dot" cx="28" cy="345" r="4"/>
-              <line class="flow-cap" x1="1010" y1="345" x2="1080" y2="345"/>
-              <polygon class="flow-arrow" points="1080,338 1094,345 1080,352"/>
-            </svg>
-          </div>
-          <div class="mobile-flow-list">
-            <div class="mob-flow-card"><div class="mob-flow-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0B6E6A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg></div><div class="mob-flow-content"><div class="mob-flow-title">01. Gagasan</div><p class="mob-flow-desc">Bermula dari pemikiran yang dicatat apa adanya.</p></div></div>
-            <div class="mob-flow-card"><div class="mob-flow-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0B6E6A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg></div><div class="mob-flow-content"><div class="mob-flow-title">02. Perencanaan</div><p class="mob-flow-desc">Tujuan, kebutuhan, dan kemampuan disusun terarah.</p></div></div>
-            <div class="mob-flow-card"><div class="mob-flow-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0B6E6A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div><div class="mob-flow-content"><div class="mob-flow-title">03. Perancangan</div><p class="mob-flow-desc">Rencana diberi bentuk, struktur, dan identitas.</p></div></div>
-            <div class="mob-flow-card"><div class="mob-flow-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0B6E6A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" x2="4" y1="22" y2="15"/></svg></div><div class="mob-flow-content"><div class="mob-flow-title">04. Perintisan</div><p class="mob-flow-desc">Langkah pertama diambil sesuai kesiapan.</p></div></div>
-            <div class="mob-flow-card"><div class="mob-flow-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0B6E6A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></svg></div><div class="mob-flow-content"><div class="mob-flow-title">05. Pelaksanaan</div><p class="mob-flow-desc">Konsep dijalankan melalui kegiatan yang nyata.</p></div></div>
-            <div class="mob-flow-card"><div class="mob-flow-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0B6E6A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="5" x="2" y="3" rx="1"/><path d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8"/><path d="M10 12h4"/></svg></div><div class="mob-flow-content"><div class="mob-flow-title">06. Pengelolaan</div><p class="mob-flow-desc">Yang berjalan dirawat dan dievaluasi secara teratur.</p></div></div>
-            <div class="mob-flow-card"><div class="mob-flow-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0B6E6A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div><div class="mob-flow-content"><div class="mob-flow-title">07. Pengembangan</div><p class="mob-flow-desc">Kualitas ditingkatkan bertahap dan terukur.</p></div></div>
-          </div>
-        </section>
-
-        <!-- SECTION 2B: PETA BIDANG (POHON HIERARKI) -->
-        <section class="sec-scope">
-          <div class="pill-badge">PETA BIDANG</div>
-          <h2>Satu Wadah, Tumbuh Mencabang ke Berbagai Bidang</h2>
-          <p class="lede">Bila bagian sebelumnya menjelaskan bagaimana sebuah perjalanan tumbuh melalui tahapannya, bagian ini memetakan di mana perjalanan-perjalanan itu berlangsung. Semua yang terdokumentasi di <span translate="no">INFOTRINK</span> berangkat dari satu wadah yang sama, lalu mencabang ke empat lini, dan tiap lini terbagi lagi ke bagian-bagian kecilnya. Yang dipetakan di sini bukan isi dan urusan dalam setiap jalur, melainkan keberadaannya dan arah perkembangannya — sehingga terbaca ke mana perjalanan ini tumbuh, tanpa membahas lebih jauh dari itu.</p>
-          <div class="tree-chart">
-            <svg width="1120" height="560" viewBox="0 0 1120 560" role="img" aria-label="Peta bidang: satu wadah mencabang ke empat lini, tiap lini terpecah ke bagian kecilnya">
-              <path class="tree-bg" d="M 250 280 H 292 M 292 59 V 503 M 292 59 H 330 M 292 207 H 330 M 292 355 H 330 M 292 503 H 330 M 500 59 H 540 M 540 28 V 90 M 540 28 H 580 M 540 90 H 580 M 500 207 H 540 M 540 176 V 238 M 540 176 H 580 M 540 238 H 580 M 500 355 H 540 M 540 324 V 386 M 540 324 H 580 M 540 386 H 580 M 500 503 H 540 M 540 472 V 534 M 540 472 H 580 M 540 534 H 580"/>
-              <path class="tree-line" d="M 250 280 H 292 M 292 59 V 503 M 292 59 H 330 M 292 207 H 330 M 292 355 H 330 M 292 503 H 330 M 500 59 H 540 M 540 28 V 90 M 540 28 H 580 M 540 90 H 580 M 500 207 H 540 M 540 176 V 238 M 540 176 H 580 M 540 238 H 580 M 500 355 H 540 M 540 324 V 386 M 540 324 H 580 M 540 386 H 580 M 500 503 H 540 M 540 472 V 534 M 540 472 H 580 M 540 534 H 580"/>
-              <circle class="tree-dot" cx="292" cy="59" r="4"/>
-              <circle class="tree-dot" cx="292" cy="207" r="4"/>
-              <circle class="tree-dot" cx="292" cy="355" r="4"/>
-              <circle class="tree-dot" cx="292" cy="503" r="4"/>
-              <circle class="tree-dot" cx="540" cy="59" r="3"/>
-              <circle class="tree-dot" cx="540" cy="207" r="3"/>
-              <circle class="tree-dot" cx="540" cy="355" r="3"/>
-              <circle class="tree-dot" cx="540" cy="503" r="3"/>
-            </svg>
-            <div class="tree-root">
-              <span class="tag">SATU WADAH</span>
-              <span class="nm"><span translate="no">INFOTRINK</span></span>
-              <span class="sb">Pintu informasi &amp; dokumentasi<br>perjalanan gagasan dan karya</span>
-            </div>
-            <div class="tree-branch branch--1"><span class="num">01</span><span class="nm">Ruang Digital</span><span class="hint">Perjalanan yang hidup dan berkembang di ruang maya</span></div>
-            <div class="tree-branch branch--2"><span class="num">02</span><span class="nm">Lini Pengelolaan</span><span class="hint">Perjalanan yang dijalankan secara terarah maupun mandiri</span></div>
-            <div class="tree-branch branch--3"><span class="num">03</span><span class="nm">Ruang Karya</span><span class="hint">Perjalanan yang diabadikan dalam tulisan maupun rupa</span></div>
-            <div class="tree-branch branch--4"><span class="num">04</span><span class="nm">Lini Perluasan</span><span class="hint">Perjalanan yang tumbuh melampaui tiga lini lainnya</span></div>
-            <div class="tree-sub sub--1a"><span class="dot"></span><span class="tt">Kanal Aktif</span><span class="dd">Titik hadir yang dapat diikuti secara langsung — keberadaannya dirawat agar selalu hidup dan terkini.</span></div>
-            <div class="tree-sub sub--1b"><span class="dot"></span><span class="tt">Seri Berkala</span><span class="dd">Rangkaian tayangan yang terbit dari waktu ke waktu — tiap bagian mencatat keadaan pada masanya.</span></div>
-            <div class="tree-sub sub--2a"><span class="dot"></span><span class="tt">Pengelolaan Terarah</span><span class="dd">Dijalankan dalam bingkai yang terarah — tahapannya tercatat rapi dari perintisan hingga perawatan.</span></div>
-            <div class="tree-sub sub--2b"><span class="dot"></span><span class="tt">Pengelolaan Mandiri</span><span class="dd">Ditempuh dengan daya dan langkah sendiri — jalannya tetap terekam dalam dokumentasi apa adanya.</span></div>
-            <div class="tree-sub sub--3a"><span class="dot"></span><span class="tt">Karya Tulis</span><span class="dd">Gagasan yang dituangkan lewat kata dan kalimat — proses dari naskah pertama hingga jadinya tercatat.</span></div>
-            <div class="tree-sub sub--3b"><span class="dot"></span><span class="tt">Karya Visual</span><span class="dd">Gagasan yang dihidupkan lewat rupa dan rancangan — setiap tahap pembentukannya ikut terabadikan.</span></div>
-            <div class="tree-sub sub--4a"><span class="dot"></span><span class="tt">Langkah Bersama</span><span class="dd">Dijalani beriringan dengan pihak lain — tetap mendapat tempat dalam alur dokumentasi.</span></div>
-            <div class="tree-sub sub--4b"><span class="dot"></span><span class="tt">Langkah Berikutnya</span><span class="dd">Tempat bagi jalur yang belum masuk lini mana pun — karena perjalanan ini masih terus berjalan.</span></div>
-          </div>
-
-          <div class="mobile-tree-list">
-            <div class="mob-tree-card">
-              <div class="mob-tree-header"><span class="mob-tree-num">01</span></div>
-              <div class="mob-tree-title">Ruang Digital</div>
-              <div class="mob-tree-hint">Perjalanan yang hidup dan berkembang di ruang maya</div>
-              <div class="mob-tree-subs">
-                <div class="mob-tree-sub"><strong>Kanal Aktif</strong>Titik hadir yang dapat diikuti secara langsung — keberadaannya dirawat agar selalu hidup dan terkini.</div>
-                <div class="mob-tree-sub"><strong>Seri Berkala</strong>Rangkaian tayangan yang terbit dari waktu ke waktu — tiap bagian mencatat keadaan pada masanya.</div>
-              </div>
-            </div>
-            <div class="mob-tree-card">
-              <div class="mob-tree-header"><span class="mob-tree-num">02</span></div>
-              <div class="mob-tree-title">Lini Pengelolaan</div>
-              <div class="mob-tree-hint">Perjalanan yang dijalankan secara terarah maupun mandiri</div>
-              <div class="mob-tree-subs">
-                <div class="mob-tree-sub"><strong>Pengelolaan Terarah</strong>Dijalankan dalam bingkai yang terarah — tahapannya tercatat rapi dari perintisan hingga perawatan.</div>
-                <div class="mob-tree-sub"><strong>Pengelolaan Mandiri</strong>Ditempuh dengan daya dan langkah sendiri — jalannya tetap terekam dalam dokumentasi apa adanya.</div>
-              </div>
-            </div>
-            <div class="mob-tree-card">
-              <div class="mob-tree-header"><span class="mob-tree-num">03</span></div>
-              <div class="mob-tree-title">Ruang Karya</div>
-              <div class="mob-tree-hint">Perjalanan yang diabadikan dalam tulisan maupun rupa</div>
-              <div class="mob-tree-subs">
-                <div class="mob-tree-sub"><strong>Karya Tulis</strong>Gagasan yang dituangkan lewat kata dan kalimat — proses dari naskah pertama hingga jadinya tercatat.</div>
-                <div class="mob-tree-sub"><strong>Karya Visual</strong>Gagasan yang dihidupkan lewat rupa dan rancangan — setiap tahap pembentukannya ikut terabadikan.</div>
-              </div>
-            </div>
-            <div class="mob-tree-card">
-              <div class="mob-tree-header"><span class="mob-tree-num">04</span></div>
-              <div class="mob-tree-title">Lini Perluasan</div>
-              <div class="mob-tree-hint">Perjalanan yang tumbuh melampaui tiga lini lainnya</div>
-              <div class="mob-tree-subs">
-                <div class="mob-tree-sub"><strong>Langkah Bersama</strong>Dijalani beriringan dengan pihak lain — tetap mendapat tempat dalam alur dokumentasi.</div>
-                <div class="mob-tree-sub"><strong>Langkah Berikutnya</strong>Tempat bagi jalur yang belum masuk lini mana pun — karena perjalanan ini masih terus berjalan.</div>
-              </div>
-            </div>
-          </div>
-
-          <p class="tree-note">Pemetaan di atas menunjukkan kedudukan dan arah tumbuhnya setiap jalur, bukan kepemilikan — setiap cabang tetap berada di bawah pengelolaan pihaknya masing-masing, sebagaimana dijelaskan pada bagian pengenalan.</p>
-        </section>
-
-        <!-- SECTION 2C: URAIAN EMPAT CABANG BIDANG -->
-        <section class="sec-domains">
-          <div class="dom-header">
-            <div class="dom-header-top">
-              <div class="pill-badge">URAIAN CABANG BIDANG</div>
-            </div>
-            <h2>Mendalami Setiap Jalur Pertumbuhan di Dalam <span translate="no">INFOTRINK</span></h2>
-            <p class="lede">Setelah melihat gambaran besar bagaimana satu wadah mencabang ke berbagai arah, bagian ini menguraikan peran dan karakter masing-masing cabang bidang secara terstruktur. Keempat lini utama disusun berurutan agar mudah dikenali batasannya: mulai dari ruang hadir di ranah digital, tata cara pengelolaan langkah kerja, wujud karya yang diabadikan, hingga ruang terbuka bagi pertumbuhan perluasan di masa mendatang.</p>
-          </div>
-
-          <div class="dom-list">
-            <article class="dom-row dom-row--1">
-              <div class="dom-title-panel">
-                <div class="dom-panel-top"><span class="dom-num-pill">CABANG 01 • LINI DIGITAL</span></div>
-                <div class="dom-panel-main">
-                  <span class="dom-kicker">Pilar Pertama</span>
-                  <h3 class="dom-title">Ruang Digital</h3>
-                  <p class="dom-subtitle">Perjalanan gagasan dan informasi yang hidup, terhubung, serta terus diperbarui secara berkelanjutan di ruang maya.</p>
-                </div>
-                <div class="dom-panel-foot">
-                  <span class="dom-subtag">Kanal Aktif</span>
-                  <span class="dom-subtag">Seri Berkala</span>
-                </div>
-              </div>
-              <div class="dom-desc-panel">
-                <div class="dom-desc-label">Penjelasan Pembahasan</div>
-                <p class="dom-desc-text">Ruang Digital menghimpun seluruh jejak perjalanan yang tumbuh dan berinteraksi langsung melalui ekosistem digital. Di dalam lini ini, setiap catatan tidak dibiarkan berhenti sebagai arsip statis, melainkan dirawat secara berkala agar selaras dengan perkembangan terkini dan mudah ditelusuri kembali kapan saja.</p>
-                <div class="dom-desc-points">
-                  <div class="dom-point"><strong>Kanal Aktif</strong><span>Menjadi titik hadir utama yang terus dijaga keterkiniannya sebagai rujukan informasi yang hidup dan dapat diikuti secara langsung.</span></div>
-                  <div class="dom-point"><strong>Seri Berkala</strong><span>Menyusun rangkaian tayangan dan catatan berkesinambungan dari waktu ke waktu sehingga perubahan pada tiap masa terekam utuh.</span></div>
-                </div>
-              </div>
+              <a class="info-card-link" href="latar-belakang.html">Baca Selengkapnya →</a>
             </article>
 
-            <article class="dom-row dom-row--2 dom-row--reverse">
-              <div class="dom-title-panel">
-                <div class="dom-panel-top"><span class="dom-num-pill">CABANG 02 • LINI TATA KELOLA</span></div>
-                <div class="dom-panel-main">
-                  <span class="dom-kicker">Pilar Kedua</span>
-                  <h3 class="dom-title">Lini Pengelolaan</h3>
-                  <p class="dom-subtitle">Perjalanan perintisan dan pelaksanaan yang dijalankan melalui pendekatan terarah maupun langkah mandiri.</p>
-                </div>
-                <div class="dom-panel-foot">
-                  <span class="dom-subtag">Pengelolaan Terarah</span>
-                  <span class="dom-subtag">Pengelolaan Mandiri</span>
-                </div>
+            <article class="info-card">
+              <div>
+                <span class="info-card-num">02 • TATA KELOLA</span>
+                <h3 class="info-card-title">Prinsip Kerja &amp; Batasan Pengelolaan</h3>
+                <p class="info-card-desc">Uraian mengenai bagaimana setiap informasi dan dokumentasi dijaga objektivitasnya tanpa mencampuri kewenangan operasional pihak yang mengelolanya.</p>
               </div>
-              <div class="dom-desc-panel">
-                <div class="dom-desc-label">Penjelasan Pembahasan</div>
-                <p class="dom-desc-text">Lini Pengelolaan mencatat bagaimana sebuah gagasan diterjemahkan menjadi langkah kerja nyata dan dirawat keberlanjutannya. Dokumentasi pada cabang ini menyoroti proses penataan, pembagian tahapan, serta disiplin pelaksanaan tanpa mencampuri kewenangan operasional pihak yang menjalankannya.</p>
-                <div class="dom-desc-points">
-                  <div class="dom-point"><strong>Pengelolaan Terarah</strong><span>Merekam perjalanan yang disusun dalam kerangka terencana, mulai dari tahap perintisan awal hingga evaluasi dan perawatan rutin.</span></div>
-                  <div class="dom-point"><strong>Pengelolaan Mandiri</strong><span>Mengabadikan inisiatif yang ditempuh dengan daya dan langkah sendiri secara apa adanya sesuai kenyataan di lapangan.</span></div>
-                </div>
-              </div>
+              <a class="info-card-link" href="prinsip-pengelolaan.html">Baca Selengkapnya →</a>
             </article>
 
-            <article class="dom-row dom-row--3">
-              <div class="dom-title-panel">
-                <div class="dom-panel-top"><span class="dom-num-pill">CABANG 03 • LINI KREATIF</span></div>
-                <div class="dom-panel-main">
-                  <span class="dom-kicker">Pilar Ketiga</span>
-                  <h3 class="dom-title">Ruang Karya</h3>
-                  <p class="dom-subtitle">Perjalanan pemikiran dan imajinasi yang diabadikan ke dalam bentuk susunan kata maupun rancangan visual.</p>
-                </div>
-                <div class="dom-panel-foot">
-                  <span class="dom-subtag">Karya Tulis</span>
-                  <span class="dom-subtag">Karya Visual</span>
-                </div>
+            <article class="info-card">
+              <div>
+                <span class="info-card-num">03 • LINI LITERATUR</span>
+                <h3 class="info-card-title">Hasil Riset &amp; Kajian Analisis Strategis</h3>
+                <p class="info-card-desc">Kumpulan arsip riset pilihan dan kajian mendalam yang dikumpulkan secara berkala untuk mendukung pemahaman pengetahuan yang akurat.</p>
               </div>
-              <div class="dom-desc-panel">
-                <div class="dom-desc-label">Penjelasan Pembahasan</div>
-                <p class="dom-desc-text">Ruang Karya menjadi tempat di mana pemikiran abstrak diberi bentuk konkret agar dapat dibaca, dilihat, dan dipelajari lintas waktu. Yang dihimpun bukan sekadar hasil akhirnya, melainkan juga catatan proses penyusunan, penyempurnaan konsep, serta latar belakang lahirnya setiap karya.</p>
-                <div class="dom-desc-points">
-                  <div class="dom-point"><strong>Karya Tulis</strong><span>Menghimpun gagasan yang dirangkai melalui kata dan kalimat, mencatat perjalanan dari draf pertama hingga naskah yang matang.</span></div>
-                  <div class="dom-point"><strong>Karya Visual</strong><span>Mendokumentasikan gagasan yang dihidupkan lewat rupa, tata letak, dan rancangan grafis beserta setiap tahap pembentukannya.</span></div>
-                </div>
-              </div>
+              <a class="info-card-link" href="hasil-riset.html">Telusuri Arsip →</a>
             </article>
 
-            <article class="dom-row dom-row--4 dom-row--reverse">
-              <div class="dom-title-panel">
-                <div class="dom-panel-top"><span class="dom-num-pill">CABANG 04 • LINI PENGEMBANGAN</span></div>
-                <div class="dom-panel-main">
-                  <span class="dom-kicker">Pilar Keempat</span>
-                  <h3 class="dom-title">Lini Perluasan</h3>
-                  <p class="dom-subtitle">Perjalanan yang tumbuh melampaui batas tiga lini sebelumnya melalui sinergi maupun jalur rintisan baru.</p>
-                </div>
-                <div class="dom-panel-foot">
-                  <span class="dom-subtag">Langkah Bersama</span>
-                  <span class="dom-subtag">Langkah Berikutnya</span>
-                </div>
+            <article class="info-card">
+              <div>
+                <span class="info-card-num">04 • DOKUMENTASI</span>
+                <h3 class="info-card-title">Laporan &amp; Catatan Perkembangan Berkala</h3>
+                <p class="info-card-desc">Rekam jejak kemajuan dan pembaruan informasi dari masa perintisan awal hingga tahap pengembangan terkininya di lapangan.</p>
               </div>
-              <div class="dom-desc-panel">
-                <div class="dom-desc-label">Penjelasan Pembahasan</div>
-                <p class="dom-desc-text">Lini Perluasan disiapkan sebagai ruang tumbuh yang lentur agar wadah dokumentasi ini tidak pernah tertutup terhadap perkembangan zaman. Cabang ini menampung inisiatif lintas sektor maupun gagasan baru yang belum tergolong ke dalam tiga lini utama sebelumnya.</p>
-                <div class="dom-desc-points">
-                  <div class="dom-point"><strong>Langkah Bersama</strong><span>Mencatat perjalanan yang dijalani beriringan bersama pihak lain dengan tetap menjaga kejelasan peran dan batas masing-masing.</span></div>
-                  <div class="dom-point"><strong>Langkah Berikutnya</strong><span>Menyediakan ruang terbuka bagi bidang-bidang rintisan masa depan karena proses belajar dan membangun terus berlanjut.</span></div>
-                </div>
-              </div>
+              <a class="info-card-link" href="laporan.html">Lihat Perkembangan →</a>
             </article>
           </div>
         </section>
 
-        <!-- ============ SECTION BARU: EKSPLORASI HALAMAN INTERAKTIF (5 PART) ============ -->
-        <section class="sec-showcase">
-          <div class="showcase-header">
-            <div class="pill-badge">EKSPLORASI KHUSUS</div>
-            <h2>Sorotan Utama &amp; Dokumentasi Pilihan</h2>
-            <p class="lede">Menampilkan materi pilihan dan inisiatif terpadu yang dirangkum khusus untuk memberikan pemahaman mendalam mengenai arah pengembangan serta dokumentasi berharga di dalam <span translate="no">INFOTRINK</span>.</p>
-          </div>
-
-          <div class="showcase-slides-wrap" id="showcaseWrap">
-            <div class="showcase-slide active" data-showcase-slide="1">
-              <div class="showcase-text-col">
-                <p>Bagian pertama ini menghadirkan tinjauan mendalam atas proses dokumentasi riset dan kajian strategis yang dikumpulkan secara berkala dari berbagai sumber tepercaya. Setiap catatan disusun secara teliti untuk memastikan akurasi data serta kejelasan konteks dari masa perintisan hingga tahap realisasinya di lapangan. Dengan format penulisan yang terstruktur rapi, mendalam, dan rata kanan-kiri, pembaca dapat menelusuri alur pemikiran, latar belakang, serta arah pengembangan di balik setiap inisiatif secara nyaman, transparan, dan mudah dipahami lintas waktu.</p>
-              </div>
-              <div class="showcase-visual-col">
-                <div class="showcase-img-frame">
-                  <img src="slide/hero_4_narasumber.jpg" alt="Dokumentasi Riset Pilihan" width="480" height="310">
-                </div>
-                <div class="showcase-content-box">
-                  <h3 class="showcase-item-title">Arsip Riset &amp; Kajian Strategis</h3>
-                  <a class="showcase-btn" href="hasil-riset.html">Masuk ke Halaman →</a>
-                </div>
-              </div>
-            </div>
-
-            <div class="showcase-slide" data-showcase-slide="2">
-              <div class="showcase-text-col">
-                <p>Bagian kedua menyoroti rangkaian catatan pembangunan dan langkah perintisan yang dikelola secara berkelanjutan dan terarah. Fokus utama diletakkan pada transparansi tahapan pelaksanaan, mulai dari rancangan konseptual awal, persiapan infrastruktur, hingga evaluasi berkala di lapangan. Seluruh dokumentasi disajikan dengan standar kerapian tinggi, estetika visual yang berwibawa, serta kelengkapan informasi yang mendalam untuk menjadi rujukan yang andal bagi siapa saja yang ingin mempelajari perkembangannya secara utuh.</p>
-              </div>
-              <div class="showcase-visual-col">
-                <div class="showcase-img-frame">
-                  <img src="slide/hero_pembangunan.jpg" alt="Dokumentasi Pembangunan &amp; Perencanaan" width="480" height="310">
-                </div>
-                <div class="showcase-content-box">
-                  <h3 class="showcase-item-title">Catatan Pembangunan &amp; Perencanaan</h3>
-                  <a class="showcase-btn" href="pembangunan.html">Masuk ke Halaman →</a>
-                </div>
-              </div>
-            </div>
-
-            <div class="showcase-slide" data-showcase-slide="3">
-              <div class="showcase-text-col">
-                <p>Bagian ketiga mengulas secara komprehensif dinamika ruang digital serta berbagai kanal aktif yang dikelola untuk memastikan arus informasi tetap terhubung secara langsung. Melalui pemantauan tren teknologi dan interaksi publik yang transparan, dokumentasi ini merekam bagaimana sebuah gagasan virtual dapat tumbuh, beradaptasi, dan memberikan dampak positif yang berkelanjutan bagi komunitas luas.</p>
-              </div>
-              <div class="showcase-visual-col">
-                <div class="showcase-img-frame">
-                  <img src="1000007538.png" alt="Dokumentasi Ruang Digital" width="480" height="310">
-                </div>
-                <div class="showcase-content-box">
-                  <h3 class="showcase-item-title">Dinamika Ruang Digital &amp; Kanal</h3>
-                  <a class="showcase-btn" href="media-digital.html">Masuk ke Halaman →</a>
-                </div>
-              </div>
-            </div>
-
-            <div class="showcase-slide" data-showcase-slide="4">
-              <div class="showcase-text-col">
-                <p>Bagian keempat berfokus pada eksplorasi karya visual, infografis, dan dokumentasi artistik yang merefleksikan estetika serta identitas platform. Setiap elemen visual dirancang dengan perhitungan spasial yang presisi, warna berkelas, dan filosofi mendalam agar mampu menyampaikan pesan secara visual tanpa meninggalkan esensi informasi yang ingin ditargetkan.</p>
-              </div>
-              <div class="showcase-visual-col">
-                <div class="showcase-img-frame">
-                  <img src="slide/hero_berbagi_sesama.jpg" alt="Dokumentasi Karya Visual" width="480" height="310">
-                </div>
-                <div class="showcase-content-box">
-                  <h3 class="showcase-item-title">Koleksi Karya Visual &amp; Infografis</h3>
-                  <a class="showcase-btn" href="visual-infografis.html">Masuk ke Halaman →</a>
-                </div>
-              </div>
-            </div>
-
-            <div class="showcase-slide" data-showcase-slide="5">
-              <div class="showcase-text-col">
-                <p>Bagian kelima menyajikan rangkuman langkah perluasan, inisiatif sinergi bersama pihak ketiga, serta visi masa depan yang terus dirintis. Ruang terbuka ini mencerminkan komitmen platform untuk senantiasa berkembang, terbuka terhadap inovasi lintas sektor, dan siap menghadapi tantangan zaman dengan fondasi tata kelola yang matang dan terstruktur.</p>
-              </div>
-              <div class="showcase-visual-col">
-                <div class="showcase-img-frame">
-                  <img src="1000007373.png" alt="Langkah Perluasan dan Visi" width="480" height="310">
-                </div>
-                <div class="showcase-content-box">
-                  <h3 class="showcase-item-title">Langkah Perluasan &amp; Visi Masa Depan</h3>
-                  <a class="showcase-btn" href="mengenal-infotrink.html">Masuk ke Halaman →</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="showcase-nav-dots">
-            <button class="showcase-dot active" data-showcase-target="1">1</button>
-            <button class="showcase-dot" data-showcase-target="2">2</button>
-            <button class="showcase-dot" data-showcase-target="3">3</button>
-            <button class="showcase-dot" data-showcase-target="4">4</button>
-            <button class="showcase-dot" data-showcase-target="5">5</button>
-          </div>
-        </section>
-
-        <!-- SECTION 3: KUTIPAN SEMANGAT -->
-        <section class="sec-quote">
-          <div class="rule"></div>
-          <div class="glow"></div>
-          <div class="mark l">&ldquo;</div>
-          <div class="mark r">&rdquo;</div>
-          <div class="corners"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div></div>
-          <div class="body">
-            <div class="tag-wrap"><div class="quote-tag"><i></i>SEMANGAT KERJA<i></i></div></div>
-            <h2>Tidak Ada Perkembangan Tanpa Kesungguhan</h2>
-            <div class="divider"><div class="ln"></div><div class="dot"></div><div class="ln r"></div></div>
-            <p>Menumbuhkan sesuatu menuntut kerja yang sungguh-sungguh: disiplin dalam menjalankan, teliti dalam memeriksa, sabar dalam menanti hasil, dan rendah hati dalam memperbaiki kekurangan. Kecepatan tidak boleh mengorbankan ketelitian, dan hasil yang dicapai tidak boleh mengabaikan tanggung jawab — sebab perkembangan yang baik selalu dibangun di atas proses yang benar.</p>
-          </div>
-        </section>
-
-        <!-- SECTION 4: FOOTER -->
+        <!-- ============ FOOTER ============ -->
         <section class="sec-footer">
           <div class="blob b1"></div>
           <div class="blob b2"></div>
-          <div class="blob b3"></div>
           <div class="footer-main">
-            <div class="footer-marquee" aria-label="Berkembang, Keterampilan, Ketekunan, Kerja Keras, Konsisten, Kemajuan, Keberhasilan, Perjuangan, Tekad">
-              <div class="fm-inner">
-                <span class="fm-group">
-                  <span class="fm-item"><span class="fm-text">BERKEMBANG</span><span class="fm-dot">•</span></span>
-                  <span class="fm-item"><span class="fm-text">KETERAMPILAN</span><span class="fm-dot">•</span></span>
-                  <span class="fm-item"><span class="fm-text">KETEKUNAN</span><span class="fm-dot">•</span></span>
-                  <span class="fm-item"><span class="fm-text">KERJA KERAS</span><span class="fm-dot">•</span></span>
-                  <span class="fm-item"><span class="fm-text">KONSISTEN</span><span class="fm-dot">•</span></span>
-                  <span class="fm-item"><span class="fm-text">KEMAJUAN</span><span class="fm-dot">•</span></span>
-                  <span class="fm-item"><span class="fm-text">KEBERHASILAN</span><span class="fm-dot">•</span></span>
-                  <span class="fm-item"><span class="fm-text">PERJUANGAN</span><span class="fm-dot">•</span></span>
-                  <span class="fm-item"><span class="fm-text">TEKAD</span><span class="fm-dot">•</span></span>
-                </span>
-                <span class="fm-group" aria-hidden="true">
-                  <span class="fm-item"><span class="fm-text">BERKEMBANG</span><span class="fm-dot">•</span></span>
-                  <span class="fm-item"><span class="fm-text">KETERAMPILAN</span><span class="fm-dot">•</span></span>
-                  <span class="fm-item"><span class="fm-text">KETEKUNAN</span><span class="fm-dot">•</span></span>
-                  <span class="fm-item"><span class="fm-text">KERJA KERAS</span><span class="fm-dot">•</span></span>
-                  <span class="fm-item"><span class="fm-text">KONSISTEN</span><span class="fm-dot">•</span></span>
-                  <span class="fm-item"><span class="fm-text">KEMAJUAN</span><span class="fm-dot">•</span></span>
-                  <span class="fm-item"><span class="fm-text">KEBERHASILAN</span><span class="fm-dot">•</span></span>
-                  <span class="fm-item"><span class="fm-text">PERJUANGAN</span><span class="fm-dot">•</span></span>
-                  <span class="fm-item"><span class="fm-text">TEKAD</span><span class="fm-dot">•</span></span>
-                </span>
-              </div>
-            </div>
             <div class="row">
               <div class="lead">
                 <h2>Dokumentasi yang Terhimpun Menanti untuk Ditelusuri</h2>
@@ -879,31 +273,31 @@ body.menu-locked #container{overflow:hidden}
             <div>
               <h4>NAVIGASI</h4>
               <ul>
-                <li><a href="#" data-nav="Beranda">Beranda</a></li>
-                <li><a href="#" data-nav="Publikasi">Publikasi</a></li>
+                <li><a href="index.html" data-nav="Beranda">Beranda</a></li>
+                <li><a href="media-informasi.html" data-nav="Publikasi">Publikasi</a></li>
                 <li><a href="#" data-nav="Informasi">Informasi</a></li>
                 <li><a href="#" data-nav="Galeri">Galeri</a></li>
-                <li><a href="#" data-nav="Mengenal INFOTRINK"><span translate="no">Mengenal INFOTRINK</span></a></li>
+                <li><a href="mengenal-infotrink.html" data-nav="Mengenal INFOTRINK"><span translate="no">Mengenal INFOTRINK</span></a></li>
               </ul>
             </div>
             <div>
               <h4>BIDANG</h4>
               <ul>
-                <li><a href="#">Media Digital</a></li>
-                <li><a href="#">Pembangunan</a></li>
-                <li><a href="#">Personal</a></li>
-                <li><a href="#">Bidang Lainnya</a></li>
+                <li><a href="media-digital.html">Media Digital</a></li>
+                <li><a href="pembangunan.html">Pembangunan</a></li>
+                <li><a href="personal.html">Personal</a></li>
+                <li><a href="bidang-lainnya.html">Bidang Lainnya</a></li>
               </ul>
             </div>
             <div>
               <h4>JENIS MATERI</h4>
               <ul>
-                <li><a href="#">Media Informasi</a></li>
-                <li><a href="#">Hasil Riset</a></li>
-                <li><a href="#">Kajian &amp; Analisis</a></li>
-                <li><a href="#">Laporan</a></li>
-                <li><a href="#">Data &amp; Referensi</a></li>
-                <li><a href="#">Gagasan</a></li>
+                <li><a href="media-informasi.html">Media Informasi</a></li>
+                <li><a href="hasil-riset.html">Hasil Riset</a></li>
+                <li><a href="kajian-analisis.html">Kajian &amp; Analisis</a></li>
+                <li><a href="laporan.html">Laporan</a></li>
+                <li><a href="data-referensi.html">Data &amp; Referensi</a></li>
+                <li><a href="gagasan-konsep.html">Gagasan</a></li>
               </ul>
             </div>
           </div>
@@ -933,26 +327,6 @@ function brand(s){
   for(var i=0;i<parts.length;i++){ out += esc(parts[i]); if(i<parts.length-1) out += '<span translate="no">INFOTRINK</span>'; }
   return out;
 }
-
-var ICONS = {
-  Lightbulb:'<svg class="stage-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B6E6A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>',
-  Compass:'<svg class="stage-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B6E6A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>',
-  PenLine:'<svg class="stage-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B6E6A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>',
-  Flag:'<svg class="stage-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B6E6A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" x2="4" y1="22" y2="15"/></svg>',
-  Workflow:'<svg class="stage-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B6E6A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></svg>',
-  Archive:'<svg class="stage-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B6E6A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="5" x="2" y="3" rx="1"/><path d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8"/><path d="M10 12h4"/></svg>',
-  TrendingUp:'<svg class="stage-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B6E6A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>'
-};
-
-var FLOW_STAGES = [
-  {icon:"Lightbulb", name:"Gagasan", desc:"Bermula dari pemikiran yang dicatat apa adanya."},
-  {icon:"Compass", name:"Perencanaan", desc:"Tujuan, kebutuhan, dan kemampuan disusun terarah."},
-  {icon:"PenLine", name:"Perancangan", desc:"Rencana diberi bentuk, struktur, dan identitas."},
-  {icon:"Flag", name:"Perintisan", desc:"Langkah pertama diambil sesuai kesiapan."},
-  {icon:"Workflow", name:"Pelaksanaan", desc:"Konsep dijalankan melalui kegiatan yang nyata."},
-  {icon:"Archive", name:"Pengelolaan", desc:"Yang berjalan dirawat dan dievaluasi secara teratur."},
-  {icon:"TrendingUp", name:"Pengembangan", desc:"Kualitas ditingkatkan bertahap dan terukur."}
-];
 
 var SUB_MENU_URLS = {
   "Media Informasi & Penjelasan": "media-informasi.html",
@@ -1023,20 +397,6 @@ function renderOverlays(){
       + '</div>';
   }
   host.innerHTML = html;
-}
-
-function renderFlowStages(){
-  var host = $("[data-flow]"); if(!host) return;
-  var html = "";
-  for(var i=0;i<FLOW_STAGES.length;i++){
-    var s = FLOW_STAGES[i], n = i+1;
-    html += '<div class="stage stage--'+n+'">'+(ICONS[s.icon]||"")+'</div>'
-      + '<div class="stage-label stage-label--'+n+'">'
-      + '<span class="stage-name">'+esc(s.name)+'</span>'
-      + '<span class="stage-desc">'+esc(s.desc)+'</span>'
-      + '</div>';
-  }
-  host.insertAdjacentHTML("beforeend", html);
 }
 
 function updateScale(){
@@ -1112,109 +472,23 @@ function closeMenu(){
   state.activeMenu = null;
   scheduleNavHighlight();
 }
-function goBeranda(){
-  if(state.activeMenu) closeMenu();
-  var c = $("#container"); if(c) c.scrollTop = 0;
-}
 function updateNavHighlight(){
   $$(".nav-link").forEach(function(l){
     var item = l.getAttribute("data-nav");
-    var on = state.activeMenu ? (state.activeMenu===item) : (item==="Beranda");
+    var on = state.activeMenu ? (state.activeMenu===item) : (item==="Publikasi");
     l.classList.toggle("on", on);
   });
-}
-
-function initShowcaseSlider(){
-  var dots = $$("[data-showcase-target]");
-  var slides = $$("[data-showcase-slide]");
-  var wrap = $("#showcaseWrap");
-  if(!dots.length || !slides.length) return;
-
-  var currentSlide = 1;
-  var totalSlides = slides.length;
-
-  function goToSlide(targetNum){
-    if(targetNum < 1) targetNum = totalSlides;
-    if(targetNum > totalSlides) targetNum = 1;
-    currentSlide = targetNum;
-
-    dots.forEach(function(d){ d.classList.remove("active"); });
-    var activeDot = document.querySelector('[data-showcase-target="'+currentSlide+'"]');
-    if(activeDot) activeDot.classList.add("active");
-
-    slides.forEach(function(slide){
-      if(slide.getAttribute("data-showcase-slide") === String(currentSlide)){
-        slide.classList.add("active");
-      } else {
-        slide.classList.remove("active");
-      }
-    });
-
-    setTimeout(function(){ if(window.innerWidth > 768){ measureContentHeight(); } }, 100);
-  }
-
-  dots.forEach(function(dot){
-    dot.addEventListener("click", function(){
-      var target = parseInt(this.getAttribute("data-showcase-target"), 10);
-      goToSlide(target);
-    });
-  });
-
-  document.addEventListener("keydown", function(e){
-    if(state.activeMenu) return;
-    if(e.key === "ArrowLeft"){
-      goToSlide(currentSlide - 1);
-    } else if(e.key === "ArrowRight"){
-      goToSlide(currentSlide + 1);
-    }
-  });
-
-  if(wrap){
-    var startX = 0;
-    var isDragging = false;
-
-    wrap.addEventListener("touchstart", function(e){
-      startX = e.touches[0].clientX;
-    }, {passive: true});
-
-    wrap.addEventListener("touchend", function(e){
-      var endX = e.changedTouches[0].clientX;
-      var diff = startX - endX;
-      if(Math.abs(diff) > 50){
-        if(diff > 0){ goToSlide(currentSlide + 1); }
-        else { goToSlide(currentSlide - 1); }
-      }
-    }, {passive: true});
-
-    wrap.addEventListener("mousedown", function(e){
-      startX = e.clientX;
-      isDragging = true;
-    });
-
-    wrap.addEventListener("mouseup", function(e){
-      if(!isDragging) return;
-      var endX = e.clientX;
-      var diff = startX - endX;
-      isDragging = false;
-      if(Math.abs(diff) > 50){
-        if(diff > 0){ goToSlide(currentSlide + 1); }
-        else { goToSlide(currentSlide - 1); }
-      }
-    });
-
-    wrap.addEventListener("mouseleave", function(){
-      isDragging = false;
-    });
-  }
 }
 
 function onClick(e){
   var navEl = e.target.closest("[data-nav]");
   if(navEl){
-    e.preventDefault();
     var item = navEl.getAttribute("data-nav");
-    if(item === "Beranda") goBeranda(); else openMenu(item);
-    return;
+    if(item !== "Beranda" && SUB_MENUS[item]){
+      e.preventDefault();
+      openMenu(item);
+      return;
+    }
   }
   if(e.target.closest("[data-close]")){ e.preventDefault(); closeMenu(); return; }
   var a = e.target.closest('a[href="#"]');
@@ -1228,8 +502,6 @@ function onResize(){
 
 function init(){
   renderOverlays();
-  renderFlowStages();
-  initShowcaseSlider();
   if(window.innerWidth > 768){
     updateScale(); applyZoom();
     requestAnimationFrame(function(){ measureContentHeight(); measureNavPositions(); });
