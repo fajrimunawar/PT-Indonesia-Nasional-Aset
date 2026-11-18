@@ -87,11 +87,241 @@ body.menu-locked #container{overflow:hidden}
 .overlay-menu.open .ov-x:hover{background:#d32f2f;transform:scale(1.1) rotate(0);transition-delay:0s}
 
 /* ============ KONTEN HALAMAN ============ */
-.page-body{margin:40px 70px 0;flex:1;display:flex;flex-direction:column;gap:56px;padding-bottom:50px}
+.page-body{margin:40px 70px 0;flex:1;display:flex;flex-direction:column;gap:64px;padding-bottom:80px}
 
-/* =========================================================
+/* SECTION TITLE UNIVERSAL */
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:28px}
+.sec-eyebrow{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:1.4px;color:var(--teal);display:block;margin-bottom:6px}
+.sec-title{font-size:30px;font-weight:800;color:var(--teal-deep);margin:0;letter-spacing:-.6px;line-height:1.2}
+.sec-sub{font-size:14px;color:var(--teal-soft);max-width:440px;margin:0;line-height:1.6;text-align:right}
+
+/* =============================================================
+   1. HERO EDITORIAL (ASYMMETRIC MAGAZINE STYLE)
+   ============================================================= */
+.hero-editorial{
+  display:grid;grid-template-columns:1.6fr 1fr;gap:36px;align-items:end;
+  padding-bottom:36px;border-bottom:3px solid var(--teal-deep);
+  position:relative;
+}
+.hero-editorial::after{
+  content:"";position:absolute;bottom:-3px;left:0;width:120px;height:3px;background:var(--gold);
+}
+.he-left{display:flex;flex-direction:column;gap:18px}
+.he-kicker{
+  display:inline-flex;align-items:center;gap:10px;width:fit-content;
+  font-size:11.5px;font-weight:800;letter-spacing:2px;text-transform:uppercase;
+  color:var(--teal);padding:6px 14px;background:rgba(11,110,106,.08);border-radius:4px;
+}
+.he-kicker::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--teal)}
+.he-title{
+  font-size:54px;font-weight:800;line-height:1.05;margin:0;letter-spacing:-1.8px;
+  color:var(--teal-deep);font-family:Georgia,'Times New Roman',serif;
+}
+.he-title em{font-style:italic;color:var(--teal)}
+.he-title span{color:var(--gold)}
+.he-deck{font-size:16px;line-height:1.7;color:var(--ink);margin:0;max-width:640px;font-weight:500}
+.he-deck strong{color:var(--teal);font-weight:700}
+.he-right{
+  display:flex;flex-direction:column;gap:14px;padding:24px 0 0 32px;
+  border-left:1px solid rgba(11,59,58,.15);
+}
+.he-stat-block{border-bottom:1px solid rgba(11,59,58,.1);padding-bottom:14px}
+.he-stat-block:last-child{border-bottom:none;padding-bottom:0}
+.he-stat-num{font-size:36px;font-weight:800;color:var(--teal);line-height:1;letter-spacing:-1px;font-family:Georgia,serif}
+.he-stat-lbl{font-size:12px;font-weight:700;color:var(--teal-soft);text-transform:uppercase;letter-spacing:.8px;margin-top:6px;display:block}
+
+/* =============================================================
+   2. STRUKTUR POHON (TREE DIAGRAM CSS)
+   ============================================================= */
+.tree-wrap{
+  background:linear-gradient(180deg,#FFFFFF 0%,#F4FBF9 100%);
+  border-radius:24px;padding:44px 40px;box-shadow:0 12px 34px rgba(11,59,58,.06);
+  border:1px solid rgba(11,110,106,.1);
+}
+.tree-root{
+  display:flex;flex-direction:column;align-items:center;position:relative;
+}
+.tree-node{
+  background:linear-gradient(135deg,var(--teal-deep),var(--teal-mid));
+  color:#fff;padding:16px 28px;border-radius:14px;font-weight:800;font-size:16px;
+  letter-spacing:.3px;box-shadow:0 8px 20px rgba(11,59,58,.25);position:relative;z-index:2;
+}
+.tree-node small{display:block;font-size:10.5px;font-weight:600;color:var(--cyan);text-transform:uppercase;letter-spacing:1.2px;margin-top:4px}
+.tree-stem{width:2px;height:36px;background:var(--teal);opacity:.35}
+.tree-branches{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:20px;width:100%;position:relative;padding-top:20px;
+}
+.tree-branches::before{
+  content:"";position:absolute;top:0;left:12.5%;right:12.5%;height:2px;background:var(--teal);opacity:.35;
+}
+.tree-branch{
+  display:flex;flex-direction:column;align-items:center;position:relative;padding-top:20px;
+}
+.tree-branch::before{
+  content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:2px;height:20px;background:var(--teal);opacity:.35;
+}
+.tree-leaf{
+  background:#fff;border:1.5px solid rgba(11,110,106,.2);border-radius:12px;
+  padding:16px 18px;width:100%;text-align:center;box-shadow:0 4px 12px rgba(11,59,58,.05);
+  transition:transform .25s,border-color .25s,box-shadow .25s;
+}
+.tree-leaf:hover{transform:translateY(-3px);border-color:var(--teal);box-shadow:0 10px 22px rgba(11,59,58,.12)}
+.tree-leaf .tl-tag{
+  display:inline-block;font-size:9.5px;font-weight:800;letter-spacing:1px;
+  color:var(--gold);background:rgba(217,180,91,.15);padding:2px 8px;border-radius:4px;margin-bottom:8px;
+}
+.tree-leaf .tl-title{font-size:14px;font-weight:800;color:var(--teal-deep);margin:0 0 4px;line-height:1.3}
+.tree-leaf .tl-desc{font-size:11.5px;color:var(--teal-soft);margin:0;line-height:1.5}
+
+/* =============================================================
+   3. TABEL MATRIKS
+   ============================================================= */
+.matrix-wrap{overflow:hidden;border-radius:20px;box-shadow:0 14px 38px rgba(11,59,58,.08);border:1px solid rgba(11,110,106,.12)}
+.matrix-table{width:100%;border-collapse:collapse;background:#fff;font-size:13.5px}
+.matrix-table thead{background:linear-gradient(135deg,var(--teal-deep),var(--teal-mid));color:#fff}
+.matrix-table th{
+  padding:18px 22px;text-align:left;font-size:11.5px;font-weight:800;
+  text-transform:uppercase;letter-spacing:1.1px;
+}
+.matrix-table th:first-child{width:24%;border-right:1px solid rgba(255,255,255,.15)}
+.matrix-table tbody tr{border-bottom:1px solid rgba(11,59,58,.08);transition:background .2s}
+.matrix-table tbody tr:hover{background:#F4FBF9}
+.matrix-table tbody tr:last-child{border-bottom:none}
+.matrix-table td{padding:16px 22px;vertical-align:top;line-height:1.6}
+.matrix-table td:first-child{
+  font-weight:800;color:var(--teal-deep);font-size:13px;
+  background:rgba(11,110,106,.04);border-right:1px solid rgba(11,59,58,.08);
+}
+.matrix-table td:first-child small{display:block;font-weight:600;color:var(--teal-soft);font-size:11px;margin-top:2px;letter-spacing:.3px}
+.matrix-badge{
+  display:inline-block;padding:3px 10px;border-radius:999px;font-size:10.5px;
+  font-weight:800;letter-spacing:.5px;margin-right:4px;margin-bottom:4px;
+}
+.mb-core{background:rgba(11,110,106,.12);color:var(--teal)}
+.mb-supp{background:rgba(217,180,91,.2);color:#8B6B20}
+.mb-vis{background:rgba(139,92,246,.12);color:#6B46C1}
+.matrix-table td:last-child{color:var(--teal-soft);font-size:12.5px;font-style:italic;text-align:right;font-weight:600}
+
+/* =============================================================
+   4. DIAGRAM ALUR (FLOWCHART HORIZONTAL)
+   ============================================================= */
+.flow-wrap{
+  background:var(--teal-deep);border-radius:26px;padding:48px 40px;color:#fff;
+  position:relative;overflow:hidden;
+}
+.flow-wrap::before{
+  content:"";position:absolute;top:-100px;right:-100px;width:300px;height:300px;
+  border-radius:50%;background:radial-gradient(circle,rgba(129,246,239,.12),transparent 70%);
+}
+.flow-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative;margin-top:32px}
+.flow-step{
+  display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 12px;position:relative;
+}
+.flow-step::after{
+  content:"";position:absolute;top:32px;left:calc(50% + 32px);right:calc(-50% + 32px);height:2px;
+  background:linear-gradient(90deg,var(--cyan),rgba(129,246,239,.3));
+}
+.flow-step:last-child::after{display:none}
+.flow-circle{
+  width:64px;height:64px;border-radius:50%;background:rgba(129,246,239,.15);
+  border:2px solid var(--cyan);color:var(--cyan);display:flex;align-items:center;justify-content:center;
+  font-size:22px;font-weight:800;font-family:Georgia,serif;margin-bottom:18px;position:relative;z-index:2;
+  box-shadow:0 0 0 6px rgba(11,59,58,1);
+}
+.flow-step.current .flow-circle{background:var(--cyan);color:var(--teal-deep)}
+.flow-h{font-size:13.5px;font-weight:800;color:#fff;margin:0 0 6px;line-height:1.35}
+.flow-d{font-size:11.5px;line-height:1.55;color:#A3E8E2;margin:0}
+
+/* =============================================================
+   5. GRAFIK BATANG (BAR CHART CSS)
+   ============================================================= */
+.chart-panel{
+  display:grid;grid-template-columns:1fr 1.4fr;gap:40px;
+  background:#fff;border-radius:24px;padding:44px 42px;
+  box-shadow:0 16px 44px rgba(11,59,58,.07);border:1px solid rgba(11,110,106,.1);
+}
+.chart-left{display:flex;flex-direction:column;justify-content:center}
+.chart-eyebrow{font-size:11px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:var(--teal);margin-bottom:10px}
+.chart-title{font-size:22px;font-weight:800;color:var(--teal-deep);margin:0 0 16px;line-height:1.35;letter-spacing:-.3px}
+.chart-desc{font-size:13px;line-height:1.7;color:var(--teal-soft);margin:0}
+.chart-right{display:flex;flex-direction:column;gap:18px;justify-content:center}
+.bar-row{display:grid;grid-template-columns:130px 1fr 48px;gap:14px;align-items:center}
+.bar-label{font-size:12.5px;font-weight:700;color:var(--teal-deep);text-align:right}
+.bar-track{height:26px;background:rgba(11,110,106,.08);border-radius:6px;overflow:hidden;position:relative}
+.bar-fill{height:100%;border-radius:6px;display:flex;align-items:center;padding-left:12px;color:#fff;font-size:11px;font-weight:800;letter-spacing:.3px;transition:width 1s ease}
+.bar-fill.b1{width:85%;background:linear-gradient(90deg,var(--teal),#3FB8B0)}
+.bar-fill.b2{width:70%;background:linear-gradient(90deg,var(--teal-mid),#2C8A85)}
+.bar-fill.b3{width:58%;background:linear-gradient(90deg,#0E4A47,var(--teal-mid))}
+.bar-fill.b4{width:45%;background:linear-gradient(90deg,#8B6B20,var(--gold))}
+.bar-fill.b5{width:32%;background:linear-gradient(90deg,#6B46C1,#8B5CF6)}
+.bar-pct{font-size:12.5px;font-weight:800;color:var(--teal)}
+
+/* =============================================================
+   6. KARTU PROFIL (PRINSIP PENGELOLAAN)
+   ============================================================= */
+.profile-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.profile-card{
+  background:#fff;border-radius:22px;padding:0;overflow:hidden;
+  box-shadow:0 12px 32px rgba(11,59,58,.07);border:1px solid rgba(11,110,106,.1);
+  transition:transform .3s,box-shadow .3s;display:flex;flex-direction:column;
+}
+.profile-card:hover{transform:translateY(-6px);box-shadow:0 20px 44px rgba(11,59,58,.14)}
+.pc-head{
+  background:linear-gradient(135deg,var(--teal-deep),var(--teal-mid));
+  padding:28px 26px 24px;position:relative;overflow:hidden;
+}
+.pc-head::after{
+  content:"";position:absolute;bottom:-30px;right:-30px;width:100px;height:100px;
+  border-radius:50%;background:rgba(129,246,239,.15);
+}
+.pc-icon{
+  width:52px;height:52px;border-radius:14px;background:rgba(129,246,239,.2);
+  display:flex;align-items:center;justify-content:center;color:var(--cyan);
+  font-size:22px;font-weight:800;margin-bottom:16px;position:relative;z-index:2;
+}
+.pc-num{
+  position:absolute;top:20px;right:22px;font-size:56px;font-weight:800;color:rgba(255,255,255,.08);
+  line-height:1;font-family:Georgia,serif;
+}
+.pc-head h3{font-size:16.5px;font-weight:800;color:#fff;margin:0;line-height:1.35;position:relative;z-index:2;letter-spacing:-.2px}
+.pc-body{padding:24px 26px;flex:1}
+.pc-body p{font-size:13px;line-height:1.75;color:var(--ink);margin:0}
+.pc-foot{
+  padding:16px 26px;background:#F8FCFB;border-top:1px solid rgba(11,110,106,.08);
+  font-size:11.5px;font-weight:800;color:var(--teal);letter-spacing:.5px;
+  display:flex;align-items:center;gap:8px;text-transform:uppercase;
+}
+.pc-foot::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--teal)}
+
+/* =============================================================
+   7. PULL QUOTE PENUTUP
+   ============================================================= */
+.pullquote{
+  background:linear-gradient(135deg,#0B3B3A 0%,#0E4A47 50%,#125956 100%);
+  border-radius:28px;padding:70px 80px;color:#fff;position:relative;overflow:hidden;text-align:center;
+}
+.pullquote::before{
+  content:"“";position:absolute;top:-50px;left:40px;font-size:320px;font-family:Georgia,serif;
+  color:rgba(129,246,239,.08);line-height:1;
+}
+.pullquote::after{
+  content:"";position:absolute;bottom:0;left:0;width:100%;height:4px;
+  background:linear-gradient(90deg,var(--cyan),var(--gold),transparent);
+}
+.pq-kicker{font-size:12px;font-weight:800;letter-spacing:2.4px;text-transform:uppercase;color:var(--gold);margin-bottom:24px;display:block;position:relative;z-index:2}
+.pq-text{
+  font-size:26px;font-weight:700;line-height:1.55;margin:0 auto;max-width:840px;
+  letter-spacing:-.4px;position:relative;z-index:2;
+}
+.pq-text em{font-style:italic;color:var(--cyan)}
+.pq-sign{
+  margin-top:32px;font-size:12.5px;color:#A3E8E2;letter-spacing:1.5px;
+  font-weight:700;text-transform:uppercase;position:relative;z-index:2;
+}
+
+/* =============================================================
    MEDIA QUERY RESPONSIVE KHUSUS PERANGKAT HP (MAX 768px)
-   ========================================================= */
+   ============================================================= */
 @media (max-width: 768px) {
   body { overflow: auto !important; }
   #container { position: relative !important; inset: auto !important; min-height: 100vh !important; height: auto !important; overflow: visible !important; }
@@ -110,7 +340,60 @@ body.menu-locked #container{overflow:hidden}
   .ov-card { width: 100% !important; }
   .ov-svg { display: none !important; }
 
-  .page-body { margin: 20px 0 0 !important; gap: 28px !important; }
+  .page-body { margin: 20px 0 0 !important; gap: 36px !important; padding-bottom: 40px !important; }
+  .sec-head { flex-direction: column !important; align-items: flex-start !important; margin-bottom: 20px !important; }
+  .sec-title { font-size: 22px !important; letter-spacing: -.3px !important; }
+  .sec-sub { text-align: left !important; max-width: none !important; }
+
+  /* Hero */
+  .hero-editorial { grid-template-columns: 1fr !important; gap: 24px !important; padding-bottom: 28px !important; }
+  .he-title { font-size: 32px !important; letter-spacing: -.8px !important; }
+  .he-deck { font-size: 14px !important; }
+  .he-right { padding: 0 !important; border-left: none !important; border-top: 1px solid rgba(11,59,58,.15) !important; padding-top: 20px !important; }
+
+  /* Tree */
+  .tree-wrap { padding: 24px 16px !important; }
+  .tree-branches { grid-template-columns: 1fr 1fr !important; gap: 14px !important; padding-top: 16px !important; }
+  .tree-branches::before { display: none !important; }
+  .tree-branch { padding-top: 0 !important; }
+  .tree-branch::before { display: none !important; }
+  .tree-node { padding: 12px 18px !important; font-size: 13px !important; }
+  .tree-stem { height: 24px !important; }
+
+  /* Matrix */
+  .matrix-table { font-size: 12px !important; }
+  .matrix-table th { padding: 12px 10px !important; font-size: 10px !important; }
+  .matrix-table td { padding: 12px 10px !important; font-size: 11.5px !important; }
+  .matrix-table th:first-child { width: 30% !important; }
+  .matrix-table td:last-child { font-size: 10.5px !important; }
+
+  /* Flow */
+  .flow-wrap { padding: 32px 20px !important; border-radius: 20px !important; }
+  .flow-grid { grid-template-columns: 1fr !important; gap: 20px !important; margin-top: 24px !important; }
+  .flow-step { flex-direction: row !important; text-align: left !important; gap: 16px !important; padding: 0 !important; }
+  .flow-step::after { display: none !important; }
+  .flow-circle { width: 44px !important; height: 44px !important; font-size: 16px !important; margin-bottom: 0 !important; flex-shrink: 0; }
+  .flow-step > div { display: flex; flex-direction: column; }
+
+  /* Chart */
+  .chart-panel { grid-template-columns: 1fr !important; gap: 24px !important; padding: 28px 22px !important; }
+  .bar-row { grid-template-columns: 90px 1fr 40px !important; gap: 10px !important; }
+  .bar-label { font-size: 11px !important; }
+  .bar-track { height: 22px !important; }
+  .bar-fill { font-size: 10px !important; padding-left: 8px !important; }
+
+  /* Profile Cards */
+  .profile-grid { grid-template-columns: 1fr !important; gap: 16px !important; }
+  .pc-head { padding: 22px 20px 18px !important; }
+  .pc-body { padding: 20px !important; }
+  .pc-foot { padding: 14px 20px !important; }
+  .pc-num { font-size: 44px !important; top: 14px !important; right: 16px !important; }
+
+  /* Pullquote */
+  .pullquote { padding: 40px 24px !important; border-radius: 20px !important; }
+  .pq-text { font-size: 17px !important; letter-spacing: -.2px !important; }
+  .pullquote::before { font-size: 180px !important; top: -25px !important; left: 10px !important; }
+  .pq-sign { font-size: 11px !important; letter-spacing: 1px !important; }
 }
 </style>
 </head>
@@ -137,9 +420,318 @@ body.menu-locked #container{overflow:hidden}
           </header>
 
           <div class="page-body">
-            <!-- ===================================================== -->
-            <!-- ISI HALAMAN SUDAH DIHAPUS TOTAL — SIAP DIISI ULANG -->
-            <!-- ===================================================== -->
+
+            <!-- =========================================== -->
+            <!-- 1. HERO EDITORIAL (JUDUL HALAMAN UTAMA)     -->
+            <!-- =========================================== -->
+            <section class="hero-editorial" aria-labelledby="hero-title">
+              <div class="he-left">
+                <span class="he-kicker">Media Informasi &amp; Penjelasan</span>
+                <h1 class="he-title" id="hero-title">
+                  Membaca Setiap Gagasan dalam <em>Konteks</em> yang <span>Utuh</span>
+                </h1>
+                <p class="he-deck">
+                  <strong translate="no">INFOTRINK</strong> adalah arsitektur informasi yang menyatukan dokumentasi perjalanan berbagai entitas—perusahaan, organisasi, proyek, kajian, dan karya—ke dalam satu lingkungan digital yang tertata, transparan, dan berkelanjutan. Setiap objek dijelaskan bukan hanya sebagai hasil akhir, melainkan sebagai proses yang memiliki latar belakang, tujuan, tahapan, dan arah perkembangan.
+                </p>
+              </div>
+              <aside class="he-right" aria-label="Ringkasan Cepat">
+                <div class="he-stat-block">
+                  <div class="he-stat-num">07</div>
+                  <span class="he-stat-lbl">Kategori Informasi Utama</span>
+                </div>
+                <div class="he-stat-block">
+                  <div class="he-stat-num">04</div>
+                  <span class="he-stat-lbl">Lapis Penyampaian Data</span>
+                </div>
+                <div class="he-stat-block">
+                  <div class="he-stat-num">∞</div>
+                  <span class="he-stat-lbl">Kemungkinan Pengembangan</span>
+                </div>
+              </aside>
+            </section>
+
+            <!-- =========================================== -->
+            <!-- 2. STRUKTUR POHON (TREE DIAGRAM)            -->
+            <!-- =========================================== -->
+            <section aria-labelledby="tree-heading">
+              <div class="sec-head">
+                <div>
+                  <span class="sec-eyebrow">01 / Peta Informasi</span>
+                  <h2 class="sec-title" id="tree-heading">Struktur Konten <span translate="no">INFOTRINK</span></h2>
+                </div>
+                <p class="sec-sub">Peta hierarki yang menjelaskan bagaimana seluruh informasi dikelompokkan dan diakses.</p>
+              </div>
+
+              <div class="tree-wrap">
+                <div class="tree-root">
+                  <div class="tree-node">
+                    <span translate="no">INFOTRINK</span>
+                    <small>Pusat Informasi Terpadu</small>
+                  </div>
+                  <div class="tree-stem"></div>
+                  <div class="tree-branches">
+                    <div class="tree-branch">
+                      <div class="tree-leaf">
+                        <span class="tl-tag">Entitas</span>
+                        <h4 class="tl-title">Perusahaan &amp; Organisasi</h4>
+                        <p class="tl-desc">Profil, tujuan, status hukum, dan struktur kelembagaan.</p>
+                      </div>
+                    </div>
+                    <div class="tree-branch">
+                      <div class="tree-leaf">
+                        <span class="tl-tag">Aktivitas</span>
+                        <h4 class="tl-title">Proyek &amp; Pembangunan</h4>
+                        <p class="tl-desc">Tahapan, status, dan dokumentasi pelaksanaan.</p>
+                      </div>
+                    </div>
+                    <div class="tree-branch">
+                      <div class="tree-leaf">
+                        <span class="tl-tag">Pengetahuan</span>
+                        <h4 class="tl-title">Kajian &amp; Riset</h4>
+                        <p class="tl-desc">Latar belakang, metode, temuan, dan publikasi.</p>
+                      </div>
+                    </div>
+                    <div class="tree-branch">
+                      <div class="tree-leaf">
+                        <span class="tl-tag">Kreativitas</span>
+                        <h4 class="tl-title">Karya &amp; Media Digital</h4>
+                        <p class="tl-desc">Karya personal, saluran publikasi, dan arsip visual.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- =========================================== -->
+            <!-- 3. TABEL MATRIKS PERBANDINGAN                -->
+            <!-- =========================================== -->
+            <section aria-labelledby="matrix-heading">
+              <div class="sec-head">
+                <div>
+                  <span class="sec-eyebrow">02 / Klasifikasi</span>
+                  <h2 class="sec-title" id="matrix-heading">Matriks Perbandingan Kategori</h2>
+                </div>
+                <p class="sec-sub">Setiap kategori memiliki bobot, kedudukan, dan perlakuan penyajian yang berbeda.</p>
+              </div>
+
+              <div class="matrix-wrap">
+                <table class="matrix-table">
+                  <thead>
+                    <tr>
+                      <th>Kategori</th>
+                      <th>Objek yang Dicakup</th>
+                      <th>Bentuk Penyajian</th>
+                      <th>Prioritas</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Entitas Hukum<small>Badan Usaha</small></td>
+                      <td><span class="matrix-badge mb-core">Perusahaan</span><span class="matrix-badge mb-core">Yayasan</span><span class="matrix-badge mb-core">Lembaga</span> beserta profil, bidang usaha, dan status pendirian.</td>
+                      <td>Halaman profil, riwayat pembentukan, dan tautan resmi.</td>
+                      <td>Tinggi</td>
+                    </tr>
+                    <tr>
+                      <td>Proyek &amp; Pembangunan<small>Kegiatan</small></td>
+                      <td><span class="matrix-badge mb-supp">Infrastruktur</span><span class="matrix-badge mb-supp">Teknologi</span><span class="matrix-badge mb-supp">Kawasan</span> dengan tahapan perencanaan hingga pelaksanaan.</td>
+                      <td>Timeline perkembangan, galeri, dan status terbaru.</td>
+                      <td>Tinggi</td>
+                    </tr>
+                    <tr>
+                      <td>Kajian &amp; Riset<small>Pengetahuan</small></td>
+                      <td><span class="matrix-badge mb-supp">Penelitian</span><span class="matrix-badge mb-supp">Analisis</span><span class="matrix-badge mb-supp">Laporan</span> dengan metodologi, temuan, dan kesimpulan.</td>
+                      <td>Artikel lengkap, abstrak, dan dokumen pendukung.</td>
+                      <td>Sedang</td>
+                    </tr>
+                    <tr>
+                      <td>Media &amp; Publikasi<small>Saluran</small></td>
+                      <td><span class="matrix-badge mb-vis">YouTube</span><span class="matrix-badge mb-vis">Media Sosial</span><span class="matrix-badge mb-vis">Portal</span> sebagai kanal penyebaran informasi.</td>
+                      <td>Profil kanal, tautan, dan klasifikasi konten.</td>
+                      <td>Sedang</td>
+                    </tr>
+                    <tr>
+                      <td>Karya Personal<small>Kreativitas</small></td>
+                      <td><span class="matrix-badge mb-vis">Tulisan</span><span class="matrix-badge mb-vis">Desain</span><span class="matrix-badge mb-vis">Narasi</span> yang lahir dari pemikiran dan ekspresi individu.</td>
+                      <td>Galeri karya, sinopsis, dan keterangan proses.</td>
+                      <td>Pelengkap</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            <!-- =========================================== -->
+            <!-- 4. DIAGRAM ALUR SIKLUS INFORMASI             -->
+            <!-- =========================================== -->
+            <section aria-labelledby="flow-heading">
+              <div class="sec-head">
+                <div>
+                  <span class="sec-eyebrow">03 / Alur Siklus</span>
+                  <h2 class="sec-title" id="flow-heading">Perjalanan Informasi di <span translate="no">INFOTRINK</span></h2>
+                </div>
+                <p class="sec-sub">Lima tahap yang dilalui setiap informasi—dari gagasan hingga menjadi dokumentasi.</p>
+              </div>
+
+              <div class="flow-wrap">
+                <div class="flow-grid">
+                  <div class="flow-step">
+                    <div class="flow-circle">1</div>
+                    <div>
+                      <h4 class="flow-h">Gagasan</h4>
+                      <p class="flow-d">Ide awal yang dicatat sebagai rencana atau konsep dasar.</p>
+                    </div>
+                  </div>
+                  <div class="flow-step">
+                    <div class="flow-circle">2</div>
+                    <div>
+                      <h4 class="flow-h">Perencanaan</h4>
+                      <p class="flow-d">Penyusunan tujuan, ruang lingkup, dan tahapan kerja.</p>
+                    </div>
+                  </div>
+                  <div class="flow-step current">
+                    <div class="flow-circle">3</div>
+                    <div>
+                      <h4 class="flow-h">Pelaksanaan</h4>
+                      <p class="flow-d">Kegiatan berjalan dengan pembaruan status berkala.</p>
+                    </div>
+                  </div>
+                  <div class="flow-step">
+                    <div class="flow-circle">4</div>
+                    <div>
+                      <h4 class="flow-h">Dokumentasi</h4>
+                      <p class="flow-d">Hasil, perubahan, dan temuan direkam sebagai arsip.</p>
+                    </div>
+                  </div>
+                  <div class="flow-step">
+                    <div class="flow-circle">5</div>
+                    <div>
+                      <h4 class="flow-h">Publikasi</h4>
+                      <p class="flow-d">Informasi disajikan kepada pengunjung secara terstruktur.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- =========================================== -->
+            <!-- 5. GRAFIK BATANG KOMPOSISI KONTEN            -->
+            <!-- =========================================== -->
+            <section aria-labelledby="chart-heading">
+              <div class="sec-head">
+                <div>
+                  <span class="sec-eyebrow">04 / Komposisi</span>
+                  <h2 class="sec-title" id="chart-heading">Proporsi Fokus Penyajian</h2>
+                </div>
+                <p class="sec-sub">Gambaran perbandingan ruang penyajian antarkategori utama.</p>
+              </div>
+
+              <div class="chart-panel">
+                <div class="chart-left">
+                  <span class="chart-eyebrow">Estimasi Distribusi</span>
+                  <h3 class="chart-title">Kategori dengan Porsi Terbesar</h3>
+                  <p class="chart-desc">
+                    Penyajian tidak dibagi rata. Kategori yang berkaitan langsung dengan dokumentasi entitas dan proyek mendapat ruang terbesar, sementara kategori pendukung seperti karya personal dan media digital memperoleh porsi yang disesuaikan dengan tingkat keterkaitannya terhadap perjalanan utama.
+                  </p>
+                </div>
+                <div class="chart-right">
+                  <div class="bar-row">
+                    <div class="bar-label">Entitas &amp; Profil</div>
+                    <div class="bar-track"><div class="bar-fill b1">Dominan</div></div>
+                    <div class="bar-pct">85%</div>
+                  </div>
+                  <div class="bar-row">
+                    <div class="bar-label">Proyek</div>
+                    <div class="bar-track"><div class="bar-fill b2">Tinggi</div></div>
+                    <div class="bar-pct">70%</div>
+                  </div>
+                  <div class="bar-row">
+                    <div class="bar-label">Kajian &amp; Riset</div>
+                    <div class="bar-track"><div class="bar-fill b3">Sedang</div></div>
+                    <div class="bar-pct">58%</div>
+                  </div>
+                  <div class="bar-row">
+                    <div class="bar-label">Media Digital</div>
+                    <div class="bar-track"><div class="bar-fill b4">Cukup</div></div>
+                    <div class="bar-pct">45%</div>
+                  </div>
+                  <div class="bar-row">
+                    <div class="bar-label">Karya Personal</div>
+                    <div class="bar-track"><div class="bar-fill b5">Pelengkap</div></div>
+                    <div class="bar-pct">32%</div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- =========================================== -->
+            <!-- 6. KARTU PROFIL PRINSIP PENGELOLAAN          -->
+            <!-- =========================================== -->
+            <section aria-labelledby="profile-heading">
+              <div class="sec-head">
+                <div>
+                  <span class="sec-eyebrow">05 / Standar Pengelolaan</span>
+                  <h2 class="sec-title" id="profile-heading">Prinsip yang Menjaga Kualitas</h2>
+                </div>
+                <p class="sec-sub">Tiga pilar yang memastikan setiap informasi tetap akurat dan dapat dipertanggungjawabkan.</p>
+              </div>
+
+              <div class="profile-grid">
+                <div class="profile-card">
+                  <div class="pc-head">
+                    <div class="pc-num">01</div>
+                    <div class="pc-icon">✓</div>
+                    <h3>Akurasi Status</h3>
+                  </div>
+                  <div class="pc-body">
+                    <p>
+                      Setiap informasi disajikan sesuai kondisi sebenarnya. Rencana tidak digambarkan sebagai realisasi, dan gagasan tidak ditampilkan seolah telah berjalan. Status selalu diperbarui ketika terjadi perubahan.
+                    </p>
+                  </div>
+                  <div class="pc-foot">Prinsip Dasar</div>
+                </div>
+
+                <div class="profile-card">
+                  <div class="pc-head">
+                    <div class="pc-num">02</div>
+                    <div class="pc-icon">⇄</div>
+                    <h3>Keterhubungan Relevan</h3>
+                  </div>
+                  <div class="pc-body">
+                    <p>
+                      Hubungan antarinformasi hanya ditampilkan jika benar-benar memiliki dasar. Berada dalam satu platform tidak otomatis menjadikan dua objek saling terkait. Identitas masing-masing tetap terjaga.
+                    </p>
+                  </div>
+                  <div class="pc-foot">Prinsip Relasi</div>
+                </div>
+
+                <div class="profile-card">
+                  <div class="pc-head">
+                    <div class="pc-num">03</div>
+                    <div class="pc-icon">↻</div>
+                    <h3>Dokumentasi Berkelanjutan</h3>
+                  </div>
+                  <div class="pc-body">
+                    <p>
+                      Catatan lama tidak dihapus ketika informasi diperbarui. Riwayat tetap disimpan sebagai bagian dari dokumentasi, sehingga perubahan dapat ditelusuri kembali dan dipelajari sebagai bagian dari perjalanan.
+                    </p>
+                  </div>
+                  <div class="pc-foot">Prinsip Arsip</div>
+                </div>
+              </div>
+            </section>
+
+            <!-- =========================================== -->
+            <!-- 7. PULL QUOTE PENUTUP                        -->
+            <!-- =========================================== -->
+            <section class="pullquote" aria-labelledby="quote-heading">
+              <span class="pq-kicker" id="quote-heading">Penutup Penyampaian</span>
+              <p class="pq-text">
+                Halaman ini tidak berhenti pada pertanyaan <em>apa yang sudah ada</em>. Ia juga menjelaskan <em>apa yang sedang dibangun</em>, <em>apa yang sedang berkembang</em>, dan <em>bagaimana semuanya terbentuk</em> dari waktu ke waktu.
+              </p>
+              <p class="pq-sign">— Media Informasi &amp; Penjelasan, <span translate="no">INFOTRINK</span></p>
+            </section>
+
           </div>
         </div>
 
