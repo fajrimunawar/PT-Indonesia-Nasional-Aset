@@ -136,6 +136,149 @@ body.menu-locked #container{overflow:hidden}
 .pillar-card:nth-child(2) .pc-foot{border-top-color:rgba(255,255,255,.15);color:var(--cyan)}
 
 /* =========================================================
+   TAMBAHAN BARU — ISI PENYAMPAIAN PENJELASAN (DESAIN BERVARIASI)
+   Tidak mengubah CSS di atas. Hanya menambahkan gaya baru.
+   ========================================================= */
+
+/* --- A. STRIP DEFINISI RINGKAS (BENTUK HORIZONTAL BERJALUR) --- */
+.def-strip{
+  background:linear-gradient(120deg,#0B3B3A 0%,#0E4A47 60%,#125956 100%);
+  border-radius:28px;padding:38px 42px;color:#fff;position:relative;overflow:hidden;
+  box-shadow:0 18px 44px rgba(11,59,58,.20);border:1px solid rgba(255,255,255,.1);
+}
+.def-strip::before{
+  content:"";position:absolute;top:-40px;right:-40px;width:220px;height:220px;
+  border-radius:50%;background:radial-gradient(circle,rgba(129,246,239,.15),transparent 70%);
+}
+.def-strip::after{
+  content:"";position:absolute;bottom:0;left:0;width:100%;height:4px;
+  background:linear-gradient(90deg,var(--cyan),var(--gold),transparent);
+}
+.def-strip-inner{display:grid;grid-template-columns:1fr 1.35fr;gap:36px;align-items:center;position:relative;z-index:2}
+.def-label{font-size:11.5px;font-weight:800;text-transform:uppercase;letter-spacing:1.4px;color:#F8DE9C;display:block;margin-bottom:10px}
+.def-h{font-size:26px;font-weight:800;line-height:1.3;margin:0;letter-spacing:-.4px;color:#fff}
+.def-h span{color:var(--cyan)}
+.def-body{font-size:14.5px;line-height:1.8;color:#D5F2EF;margin:0;padding-left:28px;border-left:2px solid rgba(129,246,239,.35)}
+
+/* --- B. DUA KOLOM NARASI ASIMETRIS (KIRI KARTU, KANAN LIST BERNOMOR) --- */
+.split-narr{display:grid;grid-template-columns:1.15fr 1fr;gap:28px;align-items:stretch}
+.split-card{
+  background:var(--glass-strong);backdrop-filter:blur(16px);border-radius:28px;
+  padding:40px 38px;border:1px solid var(--border-glass);
+  box-shadow:0 16px 40px rgba(11,59,58,.08);position:relative;overflow:hidden;
+}
+.split-card::before{
+  content:"“";position:absolute;top:-30px;left:22px;font-size:180px;font-weight:800;
+  color:rgba(11,110,106,.06);line-height:1;font-family:Georgia,serif;
+}
+.split-card .sc-kicker{
+  display:inline-block;font-size:11px;font-weight:800;letter-spacing:1.2px;
+  text-transform:uppercase;color:var(--teal);background:rgba(11,110,106,.1);
+  padding:5px 12px;border-radius:6px;margin-bottom:16px;
+}
+.split-card .sc-title{font-size:23px;font-weight:800;color:var(--teal-deep);margin:0 0 14px;line-height:1.35;letter-spacing:-.3px}
+.split-card .sc-text{font-size:14.5px;line-height:1.8;color:var(--ink);margin:0 0 14px}
+.split-card .sc-text:last-child{margin-bottom:0}
+
+.split-list{display:flex;flex-direction:column;gap:14px}
+.split-item{
+  background:linear-gradient(135deg,#F3FBF9,#E1F5F0);border-radius:18px;
+  padding:20px 22px;border:1px solid rgba(11,110,106,.15);
+  display:grid;grid-template-columns:44px 1fr;gap:16px;align-items:start;
+  transition:transform .25s ease,box-shadow .25s ease;
+}
+.split-item:hover{transform:translateX(6px);box-shadow:0 8px 22px rgba(11,59,58,.10)}
+.split-item .si-num{
+  width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;
+  background:var(--teal);color:#fff;font-size:15px;font-weight:800;
+}
+.split-item .si-title{font-size:15px;font-weight:800;color:var(--teal-deep);margin:0 0 4px}
+.split-item .si-text{font-size:13px;line-height:1.65;color:var(--teal-soft);margin:0}
+
+/* --- C. KARTU TIGA STATUS REKAM JEJAK (CHIP + BAND VERTIKAL) --- */
+.status-band{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.status-col{
+  background:var(--glass-strong);border-radius:24px;padding:32px 28px;
+  border:1px solid var(--border-glass);box-shadow:0 14px 34px rgba(11,59,58,.07);
+  position:relative;overflow:hidden;display:flex;flex-direction:column;
+}
+.status-col::before{content:"";position:absolute;top:0;left:0;width:100%;height:5px}
+.status-col.s-gagasan::before{background:linear-gradient(90deg,#D9B45B,#F0D48A)}
+.status-col.s-proses::before{background:linear-gradient(90deg,#0B6E6A,#3FB8B0)}
+.status-col.s-hasil::before{background:linear-gradient(90deg,#0B3B3A,#125956)}
+.status-chip{
+  display:inline-block;font-size:11px;font-weight:800;text-transform:uppercase;
+  letter-spacing:1px;padding:5px 12px;border-radius:999px;width:fit-content;margin-bottom:16px;
+}
+.s-gagasan .status-chip{background:rgba(217,180,91,.18);color:#8B6B20}
+.s-proses .status-chip{background:rgba(11,110,106,.12);color:var(--teal)}
+.s-hasil .status-chip{background:rgba(11,59,58,.1);color:var(--teal-deep)}
+.status-h{font-size:18px;font-weight:800;color:var(--teal-deep);margin:0 0 10px;line-height:1.35}
+.status-txt{font-size:13.5px;line-height:1.75;color:var(--ink);margin:0 0 18px;flex:1}
+.status-foot{
+  font-size:12px;font-weight:700;color:var(--teal);padding-top:14px;
+  border-top:1px dashed rgba(11,59,58,.18);display:flex;align-items:center;gap:8px;
+}
+.status-foot::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--teal)}
+
+/* --- D. PANEL PRINSIP PENYAJIAN (CHECKLIST DUA KOLOM) --- */
+.principles-panel{
+  background:linear-gradient(160deg,#0B3B3A 0%,#104F4D 100%);
+  border-radius:28px;padding:44px 46px;color:#fff;
+  box-shadow:0 22px 52px rgba(11,59,58,.25);
+  border:1px solid rgba(255,255,255,.12);position:relative;overflow:hidden;
+}
+.principles-panel::before{
+  content:"";position:absolute;top:-80px;right:-80px;width:260px;height:260px;
+  border:1px solid rgba(129,246,239,.15);border-radius:50%;
+}
+.principles-panel::after{
+  content:"";position:absolute;top:-40px;right:-40px;width:260px;height:260px;
+  border:1px solid rgba(129,246,239,.08);border-radius:50%;
+}
+.pp-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:28px;position:relative;z-index:2}
+.pp-eyebrow{font-size:11.5px;font-weight:800;letter-spacing:1.3px;text-transform:uppercase;color:#F8DE9C;display:block;margin-bottom:8px}
+.pp-title{font-size:26px;font-weight:800;margin:0;letter-spacing:-.4px;color:#fff;line-height:1.3}
+.pp-title span{color:var(--cyan)}
+.pp-note{font-size:12.5px;color:#A3E8E2;max-width:280px;text-align:right;line-height:1.55;margin:0}
+.pp-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;position:relative;z-index:2}
+.pp-item{
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);
+  border-radius:16px;padding:20px 22px;display:flex;gap:16px;align-items:flex-start;
+  transition:background .2s ease,border-color .2s ease;
+}
+.pp-item:hover{background:rgba(255,255,255,.1);border-color:rgba(129,246,239,.35)}
+.pp-check{
+  flex-shrink:0;width:30px;height:30px;border-radius:9px;background:rgba(129,246,239,.18);
+  color:var(--cyan);display:flex;align-items:center;justify-content:center;
+  font-weight:800;font-size:14px;
+}
+.pp-body .pp-t{font-size:14.5px;font-weight:800;color:#fff;margin:0 0 5px;line-height:1.4}
+.pp-body .pp-d{font-size:12.5px;line-height:1.65;color:#C9EBE7;margin:0}
+
+/* --- E. KESIMPULAN PENUTUP (KUTIPAN BESAR ELEGAN) --- */
+.closing-verse{
+  background:var(--glass-strong);backdrop-filter:blur(16px);
+  border-radius:30px;padding:50px 56px;border:1px solid var(--border-glass);
+  box-shadow:0 20px 48px rgba(11,59,58,.10);
+  display:grid;grid-template-columns:auto 1fr;gap:36px;align-items:center;position:relative;overflow:hidden;
+}
+.closing-verse::before{
+  content:"";position:absolute;top:0;left:0;width:100%;height:6px;
+  background:linear-gradient(90deg,var(--teal),var(--gold),var(--cyan));
+}
+.closing-mark{
+  width:88px;height:88px;border-radius:22px;background:linear-gradient(145deg,#0B3B3A,#125956);
+  display:flex;align-items:center;justify-content:center;color:var(--cyan);
+  font-size:44px;font-weight:800;font-family:Georgia,serif;line-height:1;flex-shrink:0;
+  box-shadow:0 10px 26px rgba(11,59,58,.25);
+}
+.closing-body .cl-eyebrow{font-size:11.5px;font-weight:800;letter-spacing:1.3px;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:10px}
+.closing-body .cl-text{font-size:19px;font-weight:700;line-height:1.65;color:var(--teal-deep);margin:0;letter-spacing:-.2px}
+.closing-body .cl-text span{color:var(--teal);background:linear-gradient(180deg,transparent 62%,rgba(129,246,239,.55) 62%)}
+.closing-body .cl-sign{font-size:12.5px;color:var(--teal-soft);margin:14px 0 0;font-weight:600;letter-spacing:.3px}
+
+/* =========================================================
    MEDIA QUERY RESPONSIVE KHUSUS PERANGKAT HP (MAX 768px)
    ========================================================= */
 @media (max-width: 768px) {
@@ -163,6 +306,26 @@ body.menu-locked #container{overflow:hidden}
   .pr-quote { font-size: 16px !important; }
   .sec-head { flex-direction: column !important; align-items: flex-start !important; }
   .sec-sub { text-align: left !important; }
+
+  /* Tambahan responsif untuk bagian baru */
+  .def-strip{padding:26px 22px !important;border-radius:20px !important}
+  .def-strip-inner{grid-template-columns:1fr !important;gap:18px !important}
+  .def-h{font-size:21px !important}
+  .def-body{padding-left:0 !important;border-left:none !important;padding-top:16px;border-top:2px solid rgba(129,246,239,.35)}
+  .split-narr{grid-template-columns:1fr !important;gap:18px !important}
+  .split-card{padding:26px 22px !important;border-radius:20px !important}
+  .split-card .sc-title{font-size:19px !important}
+  .status-band{grid-template-columns:1fr !important;gap:16px !important}
+  .status-col{padding:24px 22px !important;border-radius:20px !important}
+  .principles-panel{padding:28px 22px !important;border-radius:20px !important}
+  .pp-head{flex-direction:column !important;align-items:flex-start !important;margin-bottom:22px !important}
+  .pp-title{font-size:21px !important}
+  .pp-note{text-align:left !important;max-width:none !important}
+  .pp-grid{grid-template-columns:1fr !important;gap:12px !important}
+  .pp-item{padding:16px !important;border-radius:14px !important}
+  .closing-verse{grid-template-columns:1fr !important;gap:20px !important;padding:30px 24px !important;border-radius:22px !important;text-align:left}
+  .closing-mark{width:64px !important;height:64px !important;font-size:32px !important;border-radius:16px !important}
+  .closing-body .cl-text{font-size:16px !important}
 }
 </style>
 </head>
@@ -303,6 +466,179 @@ body.menu-locked #container{overflow:hidden}
                 </div>
               </div>
             </section>
+
+            <!-- ===================================================== -->
+            <!-- TAMBAHAN BARU: ISI PENYAMPAIAN PENJELASAN BERVARIASI -->
+            <!-- ===================================================== -->
+
+            <!-- A. STRIP DEFINISI RINGKAS -->
+            <section class="def-strip" aria-labelledby="def-heading">
+              <div class="def-strip-inner">
+                <div>
+                  <span class="def-label">Rumusan Inti</span>
+                  <h2 class="def-h" id="def-heading">Bukan Sekadar Kumpulan Halaman, <span>Melainkan Satu Lingkungan Informasi</span></h2>
+                </div>
+                <p class="def-body">
+                  <strong translate="no">INFOTRINK</strong> memperlakukan setiap gagasan sebagai sesuatu yang memiliki latar belakang, tujuan, tahapan, dan kemungkinan hasil yang berbeda. Karena itu, platform ini tidak berhenti pada pengenalan profil, melainkan memperlihatkan bagaimana suatu inisiatif dibentuk, dijalankan, dan berkembang—sehingga pengunjung memperoleh gambaran yang utuh, bukan potongan informasi yang berdiri sendiri.
+                </p>
+              </div>
+            </section>
+
+            <!-- B. DUA KOLOM NARASI ASIMETRIS -->
+            <section aria-labelledby="narasi-heading">
+              <div class="sec-head">
+                <div>
+                  <span class="sec-eyebrow">02 / Arah Penyampaian</span>
+                  <h2 class="sec-title" id="narasi-heading">Cara INFOTRINK Menjelaskan Sesuatu</h2>
+                </div>
+                <p class="sec-sub">Penyampaian informasi disusun agar mudah dipahami tanpa kehilangan kedalaman konteks.</p>
+              </div>
+
+              <div class="split-narr">
+                <div class="split-card">
+                  <span class="sc-kicker">Prinsip Narasi</span>
+                  <h3 class="sc-title">Menjelaskan Proses, Bukan Hanya Hasil</h3>
+                  <p class="sc-text">
+                    Banyak platform digital hanya menampilkan keadaan akhir: daftar pengalaman, tautan media sosial, atau profil singkat. <strong translate="no">INFOTRINK</strong> mengambil arah berbeda dengan menempatkan proses sebagai bagian utama dari penyampaian.
+                  </p>
+                  <p class="sc-text">
+                    Setiap objek—entah perusahaan, proyek, kajian, atau karya—diperkenalkan melalui latar belakang, tujuan, tahapan, serta kondisi terkini. Dengan begitu, pengunjung dapat memahami mengapa sesuatu dibentuk, bagaimana ia berjalan, dan di mana posisinya saat ini.
+                  </p>
+                  <p class="sc-text">
+                    Pendekatan ini membuat informasi tidak hanya bersifat pengenalan, tetapi juga dokumentatif dan dapat ditelusuri kembali ketika diperlukan.
+                  </p>
+                </div>
+
+                <div class="split-list">
+                  <div class="split-item">
+                    <div class="si-num">01</div>
+                    <div>
+                      <h4 class="si-title">Latar Belakang &amp; Tujuan</h4>
+                      <p class="si-text">Menjelaskan alasan suatu inisiatif muncul dan apa yang ingin dicapai.</p>
+                    </div>
+                  </div>
+                  <div class="split-item">
+                    <div class="si-num">02</div>
+                    <div>
+                      <h4 class="si-title">Tahapan &amp; Status</h4>
+                      <p class="si-text">Membedakan gagasan, perencanaan, perintisan, pelaksanaan, dan penyelesaian.</p>
+                    </div>
+                  </div>
+                  <div class="split-item">
+                    <div class="si-num">03</div>
+                    <div>
+                      <h4 class="si-title">Dokumentasi Visual</h4>
+                      <p class="si-text">Melengkapi penjelasan dengan bukti gambar, rancangan, atau dokumentasi kegiatan.</p>
+                    </div>
+                  </div>
+                  <div class="split-item">
+                    <div class="si-num">04</div>
+                    <div>
+                      <h4 class="si-title">Keterhubungan</h4>
+                      <p class="si-text">Menghubungkan satu informasi dengan informasi lain yang benar-benar relevan.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- C. TIGA STATUS REKAM JEJAK -->
+            <section aria-labelledby="status-heading">
+              <div class="sec-head">
+                <div>
+                  <span class="sec-eyebrow">03 / Kejelasan Status</span>
+                  <h2 class="sec-title" id="status-heading">Tiga Kondisi yang Selalu Dibedakan</h2>
+                </div>
+                <p class="sec-sub">Agar tidak menimbulkan kesan bahwa semua yang ditampilkan telah berjalan sepenuhnya.</p>
+              </div>
+
+              <div class="status-band">
+                <div class="status-col s-gagasan">
+                  <span class="status-chip">Tahap Awal</span>
+                  <h3 class="status-h">Gagasan &amp; Rencana</h3>
+                  <p class="status-txt">
+                    Informasi yang masih berupa ide, konsep, atau perencanaan diperkenalkan sebagai gagasan—bukan sebagai kegiatan yang telah berjalan. Penjelasan mencakup pemikiran awal, tujuan yang ingin dicapai, serta arah pengembangan yang dibayangkan.
+                  </p>
+                  <div class="status-foot">Ditampilkan sebagai rencana</div>
+                </div>
+
+                <div class="status-col s-proses">
+                  <span class="status-chip">Tahap Berjalan</span>
+                  <h3 class="status-h">Persiapan &amp; Pelaksanaan</h3>
+                  <p class="status-txt">
+                    Inisiatif yang sedang dipersiapkan atau dijalankan disajikan melalui tahapan yang telah dilalui, kegiatan yang sedang berlangsung, serta perubahan yang mungkin terjadi selama proses berjalan.
+                  </p>
+                  <div class="status-foot">Dicatat perkembangannya</div>
+                </div>
+
+                <div class="status-col s-hasil">
+                  <span class="status-chip">Tahap Lanjut</span>
+                  <h3 class="status-h">Hasil &amp; Pengembangan</h3>
+                  <p class="status-txt">
+                    Objek yang telah menghasilkan sesuatu—entah perusahaan, proyek, karya, atau kajian—diperkenalkan melalui hasil yang telah dicapai, manfaatnya, serta arah pengembangan berikutnya.
+                  </p>
+                  <div class="status-foot">Disertai dokumentasi hasil</div>
+                </div>
+              </div>
+            </section>
+
+            <!-- D. PANEL PRINSIP PENYAJIAN -->
+            <section class="principles-panel" aria-labelledby="principles-heading">
+              <div class="pp-head">
+                <div>
+                  <span class="pp-eyebrow">04 / Kaidah Penyajian</span>
+                  <h2 class="pp-title" id="principles-heading">Empat Prinsip yang <span>Menjaga Kualitas Informasi</span></h2>
+                </div>
+                <p class="pp-note">Diterapkan pada seluruh kategori agar penyampaian tetap konsisten, akurat, dan dapat dipertanggungjawabkan.</p>
+              </div>
+
+              <div class="pp-grid">
+                <div class="pp-item">
+                  <span class="pp-check">✓</span>
+                  <div class="pp-body">
+                    <h4 class="pp-t">Ketepatan Status</h4>
+                    <p class="pp-d">Informasi rencana tidak disajikan seolah telah terealisasi; setiap objek dijelaskan sesuai kondisi sebenarnya.</p>
+                  </div>
+                </div>
+                <div class="pp-item">
+                  <span class="pp-check">✓</span>
+                  <div class="pp-body">
+                    <h4 class="pp-t">Kejelasan Konteks</h4>
+                    <p class="pp-d">Setiap informasi memiliki latar belakang, tujuan, dan keterangan waktu agar tidak menimbulkan tafsir ganda.</p>
+                  </div>
+                </div>
+                <div class="pp-item">
+                  <span class="pp-check">✓</span>
+                  <div class="pp-body">
+                    <h4 class="pp-t">Keterhubungan Relevan</h4>
+                    <p class="pp-d">Hubungan antar-informasi hanya ditampilkan bila benar-benar berkaitan, bukan karena berada di platform yang sama.</p>
+                  </div>
+                </div>
+                <div class="pp-item">
+                  <span class="pp-check">✓</span>
+                  <div class="pp-body">
+                    <h4 class="pp-t">Pembaruan Berkala</h4>
+                    <p class="pp-d">Informasi yang berkembang diperbarui, sementara catatan lama tetap disimpan sebagai bagian dari riwayat.</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- E. KESIMPULAN PENUTUP -->
+            <section class="closing-verse" aria-labelledby="closing-heading">
+              <div class="closing-mark">”</div>
+              <div class="closing-body">
+                <span class="cl-eyebrow" id="closing-heading">Penutup Penyampaian</span>
+                <p class="cl-text">
+                  Halaman ini bukan sekadar memperlihatkan <span>apa yang sudah ada</span>, melainkan juga menjelaskan <span>apa yang sedang dibangun</span>, <span>apa yang sedang berkembang</span>, dan <span>bagaimana semuanya terbentuk dari waktu ke waktu</span>.
+                </p>
+                <p class="cl-sign">— Media Informasi &amp; Penjelasan, <span translate="no">INFOTRINK</span></p>
+              </div>
+            </section>
+
+            <!-- ===================================================== -->
+            <!-- AKHIR TAMBAHAN BARU -->
+            <!-- ===================================================== -->
 
           </div>
 
